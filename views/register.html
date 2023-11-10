@@ -1,24 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/d43dfad79c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <header>
-
+      <h1>Aca va todo el header</h1>
     </header>
 
     <main>
-        
+      <h2 class="main__form__title">REGISTRARSE</h2>
+      <form action="/register" method="post" class="main__form__register">
+        <label for="nombre">NOMBRE</label>
+        <input
+          type="text"
+          name="nombre"
+          placeholder="Nombre y Apellido"
+          id="nombre"
+        />
+
+        <label for="email">EMAIL</label>
+        <input type="email" name="email" placeholder="tuemail@email.com" />
+
+        <label for="email">CONFIRMAR EMAIL</label>
+        <input type="email" name="email" placeholder="tuemail@email.com" />
+
+        <label for="password">CONTRASEÑA</label>
+        <div class="main__form__register__password">
+        <input
+            type="password"
+            name="password"
+            class="main__form__register__password"
+            required
+          />
+          <i class="fa-regular fa-eye"></i>
+        </div>
+
+
+          <label for="password">CONFIRMAR CONTRASEÑA</label>
+          <div class="main__form__register__password">
+          <input
+            type="password"
+            name="password"
+            required
+          />
+          <i class="fa-regular fa-eye"></i>
+        </div>
+
+        <button class="main__form__button" type="submit">CREAR CUENTA</button>
+
+        <p>¿Ya tenés una cuenta? <a href="./login">Iniciar sesión</a> </p>
+
+      </form>
     </main>
 
     <footer>
-
+        <h2>Y acá el footer</h2>
     </footer>
-    
-</body>
+  </body>
 </html>
