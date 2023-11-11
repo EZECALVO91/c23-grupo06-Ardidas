@@ -1,0 +1,96 @@
+.header{
+    background-color: var(--color-negro);
+    width: 100%;
+    padding:10px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+}
+
+
+
+.logo-ardidas{
+    
+    width:33%;
+
+
+}
+
+.pestanias{
+display:none
+
+}
+
+.buscprod{
+    display:none;
+
+}
+
+.footer{
+    text-align: center;
+    width:100%;
+    background-color: var(--color-negro);
+    padding:18px;
+}
+
+.contact{
+    font-size: 12px;
+    color: var(--color-beige);
+    position:relative;
+    bottom:8px;
+    margin: auto;
+}
+
+.burger-menu{
+font-size: 28px;
+width:33%;
+color:var(--color-beige);
+
+}
+
+.fa-solid{
+    font-size: 28px;
+    position:relative;
+    left:70px;
+    width:33%;
+    color:var(--color-beige);
+
+}
+
+
+
+
+
+
+
+
+@media (min-width:768px){
+    .pestañas{
+        display:flex;
+        color: var(--color-beige);
+        
+        }
+
+        .logo-ardidas{
+        width:40%;
+        
+        
+        }
+
+        .buscprod{
+            display:none;
+            
+        
+        }
+
+      .footer{
+            position: relative;
+            top: 400px;
+            width:100%;
+            background-color: var(--color-negro);
+            padding:20px;
+        }
+
+
+
+}
