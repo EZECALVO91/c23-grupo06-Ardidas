@@ -16,7 +16,10 @@
     </header>
 
     <main>
-      <h2 class="main__form__title">REGISTRARSE</h2>
+      <div class="main__title__box">
+      <hr>
+      <h2 class="main__form__title">REGISTRARSE</h2><hr>
+    </div>
       <form action="/register" method="post" class="main__form__register">
         <label for="nombre">NOMBRE</label>
         <input
@@ -34,7 +37,7 @@
 
         <label for="password">CONTRASEÑA</label>
         <div class="main__form__register__password">
-        <input
+          <input
             type="password"
             name="password"
             class="main__form__register__password"
@@ -43,26 +46,21 @@
           <i class="fa-regular fa-eye"></i>
         </div>
 
-
-          <label for="password">CONFIRMAR CONTRASEÑA</label>
-          <div class="main__form__register__password">
-          <input
-            type="password"
-            name="password"
-            required
-          />
+        <label for="password">CONFIRMAR CONTRASEÑA</label>
+        <div class="main__form__register__password">
+          <input type="password" name="password" required />
           <i class="fa-regular fa-eye"></i>
         </div>
+        <div class="main__form__register__box">
+          <button class="main__form__button" type="submit">CREAR CUENTA</button>
 
-        <button class="main__form__button" type="submit">CREAR CUENTA</button>
-
-        <p>¿Ya tenés una cuenta? <a href="./login">Iniciar sesión</a> </p>
-
+          <p>¿Ya tenés una cuenta? <a href="./login">Iniciar sesión</a></p>
+        </div>
       </form>
     </main>
 
     <footer>
-        <h2>Y acá el footer</h2>
+      <h2>Y acá el footer</h2>
     </footer>
   </body>
 </html>
