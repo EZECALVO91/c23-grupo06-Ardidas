@@ -1,95 +1,303 @@
-.header{
+
+
+.header {
     background-color: var(--color-negro);
     width: 100%;
-    padding:10px;
-    display:flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-}
-
-
-
-.logo-ardidas{
+    padding: 8px;
     
-    width:33%;
-
 
 }
 
-.pestanias{
-display:none
+.login_header_index{
+    display: none;
+}
+.header_top{
+display:flex;
+width:100%;
 
 }
+.menu_hambu_contenedor{
+    
+    width:20%;
+}
+.menu_hamburguesa{
+    font-size: 25px;
 
-.buscprod{
+}
+.contenedor_search_nav_home{
+display: flex;
+width:80%;
+
+
+}
+.logo-contenedor{
+    width:90%;
+  text-align: center;
+
+}
+.logo{
+width: 50%;
+
+}
+.nav_home_index{
+display: none;
+}
+ 
+.nav_ul{
+
+}
+.busqueda-contenedor{
+    width:20%;
+    text-align: right;
+
+
+}
+.busqueda{
+display: none;
+
+}
+.fa-magnifying-glass{
+    font-size: 25px;
+}
+
+.carrito_header_index{
+    display: none;
+}
+
+
+
+
+.login_header_index{
     display:none;
-
 }
 
-.footer{
-    text-align: center;
-    width:100%;
-    background-color: var(--color-negro);
-    padding:18px;
-}
 
-.contact{
+
+
+@media(width:768px){
+
+
+    .header {
+      
+        
+    
+    }
+    
+    .login_header_index{
+        display:flex;
+        justify-content: right;
+        
+       
+    }
+    .login_header_index p {
+font-size: 16px;
+fomn
+color: var(--color-beige);
+
+    }
+    .header_top{
+    
+    }
+    .menu_hambu_contenedor{
+        display: none;
+       
+    }
+    .menu_hamburguesa{
+      
+    
+    }
+    .contenedor_search_nav_home{
+    width : 80%;
+    
+    }
+    .logo-contenedor{
+      text-align: left;
+      width:29%;
+    
+    }
+    .logo{
+    width:120px;
+    
+    }
+    .nav_home_index{
+   display: flex;
+   width:120%;
+   position:relative;
+   right:-5px;
+    }
+     
+    .nav_ul{
+        display:flex;
+        gap:18px;
+        margin-top: 50px;
+        font-size: 10px;
+        position:relative;
+        left:18px;
+    }
+    .nav_ul li a{
+    color: var(--color-beige);
+    font-size: 12px;
+   
+    
+    }
+    .busqueda-contenedor{
+        
+    display: flex;
+    height: 27%;
+   position: relative;
+   right:-40px;
+   top:39px
+    
+    
+    
+    }
+    .busqueda{
+   display: initial;
+   border-radius: 25px;
+   background-color: var(--color-negro);
+   font-size: 16px;
+   
+ }
+.busqueda-lupa{
+    position:relative ;
+    right: 31px;
+    font-size: 20px;
+    margin-top: 8px;
+   
+}
+    
+    }
+    .fa-magnifying-glass{
+        
+    }
+    
+    .carrito_header_index{
+       display: initial;
+       font-size: 20px;
+
+    }
+    
+    
+    
+    
+    .login_header_index{
+       
+    }
+    @media(width:1024px){
+        .header {
+      
+        
+    
+        }
+        
+        .login_header_index{
+            display:flex;
+            justify-content: right;
+            
+           
+        }
+        .login_header_index p {
     font-size: 12px;
     color: var(--color-beige);
-    position:relative;
-    bottom:8px;
-    margin: auto;
-}
-
-.burger-menu{
-font-size: 28px;
-width:33%;
-color:var(--color-beige);
-
-}
-
-.fa-solid{
-    font-size: 28px;
-    position:relative;
-    left:70px;
-    width:33%;
-    color:var(--color-beige);
-
-}
-
-
-
-
-
-
-
-
-@media (min-width:768px){
-    .pestañas{
-        display:flex;
+    
+        }
+        .header_top{
+        
+        }
+        .menu_hambu_contenedor{
+            display: none;
+           
+        }
+        .menu_hamburguesa{
+          
+        
+        }
+        .contenedor_search_nav_home{
+        width : 80%;
+        
+        }
+        .logo-contenedor{
+          text-align: left;
+          width:29%;
+        
+        }
+        .logo{
+        width:150px;
+        
+        }
+        .nav_home_index{
+       display: flex;
+       width:120%;
+       position:relative;
+       right:-15px;
+        }
+         
+        .nav_ul{
+            display:flex;
+            gap:18px;
+            margin-top: 50px;
+            position:relative;
+            left:18px;
+        }
+        .nav_ul li a{
         color: var(--color-beige);
+        font-size: 18px;
+       
         
         }
-
-        .logo-ardidas{
-        width:40%;
-        
-        
-        }
-
-        .buscprod{
-            display:none;
+        .busqueda-contenedor{
             
+        display: flex;
+        height: 27%;
+       position: relative;
+       left: 115px;
+       top:39px
+        
+        
         
         }
-
-      .footer{
-            position: relative;
-            top: 400px;
-            width:100%;
-            background-color: var(--color-negro);
-            padding:20px;
+        .busqueda{
+       display: initial;
+       border-radius: 25px;
+       background-color: var(--color-negro);
+       font-size: 16px;
+       
+     }
+    .busqueda-lupa{
+        position:relative ;
+        right: 31px;
+        font-size: 20px;
+        margin-top: 8px;
+       
+    }
+        
         }
+        .fa-magnifying-glass{
+            
+        }
+        
+        .carrito_header_index{
+           display: initial;
+           font-size: 20px;
+    
+        }
+        
+        
+        
+        
+        .login_header_index{
+           
+        }
+
+
+
+    }
+
+
+
+
+
+
 
 
 
