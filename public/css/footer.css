@@ -24,7 +24,7 @@
 .hipervinculos a {
   font-size: 16px;
   color: var(--color-beige);
-
+  text-decoration: none;
 }
 
 .hipervinculos h3 {
@@ -88,9 +88,7 @@
     margin-bottom: 0;
     padding-left: 0;
 }
-.hipervinculos a{
-  text-decoration: none;
-}
+
 
   .hipervinculos h3 {
     margin-bottom: 20px;

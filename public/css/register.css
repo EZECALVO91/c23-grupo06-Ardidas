@@ -1,4 +1,4 @@
-main {
+.main__form {
     background-color: var(--color-beige);
     gap:20px;   
 }
@@ -7,9 +7,10 @@ main {
     padding: 5% 0%;
     letter-spacing: 8px;
     text-align: center;
+    font-weight: bold;
 }
 
-hr {
+.main__form__lines {
     display:none;
     }
 
@@ -75,7 +76,7 @@ hr {
 }
 
 @media (min-width:768px) {
-     hr {
+    .main__form__lines {
         display:flex;
         width:25%;
         border:black solid 1px;
