@@ -125,8 +125,8 @@
     .carrito_header_index{
         display: initial;
         position: absolute;
-        font-size: 32px;
-        bottom: 67px;
+        font-size: 40px;
+        bottom: 63px;
         left: 155px;
     }
 }
@@ -145,7 +145,7 @@
         top: 72px;
     }
     .carrito_header_index{
-        font-size: 40px;
+        font-size: 50px;
         bottom: 85px;
         left: 185px;
     }
