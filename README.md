@@ -1,4 +1,5 @@
-# C23 - GRUPO 06 - ARDIDAS
+# C23 - GRUPO 06 - ARDIDAS:
+## TABLERO DEL PROYECTO: [JIRA](https://grupo6-c23.atlassian.net/jira/software/projects/ARDIDAS/boards/2) 
 ## GRUPO N°6:
 * Calvo Ezequiel
 * Leonel Anchaba
