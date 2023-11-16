@@ -110,6 +110,8 @@
 
 }
 .productCart-main-section-secundario-div-2{
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 .productCart-main-section-secundario-div-2 #button-pagar-productCart{
@@ -119,6 +121,7 @@
     border: 0px;
     width: 100px;
     height: 30px;
+    margin: 0px auto;
     margin-top: 10px;
     cursor: pointer;
 }
@@ -129,6 +132,17 @@
     padding: 5%;
     font-size: 12px;
     
+}
+.productCart-main-section-secundario-div-2 #button-seguir-comprando-productCart{
+    border-radius: 16px;
+    color: var(--color-verde-muzgo);
+    font-weight: bold;
+    border: 0px;
+    width: 190px;
+    height: 35px;
+    margin: 0px auto;
+    margin-top: 10px;
+    cursor: pointer;
 }
 .productCart-footer h4{
     font-size: 14px;
@@ -192,9 +206,12 @@
         flex-wrap: wrap;
         padding: 4% 0;
     }
+    .productCart-main-section-principal{
+        width: 800px;
+    }
     .productCart-main-section-secundario{
         height: 400px;
-        margin-left: 10%;
+        margin-left: 2%;
     }
     .productCart-main-section-secundario{
         justify-content: center;
