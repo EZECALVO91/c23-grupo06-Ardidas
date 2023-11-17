@@ -1,12 +1,14 @@
 .footer {
   width: 100%;
-  padding: 20px ;
+  padding: 20px;
   background-color: #000000;
 }
+
 .copy {
   color: var(--color-beige);
- 
+
 }
+
 .redes {
   display: flex;
 }
@@ -17,84 +19,94 @@
 }
 
 .copy-footer {
- display: none;
- padding: 
-
-}
-.contenedor-footer {
-  display: flex;
-  justify-content: space-between;
- 
+  display: none;
 }
 .hipervinculos a {
   font-size: 16px;
   color: var(--color-beige);
-  display: block;
-
+  text-decoration: none;
 }
 
 .hipervinculos h3 {
   color: var(--color-beige);
 }
+
 .redes-footer {
   display: none;
 }
+
 .link-footer {
   display: none;
-} 
-.contacto_footer{
-  text-align: center;
-
 }
+
+.contacto_footer {
+  text-align: center;
+}
+.contacto_footer ul{
+  padding-left: 0;
+}
+
 .contacto_footer a {
   font-size: 15px;
 }
 
- @media (min-width: 768px) {
-    .footer {
-      padding: 10px;
-    }
-    .contenedor-footer {
-      padding: 0 15px 15px 15px;
-    }
-    .link-footer {
-      display: initial;
-    }
-  
-    .redes-footer {
-      display: initial;
-      text-align: center;
-    }
-.redes a {
-  font-size: 40px;
+@media (min-width: 768px) {
+  .contenedor-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px 15px 15px;
+  }
 
-}
-.copy-footer{
-  display: initial;
-  
-}
-.copy{
-  font-size: 20px;
-  
-}
-.hipervinculos h3{
-  margin-bottom: 20px;
-}
-.hipervinculos ul li {
-  margin-top: 5px;
-}
-.contacto_footer ul li  {
-  margin-top: 15px;
-}
-.icono-contact{
+  .link-footer {
+    display: initial;
+  }
 
-  padding-right: 5px;
+  .redes-footer {
+    display: initial;
+    text-align: center;
+  }
+
+  .redes a {
+    font-size: 40px;
+
+  }
+
+  .copy-footer {
+    display: initial;
+  }
+  .copy-footer h6{
+    font-weight: bold;
+    line-height: 0;
+    margin-bottom: 0;
+  }
+
+  .copy {
+    font-size: 20px;
+
+  }
+  .hipervinculos ul{
+    margin-bottom: 0;
+    padding-left: 0;
 }
 
-} 
 
+  .hipervinculos h3 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 0;
+  }
 
+  .hipervinculos ul li {
+    margin-top: 5px;
+  }
 
-  @media (min-width: 1024px){
+  .contacto_footer ul li {
+    margin-top: 15px;
+  }
 
-  
+  .icono-contact {
+
+    padding-right: 5px;
+  }
+
+}
