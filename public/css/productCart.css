@@ -4,6 +4,7 @@
 .productCart-header #button-ayuda-productCart{
     color: white;
     display: none;
+    padding-bottom: 10px;
 }
 .productCart-header{
     text-align: center;
@@ -190,8 +191,6 @@
 @media (min-width: 1024px){ /*Desktop*/
     .productCart-header #button-ayuda-productCart{
         font-size: 22px;
-        padding-bottom: 10px;
-
     }
     .productCart-main-div-promo{
         display: flex;
