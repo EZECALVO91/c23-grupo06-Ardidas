@@ -1,0 +1,41 @@
+.imagen_grande {
+    width: 70%;
+    height: 70%;
+}
+.imagen_pequeña {
+    width: 0%;
+}
+
+.producto {
+    flex-direction: row;
+    display: flex;
+}
+
+.main_p {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    
+}
+
+.main_carrito {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.numero {
+    text-align: center;
+    background-color: white;
+    padding: 5px;
+    width: 30%;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0);
+}
