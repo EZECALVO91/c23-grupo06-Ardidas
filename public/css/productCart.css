@@ -206,10 +206,11 @@
         padding: 4% 0;
     }
     .productCart-main-section-principal{
-        width: 800px;
+        width: 50%;
     }
     .productCart-main-section-secundario{
         height: 400px;
+        width: 30%;
         margin-left: 2%;
     }
     .productCart-main-section-secundario{
