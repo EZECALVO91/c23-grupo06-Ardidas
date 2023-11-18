@@ -1,7 +1,5 @@
 .imagen_grande {
-    width: 70%;
-    height: 70%;
-    margin-right: 1%;
+    width: 100%;
 }
 .imagen_pequeña {
     width: 0%;
@@ -29,12 +27,13 @@
     color: white;
     background-color: black;
     padding: 5px;
-    width: 60%;
     border-radius: 10px;
 }
 
 .detalles {
     padding-bottom: 5%;
+    text-align: center;
+    position: relative;
 }
 
 .numero {
@@ -52,39 +51,46 @@ main {
 }
 
 @media (min-width: 768px) {
-    main {
-        padding-top: 10px;
-        padding-bottom: 10%;
-    }
-    .main_ver-todos-productos {
-        color: white;
-        background-color: black;
-        padding: 10px;
-        width: 60%;
-        border-radius: 10px;
-        text-align: center;
-        position: relative;
-        top: 50px;
-        bottom: 50px;
-    }
     .producto {
         flex-direction: row;
         display: flex;
-        background-color: #858875;
         border-radius: 10px;
-        padding: 1%;
     }
-}
-
-@media (min-width: 1024px) {
     .imagen_grande {
         width: 40%;
-        height: 40%;
         margin-right: 1%;
     }
     .imagen_pequeña {
         width: 10%;
         height: 10%;
         margin-right: 1%;
+    }
+    .detalles {
+        text-align: left;
+        position: relative;
+        top: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .producto {
+        flex-direction: row;
+        display: flex;
+        border-radius: 10px;
+        padding: 1%;
+    }
+    .imagen_grande {
+        width: 40%;
+        margin-right: 1%;
+    }
+    .imagen_pequeña {
+        width: 10%;
+        height: 10%;
+        margin-right: 1%;
+    }
+    .detalles {
+        text-align: left;
+        position: relative;
+        top: 10px;
     }
 }
