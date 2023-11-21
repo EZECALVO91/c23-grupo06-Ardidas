@@ -21,7 +21,7 @@
     <header class="header">
       <div class="login_header_index">
         <a href="/register"><p>Crear Cuenta |</p></a>
-        <a href="#"><p>Iniciar Sesion</p></a>
+        <a href="/login" name="login"><p>Iniciar Sesion</p></a>
       </div>
       <div class="header_top">
         <a href="" class="menu_hambu_contenedor">
@@ -74,11 +74,15 @@
                 <h2 class="login_h_all">CONTRASEÑA</h2>  
                   <label for="contraseña"></label>
                 <input class="input_login" type="password" placeholder=" " required>
+               <div class="label_recordar">
+                <label for="Recordar" class="r" >Recuerdame</label>
+                <input type="checkbox" name="Recuerdame">
+              </div>
                 <a href="" class="login_contra_up"><h6 class="login_h_all">¿Olvidaste tu contraseña?</h6></a>
               </article>
               <article class="articulo_login_main">
-            <button class="btn_login_main" type="submit" >INICIAR SESSIÓN</button>
-            <a href="" class="btn_login_up" ><h6>¿No tenés cuenta? Crear cuenta.</h6></a>
+            <button class="btn_login_main" type="submit" >INICIAR SESIÓN</button>
+            <a href="/login" class="btn_login_up" ><h6>¿No tenés cuenta? Crear cuenta.</h6></a>
               </article>
           </section>
       </form>
@@ -88,7 +92,7 @@
       <div class="hipervinculos link-footer">
         <h3 class="txt-footer-navegacion">NAVEGACIÓN</h3>
         <ul>
-          <li><a href="#">Inicio</a></li>
+          <li><a href="/index">Inicio</a></li>
           <li><a href="#">Productos</a></li>
           <li><a href="#">Contacto</a></li>
           <li><a href="#">¿Como comprar?</a></li>
