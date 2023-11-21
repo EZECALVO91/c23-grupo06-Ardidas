@@ -23,6 +23,10 @@ app.get ("/", function(req,res){
 app.get ("/login", function(req,res){
     res.sendFile(path.join (__dirname, "/views/login.html"))
 });
+app.post("/login", (req,res) => {
+    console.log(req.body)
+    res.redirect("/")
+});
 
 
 app.get ("/register", function(req,res){
