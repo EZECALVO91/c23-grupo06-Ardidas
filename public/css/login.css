@@ -121,10 +121,9 @@
         font-size: 14px;
     }
     }
-   
+    @media  (min-width: 1440px){
+        .login_h_all{
+            margin-left:115px;
+        }
 
-    
-    
-    
-
-  
+    }
