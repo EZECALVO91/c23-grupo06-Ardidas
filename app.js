@@ -20,7 +20,7 @@ app.get ("/login", function(req,res){
 });
 app.post("/login", (req,res) => {
     console.log(req.body)
-    res.redirect("/")
+    res.redirect("/home")
 });
 
 app.get ("/register", function(req,res){
