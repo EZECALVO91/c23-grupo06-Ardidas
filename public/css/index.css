@@ -63,6 +63,9 @@
     color: var(--color-beige);
     border-radius: 5px;
 }
+.product-texto button a{
+    text-decoration: none;
+}
 .precio {
     color: var(--color-beige);
     font-size: 22px;
