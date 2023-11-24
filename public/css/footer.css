@@ -55,9 +55,7 @@
   padding: 200px 0;
 }
 @media (min-width: 768px) {
-  .footer{
-    margin-bottom: -px;
-  }
+
   .contenedor-footer {
     display: flex;
     justify-content: space-between;
@@ -100,6 +98,7 @@
   .hipervinculos h3 {
     margin-bottom: 20px;
     font-weight: bold;
+
     line-height: 0;
   }
 
@@ -117,8 +116,3 @@
   }
 
 }
-
-@media (min-width: 768px) {
-.footer{  margin-bottom: 25px;
-
-}}

@@ -6,6 +6,11 @@ const app = express ();
 
 const publicPath = path.resolve(__dirname, "public")
 
+const bodyParser = require("body-parser")
+
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
+
 app.use (express.static(publicPath));
 
 app.listen (3333, () => {
@@ -20,11 +25,17 @@ app.get ("/login", function(req,res){
 });
 app.post("/login", (req,res) => {
     console.log(req.body)
-    res.redirect("/home")
+    res.redirect("/")
 });
+
 
 app.get ("/register", function(req,res){
     res.sendFile(path.join (__dirname, "/views/register.html"))
+});
+
+app.post("/register", (req,res) => {
+    console.log(req.body)
+    res.redirect("/login")
 });
 
 app.get ("/carrito", function(req,res){
