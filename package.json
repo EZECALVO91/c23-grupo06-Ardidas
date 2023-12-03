@@ -1,0 +1,16 @@
+{
+  "name": "ardidas",
+  "version": "1.0.0",
+  "description": "* Calvo Ezequiel\r * Leonel Anchaba\r * Joaquin Gomez\r * Esteban Figueroa\r * Nicolas Badino\r ### WIREFRAMES:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "grupo-Ardidas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
