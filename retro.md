@@ -10,3 +10,4 @@ Hacer más: Solicitar ayuda cuando la precisamos.
 
 Comenzar a hacer: Comunicarnos(y de la manera más optima y certera posible), contestarnos por Whatsapp, usar el tablero de Jira detallando nuestras tareas y comentando los avances, implementar las Dailys.
     
+    
