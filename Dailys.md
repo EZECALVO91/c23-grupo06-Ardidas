@@ -1,4 +1,4 @@
-# C23 - GRUPO 06 - ARDIDAS : DEYLIS
+# C23 - GRUPO 06 - ARDIDAS : DAILYS
 
 ### GRUPO N°6:
 * Nicolas Badino
@@ -7,7 +7,7 @@
 * Esteban Figueroa
 * Calvo Ezequiel
 
-## DIAS DE LAS CHARLAS DE DEYLIS
+## DIAS DE LAS CHARLAS DE DAILYS
 
 * Miercoles : Despues de la clase de Habilidades Blandas.
 * Viernes : Nos juntamos 20 munitos antes de la clase.
