@@ -40,6 +40,8 @@ app.post("/register",(req,res) => {
 
 app.get ("/carrito", productsRouter);
 app.get ("/detalle", productsRouter);
+
+app.get ("/editar", productsRouter);
 /////
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

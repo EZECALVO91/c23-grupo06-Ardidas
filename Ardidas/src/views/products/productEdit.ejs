@@ -1,1 +1,37 @@
 <%- include("../partials/head.ejs") %>
+<body class="body_home">
+
+    <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
+    <%- include("../partials/header.ejs") %>
+      <main class="main__form">
+        <div class="main__title__box">
+          <hr class="main__form__lines">
+          <h2 class="main__form__title">EDITAR PRODUCTO</h2>
+          <hr class="main__form__lines">
+        </div>
+        <form action="/register" method="post" class="main__form__register">
+          <label for="nombre">NOMBRE</label>
+          <input type="text" name="nombre" placeholder="Nombre" id="nombre" />
+  
+          <label for="description">Descripción</label>
+          <input type="text" name="description" placeholder="Descripción del articulo" />
+  
+          <label for="category">Categoria</label>
+            <input type="text" name="category" class="main__form__register__category" required />
+            
+      
+  
+            <button class="main__form__button" type="submit">CREAR CUENTA</button>
+  
+            <p>¿Ya tenés una cuenta? <a href="./login">Iniciar sesión</a></p>
+          </div>
+        </form>
+      </main>
+  
+  <!--ACA SE INCLUYE EL PARTIAL : -->
+  <%- include("../partials/footer.ejs") %>
+  
+  
+  </body>
+  
+  </html>
