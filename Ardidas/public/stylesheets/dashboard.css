@@ -1,0 +1,40 @@
+.box_dashboard_option a{
+    background-color: var(--color-verde-muzgo);
+}
+
+.icon_edit_dashboard{
+    font-size: 25px;
+    padding: 0 10px;
+    
+}
+
+.box_redirect_create{
+    text-align: center;
+}
+
+.box_redirect_create a{
+    font-size: 20px;
+    color: var(--color-blanco);
+    font-weight: bolder;
+}
+
+.btn_redirect_create{
+    border: 3px solid var(--color-negro);
+    background-color: var(--color-negro);
+    box-shadow: 0px 0px 10px var(--color-negro);
+    border-radius: 15px;
+    padding: 1px 10px;
+
+}
+
+@media  (min-width: 768px){
+    .box_redirect_create a{
+        font-size: 30px;
+    }
+}
+
+@media  (min-width: 1014px){
+    .box_redirect_create a{
+        font-size: 40px;
+    }
+}
