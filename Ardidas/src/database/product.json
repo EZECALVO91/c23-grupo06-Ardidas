@@ -5,7 +5,7 @@
             "talle": 42,
             "color": "Negro",
             "descripcion": "zapatillas nike ultimo modelo 2023",
-            "precio": 110.000,
+            "precio": "110.000",
             "imagen": "nike8.webp"
         },
         {
@@ -14,7 +14,7 @@
             "talle": 40,
             "color": "Rosado",
             "descripcion": "zapatillas nike ultimo modelo 2023",
-            "precio": 110.000,
+            "precio": "110.000",
             "imagen": "nike6.webp"
         },
         {
@@ -23,7 +23,7 @@
             "talle": 38,
             "color": "Negro",
             "descripcion": "zapatillas nike ultimo modelo 2023",
-            "precio": 90.000,
+            "precio": "90.000",
             "imagen": "nike5.webp"
         },
         {
@@ -32,7 +32,7 @@
             "talle": 39,
             "color": "Azul",
             "descripcion": "zapatillas nike ultimo modelo 2023",
-            "precio": 75.000,
+            "precio": "75.000",
             "imagen": "nike6.webp"
         },
         {
@@ -41,7 +41,7 @@
             "talle": 42,
             "color": "varios colores para elegir",
             "descripcion": "zapatillas nike ultimo modelo 2023",
-            "precio": 110.000,
+            "precio": "110.000",
             "imagen": "nike7.webp"
         },
         {
@@ -50,7 +50,7 @@
             "talle": 38,
             "color": "Negro",
             "descripcion": "zapatillas nike ultimo modelo 2023",
-            "precio": 90.000,
+            "precio": "90.000",
             "imagen": "nike8.webp"
         },
         {
@@ -59,7 +59,7 @@
             "talle": 42,
             "color": "varios colores para elegir",
             "descripcion": "zapatillas nike ultimo modelo 2023",
-            "precio": 110.000,
+            "precio": "110.000",
             "imagen": "nike5.webp"
         },
         {
@@ -68,7 +68,7 @@
             "talle": 38,
             "color": "Negro",
             "descripcion": "zapatillas nike ultimo modelo 2023",
-            "precio": 90.000,
+            "precio": "90.000",
             "imagen": "nike6.webp"
         }
     ]
