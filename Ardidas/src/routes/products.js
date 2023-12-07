@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const {productCart, productDetail} = require('../controllers/productsControllers')
+const {productCart, productDetail, dashboard} = require('../controllers/productsControllers')
 
 router
 .get('/carrito', productCart)
 
 .get('/detalle', productDetail)
+
+.get('/dashboard', dashboard)
 
 
 
