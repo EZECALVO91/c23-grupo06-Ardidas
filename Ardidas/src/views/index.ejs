@@ -67,66 +67,18 @@
       </div>
 
       <section class="contenedor-productos1 section_products_main_index">
-        <article class="articulos">
-          <a href="../products/detalle"><img src="/images/nike8.webp" alt="Zapatillas Nike" /></a>
+        <% products.forEach(product => { %>
+                  <article class="articulos">
+          <a href="../products/detalle/<%= product.id%>"><img src="/images/<%=product.imagen %>" alt="Zapatillas Nike" /></a>
           <div class="product-texto">
             <div class="main_descuento_precio_articulo">
-              <p class="precio">$110.000</p>
+              <p class="precio">$<%=product.precio%></p>
             </div>
-            <p class="modelo">Nike Revolution 6</p>
+            <p class="modelo"><%=product.nombre%></p>
             <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
           </div>
         </article>
-        <article class="articulos">
-          <a href="/products/detalle"><img src="/images/nike6.webp" alt="Zapatillas Nike" /></a>
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$110.000</p>
-            </div>
-            <p class="modelo">Nike Revolution 6</p>
-            <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
-          </div>
-        </article>
-        <article class="articulos">
-          <a href="/products/detalle"><img src="/images/nikeb3.webp" alt="Zapatillas Nike" /></a>
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$90.000</p>
-            </div>
-            <p class="modelo">Nike Air Max</p>
-            <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
-          </div>
-        </article>
-        <article class="articulos">
-          <a href="/products/detalle"><img src="/images/nikea4.webp" alt="Zapatillas Nike" /></a>
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$75.000</p>
-            </div>
-            <p class="modelo">Nike Zoom</p>
-            <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
-          </div>
-        </article>
-        <article class="articulos">
-          <a href="/products/detalle"><img src="/images/nike8.webp" alt="Zapatillas Nike" /></a>
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$110.000</p>
-            </div>
-            <p class="modelo">Nike Revolution 6</p>
-            <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
-          </div>
-        </article>
-        <article class="articulos">
-          <a href="/products/detalle"><img src="/images/nike6.webp" alt="Zapatillas Nike" /></a>
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$110.000</p>
-            </div>
-            <p class="modelo">Nike Revolution 6</p>
-            <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
-          </div>
-        </article>
+          <% }); %>
       </section>
 
       <div class="main_title_box">
@@ -136,66 +88,18 @@
       </div>
 
       <section class="contenedor-productos2 section_products_main_index">
+        <% products.forEach(product => { %>
         <article class="articulos">
-          <a href="/products/detalle"><img src="/images/nike5.webp" alt="Zapatillas Nike" /></a>
+          <a href="/products/detalle/<%= product.id%>"><img src="/images/<%= product.imagen %>" alt="Zapatillas Nike" /></a>
           <div class="product-texto">
             <div class="main_descuento_precio_articulo">
-              <p class="precio">$60.000</p>
+              <p class="precio">$<%= product.precio%></p>
             </div>
-            <p class="modelo">Nike Revolution 6</p>
+            <p class="modelo"><%=product.imagen%></p>
             <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
           </div>
         </article>
-        <article class="articulos">
-          <a href="/products/detalle"><img src="/images/nike6.webp" alt="Zapatillas Nike" /></a>
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$100.000</p>
-            </div>
-            <p class="modelo">Nike Air Max</p>
-            <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
-          </div>
-        </article>
-        <article class="articulos">
-          <a href="/products/detalle"><img src="/images/nike7.webp" alt="Zapatillas Nike" /></a>  
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$69.900</p>
-            </div>
-            <p class="modelo">Nike Zoom</p>
-            <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
-          </div>
-        </article>
-        <article class="articulos">
-          <a href="/products/detalle"><img src="/images/nike8.webp" alt="Zapatillas Nike" /></a>
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$120.000</p>
-            </div>
-            <p class="modelo">Nike Lebron</p>
-            <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
-          </div>
-        </article>
-        <article class="articulos">
-          <a href="/products/detalle"><img src="/images/nike5.webp" alt="Zapatillas Nike" /></a>
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$60.000</p>
-            </div>
-            <p class="modelo">Nike Revolution 6</p>
-            <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
-          </div>
-        </article>
-        <article class="articulos">
-          <a href="/products/detalle"><img src="/images/nike6.webp" alt="Zapatillas Nike" /></a>
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$100.000</p>
-            </div>
-            <p class="modelo">Nike Air Max</p>
-            <button><a href="/products/carrito">SUMAR AL CARRITO</a></button>
-          </div>
-        </article>
+        <% }); %>
       </section>
       <article class="ver_productos">
         <a href="#">VER TODOS LOS PRODUCTOS</a>

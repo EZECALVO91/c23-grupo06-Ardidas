@@ -1,4 +1,4 @@
-const products = [{
+const productsasd = [{
     id:1,
     nombre: "Nike Revolution 6",
     talle: 42,
@@ -70,13 +70,17 @@ const products = [{
     precio: 90000,
     imagen: "nike6.webp"
 }]
-
+const fs = require('fs')
+const productsJson = fs.readFileSync(__dirname + '../../database/product.json','utf-8')
+const products = JSON.parse(productsJson)
 const productsController ={
     productCart:(req,res)=>{
         res.render('./products/productCart',{title:"Carrito"})
     },
     productDetail:(req,res)=>{
-        res.render('./products/productDetail',{title:"Detalle",products})
+        const {id} = req.params
+        const product = products.find(producto => producto.id == id)
+        res.render('./products/productDetail',{title: "Detalle" ,product})
     },
     
     dashboard:(req, res) => {
