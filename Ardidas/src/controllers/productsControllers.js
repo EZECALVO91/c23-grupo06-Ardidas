@@ -21,7 +21,7 @@ const productsController ={
     },
     create: (req,res)=>{
         const product = req.body;
-        console.log(product);
+        console.log(product). 
         product.id = products[products.length-1].id +1;
         products.push(product);
         const productjson = JSON.stringify(products);
