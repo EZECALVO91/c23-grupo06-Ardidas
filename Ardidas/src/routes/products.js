@@ -5,7 +5,7 @@ const {productCart, productDetail, dashboard} = require('../controllers/products
 router
 .get('/carrito', productCart)
 
-.get('/detalle', productDetail)
+.get('/detalle/:id', productDetail)
 
 .get('/dashboard', dashboard)
 

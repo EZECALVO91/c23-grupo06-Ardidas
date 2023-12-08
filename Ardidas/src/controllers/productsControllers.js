@@ -1,4 +1,4 @@
-const asd = [{
+const productsasd = [{
     id:1,
     nombre: "Nike Revolution 6",
     talle: 42,
@@ -78,7 +78,9 @@ const productsController ={
         res.render('./products/productCart',{title:"Carrito"})
     },
     productDetail:(req,res)=>{
-        res.render('./products/productDetail',{title:"Detalle",products})
+        const {id} = req.params
+        const product = products.find(producto => producto.id == id)
+        res.render('./products/productDetail',{title: "Detalle" ,product})
     },
     
     dashboard:(req, res) => {
