@@ -27,6 +27,8 @@
     border-radius: 16px;
     padding: 4%;
     margin-bottom: 10px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    border: 1px solid var(--color-negro);
 }
 .productCart-main-section-principal-encabezado{
     display: flex;
@@ -48,6 +50,7 @@
 }
 .productCart-main-section-principal-article-div-1 img{
     width: 75px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 .productCart-main-section-principal-article-div-2{
     display: flex;
@@ -90,6 +93,8 @@
     padding: 20px;
     font-weight: bold;
     color: #fff;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    border: 1px solid var(--color-negro);
 }
 .productCart-main-section-secundario-resumen{
     display: none;

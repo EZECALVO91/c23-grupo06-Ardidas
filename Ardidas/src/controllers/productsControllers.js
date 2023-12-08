@@ -1,91 +1,35 @@
-const productsasd = [{
-    id:1,
-    nombre: "Nike Revolution 6",
-    talle: 42,
-    color: "Negro",
-    descripcion: "zapatillas nike ultimo modelo 2023",
-    precio: 110000,
-    imagen: "nike8.webp"
-},
-{
-    id:2,
-    nombre: "Nike Revolution 6",
-    talle: 40,
-    color: "Rosado",
-    descripcion: "zapatillas nike ultimo modelo 2023",
-    precio: 110000,
-    imagen: "nike6.webp"
-},
-{
-    id:3,
-    nombre: "Nike Air Max",
-    talle: 38,
-    color: "Negro",
-    descripcion: "zapatillas nike ultimo modelo 2023",
-    precio: 90000,
-    imagen: "nike5.webp"
-},
-{
-    id:4,
-    nombre: "Nike Zoom",
-    talle: 39,
-    color: "Azul",
-    descripcion: "zapatillas nike ultimo modelo 2023",
-    precio: 75000,
-    imagen: "nike6.webp"
-},
-{
-    id:5,
-    nombre: "Nike Revolution 6",
-    talle: 42,
-    color: "varios colores para elegir",
-    descripcion: "zapatillas nike ultimo modelo 2023",
-    precio: 110000,
-    imagen: "nike7.webp"
-},
-{
-    id:6,
-    nombre: "Nike Air Max",
-    talle: 38,
-    color: "Negro",
-    descripcion: "zapatillas nike ultimo modelo 2023",
-    precio: 90000,
-    imagen: "nike8.webp"
-},
-{
-    id:7,
-    nombre: "Nike Revolution 6",
-    talle: 42,
-    color: "varios colores para elegir",
-    descripcion: "zapatillas nike ultimo modelo 2023",
-    precio: 110000,
-    imagen: "nike5.webp"
-},
-{
-    id:8,
-    nombre: "Nike Air Max",
-    talle: 38,
-    color: "Negro",
-    descripcion: "zapatillas nike ultimo modelo 2023",
-    precio: 90000,
-    imagen: "nike6.webp"
-}]
 const fs = require('fs')
 const productsJson = fs.readFileSync(__dirname + '../../database/product.json','utf-8')
 const products = JSON.parse(productsJson)
+
+
 const productsController ={
     productCart:(req,res)=>{
-        res.render('./products/productCart',{title:"Carrito"})
+        const {id} = req.params
+        const product = products.find(producto => producto.id == id)
+        res.render('products/productCart',{title:"Carrito", product})
     },
     productDetail:(req,res)=>{
         const {id} = req.params
         const product = products.find(producto => producto.id == id)
-        res.render('./products/productDetail',{title: "Detalle" ,product})
+        res.render('products/productDetail',{title: "Detalle" ,product})
     },
     
     dashboard:(req, res) => {
         res.render('products/dashboard', { title: "Dashboard", products });
-    }
+    },
+    productEdit:(req, res) => {
+         const {id} = req.params;        
+        // const productsJson = fs.readFileSync(__dirname + '../../database/product.json','utf-8')
+        // const products = JSON.parse(productsJson);
+         const product = products.find(elemento => elemento.id == id);
+        res.render("products/productEdit", {title:"Detalle producto",product})
+        
+    },
+    // update: (req,res) => {
+    //     console.log(req.body)
+    //     res.redirect("/products/dashboard")
+    // },
 }
 
 module.exports = productsController;
