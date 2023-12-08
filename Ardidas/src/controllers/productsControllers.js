@@ -16,6 +16,19 @@ const productsController ={
     dashboard:(req, res) => {
         res.render('products/dashboard', { title: "Dashboard", products });
     },
+    productLoad: (req,res)=>{
+        res.render("products/productLoad",{ title: "Crear"});
+    },
+    create: (req,res)=>{
+        const product = req.body;
+        console.log(product);
+        product.id = products[products.length-1].id +1;
+        products.push(product);
+        const productjson = JSON.stringify(products);
+        fs.writeFileSync(path.join(__dirname,"../database/product.json"),productjson,"utf-8");
+        res.redirect("/product/dashboard")
+    },
+
     productEdit:(req, res) => {
          const {id} = req.params;        
         // const productsJson = fs.readFileSync(__dirname + '../../database/product.json','utf-8')
