@@ -1,12 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const productsController = require('../controllers/productsControllers')
+const {productCart, productDetail, dashboard, productEdit, update} = require('../controllers/productsControllers')
 
 router
-.get('/carrito', productsController.productCart)
-.get('/detalle', productsController.productDetail)
+.get('/carrito', productCart)
 
-.get("/editar", productsController.productEdit)
+.get('/detalle/:id', productDetail)
 
-module.exports = router
+.get('/dashboard', dashboard)
+
+.get("/update/:id", productEdit)
+// .put("/update", update)
+
+
+
+module.exports = router;
 

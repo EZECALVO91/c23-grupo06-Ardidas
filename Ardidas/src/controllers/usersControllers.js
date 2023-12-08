@@ -1,12 +1,19 @@
-const products = [{
-    
-}]
+
 const usersController = {
-    login:(req,res)=>{
-        res.render('./users/login',{title:"Ardidas",products})
+    formRegister:(req,res)=>{
+        res.render('./users/register',{title:"Registro"})
     },
-    register:(req,res)=>{
-        res.render('./users/register',{title:"Ardidas",products})
-    }
+    register:(req,res) => {
+        console.log(req.body)
+        res.redirect("/users/login")
+    },
+    formLogin:(req,res)=>{
+            res.render('./users/login',{title:"Login"})
+    },
+    login: (req,res) => {
+        console.log(req.body)
+        res.redirect("/")
+    },
+    
 }
 module.exports = usersController;

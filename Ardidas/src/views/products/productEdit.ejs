@@ -1,37 +1,62 @@
+<!--ACA SE INCLUYE EL PARTIAL : HEAD -->
 <%- include("../partials/head.ejs") %>
-<body class="body_home">
 
-    <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
-    <%- include("../partials/header.ejs") %>
-      <main class="main__form">
-        <div class="main__title__box">
-          <hr class="main__form__lines">
-          <h2 class="main__form__title">EDITAR PRODUCTO</h2>
-          <hr class="main__form__lines">
-        </div>
-        <form action="/register" method="post" class="main__form__register">
-          <label for="nombre">NOMBRE</label>
-          <input type="text" name="nombre" placeholder="Nombre" id="nombre" />
-  
-          <label for="description">Descripción</label>
-          <input type="text" name="description" placeholder="Descripción del articulo" />
-  
-          <label for="category">Categoria</label>
-            <input type="text" name="category" class="main__form__register__category" required />
-            
+<body>
+
+  <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
+  <%- include("../partials/header.ejs") %>
+
+    <main>
+      <p>Inicio > Productos > Detalle ><%= product.nombre%></>
+        <form action="/products/update/:id?_method=PUT" method="post" class="main__form__register"></form>
+      <article class="producto">
+        <div class="imagenes_pequeñas">
+          <img src="/images/nike9.webp" alt="miniatura" class="imagen_pequeña">
+          <img src="/images/027738a4-a120-4774-970a-b2a67a9c730d-673cda2af6b79b02f216330911267738-240-0.jpeg"
+            alt="miniatura" class="imagen_pequeña">
+          <img src="/images/rBVaWF5CTiaAXloQAADZKoR2kqY074.jpg" alt="miniatura" class="imagen_pequeña">
+         </div> 
+            <input class="dashboard__image" type="file" accept=".jpg .png">
+        <div class="detalles">
+          <h2> <label for="nombre">Nombre :</label>
+            <input type="text" name="nombre" id="nombre" /></h2>
+          <h2><label for="precio">Precio :</label>
+            <input type="number" name="precio" /></h2>
       
-  
-            <button class="main__form__button" type="submit">CREAR CUENTA</button>
-  
-            <p>¿Ya tenés una cuenta? <a href="./login">Iniciar sesión</a></p>
+            <div class="detalles_talles">
+              <h2><label>Talles :</label></h2>
+              <h2><div>
+                  <input type="checkbox" name="talles" value="talles" id="talles">
+                  <label for="talles">37</label>
+              </div></h2>
+              <h2><div>
+                <input type="checkbox" name="talles" value="talles" id="talles">
+                <label for="talles">38</label>
+            </div></h2>
+          <h2><div>
+              <input type="checkbox" name="talles" value="talles" id="talles">
+              <label for="talles">39</label>
+          </div></h2>
+        <h2><div>
+            <input type="checkbox" name="talles" value="talles" id="talles">
+            <label for="talles">40</label>
+        </div></h2>
           </div>
-        </form>
-      </main>
-  
-  <!--ACA SE INCLUYE EL PARTIAL : -->
-  <%- include("../partials/footer.ejs") %>
-  
-  
-  </body>
-  
-  </html>
+          <h2><label for="Descripción">Descripción</label></h2>
+                    <textarea name="Descripción" id="Descripción" cols="42" rows="3"></textarea>
+         </div>
+        
+      
+      </article>
+      <a href="/products/dashboard"><button class="main_ver-todos-productos" type="submit">ACTUALIZAR PRODUCTO</button></a>
+    </form>
+      
+    </main>
+
+<!--ACA SE INCLUYE EL PARTIAL : -->
+<%- include("../partials/footer.ejs") %>
+
+
+</body>
+
+</html>
