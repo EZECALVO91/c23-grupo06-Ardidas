@@ -41,9 +41,76 @@
 
 /* Diseños de formulario de edicion */
 
-.dashboard__image {
-    outline:solid green 3px;
-    width: 361px;
-    height: 361px;
+.update_body{
+    background-color: var(--color-beige);
 }
 
+.main_update{
+    padding: 7% 2%;
+}
+
+.update_section-box{
+    flex-direction: row;
+}
+
+.update_box_intern{
+    display: flex;
+    flex-direction: column;
+}
+
+.img_update_fast{
+    margin:10px;
+}
+
+.dashboard__image {
+    outline:solid var(--color-verde-muzgo) 3px;
+    width: 235px;
+    height:200px;
+    background-color: var(--color-blanco);
+}
+
+.talles_update{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.imagenes_pequeñas_update{
+    margin-left: 1%;
+}
+
+.imagenes_pequeñas_update img{
+    margin-bottom: 10px;
+}
+.main_ver-todos-productos{
+    margin-top: 30px;
+}
+
+
+
+@media  (min-width: 768px){
+    .dashboard__image {
+        width: 90%;
+        height:70%;
+    }
+    .update_box_intern{
+        width:35%;
+    }
+    
+    .img_update_fast{
+        width: 50%;
+    }
+    .imagenes_pequeñas_update{
+        width: 15%;
+    }
+}
+
+@media  (min-width: 1024px){
+    .dashboard__image {
+        width: 95%;
+        height:85%;
+    }
+    .imagenes_pequeñas_update{
+        width: 22%;
+    }
+}
