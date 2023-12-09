@@ -1,0 +1,82 @@
+<!--ACA SE INCLUYE EL PARTIAL : HEAD -->
+<%-include("../partials/head.ejs")%>
+
+  <body class="update_body">
+
+    <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
+    <%-include("../partials/header.ejs")%>
+    
+
+      <main class="main_update">
+        <h2 class="h2_title_form">CARGA DE PRODUCTO</h2>
+        <form action="/products/update" method="post" class="main__form__register">
+
+          <section class="producto update_section-box">
+            
+            
+            <div class="imagenes_pequeñas imagenes_pequeñas_update">
+              <img src="/images/nike9.webp" alt="miniatura" class="imagen_pequeña">
+              <img src="/images/027738a4-a120-4774-970a-b2a67a9c730d-673cda2af6b79b02f216330911267738-240-0.jpeg"
+                alt="miniatura" class="imagen_pequeña">
+              <img src="/images/rBVaWF5CTiaAXloQAADZKoR2kqY074.jpg" alt="miniatura" class="imagen_pequeña">
+            </div>
+           
+            <div class="img_update_fast">
+              
+                  <input class="dashboard__image" type="file" accept=".jpg .png">
+                  
+            </div>
+            
+            <div class=" update_box_intern">
+              <label for="nombre">Nombre :</label>
+                <input type="text" name="nombre" id="nombre" />
+              
+            <label for="precio">Precio :</label>
+                <input type="number" name="precio" />
+              
+              
+              <div class="talles_update">
+              <label>Talles :</label>
+              <div>
+                    <input type="checkbox" name="talles" value="talles" id="talles">
+                    <label for="talles">37</label>
+                  </div>
+              
+              
+              
+                  <div>
+                    <input type="checkbox" name="talles" value="talles" id="talles">
+                    <label for="talles">38</label>
+                  </div>
+              
+              
+                  <div>
+                    <input type="checkbox" name="talles" value="talles" id="talles">
+                    <label for="talles">39</label>
+                  </div>
+              
+              
+                  <div>
+                    <input type="checkbox" name="talles" value="talles" id="talles">
+                    <label for="talles">40</label>
+                  </div>
+              
+              </div>
+              <div>
+              
+                <label for="Descripción">Descripción</label>
+                <textarea name="Descripción" id="Descripción" cols="25" rows="5"></textarea>
+              
+              </div>
+            </div>
+          </section>
+        <a href="/products/dashboard"><button class="main_ver-todos-productos" type="submit">CREAR PRODUCTO</button></a>
+      
+        </form>
+      
+      </main>
+
+      <!--ACA SE INCLUYE EL PARTIAL : -->
+      <%- include("../partials/footer.ejs") %>
+  </body>
+  </html>
