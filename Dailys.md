@@ -15,6 +15,7 @@
 
 
 ## Daily 7/12/2023
+## Daily 7/12/2023
 
 * Nicolas Badino = Los dias antes de la deily estuvo ayudando a los compañeros a realizar los trabajos, hacer commits
                 y ayudar con los request, trabaje junto con mis compañeros para armar la estructura y el funcionamiento de dashboard. Hoy ayude a terminar el css de stylo del dashboad y estoy mirando los videos de las clases y leo documentacion para mañana poder terminar con su tarea de FORMULARIO DE CREACION.
