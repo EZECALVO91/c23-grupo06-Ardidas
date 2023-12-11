@@ -14,7 +14,7 @@
 * De ser necesario se programa una tercera Deyli antes de la entrega del Sprint.
 
 
-## Dayly 7/12/2023
+## Daily 7/12/2023
 
 * Nicolas Badino = Los dias antes de la deily estuvo ayudando a los compañeros a realizar los trabajos, hacer commits
                 y ayudar con los request, trabaje junto con mis compañeros para armar la estructura y el funcionamiento de dashboard. Hoy ayude a terminar el css de stylo del dashboad y estoy mirando los videos de las clases y leo documentacion para mañana poder terminar con su tarea de FORMULARIO DE CREACION.
@@ -31,3 +31,22 @@
 
 * Calvo Ezequiel = Los dias anteriores espere a que esteban termine la reestructuracion con express-generator, hice el
                 pull para poder comenzar a refactorizar y crear la carpeta partials, al terminarlas la subi a la rama para hacerle el Pull Request a develop, al terminar hicimos una RETRO grupal, se grabo la charla en un audio y luego la tipie a l archivo retro.md , estuve ayudado en la estructura y armado de dashboar con mis compañeros. El dia de hoy ayude tambien con los formularios y vistas de mis compañeros. Y para los siguientes dias me quedaria seguir ayudando en los que mis compañeros necesiten.
+
+
+
+## Daily 10/12/2023
+
+
+* Nicolas Badino = El dia de ayer me tome un descanso luego de haber terminado con mi parte del sprint 3, hoy revise un poco el codigo para ver
+                si podia hacer funcional los formularios junto con Ezequiel, Y el dia de mañana ya se hace la entrega y cierre de sprint 3.
+
+
+* Leonel Anchaba = Tiene que completar su parte luego.
+
+* Joaquin Gomez = Joaquin no se conecto a la daily, sigue sin participar del sprint y sin tener comunicacion con el grupo, nosotros hablamos 
+                por el grupo pero el igualmente no contesta, solo a leo le contesto unos mensajes pero nada mas.
+
+* Esteban Figueroa = Tiene que completar su parte luego.
+
+* Calvo Ezequiel = En los dias anteriores, estuve leyendo un poco de documentacion para poder entender bien los conceptos aprendidos
+                todavia me sigue costando adaptarme al javascrip y al formato del express-generator, hoy quiero revisar un poco los codigos para ver si se puede llegar a resolver y hacer utilizables los formularios. Y el dia de mañana ya se hace la entrega y cierre de sprint 3.
