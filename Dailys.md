@@ -42,7 +42,7 @@
                 si podia hacer funcional los formularios junto con Ezequiel, Y el dia de mañana ya se hace la entrega y cierre de sprint 3.
 
 
-* Leonel Anchaba = Tiene que completar su parte luego.
+* Leonel Anchaba = Por mi parte lo último trabajado fue en las primeras horas del dia viernes, en el formulario de edición de producto(que era de lo único que faltaba para el sprint), para poder tener el finde libre. Ahora toca arrancar con el tp de crud de la clase 28, habilitado este mismo finde
 
 * Joaquin Gomez = Joaquin no se conecto a la daily, sigue sin participar del sprint y sin tener comunicacion con el grupo, nosotros hablamos 
                 por el grupo pero el igualmente no contesta, solo a leo le contesto unos mensajes pero nada mas.
