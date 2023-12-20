@@ -9,7 +9,7 @@ router
 
 .get('/dashboard', dashboard)
 
-.get("/productLoad",productLoad)
+.get("/create",productLoad)
 .post("/create",create)
 
 .get("/update/:id", productEdit)
