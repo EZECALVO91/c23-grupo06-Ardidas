@@ -1,6 +1,15 @@
 const fs = require('fs')
+const path = require ('path')
 const productsJson = fs.readFileSync(__dirname + '../../database/product.json','utf-8')
 const products = JSON.parse(productsJson)
+
+const reutilizarJson = () => {
+    const productsFilePath = path.join(__dirname, '../database/product.json');
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+	return products
+}
+
+const productsFilePath = path.join(__dirname, '../database/product.json');
 
 
 const productsController ={
@@ -40,10 +49,14 @@ const productsController ={
         res.render("products/productEdit", {title:"Detalle producto",product})
         
     },
-    // update: (req,res) => {
-    //     console.log(req.body)
-    //     res.redirect("/products/dashboard")
-    // },
+
+    destroy:(req, res) => {
+		const products = reutilizarJson();
+		let productClear = products.filter(product => product.id !== +req.params.id);
+		const json = JSON.stringify(productClear);
+		fs.writeFileSync(productsFilePath,json, "utf-8");
+		res.redirect ('/products/dashboard')
+	}
 }
 
 module.exports = productsController;
