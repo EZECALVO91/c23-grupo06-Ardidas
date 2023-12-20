@@ -1,0 +1,48 @@
+[
+    {
+        "Identificador": 1,
+        "Nombre": "Esteban",
+        "Apellido": "Figueroa",
+        "Email": "EFigueroa@gmail.com",
+        "Contraseña": "contras2",
+        "Categoría": "ADMIN",
+        "Imagen": image1
+    },
+    {
+        "Identificador": 2,
+        "Nombre": "Juaquin",
+        "Apellido": "Gomez",
+        "Email":"JGomez@gmail.com",
+        "Contraseña": "contras2",
+        "Categoría": "ADMIN",
+        "Imagen": image2
+    },
+    {
+        "Identificador": 3,
+        "Nombre":"Leonel",
+        "Apellido":"Anchaba",
+        "Email":"LAnchaba@gmail.com",
+        "Contraseña":"contras3",
+        "Categoría":"ADMIN",
+        "Imagen":image3
+    },
+    {
+        "Identificador": 4,
+        "Nombre":"Ezequiel",
+        "Apellido":"Calvo",
+        "Email":"ECalvo@gmail.com",
+        "Contraseña":"contras4",
+        "Categoría":"ADMIN",
+        "Imagen":"image4"
+    },
+    {
+        "Identificador": 5,
+        "Nombre":"Nicolas",
+        "Apellido":"Badino",
+        "Email":"NBadino@gmail.com",
+        "Contraseña":"contras5",
+        "Categoría":"ADMIN",
+        "Imagen":image5
+    }
+
+     ]
