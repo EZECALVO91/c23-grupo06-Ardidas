@@ -4,7 +4,8 @@ const productsJson = fs.readFileSync(__dirname + '../../database/product.json','
 const products = JSON.parse(productsJson)
 const indexController = {
     index:(req,res)=>{
-        res.render('index',{title:"Ardidas",products})
+        const featuredCategory = products.filter(product => product.category === "destacado")
+        res.render('index',{title:"Ardidas",products, featuredCategory})
     }
 }
 module.exports = indexController

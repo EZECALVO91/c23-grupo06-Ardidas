@@ -88,7 +88,7 @@
       </div>
 
       <section class="contenedor-productos2 section_products_main_index">
-        <% products.forEach(product => { %>
+        <% featuredCategory.forEach(product => { %>
         <article class="articulos">
           <a href="/products/detalle/<%= product.id%>"><img src="/images/<%= product.imagen %>" alt="Zapatillas Nike" /></a>
           <div class="product-texto">
@@ -102,7 +102,7 @@
         <% }); %>
       </section>
       <article class="ver_productos">
-        <a href="#">VER TODOS LOS PRODUCTOS</a>
+        <a href="/products">VER TODOS LOS PRODUCTOS</a>
       </article>
     </main>
 
