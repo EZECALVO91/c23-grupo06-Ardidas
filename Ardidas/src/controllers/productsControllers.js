@@ -20,6 +20,7 @@ const productsFilePath = path.join(__dirname, '../database/product.json');
 const productsController ={
     //Este metodo hay que editarlo, Esteban. 
     index: (req, res) => {
+        const products = reutilizarJson();
         res.render("products/products",{title:"Ardidas",products})
     },
     productCart:(req,res)=>{
