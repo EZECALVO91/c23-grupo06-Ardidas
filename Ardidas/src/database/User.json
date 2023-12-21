@@ -1,21 +1,21 @@
 [
     {
         "Identificador": 1,
-        "Nombre": "Esteban",
-        "Apellido": "Figueroa",
-        "Email": "EFigueroa@gmail.com",
-        "Contraseña": "contras2",
-        "Categoría": "ADMIN",
-        "Imagen": image1
+        "Nombre":"Esteban",
+        "Apellido":"Figueroa",
+        "Email":"EFigueroa@gmail.com",
+        "Contraseña":"contras2",
+        "Categoría":"ADMIN",
+        "Imagen":"image1"
     },
     {
         "Identificador": 2,
-        "Nombre": "Juaquin",
-        "Apellido": "Gomez",
+        "Nombre":"Juaquin",
+        "Apellido":"Gomez",
         "Email":"JGomez@gmail.com",
-        "Contraseña": "contras2",
-        "Categoría": "ADMIN",
-        "Imagen": image2
+        "Contraseña":"contras2",
+        "Categoría":"ADMIN",
+        "Imagen": "image2"
     },
     {
         "Identificador": 3,
@@ -24,7 +24,7 @@
         "Email":"LAnchaba@gmail.com",
         "Contraseña":"contras3",
         "Categoría":"ADMIN",
-        "Imagen":image3
+        "Imagen":"image3"
     },
     {
         "Identificador": 4,
@@ -42,7 +42,7 @@
         "Email":"NBadino@gmail.com",
         "Contraseña":"contras5",
         "Categoría":"ADMIN",
-        "Imagen":image5
+        "Imagen":"image5"
     }
 
-     ]
+]
