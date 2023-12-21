@@ -238,45 +238,5 @@
         "precio": "90.000",
         "imagen": "nike6.webp",
         "category": "lanzamiento"
-    },
-    {
-        "id": 1703055350543,
-        "nombre": "Holi",
-        "talles": "37",
-        "descripcion": "prueba",
-        "precio": "12345",
-        "imagen": "1703055350477_img_.jpg",
-        "category": "destacado"
-    },
-    {
-        "id": 1703055402192,
-        "nombre": "prueba5",
-        "talles": 37,
-        "descripcion": "sdfgrtyhsrth",
-        "precio": "40130",
-        "imagen": "1703055402164_img_.jpg",
-        "category": "oferta"
-    },
-    {
-        "id": 1703055463085,
-        "nombre": "asdasdasda",
-        "talles": [
-            37
-        ],
-        "descripcion": "gfthdgyhdfg",
-        "precio": "1231231",
-        "imagen": "1703055462989_img_.jpg",
-        "category": "lanzamiento"
-    },
-    {
-        "id": 1703055541100,
-        "nombre": "decime que si",
-        "talles": [
-            null
-        ],
-        "descripcion": "dale dale daleeeeee",
-        "precio": "500000",
-        "imagen": "1703055541057_img_.jpg",
-        "category": "oferta"
     }
 ]
