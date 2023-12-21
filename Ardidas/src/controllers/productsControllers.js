@@ -46,21 +46,20 @@ const productsController ={
           const archivoJson = reutilizarJson();
           console.log("2do paso :", archivoJson)
           const Nuevaid = Date.now();
-          const {nombre, talles, descripcion, precio, category} = req.body;
+          const {nombre, talles, descripcion, precio, category, color} = req.body;
 
           let nuevoJson = {
              id: +Nuevaid,
              nombre: nombre.trim(),
-             talles: [+talles],
+             talles,
              descripcion: descripcion.trim(),
-             precio: precio,
+             precio: +precio,
              imagen: file ? file.filename : "default-image.png",
-             category
+             category,
+             color
           }
-          console.log("nuevo archivo:", nuevoJson);
           let productoNuevo = [...archivoJson, nuevoJson]
           setJson(productoNuevo, "product");
-          console.log("Ultimo paso antes de redirigir:", setJson(productoNuevo, "product")) 
           res.redirect("/products");
     
     },
