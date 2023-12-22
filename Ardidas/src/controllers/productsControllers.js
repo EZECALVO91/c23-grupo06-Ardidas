@@ -8,11 +8,21 @@ const reutilizarJson = () => {
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 	return products
 }
+const setJson = (array,fileName) => {
+    const json = JSON.stringify(array);
+    fs.writeFileSync(`${__dirname}/../database/${fileName}.json`,json,"utf-8")
+}
+
 
 const productsFilePath = path.join(__dirname, '../database/product.json');
 
 
 const productsController ={
+    //Este metodo hay que editarlo, Esteban. 
+    index: (req, res) => {
+        const products = reutilizarJson();
+        res.render("products/products",{title:"Ardidas",products})
+    },
     productCart:(req,res)=>{
         const {id} = req.params
         const product = products.find(producto => producto.id == id)
@@ -30,14 +40,29 @@ const productsController ={
     productLoad: (req,res)=>{
         res.render("products/productLoad",{ title: "Crear"});
     },
+    
     create: (req,res)=>{
-        const product = req.body;
-        console.log(product). 
-        product.id = products[products.length-1].id +1;
-        products.push(product);
-        const productjson = JSON.stringify(products);
-        fs.writeFileSync(path.join(__dirname,"../database/product.json"),productjson,"utf-8");
-        res.redirect("/product/dashboard")
+          const file = req.file
+          console.log("1er paso :", file)
+          const archivoJson = reutilizarJson();
+          console.log("2do paso :", archivoJson)
+          const Nuevaid = Date.now();
+          const {nombre, talles, descripcion, precio, category, color} = req.body;
+
+          let nuevoJson = {
+             id: +Nuevaid,
+             nombre: nombre.trim(),
+             talles,
+             descripcion: descripcion.trim(),
+             precio: +precio,
+             imagen: file ? file.filename : "default-image.png",
+             category,
+             color
+          }
+          let productoNuevo = [...archivoJson, nuevoJson]
+          setJson(productoNuevo, "product");
+          res.redirect("/products");
+    
     },
 
     productEdit:(req, res) => {
