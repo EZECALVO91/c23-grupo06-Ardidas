@@ -7,7 +7,7 @@
   <%- include("../partials/header.ejs") %>
 
     <main>
-      <p>Inicio > Productos > Detalle ><%= product.nombre%></>
+      <p><a class="redirect-detalle" href="/">Inicio</a> > <a class="redirect-detalle" href="/products"> Categoria </a>> Detalle ><%= product.nombre%></a>
       <article class="producto">
         <div class="imagenes_pequeñas">
           <img src="/images/nike9.webp" alt="miniatura" class="imagen_pequeña">
@@ -36,6 +36,12 @@
           </a>
         </div>
       </article>
+      <div class="detalles_div_descripcion">
+        <h3>Descripción</h3>
+        <p class="detalles_div_descripcion_p">
+          <%= product.descripcion %>
+        </p>
+      </div>
       <a href="/">
         <p class="main_ver-todos-productos">VER TODOS LOS PRODUCTOS</p>
       </a>
