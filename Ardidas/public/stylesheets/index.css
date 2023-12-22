@@ -93,7 +93,7 @@
     .hr_txt {
         display:flex;
         width:30%;
-        border:2px solid var(--color-negro);
+        /* border:2px solid var(--color-negro); */
     }
     .main_title_box {
         display: flex;
