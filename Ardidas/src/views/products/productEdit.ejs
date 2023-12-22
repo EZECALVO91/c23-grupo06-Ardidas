@@ -9,69 +9,106 @@
 
       <main class="main_update">
 
-        <form action="/products/update/:id?_method=PUT" method="post" class="main__form__register">
+        <form action="/products/update/<%= product.id %>?_method=PUT" method="post" class="main__form__register">
 
           <section class="producto update_section-box">
-            
-            
-            <div class="imagenes_pequeñas imagenes_pequeñas_update">
-              <img src="/images/nike9.webp" alt="miniatura" class="imagen_pequeña">
-              <img src="/images/027738a4-a120-4774-970a-b2a67a9c730d-673cda2af6b79b02f216330911267738-240-0.jpeg"
-                alt="miniatura" class="imagen_pequeña">
-              <img src="/images/rBVaWF5CTiaAXloQAADZKoR2kqY074.jpg" alt="miniatura" class="imagen_pequeña">
-            </div>
+
 
             <div class="img_update_fast">
-            
-                  <input class="dashboard__image" type="file" accept=".jpg .png">
-            
+
+              <input class="dashboard__image" name="image" type="file" accept="image/*" value="<%= product.imagen %>">
+
             </div>
-            
+
             <div class=" update_box_intern">
               <label for="nombre">Nombre :</label>
-                <input type="text" name="nombre" id="nombre" />
-              
-            <label for="precio">Precio :</label>
-                <input type="number" name="precio" />
-              
-              
+              <input type="text" name="nombre" id="nombre" value="<%= product.nombre %>" />
+
+              <label for="precio">Precio :</label>
+              <input type="number" name="precio" value="<%= product.precio %>" />
+
+              <label for="category" >Categoría:</label>
+              <select name="category" id="category" value="<%= product.category %>">
+                <option value=""<%= product.category == "" ? "selected" : null  %>>Producto</option>
+                <option value="oferta" <%=product.category == "oferta" ? "selected" : null %>>Oferta</option>
+                <option value="destacado"  <%=product.category == "destacado" ? "selected" : null  %>>Destacado</option>
+                <option value="lanzamiento" <%=product.category == "lanzamiento" ? "selected" : null  %>>Lanzamiento</option>
+              </select>
+
               <div class="talles_update">
-              <label>Talles :</label>
-              <div>
-                    <input type="checkbox" name="talles" value="talles" id="talles">
-                    <label for="talles">37</label>
-                  </div>
-              
-              
-              
-                  <div>
-                    <input type="checkbox" name="talles" value="talles" id="talles">
-                    <label for="talles">38</label>
-                  </div>
-              
-              
-                  <div>
-                    <input type="checkbox" name="talles" value="talles" id="talles">
-                    <label for="talles">39</label>
-                  </div>
-              
-              
-                  <div>
-                    <input type="checkbox" name="talles" value="talles" id="talles">
-                    <label for="talles">40</label>
-                  </div>
-              
+                <label>Talles :</label>
+                <div>
+                  <input type="checkbox" name="talles" value="37" id="talles"  >
+                  <label for="talles" >37</label>
+                </div>
+
+
+
+                <div>
+                  <input type="checkbox" name="talles" value="38" id="talles">
+                  <label for="talles" >38</label>
+                </div>
+
+
+                <div>
+                  <input type="checkbox" name="talles" value="39" id="talles">
+                  <label for="talles" >39</label>
+                </div>
+
+
+                <div>
+                  <input type="checkbox" name="talles" value="40" id="talles">
+                  <label for="talles" >40</label>
+                </div>
+
+              </div>
+
+          
               </div>
               <div>
-              
-                <label for="Descripción">Descripción</label>
-                <textarea name="Descripción" id="Descripción" cols="25" rows="5"></textarea>
-              
+
+                <label for="descripcion">Descripción</label>
+                <textarea name="descripcion" id="descripcion" cols="25" rows="1"><%=product.descripcion %></textarea>
+
               </div>
+              <div>
+                <label>Colores disponibles :</label>
+                <div>
+                  <input type="checkbox" name="color" value="Negro" id="color">
+                  <label for="color" >Negro</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="color" value="Blanco" id="color">
+                  <label for="color" >Blanco</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="color" value="Gris" id="color">
+                  <label for="color" >Gris</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="color" value="Rosa" id="color">
+                  <label for="color" >Rosa</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="color" value="Azul" id="color">
+                  <label for="color" >Azul</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="color" value="Beige" id="color">
+                  <label for="color" >Beige</label>
+                </div>
+
+              </div>
+
             </div>
+          
           </section>
-        <a href="/products/dashboard"><button class="main_ver-todos-productos" type="submit">ACTUALIZAR PRODUCTO</button></a>
-      
+        <button class="main_ver-todos-productos" type="submit">ACTUALIZAR PRODUCTO</button>      
         </form>
       
       </main>

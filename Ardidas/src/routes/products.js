@@ -30,7 +30,7 @@ router
 .post("/",uploadFile.single("image"), create)
 
 .get("/update/:id", productEdit)
-//.put("/update", update)
+.put("/update/:id", update)
 
 .delete('/delete/:id', destroy)
 

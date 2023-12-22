@@ -29,6 +29,7 @@ const productsController ={
         res.render('products/productCart',{title:"Carrito", product})
     },
     productDetail:(req,res)=>{
+        const products = reutilizarJson();
         const {id} = req.params
         const product = products.find(producto => producto.id == id)
         res.render('products/productDetail',{title: "Detalle" ,product})
@@ -74,6 +75,30 @@ const productsController ={
         
     },
 
+
+    update:(req, res) => {
+        const {id} =req.params;
+        const product = reutilizarJson();
+        const {nombre,precio,descripcion,imagen,category,talles,color} = req.body;
+        const nuevoArray = products.map(product => {
+            if(product.id == id)
+            return{
+                id:+id,
+                nombre:nombre.trim(),
+                talles,
+                color,
+                precio:+precio,
+                descripcion:descripcion.trim(),
+                imagen: imagen ? imagen : product.imagen,
+                category,
+            }
+
+        return product
+        })
+        const json = JSON.stringify(nuevoArray);
+        fs.writeFileSync(productsFilePath, json, 'utf-8');
+        res.redirect(`/products/detalle/${id}`);
+    },
     destroy:(req, res) => {
 		const products = reutilizarJson();
 		let productClear = products.filter(product => product.id !== +req.params.id);
@@ -81,6 +106,8 @@ const productsController ={
 		fs.writeFileSync(productsFilePath,json, "utf-8");
 		res.redirect ('/products/dashboard')
 	}
+
+    
 }
 
 module.exports = productsController;
