@@ -5,7 +5,9 @@ const products = JSON.parse(productsJson)
 const indexController = {
     index:(req,res)=>{
         const featuredCategory = products.filter(product => product.category === "destacado")
-        res.render('index',{title:"Ardidas",products, featuredCategory})
+        const lanzamientoProducts = products.filter(product => product.category === "lanzamiento")
+
+        res.render('index',{title:"Ardidas",products, featuredCategory, lanzamientoProducts})
     }
 }
 module.exports = indexController
