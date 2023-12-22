@@ -32,7 +32,9 @@ const productsController ={
         const products = reutilizarJson();
         const {id} = req.params
         const product = products.find(producto => producto.id == id)
-        res.render('products/productDetail',{title: "Detalle" ,product})
+        const productOff = products.filter(product => product.category === "oferta")
+
+        res.render('products/productDetail',{title: "Detalle" ,product, productOff})
     },
     
     dashboard:(req, res) => {
