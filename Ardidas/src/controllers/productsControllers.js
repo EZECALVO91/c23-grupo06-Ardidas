@@ -23,11 +23,15 @@ const productsController ={
         const products = reutilizarJson();
         res.render("products/products",{title:"Ardidas",products})
     },
+
+
     productCart:(req,res)=>{
         const {id} = req.params
         const product = products.find(producto => producto.id == id)
         res.render('products/productCart',{title:"Carrito", product})
     },
+
+
     productDetail:(req,res)=>{
         const products = reutilizarJson();
         const {id} = req.params
@@ -37,47 +41,50 @@ const productsController ={
         res.render('products/productDetail',{title: "Detalle" ,product, productOff})
     },
     
+
     dashboard:(req, res) => {
+        const products = reutilizarJson();
         res.render('products/dashboard', { title: "Dashboard", products });
     },
+
+
+
     productLoad: (req,res)=>{
         res.render("products/productLoad",{ title: "Crear"});
     },
-    
     create: (req,res)=>{
-          const file = req.file
-          console.log("1er paso :", file)
-          const archivoJson = reutilizarJson();
-          console.log("2do paso :", archivoJson)
-          const Nuevaid = Date.now();
-          const {nombre, talles, descripcion, precio, category, color} = req.body;
+        const file = req.file
+        console.log("1er paso :", file)
+        const archivoJson = reutilizarJson();
+        console.log("2do paso :", archivoJson)
+        const Nuevaid = Date.now();
+        const {nombre, talles, descripcion, precio, category, color} = req.body;
 
-          let nuevoJson = {
-             id: +Nuevaid,
-             nombre: nombre.trim(),
-             talles,
-             descripcion: descripcion.trim(),
-             precio: +precio,
-             imagen: file ? file.filename : "default-image.png",
-             category,
-             color
-          }
-          let productoNuevo = [...archivoJson, nuevoJson]
-          setJson(productoNuevo, "product");
-          res.redirect("/products");
+        let nuevoJson = {
+            id: +Nuevaid,
+            nombre: nombre.trim(),
+            talles,
+            descripcion: descripcion.trim(),
+            precio: +precio,
+            imagen: file ? file.filename : "default-image.png",
+            category,
+            color
+        }
+        let productoNuevo = [...archivoJson, nuevoJson]
+        setJson(productoNuevo, "product");
+        res.redirect("/products/dashboard");
     
     },
 
+
     productEdit:(req, res) => {
-         const {id} = req.params;        
+        const {id} = req.params;        
         // const productsJson = fs.readFileSync(__dirname + '../../database/product.json','utf-8')
         // const products = JSON.parse(productsJson);
-         const product = products.find(elemento => elemento.id == id);
+        const product = products.find(elemento => elemento.id == id);
         res.render("products/productEdit", {title:"Detalle producto",product})
         
     },
-
-
     update:(req, res) => {
         const {id} =req.params;
         const product = reutilizarJson();
@@ -101,10 +108,21 @@ const productsController ={
         fs.writeFileSync(productsFilePath, json, 'utf-8');
         res.redirect(`/products/detalle/${id}`);
     },
+
+
     destroy:(req, res) => {
+        const {id}= req.params;
 		const products = reutilizarJson();
+
+        let product = products.find(product => product.id == id);
 		let productClear = products.filter(product => product.id !== +req.params.id);
 		const json = JSON.stringify(productClear);
+        
+        fs.unlink(path.join(__dirname,`../../public/images/${product.imagen}`), (err) =>{
+			if(err) throw err;
+			console.log(`borre el archivo ${product.image}`);
+		})
+
 		fs.writeFileSync(productsFilePath,json, "utf-8");
 		res.redirect ('/products/dashboard')
 	}
