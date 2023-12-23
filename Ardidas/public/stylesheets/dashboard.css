@@ -27,6 +27,17 @@
 
 }
 
+.button-delete{
+    background-color: rgb(147 146 218 / -70%);
+    padding: 3px;
+    border: 1px solid var(--color-verde-muzgo);
+}
+
+.fa-trash-can{
+    color: var(--color-beige) ;
+    font-size: 25px;
+}
+
 @media  (min-width: 768px){
     .box_redirect_create a{
         font-size: 30px;
