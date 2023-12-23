@@ -19,6 +19,7 @@
         <div class="detalles">
           <h2><%= product.nombre%></h2>
           <h2>$<%= product.precio %></h2>
+          <div class="select-options-details-products">
           <div class="detalles_talles">
             <p>Talles</p>
             <select name="talles" id="" class="numero">
@@ -27,11 +28,18 @@
               <% })%>
             </select>
           </div>
-          <div class="detalles_carrito">
+          <div class="detalles_cantidad">
             <p>Cantidad</p>
             <input type="number" class="numero" value="1">
           </div>
+          <div class="detalles_color">
+            <p>Colores</p>
+            <select name="color" id="" class="numero">
+              <option value=<%= product.color %>><%= product.color %></option>
+              </select>
+            </div>
           <a href="/products/carrito/<%= product.id%>">
+          </div>
             <p class="main_carrito">Agregar al carrito</p>
           </a>
         </div>
