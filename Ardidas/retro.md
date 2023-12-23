@@ -68,8 +68,6 @@ _________________________________________________________
 
 #### Hacer menos:
 * Empezar a procastinar menos.
- 
-
 
 #### Continuar Haciendo:
 * Seguir actualizando Jira y GitHub con frecuencia.
@@ -77,7 +75,6 @@ _________________________________________________________
 * Seguir participando en el grupo.
 * Seguir tratandonos con respeto.
 * Seguir automotivandonos como equipo.
-
 
 #### Hacer más:
 * Administrar mejor el tiempo.
