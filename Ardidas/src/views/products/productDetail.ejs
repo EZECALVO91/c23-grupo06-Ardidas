@@ -7,7 +7,7 @@
   <%- include("../partials/header.ejs") %>
 
     <main>
-      <p>Inicio > Productos > Detalle ><%= product.nombre%></>
+      <p><a class="redirect-detalle" href="/">Inicio</a> > <a class="redirect-detalle" href="/products"> Categoria </a>> Detalle ><%= product.nombre%></a>
       <article class="producto">
         <div class="imagenes_pequeñas">
           <img src="/images/nike9.webp" alt="miniatura" class="imagen_pequeña">
@@ -19,6 +19,7 @@
         <div class="detalles">
           <h2><%= product.nombre%></h2>
           <h2>$<%= product.precio %></h2>
+          <div class="select-options-details-products">
           <div class="detalles_talles">
             <p>Talles</p>
             <select name="talles" id="" class="numero">
@@ -27,15 +28,28 @@
               <% })%>
             </select>
           </div>
-          <div class="detalles_carrito">
+          <div class="detalles_cantidad">
             <p>Cantidad</p>
             <input type="number" class="numero" value="1">
           </div>
+          <div class="detalles_color">
+            <p>Colores</p>
+            <select name="color" id="" class="numero">
+              <option value=<%= product.color %>><%= product.color %></option>
+              </select>
+            </div>
           <a href="/products/carrito/<%= product.id%>">
+          </div>
             <p class="main_carrito">Agregar al carrito</p>
           </a>
         </div>
       </article>
+      <div class="detalles_div_descripcion">
+        <h3>Descripción</h3>
+        <p class="detalles_div_descripcion_p">
+          <%= product.descripcion %>
+        </p>
+      </div>
       <a href="/">
         <p class="main_ver-todos-productos">VER TODOS LOS PRODUCTOS</p>
       </a>
