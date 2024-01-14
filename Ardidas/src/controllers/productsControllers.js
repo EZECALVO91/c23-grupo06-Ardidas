@@ -81,12 +81,18 @@ const productsController = {
 
         let product = products.find(product => product.id == id);
         let productClear = products.filter(product => product.id !== +req.params.id);
+        if (product.imagen == "default-image.png") {
+            setJson(productClear, "product");
+            res.redirect('/products/dashboard')
+        } else {
         fs.unlink(`./public/images/products/${product.imagen}`, (err) => {
             if (err) throw err
             console.log(`borre el archivo ${product.image}`)
           })
           setJson(productClear, "product");
-        res.redirect('/products/dashboard')
+          res.redirect('/products/dashboard')
+          
+    }
     }
 }
 

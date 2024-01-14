@@ -3,13 +3,18 @@
         "id": 1,
         "nombre": "Nike Revolution 6",
         "talles": [
-            "36"
+            "36",
+            "37",
+            "38",
+            "39"
         ],
         "color": [
-            "Negro"
+            "Negro",
+            "Blanco",
+            "Gris"
         ],
         "precio": 300000,
-        "descripcion": "zapatillas ultimo modelo",
+        "descripcion": "Zapatillas ultimo modelo",
         "imagen": "nike7.webp",
         "category": "oferta"
     },
@@ -286,10 +291,11 @@
         "category": "Lanzamiento"
     },
     {
-        "id": 1705197957858,
-        "nombre": "saasda",
+        "id": 1705217927041,
+        "nombre": "sadasd",
         "talles": [
-            "36"
+            "39",
+            "40"
         ],
         "color": [
             "Negro",
@@ -297,19 +303,6 @@
         ],
         "precio": 123,
         "descripcion": "",
-        "imagen": "default-image.png",
-        "category": "Oferta"
-    },
-    {
-        "id": 1705215135013,
-        "nombre": "asda",
-        "talles": [
-            "36",
-            "37"
-        ],
-        "color": "Negro",
-        "precio": 214,
-        "descripcion": "asdasd",
         "imagen": "default-image.png",
         "category": "Oferta"
     }
