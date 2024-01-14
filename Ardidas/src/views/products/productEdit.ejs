@@ -35,67 +35,70 @@
               </div>
             </div>
             <div class="talles_update">
+             
               <label>Talles :</label>
+             
               <div>
-                <input type="checkbox" name="talles" value="36" <%=product.talles == "36" ? "checked" : null %> id="talles">
+                <input type="checkbox" name="talles" value="36" <%=product.talles.includes("36") ? "checked" : null %> id="talles">
                 <label for="talles" >36</label>
               </div>
               <div>
-                <input type="checkbox" name="talles" value="37" <%=product.talles == "37" ? "checked" : null %> id="talles">
+                <input type="checkbox" name="talles" value="37" <%=product.talles.includes("37") ? "checked" : null %> id="talles">
                 <label for="talles" >37</label>
               </div>
               <div>
-                <input type="checkbox" name="talles" value="38" <%=product.talles == 38 ? "checked" : null %> id="talles">
+                <input type="checkbox" name="talles" value="38" <%=product.talles.includes("38") ? "checked" : null %> id="talles">
                 <label for="talles" >38</label>
               </div>
               <div>
-                <input type="checkbox" name="talles" value="39"  id="talles" >
+                <input type="checkbox" name="talles" value="39" <%=product.talles.includes("39") ? "checked" : null %> id="talles" >
                 <label for="talles" >39</label>
               </div>
               <div>
-                <input type="checkbox" name="talles" value="40" id="talles">
+                <input type="checkbox" name="talles" value="40" <%=product.talles.includes("40") ? "checked" : null %> id="talles">
                 <label for="talles" >40</label>
               </div>
               <div>
-                <input type="checkbox" name="talles" value="41" id="talles">
+                <input type="checkbox" name="talles" value="41" <%=product.talles.includes("41") ? "checked" : null %> id="talles">
                 <label for="talles" >41</label>
-              </div>
+              </div>            
               <div>
-                <input type="checkbox" name="talles" value="42" id="talles">
+                <input type="checkbox" name="talles" value="42" <%=product.talles.includes("42") ? "checked" : null %> id="talles">
                 <label for="talles" >42</label>
               </div>
-
+              
               </div>
 
               <div class="input_colores_create">
                 <label>Colores disponibles :</label>
+             
                 <div>
-                  <input type="checkbox" name="color" value="Negro" <%=product.color == "Negro" ? "checked" : null %> id="color">
+                  <input type="checkbox" name="color" value="Negro" <%=product.color.includes("Negro") ? "checked" : null %> id="color">
                   <label for="color" >Negro</label>
                 </div>
-
+              
                 <div>
-                  <input type="checkbox" name="color" value="Blanco" <%=product.color == "Blanco" ? "checked" : null %> id="color">
+                  <input type="checkbox" name="color" value="Blanco" <%=product.color.includes("Blanco") ? "checked" : null %> id="color">
                   <label for="color" >Blanco</label>
                 </div>
 
                 <div>
-                  <input type="checkbox" name="color" value="Gris" <%=product.color == "Gris" ? "checked" : null %> id="color">
+                  <input type="checkbox" name="color" value="Gris" <%=product.color.includes("Gris") ? "checked" : null %> id="color">
                   <label for="color" >Gris</label>
                 </div>
 
                 <div>
-                  <input type="checkbox" name="color" value="Rosa" id="color">
+                  <input type="checkbox" name="color" value="Rosa" <%=product.color.includes("Rosa") ? "checked" : null %> id="color">
                   <label for="color" >Rosa</label>
                 </div>
 
                 <div>
-                  <input type="checkbox" name="color" value="Azul" id="color">
+                  <input type="checkbox" name="color" value="Azul" <%=product.color.includes("Azul") ? "checked" : null %> id="color">
                   <label for="color" >Azul</label>
                 </div>
 
                 <div>
-                  <input type="checkbox" name="color" value="Beige" id="color">
+                  <input type="checkbox" name="color" value="Beige" <%=product.color.includes("Beige") ? "checked" : null %> id="color">
                   <label for="color" >Beige</label>
                 </div>
 

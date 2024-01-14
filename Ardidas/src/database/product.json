@@ -3,25 +3,21 @@
         "id": 1,
         "nombre": "Nike Revolution 6",
         "talles": [
-            36
+            "36"
         ],
         "color": [
-            "Negro",
-            "Blanco",
-            "Gris"
+            "Negro"
         ],
         "precio": 300000,
         "descripcion": "zapatillas ultimo modelo",
         "imagen": "nike7.webp",
-        "category": "destacado"
+        "category": "oferta"
     },
     {
         "id": 2,
         "nombre": "Nike N95 sdasdasda",
         "talles": [
-            36,
-            37,
-            38
+            "37"
         ],
         "color": [
             "Negro",
@@ -30,42 +26,46 @@
         "precio": 110,
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "imagen": "nike6.webp",
-        "category": "destacado"
+        "category": "oferta"
     },
     {
         "id": 3,
         "nombre": "Nike Air Max",
         "talles": [
-            38
+            "38"
         ],
-        "color": "Beige",
+        "color": [
+            "Beige"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 90,
         "imagen": "nike5.webp",
-        "category": "destacado"
+        "category": "Destacado"
     },
     {
         "id": 4,
         "nombre": "Nike Zoom",
         "talles": [
-            39,
-            40,
-            41
+            "39",
+            "40",
+            "41"
         ],
-        "color": "Azul",
+        "color": [
+            "Azul"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 75,
         "imagen": "nike8.webp",
-        "category": "destacado"
+        "category": "Destacado"
     },
     {
         "id": 5,
         "nombre": "mike",
         "talles": [
-            37,
-            38,
-            39,
-            40
+            "37",
+            "38",
+            "39",
+            "40"
         ],
         "color": [
             "Negro",
@@ -78,164 +78,186 @@
         "precio": 190000,
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "imagen": "nike9.webp",
-        "category": "oferta"
+        "category": "Oferta"
     },
     {
         "id": 6,
         "nombre": "Nike Air Max",
         "talles": [
-            38,
-            40
+            "38",
+            "40"
         ],
-        "color": "Negro",
+        "color": [
+            "Negro"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 90,
         "imagen": "nike5.webp",
-        "category": "oferta"
+        "category": "Oferta"
     },
     {
         "id": 7,
         "nombre": "Nike Revolution 6",
         "talles": [
-            38,
-            40,
-            42
+            "38",
+            "40",
+            "42"
         ],
-        "color": "Blanco",
+        "color": [
+            "Blanco"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 110,
         "imagen": "nikea4.webp",
-        "category": "oferta"
+        "category": "Oferta"
     },
     {
         "id": 8,
         "nombre": "Nike Air Max",
         "talles": [
-            38,
-            39
+            "38",
+            "39"
         ],
-        "color": "Negro",
+        "color": [
+            "Negro"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 90,
         "imagen": "nikeb3.webp",
-        "category": "oferta"
+        "category": "Oferta"
     },
     {
         "id": 9,
         "nombre": "Nike Air Max",
         "talles": [
-            38,
-            39
+            "38",
+            "39"
         ],
-        "color": "Negro",
+        "color": [
+            "Negro"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 90,
         "imagen": "nikec2.webp",
-        "category": "destacado"
+        "category": "Destacado"
     },
     {
         "id": 10,
         "nombre": "Nike Revolution 6",
         "talles": [
-            40,
-            41,
-            42
+            "40",
+            "41",
+            "42"
         ],
-        "color": "Negro",
+        "color": [
+            "Negro"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 110,
         "imagen": "nike8.webp",
-        "category": "lanzamiento"
+        "category": "Lanzamiento"
     },
     {
         "id": 11,
         "nombre": "Nike Revolution 6",
         "talles": [
-            40,
-            41
+            "40",
+            "41"
         ],
-        "color": "Rosado",
+        "color": [
+            "Rosado"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 110,
         "imagen": "nike6.webp",
-        "category": "destacado"
+        "category": "Destacado"
     },
     {
         "id": 12,
         "nombre": "Nike Air Max 1748",
         "talles": [
-            39,
-            40,
-            41
+            "39",
+            "40",
+            "41"
         ],
-        "color": "Azul",
+        "color": [
+            "Azul"
+        ],
         "precio": 96000,
         "descripcion": "zapatillas nike ultimo modelo 2024",
         "imagen": "nike5.webp",
-        "category": "oferta"
+        "category": "Oferta"
     },
     {
         "id": 13,
         "nombre": "Nike Zoom",
         "talles": [
-            39,
-            40,
-            41
+            "39",
+            "40",
+            "41"
         ],
-        "color": "Azul",
+        "color": [
+            "Azul"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 75,
         "imagen": "nike7.webp",
-        "category": "destacado"
+        "category": "Destacado"
     },
     {
         "id": 14,
         "nombre": "Nike Revolution 6",
         "talles": [
-            39,
-            41,
-            42
+            "39",
+            "41",
+            "42"
         ],
-        "color": "Azul",
+        "color": [
+            "Azul"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 110,
         "imagen": "nike5.webp",
-        "category": "lanzamiento"
+        "category": "Lanzamiento"
     },
     {
         "id": 15,
         "nombre": "Nike Air Max",
         "talles": [
-            38,
-            40
+            "38",
+            "40"
         ],
-        "color": "Negro",
+        "color": [
+            "Negro"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 90,
         "imagen": "nike9.webp",
-        "category": "oferta"
+        "category": "Oferta"
     },
     {
         "id": 16,
         "nombre": "Nike Revolution 6",
         "talles": [
-            38,
-            40,
-            42
+            "38",
+            "40",
+            "42"
         ],
-        "color": "Beige",
+        "color": [
+            "Beige"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 110,
         "imagen": "nike7.webp",
-        "category": "oferta"
+        "category": "Oferta"
     },
     {
         "id": 17,
         "nombre": "Nike Air Max nico",
         "talles": [
-            37,
-            38,
-            39
+            "37",
+            "38",
+            "39"
         ],
         "color": [
             "Negro",
@@ -246,7 +268,7 @@
         "precio": 120000,
         "descripcion": "zapatillas nike ultimo  \r\n modelo 2023",
         "imagen": "nike8.webp",
-        "category": "lanzamiento"
+        "category": "Lanzamiento"
     },
     {
         "id": 18,
@@ -255,17 +277,19 @@
             "38",
             "39"
         ],
-        "color": "Negro",
+        "color": [
+            "Negro"
+        ],
         "descripcion": "zapatillas nike ultimo modelo 2023",
         "precio": 90,
         "imagen": "nikec2.webp",
-        "category": "lanzamiento"
+        "category": "Lanzamiento"
     },
     {
         "id": 1705197957858,
         "nombre": "saasda",
         "talles": [
-            36
+            "36"
         ],
         "color": [
             "Negro",
@@ -274,29 +298,19 @@
         "precio": 123,
         "descripcion": "",
         "imagen": "default-image.png",
-        "category": "oferta"
+        "category": "Oferta"
     },
     {
-        "id": 1705197978051,
-        "nombre": "asd",
-        "talles": null,
-        "color": "Negro",
-        "precio": 123,
-        "descripcion": "asda",
-        "imagen": "default-image.png",
-        "category": "oferta"
-    },
-    {
-        "id": 1705197998651,
-        "nombre": "sadfa",
+        "id": 1705215135013,
+        "nombre": "asda",
         "talles": [
-            "39",
-            "40"
+            "36",
+            "37"
         ],
         "color": "Negro",
-        "precio": 213,
-        "descripcion": "",
+        "precio": 214,
+        "descripcion": "asdasd",
         "imagen": "default-image.png",
-        "category": "oferta"
+        "category": "Oferta"
     }
 ]

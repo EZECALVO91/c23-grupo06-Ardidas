@@ -32,17 +32,16 @@ const productsController = {
         const products = getJson("product");
         const Nuevaid = Date.now();
         const { nombre, talles, color, precio, descripcion, category  } = req.body;
-
+        console.log("Que llega?: " , req.body.color)
         let nuevoJson = {
             id: +Nuevaid,
             nombre: nombre.trim(),
             talles: talles >= 1 ? [talles] : talles,
-            color,
+            color: [color.checked > 1] ? color : [color] ,
             precio: +precio,
             descripcion: descripcion.trim(),
             imagen: file ? file.filename : "default-image.png",
-            category,
-            
+            category,   
         }
         let productoNuevo = [...products, nuevoJson]
         setJson(productoNuevo, "product");
@@ -63,7 +62,7 @@ const productsController = {
                 return {
                     id: +id,
                     nombre: nombre.trim(),
-                    talles,
+                    talles: talles >= 1 ? [talles] : talles,
                     color,
                     precio: +precio,
                     descripcion: descripcion.trim(),

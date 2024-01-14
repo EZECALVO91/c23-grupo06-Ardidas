@@ -132,7 +132,7 @@ main {
         margin-top: 5%;
     }
     .detalles_color p{
-        width: 50%;
+        width: 45%;
     }
 
     .numero {
@@ -228,4 +228,13 @@ main {
     .detalles_div_descripcion{
         margin: 0% 4%;
     }
-}
+    .color_detail {
+        width:100px;
+        border-radius: 10px;
+       }
+    
+    .detalles_color {
+        width:220px
+     }
+
+    }
