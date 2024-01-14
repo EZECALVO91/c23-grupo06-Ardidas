@@ -22,7 +22,9 @@
         "id": 2,
         "nombre": "Nike N95 sdasdasda",
         "talles": [
-            "37"
+            "37",
+            "38",
+            "39"
         ],
         "color": [
             "Negro",
@@ -294,16 +296,40 @@
         "id": 1705217927041,
         "nombre": "sadasd",
         "talles": [
+            "38",
             "39",
-            "40"
+            "40",
+            "41",
+            "42"
         ],
         "color": [
             "Negro",
-            "Blanco"
+            "Blanco",
+            "Gris",
+            "Rosa",
+            "Azul"
         ],
         "precio": 123,
         "descripcion": "",
         "imagen": "default-image.png",
-        "category": "Oferta"
+        "category": "oferta"
+    },
+    {
+        "id": 1705220391899,
+        "nombre": "fasdfaf",
+        "talles": [
+            "38",
+            "39",
+            "41"
+        ],
+        "color": [
+            "Negro",
+            "Blanco",
+            "Gris"
+        ],
+        "precio": 3234,
+        "descripcion": "zdfbzcvzxcvzx",
+        "imagen": "1705220391871_img_.jpg",
+        "category": "oferta"
     }
 ]

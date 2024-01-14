@@ -8,11 +8,23 @@
     text-align: center;
     font-weight: bolder;  
 }
+.input_edit_img {
+    position: absolute;
+    height:150px;
+    width: 150px;
+    outline:solid var(--color-verde-muzgo) 3px;
+}
 
-.img_update_fast {
+ .img_update_fast input{
+    position:relative;
+    height:150px;
+    width: 150px;
+    opacity: 0;
+} 
+.img_create_fast {
     text-align: center;
 }
-.img_update_fast input {
+.img_create_fast input {
     outline: solid red 2px;
     background-image: url("../images/img_add_form_productLoad.png");
     background-size: 40%;
@@ -24,6 +36,8 @@
     width: 55%;
     height: 150px; 
 }
+
+
 .form_loadProduct {
     display:flex;
     flex-direction: column;
@@ -57,25 +71,57 @@
     text-align: center;
 }
 
+@media (min-width: 768px){ 
+    .input_edit_img {
+    position: absolute;
+    height:300px;
+    width: 300px;
+    outline:solid var(--color-verde-muzgo) 3px;
+    }
+    
+     .img_update_fast input{
+    position:relative;
+    height:300px;
+    width: 300px;
+    opacity: 0;
+    } 
+}
 
 
 @media (min-width:1024px) {
+    main .form_loadProduct {
+        max-width: 830px;
+    }
 .h2_title_form{
     text-align: center;
     font-size: 30px;
     font-weight: bolder;  
 }
+.img_create_fast input{
+    background-image: url("../images/img_add_form_productLoad.png");
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline:solid var(--color-verde-muzgo) 3px;
+    height:350px;
+    width:350px;
+    background-color: var(--color-blanco);
+    margin-top:25px;
+   }
 
-.img_update_fast input{
- background-image: url("../images/img_add_form_productLoad.png");
- background-size: 40%;
- background-repeat: no-repeat;
- background-position: center;
- outline:solid var(--color-verde-muzgo) 3px;
- height:300px;
- background-color: var(--color-blanco);
- margin-top:25px;
+.input_edit_img {
+    position: absolute;
+    outline:solid var(--color-verde-muzgo) 3px;
+    height:350px;
+width: 350px;
 }
+
+ .img_update_fast input{
+position:relative;
+height:350px;
+width: 350px;
+opacity: 0;
+} 
 
 .form_loadProduct {
     display:flex;
@@ -89,9 +135,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.img_update_fast {
-    width: 45%;
-}
+
 
 .update_box_intern {
     width:40%;
@@ -114,7 +158,6 @@
     padding:15px;
     border-radius: 10px; 
     border:solid 1px #75798b;
-    width: 100%;
 }
 
 .form_loadProduct label {
