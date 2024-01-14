@@ -3,7 +3,7 @@
         "id": 1,
         "nombre": "Nike Revolution 6",
         "talles": [
-            "36"
+            36
         ],
         "color": [
             "Negro",
@@ -19,9 +19,9 @@
         "id": 2,
         "nombre": "Nike N95 sdasdasda",
         "talles": [
-            "36",
-            "37",
-            "38"
+            36,
+            37,
+            38
         ],
         "color": [
             "Negro",
@@ -40,7 +40,7 @@
         ],
         "color": "Beige",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "90.000",
+        "precio": 90,
         "imagen": "nike5.webp",
         "category": "destacado"
     },
@@ -54,7 +54,7 @@
         ],
         "color": "Azul",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "75.000",
+        "precio": 75,
         "imagen": "nike8.webp",
         "category": "destacado"
     },
@@ -62,10 +62,10 @@
         "id": 5,
         "nombre": "mike",
         "talles": [
-            "37",
-            "38",
-            "39",
-            "40"
+            37,
+            38,
+            39,
+            40
         ],
         "color": [
             "Negro",
@@ -89,7 +89,7 @@
         ],
         "color": "Negro",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "90.000",
+        "precio": 90,
         "imagen": "nike5.webp",
         "category": "oferta"
     },
@@ -103,7 +103,7 @@
         ],
         "color": "Blanco",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "110.000",
+        "precio": 110,
         "imagen": "nikea4.webp",
         "category": "oferta"
     },
@@ -116,7 +116,7 @@
         ],
         "color": "Negro",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "90.000",
+        "precio": 90,
         "imagen": "nikeb3.webp",
         "category": "oferta"
     },
@@ -129,7 +129,7 @@
         ],
         "color": "Negro",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "90.000",
+        "precio": 90,
         "imagen": "nikec2.webp",
         "category": "destacado"
     },
@@ -143,7 +143,7 @@
         ],
         "color": "Negro",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "110.000",
+        "precio": 110,
         "imagen": "nike8.webp",
         "category": "lanzamiento"
     },
@@ -156,7 +156,7 @@
         ],
         "color": "Rosado",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "110.000",
+        "precio": 110,
         "imagen": "nike6.webp",
         "category": "destacado"
     },
@@ -184,7 +184,7 @@
         ],
         "color": "Azul",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "75.000",
+        "precio": 75,
         "imagen": "nike7.webp",
         "category": "destacado"
     },
@@ -193,12 +193,12 @@
         "nombre": "Nike Revolution 6",
         "talles": [
             39,
-            42,
-            43
+            41,
+            42
         ],
         "color": "Azul",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "110.000",
+        "precio": 110,
         "imagen": "nike5.webp",
         "category": "lanzamiento"
     },
@@ -211,7 +211,7 @@
         ],
         "color": "Negro",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "90.000",
+        "precio": 90,
         "imagen": "nike9.webp",
         "category": "oferta"
     },
@@ -225,7 +225,7 @@
         ],
         "color": "Beige",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "110.000",
+        "precio": 110,
         "imagen": "nike7.webp",
         "category": "oferta"
     },
@@ -233,9 +233,9 @@
         "id": 17,
         "nombre": "Nike Air Max nico",
         "talles": [
-            "37",
-            "38",
-            "39"
+            37,
+            38,
+            39
         ],
         "color": [
             "Negro",
@@ -252,13 +252,51 @@
         "id": 18,
         "nombre": "Nike Air Max",
         "talles": [
-            38,
-            39
+            "38",
+            "39"
         ],
         "color": "Negro",
         "descripcion": "zapatillas nike ultimo modelo 2023",
-        "precio": "90.000",
+        "precio": 90,
         "imagen": "nikec2.webp",
         "category": "lanzamiento"
+    },
+    {
+        "id": 1705197957858,
+        "nombre": "saasda",
+        "talles": [
+            36
+        ],
+        "color": [
+            "Negro",
+            "Blanco"
+        ],
+        "precio": 123,
+        "descripcion": "",
+        "imagen": "default-image.png",
+        "category": "oferta"
+    },
+    {
+        "id": 1705197978051,
+        "nombre": "asd",
+        "talles": null,
+        "color": "Negro",
+        "precio": 123,
+        "descripcion": "asda",
+        "imagen": "default-image.png",
+        "category": "oferta"
+    },
+    {
+        "id": 1705197998651,
+        "nombre": "sadfa",
+        "talles": [
+            "39",
+            "40"
+        ],
+        "color": "Negro",
+        "precio": 213,
+        "descripcion": "",
+        "imagen": "default-image.png",
+        "category": "oferta"
     }
 ]

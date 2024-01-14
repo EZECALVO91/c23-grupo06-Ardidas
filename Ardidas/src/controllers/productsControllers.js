@@ -36,8 +36,8 @@ const productsController = {
         let nuevoJson = {
             id: +Nuevaid,
             nombre: nombre.trim(),
-            talles,
-            color: color,
+            talles: talles >= 1 ? [talles] : talles,
+            color,
             precio: +precio,
             descripcion: descripcion.trim(),
             imagen: file ? file.filename : "default-image.png",
