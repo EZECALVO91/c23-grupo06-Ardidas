@@ -7,70 +7,68 @@
     <%-include("../partials/header.ejs")%>
 
 
-      <main class="main_update">
+      <main>
         <h2 class="h2_title_form">CARGA DE PRODUCTO</h2>
-          <form action="/products" method="post" class="main__form__register" enctype="multipart/form-data">
-          <section class="producto update_section-box">
-
+          <form action="/products" method="post" class="form_loadProduct" enctype="multipart/form-data">
+          <section class="form__createProduct">
 
             <div class="img_update_fast">
-
               <input class="dashboard__image" name="image" type="file" accept="image/*">
-
             </div>
 
-            <div class=" update_box_intern">
+            <div class="update_box_intern">
               <label for="nombre">Nombre :</label>
               <input type="text" name="nombre" id="nombre" />
 
               <label for="precio">Precio :</label>
               <input type="number" name="precio" />
 
-              <label for="category" >Categoría:</label>
+              <label for="category" >Categoría :</label>
               <select name="category" id="category" >
                 <option value="oferta">Oferta</option>
                 <option value="destacado">Destacado</option>
                 <option value="lanzamiento">Lanzamiento</option>
               </select>
-
+              <div>
+                <label for="descripcion">Descripción :</label>
+                <textarea name="descripcion" id="descripcion"></textarea>
+              </div>
+              </div>
               <div class="talles_update">
                 <label>Talles :</label>
+                <div>
+                  <input type="checkbox" name="talles" value="36" id="talles" checked>
+                  <label for="talles" >36</label>
+                </div>
                 <div>
                   <input type="checkbox" name="talles" value="37" id="talles">
                   <label for="talles" >37</label>
                 </div>
-
-
-
                 <div>
                   <input type="checkbox" name="talles" value="38" id="talles">
                   <label for="talles" >38</label>
                 </div>
-
-
                 <div>
                   <input type="checkbox" name="talles" value="39" id="talles">
                   <label for="talles" >39</label>
                 </div>
-
-
                 <div>
                   <input type="checkbox" name="talles" value="40" id="talles">
                   <label for="talles" >40</label>
                 </div>
+                <div>
+                  <input type="checkbox" name="talles" value="41" id="talles">
+                  <label for="talles" >41</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="talles" value="42" id="talles">
+                  <label for="talles" >42</label>
+                </div>
 
               </div>
-
-          
-              </div>
-              <div>
-
-                <label for="descripcion">Descripción</label>
-                <textarea name="descripcion" id="descripcion" cols="25" rows="1"></textarea>
-
-              </div>
-              <div>
-                <label>Colores disponibles :</label>
+           
+              <div class="input_colores_create">
+                <label class="label_colores">Colores disponibles :</label>
                 <div>
                   <input type="checkbox" name="color" value="Negro" id="color">
                   <label for="color" >Negro</label>

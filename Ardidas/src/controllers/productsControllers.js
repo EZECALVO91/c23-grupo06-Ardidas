@@ -52,7 +52,7 @@ const productsController = {
         const { id } = req.params;
         const products = getJson("product");
         const product = products.find(elemento => elemento.id == id);
-        res.render("products/productEdit", { title: "Detalle producto", product })
+        res.render("products/productEdit", { title: "Editar producto", product })
     },
     update: (req, res) => {
         const { id } = req.params;
