@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "nombre":"Esteban",
+        "apellido":"Figueroa",
+        "email":"EFigueroa@gmail.com",
+        "contraseña":"contras2",
+        "categoría":"ADMIN",
+        "imagen":"image1"
+    },
+    {
+        "id": 2,
+        "nombre":"Leonel",
+        "apellido":"Anchaba",
+        "email":"LAnchaba@gmail.com",
+        "contraseña":"contras3",
+        "categoría":"ADMIN",
+        "imagen":"image2"
+    },
+    {
+        "id": 3,
+        "nombre":"Ezequiel",
+        "apellido":"Calvo",
+        "email":"ECalvo@gmail.com",
+        "contraseña":"contras4",
+        "categoría":"ADMIN",
+        "imagen":"image3"
+    },
+    {
+        "id": 4,
+        "nombre":"Nicolas",
+        "apellido":"Badino",
+        "email":"NBadino@gmail.com",
+        "contraseña":"contras5",
+        "categoría":"ADMIN",
+        "imagen":"image4"
+    }
+
+]
