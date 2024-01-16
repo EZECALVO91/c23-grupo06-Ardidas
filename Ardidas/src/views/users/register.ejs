@@ -12,15 +12,15 @@
         <h2 class="main__form__title">REGISTRARSE</h2>
         <hr class="main__form__lines">
       </div>
-      <form action="/users/register" method="post" class="main__form__register">
+      <form action="/users/register" method="post" class="main__form__register" enctype="multipart/form-data">
         <label for="name">NOMBRE</label>
         <input type="text" name="name" placeholder="Nombre y Apellido" id="name" />
 
         <label for="email">EMAIL</label>
         <input type="email" name="email" placeholder="tuemail@email.com" />
 
-        <label for="email">CONFIRMAR EMAIL</label>
-        <input type="email" name="email" placeholder="tuemail@email.com" />
+        <label for="email2">CONFIRMAR EMAIL</label>
+        <input type="email" name="email2" placeholder="tuemail@email.com" />
 
         <label for="password">CONTRASEÑA</label>
         <div class="main__form__register__password">
@@ -28,9 +28,9 @@
           <i class="fa-regular fa-eye"></i>
         </div>
 
-        <label for="password">CONFIRMAR CONTRASEÑA</label>
+        <label for="password2">CONFIRMAR CONTRASEÑA</label>
         <div class="main__form__register__password">
-          <input type="password" name="password" required />
+          <input type="password" name="password2" required />
           <i class="fa-regular fa-eye"></i>
         </div>
         <label for="image">AVATAR : </label>
