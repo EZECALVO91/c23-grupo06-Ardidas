@@ -7,15 +7,15 @@
   <%- include("../partials/header.ejs") %>
 
     <main>
-      <p><a class="redirect-detalle" href="/">Inicio</a> > <a class="redirect-detalle" href="/products"> Categoria </a>> Detalle ><%= product.nombre%></a>
+      <p><a class="redirect-detalle" href="/">Inicio</a> > <a class="redirect-detalle" href="/products"> <%= product.category %> </a>> Detalle > <%= product.nombre%></a>
       <article class="producto">
         <div class="imagenes_pequeñas">
-          <img src="/images/nike9.webp" alt="miniatura" class="imagen_pequeña">
-          <img src="/images/027738a4-a120-4774-970a-b2a67a9c730d-673cda2af6b79b02f216330911267738-240-0.jpeg"
+          <img src="/images/products/nike9.webp" alt="miniatura" class="imagen_pequeña">
+          <img src="/images/products/nike8.webp"
             alt="miniatura" class="imagen_pequeña">
-          <img src="/images/rBVaWF5CTiaAXloQAADZKoR2kqY074.jpg" alt="miniatura" class="imagen_pequeña">
+          <img src="/images/products/nike6.webp" alt="miniatura" class="imagen_pequeña">
         </div>
-        <img src="/images/<%= product.imagen%>" alt="imagen principal" class="imagen_grande">
+        <img src="/images/products/<%= product.imagen%>" alt="imagen principal" class="imagen_grande">
         <div class="detalles">
           <h2><%= product.nombre%></h2>
           <h2>$<%= product.precio %></h2>
@@ -25,7 +25,7 @@
             <select name="talles" id="" class="numero">
               <% product.talles.forEach(talles => { %>
               <option value=<%= talles %>><%= talles%></option>
-              <% })%>
+             <% }) %>
             </select>
           </div>
           <div class="detalles_cantidad">
@@ -34,8 +34,10 @@
           </div>
           <div class="detalles_color">
             <p>Colores</p>
-            <select name="color" id="" class="numero">
-              <option value=<%= product.color %>><%= product.color %></option>
+            <select name="color" id="" class="color_detail">
+              <% product.color.forEach(color => { %>
+              <option value=<%= color %>><%= color %></option>
+              <% })%>
               </select>
             </div>
           <a href="/products/carrito/<%= product.id%>">
@@ -50,7 +52,7 @@
           <%= product.descripcion %>
         </p>
       </div>
-      <a href="/">
+      <a href="/products">
         <p class="main_ver-todos-productos">VER TODOS LOS PRODUCTOS</p>
       </a>
     </main>

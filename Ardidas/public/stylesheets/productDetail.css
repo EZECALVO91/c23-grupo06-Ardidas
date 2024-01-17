@@ -92,7 +92,8 @@ main {
         border-radius: 10px;
     }
     .imagen_grande {
-        width: 40%;
+        width: 300px;
+        height: 300px;
         margin-right: 1%;
     }
     .imagen_pequeña {
@@ -132,7 +133,7 @@ main {
         margin-top: 5%;
     }
     .detalles_color p{
-        width: 50%;
+        width: 45%;
     }
 
     .numero {
@@ -187,8 +188,8 @@ main {
         padding: 1%;
     }
     .imagen_grande {
-        width: 40%;
-        height: 40%;
+        width: 360px;
+        height: 360px;
     }
     .imagen_pequeña {
         width: 50%;
@@ -228,4 +229,13 @@ main {
     .detalles_div_descripcion{
         margin: 0% 4%;
     }
-}
+    .color_detail {
+        width:100px;
+        border-radius: 10px;
+       }
+    
+    .detalles_color {
+        width:220px
+     }
+
+    }
