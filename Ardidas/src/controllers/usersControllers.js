@@ -1,5 +1,6 @@
-
 const { setJson, getJson } = require("../utility/jsonMethod");
+const bcrypt = require("bcryptjs");
+
 
 const usersController = {
     formRegister:(req,res)=>{
@@ -16,7 +17,7 @@ const usersController = {
             id,
             name,
             email,
-            password,
+            password: bcrypt.hashSync(password, 10),
             category: "ADMIN",
             image: file ? file.filename : "default-avatar-profile.jpg",
         };

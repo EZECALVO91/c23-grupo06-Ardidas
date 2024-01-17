@@ -38,5 +38,13 @@
         "password": "1234",
         "category": "ADMIN",
         "image": "default-avatar-profile.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Esteban Leonel",
+        "email": "leonelanchaba@gmail.com",
+        "password": "$2a$10$l010jA9nL4Re/CxYqnsgWuAGKn3zuynI/U/0YfY079EbdAOutxHCG",
+        "category": "ADMIN",
+        "image": "1705458913099_img_.jpg"
     }
 ]
