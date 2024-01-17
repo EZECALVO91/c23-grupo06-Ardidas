@@ -1,35 +1,42 @@
 [
     {
         "id": 1,
-        "name":"Esteban Figueroa",
-        "email":"EFigueroa@gmail.com",
-        "password":"contras2",
-        "category":"ADMIN",
-        "image":"image1"
+        "name": "Esteban Figueroa",
+        "email": "EFigueroa@gmail.com",
+        "password": "contras2",
+        "category": "ADMIN",
+        "image": "image1"
     },
     {
         "id": 2,
-        "name":"Leonel Anchaba",
-        "email":"LAnchaba@gmail.com",
-        "password":"contras3",
-        "category":"ADMIN",
-        "image":"image2"
+        "name": "Leonel Anchaba",
+        "email": "LAnchaba@gmail.com",
+        "password": "contras3",
+        "category": "ADMIN",
+        "image": "image2"
     },
     {
         "id": 3,
-        "name":"Ezequiel Calvo",
-        "email":"ECalvo@gmail.com",
-        "password":"contras4",
-        "category":"ADMIN",
-        "image":"image3"
+        "name": "Ezequiel Calvo",
+        "email": "ECalvo@gmail.com",
+        "password": "contras4",
+        "category": "ADMIN",
+        "image": "image3"
     },
     {
         "id": 4,
-        "name":"Nicolas Badino",
-        "email":"NBadino@gmail.com",
-        "password":"contras5",
-        "category":"ADMIN",
-        "image":"image4"
+        "name": "Nicolas Badino",
+        "email": "NBadino@gmail.com",
+        "password": "contras5",
+        "category": "ADMIN",
+        "image": "image4"
+    },
+    {
+        "id": 5,
+        "name": "zapas",
+        "email": "leonelanchaba@gmail.com",
+        "password": "1234",
+        "category": "ADMIN",
+        "image": "default-avatar-profile.jpg"
     }
-
 ]
