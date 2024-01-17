@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const {formRegister, register, formLogin, login} = require('../controllers/usersControllers');
-const uploadFile = require('../validation/validationUploadUser');
+const uploadFile = require("../validations/imageUser")
 const registerValidation = require('../validation/validationRegister');
+
 
 
 router
