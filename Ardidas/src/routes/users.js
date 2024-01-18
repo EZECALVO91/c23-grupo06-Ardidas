@@ -3,7 +3,7 @@ const router = express.Router();
 const {formRegister, register, formLogin, login} = require('../controllers/usersControllers');
 const uploadFile = require("../validations/imageUser")
 const registerValidation = require('../validation/validationRegister');
-
+const loginValidation = require('../validation/validationLogin')
 
 
 router
@@ -12,7 +12,7 @@ router
 .post("/register", uploadFile.single("image"),registerValidation, register)
 
 .get('/login', formLogin)
-.post("/login", login)
+.post("/login", loginValidation, login)
 
 
 

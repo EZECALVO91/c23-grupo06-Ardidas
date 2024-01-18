@@ -1,7 +1,7 @@
 const { setJson, getJson } = require("../utility/jsonMethod");
 const bcrypt = require("bcryptjs");
 const {validationResult} = require('express-validator');
-
+const session = require('express-session')
 
 const usersController = {
     formRegister:(req,res)=>{
@@ -45,8 +45,36 @@ const usersController = {
             res.render('./users/login',{title:"Login"})
     },
     login: (req,res) => {
-        console.log(req.body)
-        res.redirect("/")
+        let errors = validationResult(req);
+        let usuarioLogin
+        if (errors.isEmpty()){
+            let users = getJson('users')
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email.toLowerCase() == req.body.usuario.toLowerCase()) {
+                    if (bcrypt.compareSync(req.body.password, users[i].password)) {
+                        usuarioLogin = users[i]
+                        break;
+                        }
+                    }
+                }
+                if (usuarioLogin == undefined) {
+                    return res.render('./users/login', {errors: [
+                        {msg: 'Credenciales invalidas'}
+                    ], title: 'Login'})
+    
+            }
+            req.session.usuarioLogin = usuarioLogin
+            if (req.body.recuerdame != undefined) {
+                res.cookie('recuerdame',
+                usuarioLogin.email,{ maxAge: 120000 })
+                console.log('se guardo la cookieeeee')
+            }
+            res.redirect('/')
+
+
+        }else{
+            return res.render('./users/login', {errors: errors.errors, title:'Login'})
+        }
     },
 
     
