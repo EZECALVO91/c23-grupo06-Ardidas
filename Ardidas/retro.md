@@ -85,22 +85,29 @@ _________________________________________________________
 ______________________________________________________________
 # Conclusiones del Cuarto Sprint:
 
-### LIDER : 
+### LIDER : JUAQUIN GOMEZ.
 
 
 #### Dejar de Hacer:
+Dejar de proocastinar, no tener el compromiso suficiente para la daylis.
 
 
 #### Hacer menos:
+Empezar a procastinar menos.
+
+#### Continuar Haciendo: 
+Seguir trabajando con el jira y el github, continuar comunicandome como grupo. 
+Seguir resolviendo conflictos , con razon y entendimiento grupal.
 
 
-#### Continuar Haciendo:
-
-
-#### Hacer más:
+#### Hacer más: 
+Tratar de cumplir con las expectativas de entrega.
+Ser mas comunicativo con el grupo a la hora de repartir tareas.
+Ir notificando al grupo , como venimos con las tareas.
 
 
 #### Comenzar a Hacer:
+Empezar con las Deylis apenas unicie el sprint asi mejoramos el dinamismo del grupo.
 
 
 ______________________________________________________________
