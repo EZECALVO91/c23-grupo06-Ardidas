@@ -54,5 +54,13 @@
         "password": "$2a$10$WWKaVYtHcnJP79FXNfta.OiApvwTpPyzfN0STl3g89Uxg4ypf7dWK",
         "category": "ADMIN",
         "image": "default-avatar-profile.jpg"
+    },
+    {
+        "id": 1705639066010,
+        "name": "zapas",
+        "email": "leo@gmail.com",
+        "password": "$2a$10$PTwRnhtCjGdjL17ELF0OGOI1YfzMhud9AJa8QYyFTDa1Tm0FGA3ri",
+        "category": "ADMIN",
+        "image": "1705639066002_img_.webp"
     }
 ]

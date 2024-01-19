@@ -5,7 +5,7 @@ const session = require('express-session')
 
 const usersController = {
     formRegister:(req,res)=>{
-        res.render('./users/register',{title:"Registro"})
+        res.render('./users/register',{title:"Registro", usuarioLogeado: null})
         
     },
     register:(req,res) => {
