@@ -20,6 +20,9 @@
         font-size: 16px;
         font-weight: bold;
     }
+.box_home_form{
+    padding: 0;
+}
 .input_login{
 
     width: 99%;
@@ -53,6 +56,11 @@
 .btn_login_up h6{
     font-size: 12px;
 }
+.articulo_login_error_validator ul{
+    padding: 0;
+    color: red;
+    font-weight: 600;
+}
 @media(min-width: 768px){
     .input_login{
         width: 85%;
@@ -81,6 +89,9 @@
 }
 
 @media  (min-width: 1024px){
+    .main_login{
+        padding: 5% 0;
+    }
     .input_login{
         height: 60px;
         font-size: 22px;

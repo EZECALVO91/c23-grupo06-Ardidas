@@ -10,6 +10,18 @@
       <form class="box_home_form" action="/users/login" method="post">
         <section>
           <article class="articulo_login_main">
+            <% if (typeof errors != 'undefined'){ %>
+              <div class="articulo_login_error_validator">
+              <p>ERROR</p>
+              <ul>
+                <% for (let i = 0; i < errors.length; i++) { %>
+                <li>
+                  <%= errors[i].msg %>
+                </li>
+                <% } %>
+              </ul>
+              </div>
+              <% } %>
             <h2 class="login_h_all">EMAIL</h2>
             <label for="usuario"></label>
             <input class="input_login" type="email" name="usuario" placeholder="tu-email@email.com*" required>
@@ -24,7 +36,7 @@
             </a>
             <div class="label_recordar">
               <label for="Recuerdame" class="r">Recuerdame</label>
-              <input type="checkbox" name="Recuerdame">
+              <input type="checkbox" name="recuerdame">
             </div>
           </article>
           <article class="articulo_login_main">
