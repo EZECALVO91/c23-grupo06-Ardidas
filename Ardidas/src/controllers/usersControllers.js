@@ -1,5 +1,5 @@
 
-const { setJson, getJson } = require("../utility/jsonMethod");
+const { setJson, getJson} = require("../utility/jsonMethod");
 
 const usersController = {
     formRegister:(req,res)=>{
@@ -33,6 +33,42 @@ const usersController = {
     login: (req,res) => {
         console.log(req.body)
         res.redirect("/")
+    },
+        //Edicion de usuarios
+    usersEdit: (req, res) => {
+        const { id } = req.params;
+        const users = getJson("users");
+        const user = users.find(elemento => elemento.id == id);
+        res.render("users/usersEdit", { title: "Editar Usuario", user })
+    },
+    usersUpdate: (req, res) => {
+        const { id } = req.params;
+        const users = getJson("user");
+        const { name, email, password} = req.body;
+        const nuevoArray = users.map(product => {
+            if (product.id == id)
+                return {
+                    id: +id,
+                    nombre: nombre.trim(),
+                    talles: talles >= 1 ? [talles] : talles,
+                    color :Array.isArray(color) ? color : [color],
+                    precio: +precio,
+                    descripcion: descripcion.trim(),
+                    imagen: imagen ? imagen : product.imagen,
+                    category,
+                }
+
+            return product
+        })
+        setJson(nuevoArray, "product")
+        res.redirect(`/products/detalle/${id}`);
+    },
+
+    //Dashboard de Usuarios
+
+    UsersDashboard: (req, res) => {
+        const users = getJson("users");
+        res.render('users/usersDashboard', { title: "Users Dashboard", users });
     },
     
 }

@@ -5,7 +5,7 @@
         "email": "EFigueroa@gmail.com",
         "password": "contras2",
         "category": "ADMIN",
-        "image": "image1"
+        "image": "default-avatar-profile.jpg"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "email": "LAnchaba@gmail.com",
         "password": "contras3",
         "category": "ADMIN",
-        "image": "image2"
+        "image": "default-avatar-profile.jpg"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "email": "ECalvo@gmail.com",
         "password": "contras4",
         "category": "ADMIN",
-        "image": "image3"
+        "image": "default-avatar-profile.jpg"
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "email": "NBadino@gmail.com",
         "password": "contras5",
         "category": "ADMIN",
-        "image": "image4"
+        "image": "default-avatar-profile.jpg"
     },
     {
         "id": 5,

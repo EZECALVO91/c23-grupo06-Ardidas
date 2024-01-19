@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {formRegister, register, formLogin, login} = require('../controllers/usersControllers');
+const {formRegister, register, formLogin, login,usersEdit,usersUpdate,UsersDashboard} = require('../controllers/usersControllers');
 const multer = require("multer");
 const path = require("path");
 
@@ -29,6 +29,13 @@ router
 
 .get('/login', formLogin)
 .post("/login", login)
+
+//Dashboard de Usurios
+.get('/dashboard', UsersDashboard)
+
+//Edicion de usuarios
+.get('/update/:id', usersEdit )
+.put('/update/:id', usersUpdate)
 
 
 
