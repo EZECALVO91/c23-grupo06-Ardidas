@@ -1,12 +1,18 @@
 <header class="header">
     <div class="login_header_index">
-        <a href="/users/register">
-            <p>Crear Cuenta |</p>
-        </a>
-        <a href="/users/login">
-            <p>Iniciar Sesion</p>
-        </a>
-    </div>
+            <% if (usuarioLogeado != undefined) {%>
+                <a href="#"> <p><%= usuarioLogeado.email %></p> </a>
+                <a href=""><p>  | </p></a>
+                <a href="#"><p>Cerrar Sesion</p></a>
+           <%} else{%>
+            <a href="/users/register">
+                <p>Crear Cuenta |</p>
+            </a>
+                <a href="/users/login">
+                <p>Iniciar Sesion</p>
+            </a>
+                <%}%>
+            </div>
     <div class="header_top">
         <a href="" class="menu_hambu_contenedor">
             <i class="menu_hamburguesa fa-solid fa-bars" style="color: #fcfce7"></i>

@@ -42,7 +42,7 @@ const usersController = {
          }
     },
     formLogin:(req,res)=>{
-            res.render('./users/login',{title:"Login"})
+            res.render('./users/login',{title:"Login", usuarioLogeado: req.session.usuarioLogin})
     },
     login: (req,res) => {
         let errors = validationResult(req);
@@ -60,7 +60,7 @@ const usersController = {
                 if (usuarioLogin == undefined) {
                     return res.render('./users/login', {errors: [
                         {msg: 'Credenciales invalidas'}
-                    ], title: 'Login'})
+                    ], title: 'Login',usuarioLogeado: req.session.usuarioLogin})
     
             }
             req.session.usuarioLogin = usuarioLogin
@@ -73,7 +73,7 @@ const usersController = {
 
 
         }else{
-            return res.render('./users/login', {errors: errors.errors, title:'Login'})
+            return res.render('./users/login', {errors: errors.errors, title:'Login',usuarioLogeado: req.session.usuarioLogin})
         }
     },
 
