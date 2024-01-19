@@ -1,7 +1,7 @@
 <header class="header">
     <div class="login_header_index">
             <% if (usuarioLogeado != undefined) {%>
-                <a href="#"> <p><%= usuarioLogeado.email %></p> </a>
+                <a href="/users/profile"> <p><%= usuarioLogeado.email %></p> </a>
                 <a href=""><p>  | </p></a>
                 <a href="#"><p>Cerrar Sesion</p></a>
            <%} else{%>
@@ -27,7 +27,11 @@
                     </li>
                     <li><a href="/contacto">CONTACTO</a></li>
                     <li><a href="/products">PRODUCTOS</a></li>
-                    <li><a href="/products/dashboard">¿COMO COMPRAR?</a></li>
+                    <% if (usuarioLogeado && usuarioLogeado.category == "ADMIN") {%>
+                        <li><a href="/products/dashboard">DASHBOARD</a></li>
+                        <%} else{%>
+                    <li><a href="/help">¿COMO COMPRAR?</a></li>
+                    <%}%>
                 </ul>
             </nav>
             <form class="busqueda-contenedor" action="">
