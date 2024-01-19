@@ -5,27 +5,27 @@ const { setJson, getJson } = require("../utility/jsonMethod");
 const productsController = {
     index: (req, res) => {
         const products = getJson("product");
-        res.render("products/products", { title: "Ardidas", products })
+        res.render("products/products", { title: "Ardidas", products, usuarioLogeado: req.session.usuarioLogin})
     },
     productCart: (req, res) => {
         const { id } = req.params
         const products = getJson("product");
         const product = products.find(producto => producto.id == id)
-        res.render('products/productCart', { title: "Carrito", product })
+        res.render('products/productCart', { title: "Carrito", product,usuarioLogeado: req.session.usuarioLogin })
     },
     productDetail: (req, res) => {
         const products = getJson("product");
         const { id } = req.params
         const product = products.find(producto => producto.id == id)
         const productOff = products.filter(product => product.category === "oferta")
-        res.render('products/productDetail', { title: "Detalle", product, productOff })
+        res.render('products/productDetail', { title: "Detalle", product, productOff,usuarioLogeado: req.session.usuarioLogin })
     },
     dashboard: (req, res) => {
         const products = getJson("product");
-        res.render('products/dashboard', { title: "Dashboard", products });
+        res.render('products/dashboard', { title: "Dashboard", products,usuarioLogeado: req.session.usuarioLogin });
     },
     productLoad: (req, res) => {
-        res.render("products/productLoad", { title: "Crear" });
+        res.render("products/productLoad", { title: "Crear",usuarioLogeado: req.session.usuarioLogin });
     },
     create: (req, res) => {
         const file = req.file
@@ -51,7 +51,7 @@ const productsController = {
         const { id } = req.params;
         const products = getJson("product");
         const product = products.find(elemento => elemento.id == id);
-        res.render("products/productEdit", { title: "Editar producto", product })
+        res.render("products/productEdit", { title: "Editar producto", product,usuarioLogeado: req.session.usuarioLogin })
     },
     update: (req, res) => {
         const { id } = req.params;
