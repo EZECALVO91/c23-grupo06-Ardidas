@@ -61,4 +61,14 @@
 
 * Nicolas Badino = Yo ayer cree la rama de mi tarea, tambien cree la rama del json de usuarios donde agregue nuestros nombre con los datos de administradores, y hoy empiezo con la tarea que es editar un producto formulario de edicion y logica de actualizacion , espero hoy terminar o adelantar lo mas posible, para poder ponerme al dia con el Play Graund, si bien ayer hice el crud del sprint y tengo que terminar la parte del crud de ML para asi poder entregarlo. Hoy 22 de diciembre estoy dandole un poco de estilo a la vista de edicion de productos para que pueda ser facil de usar para los usuarios, el dia de mañana estoy terminando ya con todo para levantar la tarea y hacerle el pull a develop.
 
-* Esteban Fogueroa = ESTEBAN COMPLETA ACA
+* Esteban Figueroa = ESTEBAN COMPLETA ACA
+
+## Daily 18/1/2024
+
+* Ezequiel Calvo = Hoy empeze con la parte de mi sprint, implementar actualizaciones de los datos. Se creo un dashboard y su vista, se implemento su logica, se esta terminando el controlador de rutas. Para mañana, deberia implementar el crear usuario, su edicion y la validacion.
+
+* Leonel Anchaba = Ayer/hoy , no estuve trabajando en el sprint. Estuve trabajando en el tp  de la clase 32 del Playground para ver si despejaba duda/s con respecto a mi parte del sprint. Las trabas que /tenia en el sprint se fueron con la clase del dia 18/01/24. Que justamente trataba sobre la consigna que se me encargo: implementar rutas de huespedes y usuarios. Apartir de hoy y mañana no solo empezare con esa tarea si no que la idea seria terminarla.
+
+* Nicolas Badino = Ayer termine con mi trabajo de validacion de registro , hoy me encargue de la retro y el dayli que no habiamos podido reunirnos. Mañana ayudare a mis compañeros en lo que necesiten para que puedan terminar su tarea en el sprint.
+
+* Esteban Figueroa = Ayer 17/01/2024 y hoy termine con casi todos los puntos de mi sprint , solo me quedan detalles de la validacion en el formulario de login.
