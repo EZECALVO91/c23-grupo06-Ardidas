@@ -5,7 +5,7 @@ const session = require('express-session')
 
 const usersController = {
     formRegister:(req,res)=>{
-        res.render('./users/register',{title:"Registro"})
+        res.render('./users/register',{title:"Registro", usuarioLogeado: null})
         
     },
     register:(req,res) => {
@@ -15,7 +15,7 @@ const usersController = {
   
         if(!errores.isEmpty()){
           console.log("Ingrese en errores");
-          res.render('./users/register',{errores:errores.mapped(),old:req.body,title:"registro"})
+          res.render('./users/register',{errores:errores.mapped(),old:req.body,title:"registro", usuarioLogeado:null})
         }
         else{
             
@@ -30,7 +30,7 @@ const usersController = {
             name: name.trim(),
             email:email.trim(),
             password: bcrypt.hashSync(password,10),
-            category: "ADMIN",
+            category: "USER",
             image: file ? file.filename : "default-avatar-profile.jpg",
         };
 

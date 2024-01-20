@@ -4,6 +4,9 @@ const {index, productCart, productDetail, dashboard, productLoad, create, produc
 const multer = require("multer");
 const path = require("path");
 
+const sessionValidate = require("../middleware/sessionValidate");
+const isAdmin = require("../middleware/isAdminValidate");
+
 const storage = multer.diskStorage({
     destination: (req,file,cb) => {
         cb(null, path.join(__dirname, "../../public/images/products"))
@@ -20,19 +23,19 @@ const uploadFile = multer({ storage})
 router
 .get("/", index)
 
-.get('/carrito/:id', productCart)
+.get('/carrito/:id', sessionValidate, productCart)
 
 .get('/detalle/:id', productDetail)
 
-.get('/dashboard', dashboard)
+.get('/dashboard', isAdmin, dashboard)
 
-.get("/create",productLoad)
-.post("/",uploadFile.single("image"), create)
+.get("/create", isAdmin, productLoad)
+.post("/",uploadFile.single("image"), isAdmin, create)
 
-.get("/update/:id", productEdit)
-.put("/update/:id", update)
+.get("/update/:id", isAdmin, productEdit)
+.put("/update/:id", isAdmin, update)
 
-.delete('/delete/:id', destroy)
+.delete('/delete/:id', isAdmin, destroy)
 
 
 
