@@ -3,7 +3,6 @@
 ### GRUPO N°6:
 * Nicolas Badino
 * Leonel Anchaba
-* Joaquin Gomez
 * Esteban Figueroa
 * Calvo Ezequiel
 
@@ -85,7 +84,7 @@ _________________________________________________________
 ______________________________________________________________
 # Conclusiones del Cuarto Sprint:
 
-### LIDER : JUAQUIN GOMEZ.
+### LIDER : JOAQUIN GOMEZ.
 
 
 #### Dejar de Hacer:
@@ -93,7 +92,7 @@ Dejar de proocastinar, no tener el compromiso suficiente para la daylis.
 
 
 #### Hacer menos:
-Empezar a procastinar menos.
+Procastinar menos.
 
 #### Continuar Haciendo: 
 Seguir trabajando con el jira y el github, continuar comunicandome como grupo. 
