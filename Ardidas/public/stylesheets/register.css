@@ -94,9 +94,6 @@
      }
 
     .main__form__register__box {
-        display:flex;
-        flex-direction: row;
-        flex-wrap: wrap;
         margin:3% 0% 10%;
     }
 
