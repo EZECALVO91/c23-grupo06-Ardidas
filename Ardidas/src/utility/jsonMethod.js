@@ -11,4 +11,7 @@ const setJson = (array,fileName) => {
     fs.writeFileSync(`${__dirname}/../database/${fileName}.json`,json,"utf-8")
 }
 
+
+
+
 module.exports = {setJson, getJson}
