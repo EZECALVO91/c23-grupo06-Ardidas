@@ -1,10 +1,16 @@
 <header class="header">
     <div class="login_header_index">
+        <% if (usuarioLogeado && usuarioLogeado.category == "ADMIN") {%>
+            <a href="/products/dashboard"> Productos |</a>
+            <a href="/users/dashboard"> Usuarios | </a>
+            
+        <%}%>
+        
             <% if (usuarioLogeado != undefined) {%>
-                <a href="/users/profile"> <p><%= usuarioLogeado.email %></p> </a>
+                <a href="/users/profile/<%= usuarioLogeado.id %>"> <p><%= usuarioLogeado.email %></p> </a>
                 <a href=""><p>  | </p></a>
                 <a href="#"><p>Cerrar Sesion</p></a>
-           <%} else{%>
+            <%} else{%>
             <a href="/users/register">
                 <p>Crear Cuenta |</p>
             </a>
@@ -12,7 +18,7 @@
                 <p>Iniciar Sesion</p>
             </a>
                 <%}%>
-            </div>
+        </div>
     <div class="header_top">
         <a href="" class="menu_hambu_contenedor">
             <i class="menu_hamburguesa fa-solid fa-bars" style="color: #fcfce7"></i>
@@ -27,18 +33,7 @@
                     </li>
                     <li><a href="/contacto">CONTACTO</a></li>
                     <li><a href="/products">PRODUCTOS</a></li>
-<<<<<<< HEAD
-                    <li><a href="/products/dashboard">¿COMO COMPRAR?</a></li>
-                    <li>
-                        <a href="/users/dashboard"><strong>USUARIOS</strong></a>
-                    </li>
-=======
-                    <% if (usuarioLogeado && usuarioLogeado.category == "ADMIN") {%>
-                        <li><a href="/products/dashboard">DASHBOARD</a></li>
-                        <%} else{%>
                     <li><a href="/help">¿COMO COMPRAR?</a></li>
-                    <%}%>
->>>>>>> rutasHuespedEUsuarios
                 </ul>
             </nav>
             <form class="busqueda-contenedor" action="">

@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const {formRegister, register, formLogin, login} = require('../controllers/usersControllers');
+const {formRegister, register, formLogin, login, usersEdit,usersUpdate ,
+    UsersDashboard, userProfile, userProfileEdit, createPrivileges,
+    createUserPrivileges, destroy} = require('../controllers/usersControllers');
+    
 const uploadFile = require("../validations/imageUser")
 const registerValidation = require('../validation/validationRegister');
 const loginValidation = require('../validation/validationLogin')
-// const sessionValidate = require("../middleware/sessionValidate");
-// const isAdmin = require("../middleware/isAdminValidate");
+const sessionValidate = require("../middleware/sessionValidate");
+const isAdmin = require("../middleware/isAdminValidate");
 
 
 router
@@ -17,11 +20,22 @@ router
 .post("/login", loginValidation, login)
 
 //Dashboard de Usurios
-.get('/dashboard', UsersDashboard)
+.get('/dashboard',isAdmin, UsersDashboard)
 
-//Edicion de usuarios
-.get('/update/:id', usersEdit )
-.put('/update/:id', usersUpdate)
+.get('/createPrivileges', createPrivileges)
+.post('/createPrivileges',uploadFile.single("image"),registerValidation, createUserPrivileges)
+
+//Edicion de usuarios departe de Dashboar
+.get('/update/:id',isAdmin , usersEdit )
+.put('/update/:id',isAdmin ,usersUpdate)
+
+//Profile para el usuario y su cambio de informacion
+.get('/profile/:id', userProfile)
+.put('/profile/:id',  userProfileEdit)
+
+
+//Eliminar Usuarios Dashboard
+.delete('/delete/:id', isAdmin, destroy)
 
 
 

@@ -1,66 +1,11 @@
 [
-    {
-        "id": 1,
-        "name": "Esteban Figueroa",
-        "email": "EFigueroa@gmail.com",
-        "password": "contras2",
-        "category": "ADMIN",
-        "image": "default-avatar-profile.jpg"
-    },
-    {
-        "id": 2,
-        "name": "Leonel Anchaba",
-        "email": "LAnchaba@gmail.com",
-        "password": "contras3",
-        "category": "ADMIN",
-        "image": "default-avatar-profile.jpg"
-    },
-    {
-        "id": 3,
-        "name": "Ezequiel Calvo",
-        "email": "ECalvo@gmail.com",
-        "password": "contras4",
-        "category": "ADMIN",
-        "image": "default-avatar-profile.jpg"
-    },
-    {
-        "id": 4,
-        "name": "Nicolas Badino",
-        "email": "NBadino@gmail.com",
-        "password": "contras5",
-        "category": "ADMIN",
-        "image": "default-avatar-profile.jpg"
-    },
-    {
-        "id": 5,
-        "name": "zapas",
-        "email": "leonelanchaba@gmail.com",
-        "password": "1234",
-        "category": "ADMIN",
-        "image": "default-avatar-profile.jpg"
-    },
-    {
-        "id": 6,
-        "name": "Esteban Leonel",
-        "email": "leonelanchaba@gmail.com",
-        "password": "$2a$10$l010jA9nL4Re/CxYqnsgWuAGKn3zuynI/U/0YfY079EbdAOutxHCG",
-        "category": "ADMIN",
-        "image": "1705458913099_img_.jpg"
-    },
-    {
-        "id": 1705618652084,
-        "name": "Esteban Figueroa",
-        "email": "Estebanfigueroa@gmail.com",
-        "password": "$2a$10$WWKaVYtHcnJP79FXNfta.OiApvwTpPyzfN0STl3g89Uxg4ypf7dWK",
-        "category": "ADMIN",
-        "image": "default-avatar-profile.jpg"
-    },
-    {
-        "id": 1705639066010,
-        "name": "zapas",
-        "email": "leo@gmail.com",
-        "password": "$2a$10$PTwRnhtCjGdjL17ELF0OGOI1YfzMhud9AJa8QYyFTDa1Tm0FGA3ri",
-        "category": "ADMIN",
-        "image": "1705639066002_img_.webp"
-    }
+  {
+    "id": 1705768886340,
+    "name": "EZEQUIEL",
+    "email": "eze@admin.com",
+    "password": "$2a$10$qPvE1uQsz9e97UCv0LYUfuXSHPcaF2Gexrcv6APFFuPhJGQqrI/ia",
+    "category": "ADMIN",
+    "image": "default-avatar-profile.jpg"
+  }
+
 ]
