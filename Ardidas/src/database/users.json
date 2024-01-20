@@ -1,11 +1,10 @@
 [
-  {
-    "id": 1705768886340,
-    "name": "EZEQUIEL",
-    "email": "eze@admin.com",
-    "password": "$2a$10$qPvE1uQsz9e97UCv0LYUfuXSHPcaF2Gexrcv6APFFuPhJGQqrI/ia",
-    "category": "ADMIN",
-    "image": "default-avatar-profile.jpg"
+    {
+        "id": 1705768886340,
+        "name": "EZEQUIEL",
+        "email": "eze@admin.com",
+        "password": "$2a$10$qPvE1uQsz9e97UCv0LYUfuXSHPcaF2Gexrcv6APFFuPhJGQqrI/ia",
+        "category": "ADMIN",
+        "image": "default-avatar-profile.jpg"
   }
-
 ]

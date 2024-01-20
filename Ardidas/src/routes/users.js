@@ -22,16 +22,16 @@ router
 //Dashboard de Usurios
 .get('/dashboard',isAdmin, UsersDashboard)
 
-.get('/createPrivileges', createPrivileges)
-.post('/createPrivileges',uploadFile.single("image"),registerValidation, createUserPrivileges)
+.get('/createPrivileges', isAdmin, createPrivileges)
+.post('/createPrivileges',uploadFile.single("image"), isAdmin, registerValidation, createUserPrivileges)
 
 //Edicion de usuarios departe de Dashboar
 .get('/update/:id',isAdmin , usersEdit )
 .put('/update/:id',isAdmin ,usersUpdate)
 
 //Profile para el usuario y su cambio de informacion
-.get('/profile/:id', userProfile)
-.put('/profile/:id',  userProfileEdit)
+.get('/profile/:id', sessionValidate, userProfile)
+.put('/profile/:id', sessionValidate,  userProfileEdit)
 
 
 //Eliminar Usuarios Dashboard
