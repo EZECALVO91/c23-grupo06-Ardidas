@@ -9,6 +9,7 @@ const session = require('express-session')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products')
+const recuerdameMiddleware = require('./middlewares/cookieSaveuser')
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }))
+app.use(recuerdameMiddleware);
 /////
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
