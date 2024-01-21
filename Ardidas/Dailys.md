@@ -72,3 +72,13 @@
 * Nicolas Badino = Ayer termine con mi trabajo de validacion de registro , hoy me encargue de la retro y el dayli que no habiamos podido reunirnos. Mañana ayudare a mis compañeros en lo que necesiten para que puedan terminar su tarea en el sprint.
 
 * Esteban Figueroa = Ayer 17/01/2024 y hoy termine con casi todos los puntos de mi sprint , solo me quedan detalles de la validacion en el formulario de login.
+
+## Daily 19/1/2024
+
+* Ezequiel Calvo = Hoy 19/1 estuve repasando el pg y reeviendo los videos de las clases tecnicas, estoy trabado con el tema de la creacion de un usuario. Y despues de esto ya poner los privilegios del usuario que calculo que lo estare haciendo el dia sabado. El dia domingo estaria terminando lo que es lo de validaciones. Es una parte bastante larga ya que me tuve que encargar de las vistas tambien y me esta llevando tiempo.
+
+* Leonel Anchaba = En cuanto lo trabajado ayer 18/1 y hoy 19/1, el sprint no estuve tocando nada. Estuve ocupado con el trabajo de kitchening para ver si podia borrar la imagen cuando habia errores en el formulario, mi traba , faltan crearse rutas para poder terminar mi parte del proyecto . Asi aplico los middlewares a las que todavia no han sido creadas. 
+
+* Nicolas Badino = Yo hoy estuve repasando el pg , termine con mi parte del trabajo en la tarea que compartia con Esteban (implementar la funcion de recordar usuario), mañana la verdad por temas familiares no voy a poder dedicarle mucho tiempo al sprint. Domingo : los detalles que me faltan es validar el confirmar contraseña y la imagen. Con esto mi parte estaria finalizada
+
+* Esteban Figueroa = Falta completar.
