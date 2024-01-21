@@ -1,10 +1,21 @@
 [
-    {
-        "id": 1705768886340,
-        "name": "EZEQUIEL",
-        "email": "eze@admin.com",
-        "password": "$2a$10$qPvE1uQsz9e97UCv0LYUfuXSHPcaF2Gexrcv6APFFuPhJGQqrI/ia",
-        "category": "ADMIN",
-        "image": "default-avatar-profile.jpg"
+  {
+    "id": 1705768886340,
+    "name": "EZEQUIEL",
+    "email": "eze@admin.com",
+    "password": "$2a$10$qPvE1uQsz9e97UCv0LYUfuXSHPcaF2Gexrcv6APFFuPhJGQqrI/ia",
+    "category": "ADMIN",
+    "image": "default-avatar-profile.jpg"
+  },
+  {
+    "id": 1705796164807,
+    "name": "Ezequiel Alejandro Calvo",
+    "email": "eze@1.com",
+    "password": "$2a$10$qPvE1uQsz9e97UCv0LYUfuXSHPcaF2Gexrcv6APFFuPhJGQqrI/ia",
+    "category": "USER",
+    "date": "1991-11-20",
+    "localidad": "Buenos Aires - San Miguel",
+    "sobremi": "hola me llamo Ezequiel y soy de san miguel centro.",
+    "image": "default-avatar-profile.jpg"
   }
 ]

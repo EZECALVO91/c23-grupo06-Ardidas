@@ -175,19 +175,20 @@ const usersController = {
     userProfileEdit: (req, res) =>{
         const {id} =req.params;
         console.log("me esta trayendo", req.params.id);
-        const {name,email, date, localidad,sobremi} = req.body;
+        const {name,email,password, date, localidad,sobremi} = req.body;
         console.log("lo que trae por body", req.body);
         const users = getJson("users");
         const usuarios = users.map(element => {
             if (element.id == id){
                 return{
                     id:+id,
-                    name:name,
-                    email:email,
+                    name:name.trim(),
+                    email:email.trim(),
+                    password,
                     category:"USER",
                     date,
-                    localidad:localidad,
-                    sobremi: sobremi,
+                    localidad:localidad.trim(),
+                    sobremi: sobremi.trim(),
                     image:req.file ? req.file.filename : element.image,
                 }
             }
