@@ -124,12 +124,11 @@ const usersController = {
         res.render('users/usersDashboard', { title: "Users Dashboard", users, usuarioLogeado: req.session.usuarioLogin });
     },
 
-
-
     createPrivileges:(req, res)=> {
         const users = getJson("users");
         res.render('users/userCreatePrivi', { title: "Users Privileges", users, usuarioLogeado: req.session.usuarioLogin });
     },
+
     createUserPrivileges: (req, res) =>{
         const errores = validationResult(req);
 
@@ -173,12 +172,21 @@ const usersController = {
         res.render("users/profileEdit", { title: "Editar Usuario", user, usuarioLogeado: req.session.usuarioLogin })
     },
     userProfileEdit: (req, res) =>{
+        const errores = validationResult(req);
+        console.log("errores:", errores);
+
+        if(!errores.isEmpty()){
+            
+            res.render('users/profileEdit',{errores:errores.mapped(), old:req.body, title:"Errores Privilegios", usuarioLogeado: req.session.usuarioLogin})
+        }
+        else{
         const {id} =req.params;
         console.log("me esta trayendo", req.params.id);
         const {name,email,password, date, localidad,sobremi} = req.body;
         console.log("lo que trae por body", req.body);
+        
         const users = getJson("users");
-        const usuarios = users.map(element => {
+        const usuarios = users.map(element => {    
             if (element.id == id){
                 return{
                     id:+id,
@@ -189,12 +197,11 @@ const usersController = {
                     date,
                     localidad:localidad.trim(),
                     sobremi: sobremi.trim(),
-                    image:req.file ? req.file.filename : element.image,
+                    image: req.file ? req.file.filename : "default-avatar-profile.jpg",
                 }
             }
             return element
         })
-        
         setJson(usuarios, "users")
         const editarUsuario = usuarios.find(element => element.id == id);
         console.log("usuario",editarUsuario);
@@ -202,6 +209,7 @@ const usersController = {
         console.log("esto me tendria que llegar al json", req.session.user);
         res.cookie("user", {name:editarUsuario.name,image:editarUsuario.image, email:editarUsuario.email, id:editarUsuario.id},{maxAge: 1000 * 0 * 15})
         res.redirect(`/users/profile/${id}`)
+    }
     },
 
 
