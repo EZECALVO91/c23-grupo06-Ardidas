@@ -54,6 +54,7 @@ const productsController = {
         res.render("products/productEdit", { title: "Editar producto", product,usuarioLogeado: req.session.usuarioLogin })
     },
     update: (req, res) => {
+        
         const { id } = req.params;
         const products = getJson("product");
         const { nombre, precio, descripcion, imagen, category, talles, color } = req.body;

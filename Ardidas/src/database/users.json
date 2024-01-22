@@ -8,7 +8,7 @@
     "date": "1991-11-20",
     "localidad": "san miguel",
     "sobremi": "san miguel city",
-    "image": "1705857067264_img_.png"
+    "image": "1705951786634_img_.png"
   },
   {
     "id": 1705796164807,
@@ -19,6 +19,28 @@
     "date": "1991-11-17",
     "localidad": "San Miguel",
     "sobremi": "Soy de san miguel centro.",
-    "image": "1705854769493_img_.png"
+    "image": "1705951802435_img_.png"
+  },
+  {
+    "id": 1705951353983,
+    "name": "Calvo Ezequiel",
+    "email": "eze@prueba.com",
+    "password": "$2a$10$258a35egFKnjPEbGbFmF2.qqLPS1NChPX1ELxqEfEXAS2jfLQAsfa",
+    "category": "USER",
+    "date": "",
+    "localidad": "",
+    "sobremi": "",
+    "image": "1705951824395_img_.jpg"
+  },
+  {
+    "id": 1705951684598,
+    "name": "Calvo",
+    "email": "eze@2.com",
+    "password": "$2a$10$1OWoqhqR21CPHhrZxNkah.2NKTALECJs79/cmtX26OqDgVaM9S3PK",
+    "category": "USER",
+    "date": "1312-03-12",
+    "localidad": "San Miguel",
+    "sobremi": "Me gusta la joda",
+    "image": "1705951719655_img_.png"
   }
 ]
