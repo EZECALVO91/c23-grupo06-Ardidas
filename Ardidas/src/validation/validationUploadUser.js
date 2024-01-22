@@ -11,13 +11,20 @@ const storage = multer.diskStorage({
     }
 })
 
-const uploadFile = multer({ 
-    storage,
-     fileFilter: function(_req, file, cb) {
-         let type = file.mimetype.startsWith("image");
-         type ? cb(null, true) : cb(null, false)
-     }
-})
 
+
+const fileFilter = (req,file,cb) => { 
+    if(!file.originalname.match(/\.(jpg|jpeg|png|gif|webp)$/)){
+        req.validatorerrorImage = "Hay un error... No es una imagen"
+        return cb(null,false,req.validatorerrorImage)
+    }
+
+return cb(null,true)
+
+}
+
+const uploadFile = multer({storage,
+    fileFilter
+})
 
  module.exports=uploadFile;

@@ -9,10 +9,37 @@ const usersController = {
         
     },
     register:(req,res) => {
+
         const errores = validationResult(req);
 
         console.log("errores:", errores);
-  
+        res.send(req.validatorerrorImage)
+        if(req.validatorerrorImage){
+            res.redirect('/user/register');
+        }else{
+              const file = req.file
+        const user = getJson("users");
+        const idnew = Date.now();
+
+        const { name, email, password } = req.body;
+
+        const newUser = {
+            id:+idnew,
+            name: name.trim(),
+            email:email.trim(),
+            password: bcrypt.hashSync(password,10),
+            category: "ADMIN",
+            image: file ? file.filename : "default-avatar-profile.jpg",
+        };
+
+        const newJson = [...user, newUser];
+        setJson(newJson, "users");
+            
+        
+        res.redirect("/users/login")
+            
+        }
+
         if(!errores.isEmpty()){
           console.log("Ingrese en errores");
           res.render('./users/register',{errores:errores.mapped(),old:req.body,title:"registro"})
