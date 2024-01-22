@@ -7,7 +7,8 @@
         <%}%>
         
             <% if (usuarioLogeado != undefined) {%>
-                <a href="/users/profile/<%= usuarioLogeado.id %>"> <p><%= usuarioLogeado.email %></p> </a>
+                <img class="avatar_header" src="/images/users/<%= usuarioLogeado.image %>" alt="imagen_avatar_usuario">
+                <a href="/users/profile/<%= usuarioLogeado.id %>"><p><%= usuarioLogeado.email %></p> </a>
                 <a href=""><p>  | </p></a>
                 <a href="#"><p>Cerrar Sesion</p></a>
             <%} else{%>
