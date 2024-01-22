@@ -1,12 +1,25 @@
 <header class="header">
     <div class="login_header_index">
-        <a href="/users/register">
-            <p>Crear Cuenta |</p>
-        </a>
-        <a href="/users/login">
-            <p>Iniciar Sesion</p>
-        </a>
-    </div>
+        <% if (usuarioLogeado && usuarioLogeado.category == "ADMIN") {%>
+            <a href="/products/dashboard"> Productos |</a>
+            <a href="/users/dashboard"> Usuarios | </a>
+            
+        <%}%>
+        
+            <% if (usuarioLogeado != undefined) {%>
+                <img class="avatar_header" src="/images/users/<%= usuarioLogeado.image %>" alt="imagen_avatar_usuario">
+                <a href="/users/profile/<%= usuarioLogeado.id %>"><p><%= usuarioLogeado.email %></p> </a>
+                <a href=""><p>  | </p></a>
+                <a href="#"><p>Cerrar Sesion</p></a>
+            <%} else{%>
+            <a href="/users/register">
+                <p>Crear Cuenta |</p>
+            </a>
+                <a href="/users/login">
+                <p>Iniciar Sesion</p>
+            </a>
+                <%}%>
+        </div>
     <div class="header_top">
         <a href="" class="menu_hambu_contenedor">
             <i class="menu_hamburguesa fa-solid fa-bars" style="color: #fcfce7"></i>
@@ -21,7 +34,7 @@
                     </li>
                     <li><a href="/contacto">CONTACTO</a></li>
                     <li><a href="/products">PRODUCTOS</a></li>
-                    <li><a href="/products/dashboard">¿COMO COMPRAR?</a></li>
+                    <li><a href="/help">¿COMO COMPRAR?</a></li>
                 </ul>
             </nav>
             <form class="busqueda-contenedor" action="">

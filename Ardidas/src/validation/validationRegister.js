@@ -18,4 +18,6 @@ module.exports = [
 
     body('password').notEmpty().withMessage("El campo no puede estar vacio").bail(),
 
+
+
 ];

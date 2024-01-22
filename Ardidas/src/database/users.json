@@ -1,1 +1,28 @@
+<<<<<<< HEAD
 [{"id":1,"name":"Esteban Figueroa","email":"EFigueroa@gmail.com","password":"contras2","category":"ADMIN","image":"image1"},{"id":2,"name":"Leonel Anchaba","email":"LAnchaba@gmail.com","password":"contras3","category":"ADMIN","image":"image2"},{"id":3,"name":"Ezequiel Calvo","email":"ECalvo@gmail.com","password":"contras4","category":"ADMIN","image":"image3"},{"id":4,"name":"Nicolas Badino","email":"NBadino@gmail.com","password":"contras5","category":"ADMIN","image":"image4"},{"id":5,"name":"zapas","email":"leonelanchaba@gmail.com","password":"1234","category":"ADMIN","image":"default-avatar-profile.jpg"},{"id":1705458327869,"name":"daasd","email":"nbadino25@gmail.com","password":"$2b$10$A9Zfp9L/Wu0NaP9bReW.z.oeSbmuxFPTLIge077kwlx..fQ8HaiYa","category":"ADMIN","image":"1705458327719_img_.jpg"},{"id":1705458410259,"name":"Nicolas Badino","email":"nicolaabadino25@gmail.com","password":"$2b$10$oyIAVDUKvJ63ojwoa.RBKeU7EJjdx13T37seT.nbfq83mPtZj4m6O","category":"ADMIN","image":"default-avatar-profile.jpg"},{"id":1705810076914,"name":"Nicolas Badino","email":"woofer23@gimasd.asd","password":"$2b$10$4XHes7IGTBdnNtcYQOzGVu7iyQNN7GC8z2nWH3jEcwh9xa38wHN5W","category":"ADMIN","image":"default-avatar-profile.jpg"},{"id":1705810228107,"name":"banana","email":"banana@gmail.com","password":"$2b$10$jZcmclSbRfcqVsxHp3JLBe8olwymco8acowFSvOqESJZYmlskLGCC","category":"ADMIN","image":"1705810228044_img_.png"},{"id":1705883291459,"name":"Nicolas Badino","email":"woofer23@gimasd.asd","password":"$2b$10$Wc0ontd1irw/swgrK./MTenw6XswcxrE9lLpCcMb4BeuGXN0dGng.","category":"ADMIN","image":"1705883291294_img_.jpeg"}]
+=======
+[
+  {
+    "id": 1705768886340,
+    "name": "EZEQUIEL",
+    "email": "eze@admin.com",
+    "password": "$2a$10$qPvE1uQsz9e97UCv0LYUfuXSHPcaF2Gexrcv6APFFuPhJGQqrI/ia",
+    "category": "ADMIN",
+    "date": "1991-11-20",
+    "localidad": "san miguel",
+    "sobremi": "san miguel city",
+    "image": "1705857067264_img_.png"
+  },
+  {
+    "id": 1705796164807,
+    "name": "Ezequiel Calvo",
+    "email": "eze@1.com",
+    "password": "$2a$10$qPvE1uQsz9e97UCv0LYUfuXSHPcaF2Gexrcv6APFFuPhJGQqrI/ia",
+    "category": "USER",
+    "date": "1991-11-17",
+    "localidad": "San Miguel",
+    "sobremi": "Soy de san miguel centro.",
+    "image": "1705854769493_img_.png"
+  }
+]
+>>>>>>> f0ee0414c2d0dc4d579f43ef88e101a0760dbe94
