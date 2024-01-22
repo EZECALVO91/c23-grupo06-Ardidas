@@ -8,14 +8,14 @@ const session = require('express-session')
 const usersController = {
 
     //Logout
-    // logout:(req,res)=>{
-    //     req.session.destroy();
-    //     if (req.cookies.user) {
-    //       res.clearCookie('user');
-    //       res.clearCookie('remember');
-    //     }
-    //     res.redirect('/');
-    //   },
+    logout:(req,res)=>{
+        req.session.destroy();
+        if (req.cookies.user) {
+          res.clearCookie('user');
+          res.clearCookie('recuerdame');
+        }
+        res.redirect('/');
+      },
 
     // Registro
     formRegister:(req,res)=>{

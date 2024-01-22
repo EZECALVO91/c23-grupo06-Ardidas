@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {formRegister,register, formLogin, login, usersEdit,usersUpdate ,
+const {logout,formRegister,register, formLogin, login, usersEdit,usersUpdate ,
     UsersDashboard, userProfile, userProfileEdit, createPrivileges,
     createUserPrivileges, destroy} = require('../controllers/usersControllers');
     
@@ -38,6 +38,9 @@ router
 
 //Eliminar Usuarios Dashboard
 .delete('/delete/:id', isAdmin, destroy)
+
+//Logout
+.get('/logout', logout)
 
 
 
