@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { setJson, getJson } = require("../utility/jsonMethod");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const {validationResult} = require('express-validator');
 
 
