@@ -10,6 +10,7 @@ const userLoggedMiddleware = require('./middleware/userLoggedMiddleware')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products')
+const recuerdameMiddleware = require('./middlewares/cookieSaveuser')
 
 const app = express();
 
