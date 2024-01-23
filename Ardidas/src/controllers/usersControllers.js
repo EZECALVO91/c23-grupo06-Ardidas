@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { setJson, getJson } = require("../utility/jsonMethod");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const {validationResult} = require('express-validator');
 const session = require('express-session')
 
@@ -44,7 +44,7 @@ const usersController = {
             
         
         res.redirect("/users/login")
-         }
+        }
     },
     formLogin:(req,res)=>{
             res.render('./users/login',{title:"Login", usuarioLogeado: req.session.usuarioLogin})
@@ -107,7 +107,6 @@ const usersController = {
                     sobremi:"",
                     imagen: image ? image : user.image,
                     
-                   
                 }
 
             return user
