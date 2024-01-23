@@ -5,10 +5,12 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session')
+const userLoggedMiddleware = require('./middleware/userLoggedMiddleware')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products')
+// const recuerdameMiddleware = require('./middlewares/cookieSaveuser')
 
 const app = express();
 
@@ -24,9 +26,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'))
 app.use(session({
   secret: 'Ardidas_secret', 
-  resave: true,
-  saveUninitialized: true
+  resave: false,
+  saveUninitialized: false
 }))
+app.use(userLoggedMiddleware)
 /////
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

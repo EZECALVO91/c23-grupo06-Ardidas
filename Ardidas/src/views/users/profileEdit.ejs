@@ -7,11 +7,13 @@
   <%- include("../partials/header.ejs") %>
 
     <main class="main__form main__formProfile">
+      
       <div class="main__title__box">
         <hr class="main__form__lines">
         <h2 class="main__form__title">PROFILE</h2>
         <hr class="main__form__lines">
       </div>
+
       <form action="/users/profile/<%= usuarioLogeado.id %>?_method=PUT" method="post" class="main__form__register" enctype="multipart/form-data" >
         <label for="name">NOMBRE</label>
         <input type="text" name="name"  id="name" value="<%= usuarioLogeado.name %>"/>
@@ -21,12 +23,12 @@
         <input type="email" name="email"  value="<%= usuarioLogeado.email %>"/>
         <p class="errores_validacion_profile"> <%= locals.errores && errores.email ? errores.email.msg : null %> </p>
 
-        <label for="password">CONTRASEÑA</label>
+        <!-- <label for="password">CONTRASEÑA</label>
         <div class="main__form__register__password">
         <input type="password" name="password" class="main__form__register__password" value="<%= usuarioLogeado.password %>"/>
         <p class="errores_validacion_profile"> <%= locals.errores && errores.password ? errores.password.msg : null %> </p>
         <i class="fa-regular fa-eye"></i>
-        </div>
+        </div> -->
 
         <label for="date">FECHA DE NACIMIENTO: </label>
         <input type="date" name="date"  value="<%= usuarioLogeado.date %>"/>
@@ -43,6 +45,7 @@
         <label for="image">CAMBIO DE AVATAR: </label>
         <input type="file" name="image" id="image" accept="image/*" value="<%= usuarioLogeado.image %>">
         <p class="errores_validacion_profile"> <%= locals.errores && errores.image ? errores.image.msg : null %> </p>
+        
         <div class="main__form__register__box">
           <div class="container_avatar_img">
             <h3 class="main__form__title">AVATAR: </h3>
@@ -51,6 +54,7 @@
         
       
         <button class="main__form__button" type="">CONFIRMAR</button>
+
         </div>
       </form>
     </main>
