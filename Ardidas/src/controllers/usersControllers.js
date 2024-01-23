@@ -192,7 +192,7 @@ const usersController = {
         }
         else{
         const {id} =req.params;
-        const {name,email,password, date, localidad,sobremi,category} = req.body;
+        const {name, date, localidad,sobremi,category} = req.body;
         
         const users = getJson("users");
         const usuarios = users.map(element => {    
@@ -200,8 +200,8 @@ const usersController = {
                 return{
                     id:+id,
                     name:name.trim(),
-                    email:email.trim(),
-                    password,
+                    email: element.email,
+                    password: element.password,
                     category: category ? category : element.category,
                     date,
                     localidad:localidad.trim(),
