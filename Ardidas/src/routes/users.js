@@ -5,11 +5,11 @@ const {logout,formRegister,register, formLogin, login, usersEdit,usersUpdate ,
     createUserPrivileges, destroy} = require('../controllers/usersControllers');
 
 
-const uploadFile = require("../validation/imageUser")
 const registerValidation = require('../validation/validationRegister');
 const loginValidation = require('../validation/validationLogin')
 const validationProfile = require('../validation/validationProfile')
 const uploadImgPro = require ('../validation/valitationProfileImg')
+const validationPrivi = require ('../validation/validationRegisterPrivi')
 const sessionValidate = require("../middleware/sessionValidate");
 const isAdmin = require("../middleware/isAdminValidate");
 
@@ -27,11 +27,11 @@ router
 .get('/dashboard',isAdmin, UsersDashboard)
 
 .get('/createPrivileges', isAdmin, createPrivileges)
-.post('/createPrivileges',uploadFile.single("image"), isAdmin, registerValidation, createUserPrivileges)
+.post('/createPrivileges',uploadImgPro.single("image"), isAdmin, validationPrivi, createUserPrivileges)
 
 //Edicion de usuarios departe de Dashboar
 .get('/update/:id',isAdmin , usersEdit )
-.put('/update/:id', uploadFile.single("image"), usersUpdate)
+.put('/update/:id', uploadImgPro.single("image"), usersUpdate)
 
 //Profile para el usuario y su cambio de informacion
 .get('/profile/:id', sessionValidate, userProfile)

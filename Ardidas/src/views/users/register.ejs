@@ -6,7 +6,7 @@
   <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
   <%- include("../partials/header.ejs") %>
 
-    <main class="main__form">
+    <main class="main__form main__formProfile">
       <div class="main__title__box">
         <hr class="main__form__lines">
         <h2 class="main__form__title">REGISTRARSE</h2>
@@ -20,9 +20,6 @@
         <label for="email">EMAIL</label>
         <input type="email" name="email" placeholder="tuemail@email.com" value="<%= locals.old && old.email ? old.email : null %>" >
         <p><%= locals.errores && errores.email ? errores.email.msg : null %> </p>
-<!-- 
-        <label for="email2">CONFIRMAR EMAIL</label>
-        <input type="email" name="email2" placeholder="tuemail@email.com" /> -->
 
         <label for="password">CONTRASEÑA</label>
         <div class="main__form__register__password">
@@ -34,7 +31,7 @@
         <label for="password2">CONFIRMAR CONTRASEÑA</label>
         <div class="main__form__register__password">
           <input type="password" name="password2" required>
-          <p><%= locals.errores && errores.password ? errores.password.msg : null %>>
+          <p><%= locals.errores && errores.password ? errores.password.msg : null %></p>
           <i class="fa-regular fa-eye"></i>
         </div>
         <label for="image">AVATAR : </label>
@@ -43,7 +40,7 @@
         <div class="main__form__register__box">
           <button class="main__form__button" type="submit">CREAR CUENTA</button>
 
-          <p>¿Ya tenés una cuenta? <a href="/users/login">Iniciar sesión</a></p>
+          <h6>¿Ya tenés una cuenta? <a href="/users/login">Iniciar sesión</a></h6>
         </div>
       </form>
     </main>

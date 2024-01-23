@@ -6,7 +6,7 @@
   <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
   <%- include("../partials/header.ejs") %>
 
-    <main class="main__form">
+    <main class="main__form main__formProfile">
       <div class="main__title__box">
         <hr class="main__form__lines">
         <h2 class="main__form__title">CREADOR DE PRIVILEGIOS</h2>
@@ -20,9 +20,6 @@
         <label for="email">EMAIL</label>
         <input type="email" name="email" placeholder="tuemail@email.com" value="<%= locals.old && old.email ? old.email : null %>" >
         <p><%= locals.errores && errores.email ? errores.email.msg : null %> </p>
-<!-- 
-        <label for="email2">CONFIRMAR EMAIL</label>
-        <input type="email" name="email2" placeholder="tuemail@email.com" /> -->
 
         <label for="password">CONTRASEÑA</label>
         <div class="main__form__register__password">
@@ -45,6 +42,7 @@
 
         <label for="image">AVATAR : </label>
       <input type="file" name="image" id="image" accept="image/*" >
+      <p><%= locals.errores && errores.image ? errores.image.msg : null %> </p>
         <div class="main__form__register__box">
 
           

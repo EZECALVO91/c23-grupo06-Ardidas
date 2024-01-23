@@ -14,22 +14,14 @@ const storage = multer.diskStorage({
 const fileFilter = (req,file,cb)=>{
     const filtro =   /\.(jpg|jepg|png|gif|webp|svg)$/
     if(filtro.test(file.originalname)){
-     // To accept this file pass `false`, like so:
+    //Si el archivo subido cumple con este formato, pasa.
     cb(null, true)
     }else{    
-     // To reject the file pass `true`, like so:
-     req.errorImgProfile = "*Esta imagen no tiene un formato valido*"
+    // Si da error de formato envia este msg.
+    req.errorImgProfile = "*Esta imagen no tiene un formato valido*"
     cb(null, false)
     }
 }
-
-// const fileFilter = (req,file,cb)=>{
-//     if(file.originalname.match(/\.(jpg|jepg|png|gif|webp|svg)$/)){
-//         req.errorImgProfile = "*Esta imagen no tiene un formato valido*"
-//         return cb(null,false,req.errorImgProfile)
-//     }
-//     return cb(null,true)
-// }
 
 
 
