@@ -10,7 +10,7 @@ const usersController = {
     //Logout
     logout:(req,res)=>{
         req.session.destroy();
-        if (req.cookies.user) {
+        if (req.cookies.recuerdame) {
           res.clearCookie('user');
           res.clearCookie('recuerdame');
         }
@@ -69,6 +69,7 @@ const usersController = {
                 if (users[i].email.toLowerCase() == req.body.usuario.toLowerCase()) {
                     if (bcrypt.compareSync(req.body.password, users[i].password)) {
                         usuarioLogin = users[i]
+                        delete usuarioLogin.password
                         break;
                         }
                     }
@@ -82,8 +83,7 @@ const usersController = {
             req.session.usuarioLogin = usuarioLogin
             if (req.body.recuerdame != undefined) {
                 res.cookie('recuerdame',
-                usuarioLogin.email,{ maxAge: 120000 })
-                console.log('se guardo la cookieeeee')
+                usuarioLogin,{ maxAge: 900000 })
             }
             res.redirect('/')
 
