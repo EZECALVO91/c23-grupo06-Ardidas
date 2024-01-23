@@ -23,12 +23,12 @@
         <input type="email" name="email"  value="<%= usuarioLogeado.email %>"/>
         <p class="errores_validacion_profile"> <%= locals.errores && errores.email ? errores.email.msg : null %> </p>
 
-        <label for="password">CONTRASEÑA</label>
+        <!-- <label for="password">CONTRASEÑA</label>
         <div class="main__form__register__password">
         <input type="password" name="password" class="main__form__register__password" value="<%= usuarioLogeado.password %>"/>
         <p class="errores_validacion_profile"> <%= locals.errores && errores.password ? errores.password.msg : null %> </p>
         <i class="fa-regular fa-eye"></i>
-        </div>
+        </div> -->
 
         <label for="date">FECHA DE NACIMIENTO: </label>
         <input type="date" name="date"  value="<%= usuarioLogeado.date %>"/>
