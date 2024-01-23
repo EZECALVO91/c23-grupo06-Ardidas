@@ -231,14 +231,14 @@ const usersController = {
         let usersClear = users.filter(user => user.id !== +req.params.id);
         if (user.image == "default-avatar-profile.jpg") {
             setJson(usersClear, "users");
-            res.redirect('/users/dashboard', { usuarioLogeado: req.session.usuarioLogin})
+            res.redirect('/users/dashboard')
         } else {
         fs.unlink(`./public/images/users/${user.image}`, (err) => {
             if (err) throw err
             console.log(`borre el archivo ${user.image}`)
         })
             setJson(usersClear, "users");
-            res.redirect('users/dashboard')
+            res.redirect('/users/dashboard')
         
     }
     },
