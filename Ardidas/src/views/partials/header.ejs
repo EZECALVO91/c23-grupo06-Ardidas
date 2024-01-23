@@ -10,7 +10,7 @@
                 <img class="avatar_header" src="/images/users/<%= usuarioLogeado.image %>" alt="imagen_avatar_usuario">
                 <a href="/users/profile/<%= usuarioLogeado.id %>"><p><%= usuarioLogeado.email %></p> </a>
                 <a href=""><p>  | </p></a>
-                <a href="#"><p>Cerrar Sesion</p></a>
+                <a href="/users/logout"><p>Cerrar Sesion</p></a>
             <%} else{%>
             <a href="/users/register">
                 <p>Crear Cuenta |</p>

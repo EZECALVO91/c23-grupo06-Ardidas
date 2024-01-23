@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const {formRegister, formLogin, login, usersEdit,usersUpdate ,
+const {logout,formRegister,register, formLogin, login, usersEdit,usersUpdate ,
     UsersDashboard, userProfile, userProfileEdit, createPrivileges,
     createUserPrivileges, destroy} = require('../controllers/usersControllers');
-    
+
+
 const uploadFile = require("../validation/imageUser")
 const registerValidation = require('../validation/validationRegister');
 const loginValidation = require('../validation/validationLogin')
@@ -13,10 +14,11 @@ const sessionValidate = require("../middleware/sessionValidate");
 const isAdmin = require("../middleware/isAdminValidate");
 
 
+
 router
 //al validar la session en el controlador no estamos haciendo que funcione como middleware
 .get('/register', formRegister)
-.post("/register", uploadFile.single("image"),registerValidation, formRegister)
+.post("/register", uploadImgPro.single("image"),registerValidation, register)
 
 .get('/login', formLogin)
 .post("/login", loginValidation, login)
@@ -29,7 +31,7 @@ router
 
 //Edicion de usuarios departe de Dashboar
 .get('/update/:id',isAdmin , usersEdit )
-.put('/update/:id',isAdmin ,usersUpdate)
+.put('/update/:id', uploadFile.single("image"), usersUpdate)
 
 //Profile para el usuario y su cambio de informacion
 .get('/profile/:id', sessionValidate, userProfile)
@@ -38,6 +40,9 @@ router
 
 //Eliminar Usuarios Dashboard
 .delete('/delete/:id', isAdmin, destroy)
+
+//Logout
+.get('/logout', logout)
 
 
 

@@ -17,10 +17,15 @@ module.exports = [
 
 
     body('password').notEmpty().withMessage("El campo no puede estar vacio").bail()
-    // .custom((value,{req})=> {
-    //     return value == req.body.password2;
-    // }).withMessage("Los password no coinciden"),
+    .custom((value,{req})=> {
+        return value == req.body.password2;
+    }).withMessage("Los password no coinciden"),
 
-    
+    body('image').custom((value, {req})=>{
+        if (req.errorImgProfile) {
+            return false;
+        };
+        return true;
+    }).withMessage("*Esta imagen no tiene un formato valido*")
 
 ];
