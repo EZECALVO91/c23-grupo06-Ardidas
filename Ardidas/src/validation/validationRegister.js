@@ -16,8 +16,11 @@ module.exports = [
     }).withMessage("El usuario ya existe, utilice otro correo electronico"),
 
 
-    body('password').notEmpty().withMessage("El campo no puede estar vacio").bail(),
+    body('password').notEmpty().withMessage("El campo no puede estar vacio").bail()
+    // .custom((value,{req})=> {
+    //     return value == req.body.password2;
+    // }).withMessage("Los password no coinciden"),
 
-
+    
 
 ];
