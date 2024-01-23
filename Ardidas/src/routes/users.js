@@ -3,7 +3,8 @@ const router = express.Router();
 const {logout,formRegister,register, formLogin, login, usersEdit,usersUpdate ,
     UsersDashboard, userProfile, userProfileEdit, createPrivileges,
     createUserPrivileges, destroy} = require('../controllers/usersControllers');
-    
+
+
 const uploadFile = require("../validation/imageUser")
 const registerValidation = require('../validation/validationRegister');
 const loginValidation = require('../validation/validationLogin')
@@ -11,6 +12,7 @@ const validationProfile = require('../validation/validationProfile')
 const uploadImgPro = require ('../validation/valitationProfileImg')
 const sessionValidate = require("../middleware/sessionValidate");
 const isAdmin = require("../middleware/isAdminValidate");
+
 
 
 router
