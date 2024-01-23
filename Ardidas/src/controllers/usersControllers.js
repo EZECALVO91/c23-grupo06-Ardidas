@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { setJson, getJson } = require("../utility/jsonMethod");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const {validationResult} = require('express-validator');
 
 
@@ -22,9 +22,10 @@ const usersController = {
         
     },
     register:(req,res) => {
+
         const errores = validationResult(req);
         console.log("errores:", errores);
-
+  
         if(!errores.isEmpty()){
           console.log("Ingrese en errores");
           res.render('./users/register',{errores:errores.mapped(),old:req.body,title:"registro", usuarioLogeado:null})

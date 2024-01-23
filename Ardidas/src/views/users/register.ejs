@@ -31,10 +31,11 @@
           <i class="fa-regular fa-eye"></i>
         </div>
 
-        <!-- <label for="password2">CONFIRMAR CONTRASEÑA</label>
+        <label for="password2">CONFIRMAR CONTRASEÑA</label>
         <div class="main__form__register__password">
-          <input type="password" name="password2" required >
-          <i class="fa-regular fa-eye"></i> -->
+          <input type="password" name="password2" required>
+          <p><%= locals.errores && errores.password ? errores.password.msg : null %>>
+          <i class="fa-regular fa-eye"></i>
         </div>
         <label for="image">AVATAR : </label>
       <input type="file" name="image" id="image" accept="image/*" value="<%= locals.old && old.image ? old.image : null %>" >
