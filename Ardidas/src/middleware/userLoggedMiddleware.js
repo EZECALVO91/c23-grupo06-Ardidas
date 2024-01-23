@@ -1,5 +1,4 @@
-const session = require('express-session')
-const { setJson, getJson } = require("../utility/jsonMethod");
+const { getJson } = require("../utility/jsonMethod");
 
 const users = getJson('users')
 const userLoggedMiddleware = (req,res,next) => {
