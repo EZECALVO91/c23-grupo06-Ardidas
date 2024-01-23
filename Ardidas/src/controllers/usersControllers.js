@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { setJson, getJson } = require("../utility/jsonMethod");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const {validationResult} = require('express-validator');
 const session = require('express-session')
 
@@ -69,7 +69,6 @@ const usersController = {
                 if (users[i].email.toLowerCase() == req.body.usuario.toLowerCase()) {
                     if (bcrypt.compareSync(req.body.password, users[i].password)) {
                         usuarioLogin = users[i]
-                        delete usuarioLogin.password
                         break;
                         }
                     }
@@ -82,8 +81,9 @@ const usersController = {
             }
             req.session.usuarioLogin = usuarioLogin
             if (req.body.recuerdame != undefined) {
+                const cookieUser = {id: usuarioLogin.id, name: usuarioLogin.name, email: usuarioLogin.email}
                 res.cookie('recuerdame',
-                usuarioLogin,{ maxAge: 900000 })
+                cookieUser,{ maxAge: 900000 })
             }
             res.redirect('/')
 
