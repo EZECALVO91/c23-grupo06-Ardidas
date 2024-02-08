@@ -6,7 +6,7 @@ const userLoggedMiddleware = (req,res,next) => {
         console.log(req.cookies.recuerdame.email)
         for (let i = 0; i < users.length; i++) {
             const element = users[i];
-            if (element.email == req.cookies.recuerdame.email && element.name == req.cookies.recuerdame.name && element.id == req.cookies.recuerdame.id) {
+            if (element.email == req.cookies.recuerdame.email && element.id == req.cookies.recuerdame.id) {
                 req.session.usuarioLogin = element
             }
             
