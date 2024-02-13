@@ -81,7 +81,7 @@ const usersController = {
             }
             req.session.usuarioLogin = usuarioLogin
             if (req.body.recuerdame != undefined) {
-                const cookieUser = {id: usuarioLogin.id, name: usuarioLogin.name, email: usuarioLogin.email}
+                const cookieUser = {id: usuarioLogin.id, email: usuarioLogin.email}
                 res.cookie('recuerdame',
                 cookieUser,{ maxAge: 900000 })
             }
