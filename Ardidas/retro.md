@@ -112,23 +112,25 @@ Empezar con las Deylis apenas unicie el sprint asi mejoramos el dinamismo del gr
 ______________________________________________________________
 # Conclusiones del Quinto Sprint:
 
-### LIDER : 
+### LIDER : NICOLAS BADINO.
 
 
 #### Dejar de Hacer:
+Dejar de procastinar.
 
 
 #### Hacer menos:
-
+No corregir los errores de mis compañeros.
 
 #### Continuar Haciendo:
-
+Tratar de seguir reuniendonos, llevarnos bien, poder resolver en equipo algunos problemas.
 
 #### Hacer más:
-
+Poder juntarnos para las dailys, charlar mas sobre los errores de los sprints. SER MAS COMUNICATIVOS.
 
 #### Comenzar a Hacer:
-
+Si encontramos errores, comunicarle a nuestros compañeros para que el que hizo la tarea pueda solucionarlo, si llegado
+al caso el compañero no llega a la solucion, poder resolverlo entre todos.
 
 ______________________________________________________________
 # Conclusiones del Sexto Sprint:
