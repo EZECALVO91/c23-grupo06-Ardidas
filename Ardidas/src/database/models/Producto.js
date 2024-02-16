@@ -12,7 +12,7 @@ module.exports = (sequelize,DataTypes) => {
             allowNull: false,
         },
         precio:{
-            type:DataTypes.DECIMAL(3,1),
+            type:DataTypes.DECIMAL(10,2),
             allowNull: true,
         },
         descripcion:{
@@ -25,5 +25,37 @@ module.exports = (sequelize,DataTypes) => {
         timestamps: false
     };
     const Producto = sequelize.define(alias,cols,config);
+    //CODIGOS DE ASOCIACION
+    Producto.associate= function(models) {
+        Producto.hasMany(models.ImagenProductos,{
+            as: 'imagenesProductos',
+            foreignKey : 'products_id'
+    })
+
+    Producto.belongsTo(models.CategoriaProductos,{
+            as: 'categoriaProducto',
+            foreignKey : 'id_category_products'
+    })
+
+    Producto.belongsTo(models.Talles,{
+            as: 'talles',
+            foreignKey : 'id_talles'
+    })
+
+    Producto.belongsTo(models.Colores,{
+            as: 'colores',
+            foreignKey : 'color_id'
+    })
+    
+    //CODIGO DE ASOCIACION PARA TABLAS PIBOT
+            Producto.belongsToMany(models.Usuarios,{
+            as: 'usuarios',
+            through: 'carrito',
+            foreingKey: 'id_products',
+            otherKey: 'id_usuarios',
+            timestamps: false
+        })
+    
+    }
     return Producto;
 }

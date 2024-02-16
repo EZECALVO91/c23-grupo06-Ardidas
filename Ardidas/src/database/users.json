@@ -1,1 +1,46 @@
-[{"id":1705768886340,"name":"Calvo Ezequiel Alejandro","email":"eze@admin.com","password":"$2a$10$qPvE1uQsz9e97UCv0LYUfuXSHPcaF2Gexrcv6APFFuPhJGQqrI/ia","category":"ADMIN","date":"1991-11-20","localidad":"Buenos Aires - San Miguel","sobremi":"San miguel ciudad del Trueno Verde, gil!","image":"1705951786634_img_.png"},{"id":1705974253297,"name":"Esteban","email":"EsFi@admin.com","password":"$2a$10$2CW1elj6nBEst0LxjMnW.eyul/8UdGmtqEd5EGRLCtVa1yPzaKRT.","category":"USER","date":"","localidad":"","sobremi":"","image":"1705986980054_img_.png"},{"id":1705980353925,"name":"Esteban Leonel Anchaba","email":"leonelanchaba@gmail.com","password":"$2a$10$zCFIBOuui10gr9NmsWkggO2af5YWSFxTFILYtYdndqq3BeZ7MOkFq","category":"USER","date":"1999-08-15","localidad":"Lanús Oeste","sobremi":"asdasd","image":"1705980353916_img_.jpg"},{"id":1705984007934,"name":"Nicolas Badino","email":"nico@admin.com","password":"$2b$10$45qvZGb3G68rsrG1UT9Z/OKhLIU0zHNyhBcX8mK0Frc45to2.PJdi","category":"ADMIN","date":"","localidad":"","sobremi":"","image":"1705984007897_img_.png"}]
+[
+  {
+    "id": 1705768886340,
+    "name": "Calvo Ezequiel Alejandro",
+    "email": "eze@admin.com",
+    "password": "$2a$10$qPvE1uQsz9e97UCv0LYUfuXSHPcaF2Gexrcv6APFFuPhJGQqrI/ia",
+    "category": "ADMIN",
+    "date": "1991-11-20",
+    "localidad": "Buenos Aires - San Miguel",
+    "sobremi": "San miguel ciudad del Trueno Verde, gil!",
+    "image": "1705951786634_img_.png"
+  },
+  {
+    "id": 1705974253297,
+    "name": "Esteban",
+    "email": "EsFi@admin.com",
+    "password": "$2a$10$2CW1elj6nBEst0LxjMnW.eyul/8UdGmtqEd5EGRLCtVa1yPzaKRT.",
+    "category": "USER",
+    "date": "",
+    "localidad": "",
+    "sobremi": "",
+    "image": "1705986980054_img_.png"
+  },
+  {
+    "id": 1705980353925,
+    "name": "Esteban Leonel Anchaba",
+    "email": "leonelanchaba@gmail.com",
+    "password": "$2a$10$zCFIBOuui10gr9NmsWkggO2af5YWSFxTFILYtYdndqq3BeZ7MOkFq",
+    "category": "USER",
+    "date": "1999-08-15",
+    "localidad": "Lanús Oeste",
+    "sobremi": "asdasd",
+    "image": "1705980353916_img_.jpg"
+  },
+  {
+    "id": 1705984007934,
+    "name": "Nicolas Badino",
+    "email": "nico@admin.com",
+    "password": "$2b$10$45qvZGb3G68rsrG1UT9Z/OKhLIU0zHNyhBcX8mK0Frc45to2.PJdi",
+    "category": "ADMIN",
+    "date": "",
+    "localidad": "",
+    "sobremi": "",
+    "image": "1705984007897_img_.png"
+  }
+]

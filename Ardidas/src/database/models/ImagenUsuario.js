@@ -2,19 +2,19 @@ module.exports = (sequelize,DataTypes) => {
     const alias = "Imagenes";
     const cols = {
         id:{
-            type:DataTypes.BOOLEAN,
+            type:DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey:true,
         },
         nombre:{
             type:DataTypes.STRING(255),
+            allowNull: false,
+        },
+        path:{
+            type:DataTypes.STRING(100),
             allowNull: true,
         },
-        contenido:{
-            type:DataTypes.STRING(255),
-            allowNull: true,
-        }
     }
     ;
     const config = {
@@ -22,5 +22,14 @@ module.exports = (sequelize,DataTypes) => {
         timestamps: false
     };
     const Imagen = sequelize.define(alias,cols,config);
+    // CODIGOS DE ASOCIACION 
+    Imagen.associate= function(models) {
+        Imagen.belongsTo(models.Usuarios,{
+            as: 'usuarios',
+            foreignKey : 'image_id'
+    })
+}
+
+    
     return Imagen;
 }

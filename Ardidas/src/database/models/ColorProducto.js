@@ -2,7 +2,7 @@ module.exports = (sequelize,DataTypes) => {
     const alias = "Colores";
     const cols = {
         id:{
-            type:DataTypes.BOOLEAN,
+            type:DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey:true,
@@ -18,5 +18,13 @@ module.exports = (sequelize,DataTypes) => {
         timestamps: false
     };
     const Color = sequelize.define(alias,cols,config);
+     //CODIGOS DE ASOCIACION 
+    Color.associate= function(models) {
+        Color.hasMany(models.Productos,{
+            as: 'productos',
+            foreignKey : 'color_id'
+    })
+
+}
     return Color;
 }
