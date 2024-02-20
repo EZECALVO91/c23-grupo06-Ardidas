@@ -15,6 +15,7 @@ module.exports = {
       },
       email: {
         allowNull: false,
+        unique:true,
         type: Sequelize.STRING(75)
       },
       password: {
@@ -44,7 +45,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       image_id: {
-        unique: true,
+        unique:true,
         allowNull: false,
         type: Sequelize.INTEGER,
         references:{
@@ -52,15 +53,7 @@ module.exports = {
             tableName:'Images'
           },
           key:'id'
-        }
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        },
       }
     });
   },
