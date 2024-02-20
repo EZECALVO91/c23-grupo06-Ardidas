@@ -1,5 +1,7 @@
-const fs = require('fs')
-const { setJson, getJson } = require("../utility/jsonMethod");
+// const fs = require('fs')
+// const { setJson, getJson } = require("../utility/jsonMethod");
+const db = require("../database/models");
+// const { Sequelize } = require("../database/models");
 
 
 const productsController = {
@@ -77,23 +79,31 @@ const productsController = {
         res.redirect(`/products/detalle/${id}`);
     },
     destroy: (req, res) => {
-        const { id } = req.params;
-        const products = getJson("product");
+        // const { id } = req.params;
+        // const products = getJson("product");
 
-        let product = products.find(product => product.id == id);
-        let productClear = products.filter(product => product.id !== +req.params.id);
-        if (product.imagen == "default-image.png") {
-            setJson(productClear, "product");
-            res.redirect('/products/dashboard')
-        } else {
-        fs.unlink(`./public/images/products/${product.imagen}`, (err) => {
-            if (err) throw err
-            console.log(`borre el archivo ${product.image}`)
-          })
-          setJson(productClear, "product");
-          res.redirect('/products/dashboard')
+        // let product = products.find(product => product.id == id);
+        // let productClear = products.filter(product => product.id !== +req.params.id);
+        // if (product.imagen == "default-image.png") {
+        //     setJson(productClear, "product");
+        //     res.redirect('/products/dashboard')
+        // } else {
+        // fs.unlink(`./public/images/products/${product.imagen}`, (err) => {
+        //     if (err) throw err
+        //     console.log(`borre el archivo ${product.image}`)
+        //   })
+        //   setJson(productClear, "product");
+        //   res.redirect('/products/dashboard')
+        // }
+        db.Product.destroy({
+            where : {
+                id : req.params.id
+            }
+        })
+        .then(()=>res.redirect("/products/dashboard"))
+        .catch(error => console.log(error))
           
-    }
+    
     }
 }
 
