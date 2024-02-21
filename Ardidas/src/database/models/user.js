@@ -11,10 +11,24 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
        // define association here
-      User.belongsTo(models.Image,{
+      this.hasOne(models.Image,{
         as:'Images',
         foreignKey:'image_id'
       })
+
+      this.belongsTo(models.Category,{
+        as:'categoryes',
+        foreignKey:'id_category'
+      })
+
+      this.belongsToMany(models.User,{
+        as:'productos',
+        through:'Carritos',
+        foreignKey:'id_usuario',
+        otherKey:'id_product',
+        timestamps:false
+      })
+
     }
   }
   User.init({
