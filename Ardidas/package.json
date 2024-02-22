@@ -4,7 +4,11 @@
   "description": "* Calvo Ezequiel\r * Leonel Anchaba\r * Joaquin Gomez\r * Esteban Figueroa\r * Nicolas Badino\r ### WIREFRAMES:",
   "private": true,
   "scripts": {
-    "start": "nodemon ./src/bin/www"
+    "start": "nodemon ./src/bin/www",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo:all",
+    "seed": "npx sequelize db:seed:all",
+    "seed:undo": "npx sequelize db:seed:undo:all"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
