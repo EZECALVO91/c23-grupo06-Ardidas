@@ -12,36 +12,36 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('Talles', [
+    await queryInterface.bulkInsert('Sizes', [
       {
-      tamaño:"36"
+      size:"36"
     },
     {
-      tamaño:"37"
+      size:"37"
     },
     {
-      tamaño:"38"
+      size:"38"
     },
     {
-      tamaño:"39"
+      size:"39"
     },
     {
-      tamaño:"40"
+      size:"40"
     },
     {
-      tamaño:"41"
+      size:"41"
     },
     {
-      tamaño:"42"
+      size:"42"
     },
     {
-      tamaño:"43"
+      size:"43"
     },
     {
-      tamaño:"44"
+      size:"44"
     },
     {
-      tamaño:"45"
+      size:"45"
     },
   ], {});
   },
@@ -53,6 +53,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('Talles', null, {});
      */
-    await queryInterface.bulkDelete('Talles', null, {});
+    await queryInterface.bulkDelete('Sizes', null, {});
   }
 };

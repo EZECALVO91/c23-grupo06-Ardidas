@@ -16,38 +16,38 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey:'id_color'
       })
 
-      this.belongsTo(models.Talle,{
-        as:'Talles',
-        foreignKey:'id_talles'
+      this.belongsTo(models.Size,{
+        as:'Sizes',
+        foreignKey:'id_size'
       })
 
       this.belongsTo(models.Category_product,{
-        as:'Categories_product',
+        as:'Category_products',
         foreignKey:'id_category_product'
       })
 
-      this.hasMany(models.Imagen_producto,{
-        as:'ImagenProducto',
-        foreignKey:'id_producto'
+      this.hasMany(models.Image_product,{
+        as:'Image_products',
+        foreignKey:'id_product'
       })
 
       this.belongsToMany(models.User,{
-        as:'Usuarios',
-        through:'Carritos',
+        as:'Users',
+        through:'Carts',
         foreignKey:'id_product',
-        otherKey:'id_usuario',
+        otherKey:'id_user',
         timestamps:false
       })
 
     }
   }
   Product.init({
-    nombre: DataTypes.STRING,
-    precio: DataTypes.DECIMAL,
-    descripcion: DataTypes.STRING,
+    name: DataTypes.STRING,
+    price: DataTypes.DECIMAL,
+    description: DataTypes.STRING,
     id_category_product: DataTypes.INTEGER,
-    id_talles: DataTypes.INTEGER,
-    color_id: DataTypes.INTEGER
+    id_size: DataTypes.INTEGER,
+    id_color: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Product',

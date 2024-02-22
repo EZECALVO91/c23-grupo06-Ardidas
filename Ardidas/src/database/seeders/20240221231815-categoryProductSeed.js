@@ -14,16 +14,16 @@ module.exports = {
     */
     await queryInterface.bulkInsert('Category_products', [
       {
-        categoria:"Oferta"
+        category:"Oferta"
       },
       {
-        categoria:"Destacado"
+        category:"Destacado"
       },
       {
-        categoria:"Lanzamiento"
+        category:"Lanzamiento"
       },
       {
-        categoria:"Temporada"
+        category:"Temporada"
       }
   ], {});
   },

@@ -21,10 +21,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey:'id_category'
       })
 
-      this.belongsToMany(models.Producto,{
-        as:'Productos',
-        through:'Carritos',
-        foreignKey:'id_usuario',
+      this.belongsToMany(models.Product,{
+        as:'Products',
+        through:'Carts',
+        foreignKey:'id_user',
         otherKey:'id_product',
         timestamps:false
       })
@@ -35,11 +35,11 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
-    id_category: DataTypes.INTEGER,
-    date: DataTypes.DATE,
-    localidad: DataTypes.STRING,
-    sobremi: DataTypes.TEXT,
-    image_id: DataTypes.INTEGER
+    date: DataTypes.DATEONLY,
+    locality: DataTypes.STRING,
+    aboutMe: DataTypes.TEXT,
+    id_image: DataTypes.INTEGER,
+    id_category: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'User',
