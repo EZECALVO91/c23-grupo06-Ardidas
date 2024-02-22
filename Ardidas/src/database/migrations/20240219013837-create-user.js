@@ -24,13 +24,13 @@ module.exports = {
       },
       date: {
         allowNull: true,
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
-      localidad: {
+      locality: {
         allowNull: true,
         type: Sequelize.STRING(100)
       },
-      sobremi: {
+      aboutMe: {
         allowNull: true,
         type: Sequelize.TEXT
       },

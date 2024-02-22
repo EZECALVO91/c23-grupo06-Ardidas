@@ -2,14 +2,14 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Imagen_productos', {
+    await queryInterface.createTable('Image_products', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nombre: {
+      name: {
         allowNull: false,
         type: Sequelize.STRING(150)
       },
@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(100)
       },
-      id_producto: {
+      id_product: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references:{
@@ -30,6 +30,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Imagen_productos');
+    await queryInterface.dropTable('Image_products');
   }
 };

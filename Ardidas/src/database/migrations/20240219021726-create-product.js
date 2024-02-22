@@ -9,15 +9,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nombre: {
+      name: {
         allowNull: false,
         type: Sequelize.STRING(75)
       },
-      precio: {
+      price: {
         allowNull: true,
         type: Sequelize.DECIMAL(10,2)
       },
-      descripcion: {
+      description: {
         allowNull: true,
         type: Sequelize.STRING(100)
       },
@@ -31,12 +31,12 @@ module.exports = {
           key:'id'
         }
       },
-      id_talles: {
+      id_size: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references:{
           model:{
-            tableName:'Talles'
+            tableName:'Sizes'
           },
           key:'id'
         }
