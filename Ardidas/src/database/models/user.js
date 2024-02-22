@@ -13,16 +13,16 @@ module.exports = (sequelize, DataTypes) => {
        // define association here
       this.hasOne(models.Image,{
         as:'Images',
-        foreignKey:'image_id'
+        foreignKey:'id_image'
       })
 
       this.belongsTo(models.Category,{
-        as:'categoryes',
+        as:'Categories',
         foreignKey:'id_category'
       })
 
-      this.belongsToMany(models.User,{
-        as:'productos',
+      this.belongsToMany(models.Producto,{
+        as:'Productos',
         through:'Carritos',
         foreignKey:'id_usuario',
         otherKey:'id_product',

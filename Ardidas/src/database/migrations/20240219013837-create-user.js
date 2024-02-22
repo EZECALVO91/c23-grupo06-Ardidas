@@ -22,16 +22,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(100)
       },
-      id_category: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references:{
-          model:{
-            tableName:'Categories'
-          },
-          key:'id'
-        }
-      },
       date: {
         allowNull: true,
         type: Sequelize.DATE
@@ -44,7 +34,7 @@ module.exports = {
         allowNull: true,
         type: Sequelize.TEXT
       },
-      image_id: {
+      id_image: {
         unique:true,
         allowNull: false,
         type: Sequelize.INTEGER,
@@ -54,7 +44,17 @@ module.exports = {
           },
           key:'id'
         },
-      }
+      },
+      id_category: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references:{
+          model:{
+            tableName:'Categories'
+          },
+          key:'id'
+        }
+      },
     });
   },
   async down(queryInterface, Sequelize) {

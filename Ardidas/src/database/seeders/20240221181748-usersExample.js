@@ -22,7 +22,7 @@ module.exports = {
         date:null,
         localidad:'San Miguel',
         sobremi:'Estoy practicando codeo1',
-        image_id:1,
+        id_image:1,
       },
       {
         id:2,
@@ -33,7 +33,7 @@ module.exports = {
         date:null,
         localidad:'Lanus',
         sobremi:'Estoy practicando codeo2',
-        image_id:2,
+        id_image:2,
       },
       {
         id:3,
@@ -44,7 +44,7 @@ module.exports = {
         date:null,
         localidad:'Lanus',
         sobremi:'Estoy practicando codeo3',
-        image_id:3,
+        id_image:3,
       },
       {
         id:4,
@@ -55,7 +55,7 @@ module.exports = {
         date:null,
         localidad:'Lanus',
         sobremi:'Estoy practicando codeo4',
-        image_id:4,
+        id_image:4,
       },
       {
         id:5,
@@ -66,7 +66,7 @@ module.exports = {
         date:null,
         localidad:null,
         sobremi:null,
-        image_id:5,
+        id_image:5,
       },
       {
         id:6,
@@ -77,7 +77,7 @@ module.exports = {
         date:null,
         localidad:null,
         sobremi:null,
-        image_id:6,
+        id_image:6,
       }
     ], {});
   },
