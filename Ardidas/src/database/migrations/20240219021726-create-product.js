@@ -41,7 +41,7 @@ module.exports = {
           key:'id'
         }
       },
-      color_id: {
+      id_color: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references:{

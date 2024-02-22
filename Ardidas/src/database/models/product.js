@@ -12,27 +12,27 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.belongsTo(models.Color,{
-        as:'colors',
-        foreignKey:'color_id'
+        as:'Colors',
+        foreignKey:'id_color'
       })
 
       this.belongsTo(models.Talle,{
-        as:'talles',
+        as:'Talles',
         foreignKey:'id_talles'
       })
 
       this.belongsTo(models.Category_product,{
-        as:'categoryes_product',
+        as:'Categories_product',
         foreignKey:'id_category_product'
       })
 
       this.hasMany(models.Imagen_producto,{
-        as:'imagenProducto',
-        foreignKey:'product_id'
+        as:'ImagenProducto',
+        foreignKey:'id_producto'
       })
 
       this.belongsToMany(models.User,{
-        as:'usuarios',
+        as:'Usuarios',
         through:'Carritos',
         foreignKey:'id_product',
         otherKey:'id_usuario',

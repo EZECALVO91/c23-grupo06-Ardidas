@@ -20,7 +20,7 @@ module.exports = {
         descripcion:"LAS MEJORES ZAPATILLAS",
         id_category_product:1,
         id_talles:6,
-        color_id:6,
+        id_color:6,
 
       },
       {
@@ -30,7 +30,7 @@ module.exports = {
         descripcion:"LAS MEJORES ZAPATILLAS",
         id_category_product:1,
         id_talles:1,
-        color_id:1,
+        id_color:1,
       },
       {
         id:3,
@@ -39,7 +39,7 @@ module.exports = {
         descripcion:"LAS MEJORES ZAPATILLAS",
         id_category_product:2,
         id_talles:4,
-        color_id:4,
+        id_color:4,
   
       },
       {
@@ -49,7 +49,7 @@ module.exports = {
         descripcion:"LAS MEJORES ZAPATILLAS",
         id_category_product:3,
         id_talles:3,
-        color_id:3,
+        id_color:3,
       },
       {
         id:5,
@@ -58,7 +58,7 @@ module.exports = {
         descripcion:"LAS MEJORES ZAPATILLAS",
         id_category_product:4,
         id_talles:2,
-        color_id:2,
+        id_color:2,
     }
   ], {});
   },
