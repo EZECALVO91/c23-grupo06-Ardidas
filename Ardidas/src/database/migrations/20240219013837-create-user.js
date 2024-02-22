@@ -46,7 +46,7 @@ module.exports = {
       },
       image_id: {
         unique:true,
-        allowNull: true,
+        allowNull: false,
         type: Sequelize.INTEGER,
         references:{
           model:{
