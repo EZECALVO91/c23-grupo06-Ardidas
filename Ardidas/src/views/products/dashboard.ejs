@@ -16,12 +16,12 @@
         <% products.forEach(element => { %>
             
             <article class="articulos">
-              <img src="/images/products/<%= element.imagen %>" alt="Zapatillas Nike" />
+              <img src="/images/products/<%= element.Image_products[0].name %>" alt="Zapatillas Nike" />
                 <div class="">
                   <div class="main_descuento_precio_articulo">
-                    <p class="precio">$<%= element.precio %></p>
+                    <p class="precio">$<%= element.price %></p>
                   </div>
-                  <p class="modelo"><%= element.nombre %></p>
+                  <p class="modelo"><%= element.name %></p>
                 </div>
                 
                 
