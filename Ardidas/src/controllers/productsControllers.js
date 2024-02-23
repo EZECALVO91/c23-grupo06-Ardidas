@@ -1,30 +1,70 @@
-const fs = require('fs')
+const fs = require("fs");
 const { setJson, getJson } = require("../utility/jsonMethod");
 const db = require("../database/models");
 const { Sequelize } = require("../database/models");
 
-
 const productsController = {
-    index: (req, res) => {
+  index: (req, res) => {
+    let products = db.Product.findAll({
+      attributes: ["id","name","price","description","id_category_product","id_size","id_color",
+      ],
+      include: [
+        {
+          association: "Image_products",
+          attributes: ["id", "name", "path", "id_product"],
+        },
+      ],
+    });
 
-        let products = db.Product.findAll({
-            attributes:["id","name","price","description","id_category_product", "id_size", "id_color"],
-            include: [
-                {association:"Image_products",
-                attributes:["id","name","path","id_product"]
-            }
-            ]
-            
-        })
-        
-        Promise.all([products])
-        .then(([products]) => {
-            // return res.send(products)
-            res.render("products/products",{
-            title: "Ardidas",
+    Promise.all([products])
+      .then(([products]) => {
+        res.render("products/products", {
+          title: "Ardidas",
+          usuarioLogeado: req.session.usuarioLogin,
+          products,
+        });
+      })
+      .catch((error) => console.log(error));
+  },
+  productCart: (req, res) => {
+    const { id } = req.params;
+    const products = getJson("product");
+    const product = products.find((producto) => producto.id == id);
+    res.render("products/productCart", {
+      title: "Carrito",
+      product,
+      usuarioLogeado: req.session.usuarioLogin,
+    });
+  },
+  productDetail: (req, res) => {
+    // const products = getJson("product");
+    // const { id } = req.params;
+    // const product = products.find((producto) => producto.id == id);
+    // const productOff = products.filter(
+    //   (product) => product.category === "oferta"
+    // );
+    // res.render("products/productDetail", {
+    //   title: "Detalle",
+    //   product,
+    //   productOff,
+    //   usuarioLogeado: req.session.usuarioLogin,
+    // });
+    let product = db.Product.findByPk(req.params.id,{
+        attributes: ["id","name","price","description","id_category_product","id_size","id_color",
+        ],
+        include: [
+          {
+            association: "Image_products",
+            attributes: ["id", "name", "path", "id_product"],
+          },
+        ],
+      });
+      Promise.all([product])
+        .then(([product]) => {
+            return res.render("products/productDetail",{
+            product,
             usuarioLogeado: req.session.usuarioLogin,
-            products,
-        
+            title: "Detalle"
         })})
         .catch(error=> console.log(error));
     },
