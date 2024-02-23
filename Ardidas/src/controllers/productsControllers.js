@@ -51,14 +51,24 @@ const productsController = {
         .catch(error=> console.log(error));
   },
   productCart: (req, res) => {
-    const { id } = req.params;
-    const products = getJson("product");
-    const product = products.find((producto) => producto.id == id);
-    res.render("products/productCart", {
-      title: "Carrito",
-      product,
-      usuarioLogeado: req.session.usuarioLogin,
+    let product = db.Product.findByPk(req.params.id,{
+      attributes: ["id","name","price","description","id_category_product","id_size","id_color",
+      ],
+      include: [
+        {
+          association: "Image_products",
+          attributes: ["id", "name", "path", "id_product"],
+        },
+      ],
     });
+    Promise.all([product])
+      .then(([product]) => {
+          return res.render("products/productCart",{
+          product,
+          usuarioLogeado: req.session.usuarioLogin,
+          title: "Carrito"
+      })})
+      .catch(error=> console.log(error));
   },
   dashboard: (req, res) => {
     let products = db.Product.findAll({
