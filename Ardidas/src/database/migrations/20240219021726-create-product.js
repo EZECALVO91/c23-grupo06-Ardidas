@@ -30,28 +30,7 @@ module.exports = {
           },
           key:'id'
         }
-      },
-      id_size: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references:{
-          model:{
-            tableName:'Sizes'
-          },
-          key:'id'
-        }
-      },
-      id_color: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references:{
-          model:{
-            tableName:'Colors'
-          },
-          key:'id'
-        }
       }
-
     });
   },
   async down(queryInterface, Sequelize) {

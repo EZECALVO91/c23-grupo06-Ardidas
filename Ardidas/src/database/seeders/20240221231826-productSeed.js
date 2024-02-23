@@ -34,8 +34,6 @@ module.exports = {
         price:100000,
         description:"LAS MEJORES ZAPATILLAS",
         id_category_product:1,
-        id_size:6,
-        id_color:6,
 
       },
       {
@@ -44,8 +42,6 @@ module.exports = {
         price:120000,
         description:"LAS MEJORES ZAPATILLAS",
         id_category_product:1,
-        id_size:1,
-        id_color:1,
       },
       {
         id:3,
@@ -53,8 +49,6 @@ module.exports = {
         price:130000,
         description:"LAS MEJORES ZAPATILLAS",
         id_category_product:2,
-        id_size:4,
-        id_color:4,
       },
       {
         id:4,
@@ -62,8 +56,6 @@ module.exports = {
         price:140000,
         description:"LAS MEJORES ZAPATILLAS",
         id_category_product:3,
-        id_size:3,
-        id_color:3,
       },
       {
         id:5,
@@ -71,8 +63,6 @@ module.exports = {
         price:150000,
         description:"LAS MEJORES ZAPATILLAS",
         id_category_product:4,
-        id_size:2,
-        id_color:2,
     }
   ], {});
   },
