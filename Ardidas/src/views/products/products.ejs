@@ -67,10 +67,9 @@
       </div>
 
       <section class="contenedor-productos1 section_products_main_index">
-        <% products.forEach((product, Image_products) => { %>
+        <% products.forEach((product) => { %>
                   <article class="articulos">
-          <a href="../products/detalle/<%= product.id%>"><img src="/images/products/<%=  %>" alt="aaaaaa" /></a>
-          <!-- products.Image_products.path -->
+          <a href="../products/detalle/<%= product.id%>"><img src="/images/products/<%= product.Image_products[0].name %>" alt="<%= product.Image_products[0].name %>" /></a>
           <div class="product-texto">
             <div class="main_descuento_precio_articulo">
               <p class="precio">$<%=product.price%></p>
