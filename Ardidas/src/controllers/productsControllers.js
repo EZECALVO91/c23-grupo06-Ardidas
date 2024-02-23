@@ -42,8 +42,28 @@ const productsController = {
         res.render('products/productDetail', { title: "Detalle", product, productOff,usuarioLogeado: req.session.usuarioLogin })
     },
     dashboard: (req, res) => {
-        const products = getJson("product");
-        res.render('products/dashboard', { title: "Dashboard", products,usuarioLogeado: req.session.usuarioLogin });
+        // const products = getJson("product");
+        // res.render('products/dashboard', { title: "Dashboard", products,usuarioLogeado: req.session.usuarioLogin });
+        let products = db.Product.findAll({
+            attributes:["id","name","price","description","id_category_product", "id_size", "id_color"],
+            include: [
+                {association:"Image_products",
+                attributes:["id","name","path","id_product"]
+            }
+            ]
+            
+        })
+        
+        Promise.all([products])
+        .then(([products]) => {
+            // return res.send(products)
+            res.render("products/dashboard",{
+            title: "Dashboard",
+            usuarioLogeado: req.session.usuarioLogin,
+            products,
+        
+        })})
+        .catch(error=> console.log(error));
     },
     productLoad: (req, res) => {
         res.render("products/productLoad", { title: "Crear",usuarioLogeado: req.session.usuarioLogin });
@@ -105,29 +125,29 @@ const productsController = {
         res.redirect(`/products/detalle/${id}`);
     },
     destroy: (req, res) => {
-         const { id } = req.params;
-         const products = getJson("product");
+        //  const { id } = req.params;
+        //  const products = getJson("product");
 
-         let product = products.find(product => product.id == id);
-         let productClear = products.filter(product => product.id !== +req.params.id);
-         if (product.imagen == "default-image.png") {
-             setJson(productClear, "product");
-             res.redirect('/products/dashboard')
-         } else {
-         fs.unlink(`./public/images/products/${product.imagen}`, (err) => {
-             if (err) throw err
-             console.log(`borre el archivo ${product.image}`)
-           })
-           setJson(productClear, "product");
-           res.redirect('/products/dashboard')
-         }
-    //     db.Product.destroy({
-    //         where : {
-    //             id : req.params.id
-    //         }
-    //     })
-    //     .then(()=>res.redirect("/products/dashboard"))
-    //     .catch(error => console.log(error))
+        //  let product = products.find(product => product.id == id);
+        //  let productClear = products.filter(product => product.id !== +req.params.id);
+        //  if (product.imagen == "default-image.png") {
+        //      setJson(productClear, "product");
+        //      res.redirect('/products/dashboard')
+        //  } else {
+        //  fs.unlink(`./public/images/products/${product.imagen}`, (err) => {
+        //      if (err) throw err
+        //      console.log(`borre el archivo ${product.image}`)
+        //    })
+        //    setJson(productClear, "product");
+        //    res.redirect('/products/dashboard')
+        //  }
+         db.Product.destroy({
+             where : {
+                 id : req.params.id
+             }
+         })
+         .then(()=>res.redirect("/products/dashboard"))
+         .catch(error => console.log(error))
           
     
      }
