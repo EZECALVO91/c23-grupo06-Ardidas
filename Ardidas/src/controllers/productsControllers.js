@@ -26,29 +26,7 @@ const productsController = {
       })
       .catch((error) => console.log(error));
   },
-  productCart: (req, res) => {
-    const { id } = req.params;
-    const products = getJson("product");
-    const product = products.find((producto) => producto.id == id);
-    res.render("products/productCart", {
-      title: "Carrito",
-      product,
-      usuarioLogeado: req.session.usuarioLogin,
-    });
-  },
   productDetail: (req, res) => {
-    // const products = getJson("product");
-    // const { id } = req.params;
-    // const product = products.find((producto) => producto.id == id);
-    // const productOff = products.filter(
-    //   (product) => product.category === "oferta"
-    // );
-    // res.render("products/productDetail", {
-    //   title: "Detalle",
-    //   product,
-    //   productOff,
-    //   usuarioLogeado: req.session.usuarioLogin,
-    // });
     let product = db.Product.findByPk(req.params.id,{
         attributes: ["id","name","price","description","id_category_product","id_size","id_color",
         ],
@@ -56,6 +34,10 @@ const productsController = {
           {
             association: "Image_products",
             attributes: ["id", "name", "path", "id_product"],
+          },
+          {
+            association: "Category_products",
+            attributes: ["id", "category"],
           },
         ],
       });
@@ -67,16 +49,37 @@ const productsController = {
             title: "Detalle"
         })})
         .catch(error=> console.log(error));
-
-
   },
-  dashboard: (req, res) => {
+  productCart: (req, res) => {
+    const { id } = req.params;
     const products = getJson("product");
-    res.render("products/dashboard", {
-      title: "Dashboard",
-      products,
+    const product = products.find((producto) => producto.id == id);
+    res.render("products/productCart", {
+      title: "Carrito",
+      product,
       usuarioLogeado: req.session.usuarioLogin,
     });
+  },
+  dashboard: (req, res) => {
+    let products = db.Product.findAll({
+        attributes:["id","name","price","description","id_category_product", "id_size", "id_color"],
+        include: [
+            {association:"Image_products",
+            attributes:["id","name","path","id_product"]
+        }
+        ]     
+    })
+    
+    Promise.all([products])
+    .then(([products]) => {
+        // return res.send(products)
+        res.render("products/dashboard",{
+        title: "Dashboard",
+        usuarioLogeado: req.session.usuarioLogin,
+        products,
+    
+    })})
+    .catch(error=> console.log(error));
   },
   productLoad: (req, res) => {
     res.render("products/productLoad", {
@@ -145,24 +148,6 @@ const productsController = {
     res.redirect(`/products/detalle/${id}`);
   },
   destroy: (req, res) => {
-    const { id } = req.params;
-    const products = getJson("product");
-
-    let product = products.find((product) => product.id == id);
-    let productClear = products.filter(
-      (product) => product.id !== +req.params.id
-    );
-    if (product.imagen == "default-image.png") {
-      setJson(productClear, "product");
-      res.redirect("/products/dashboard");
-    } else {
-      fs.unlink(`./public/images/products/${product.imagen}`, (err) => {
-        if (err) throw err;
-        console.log(`borre el archivo ${product.image}`);
-      });
-      setJson(productClear, "product");
-      res.redirect("/products/dashboard");
-    }
     //     db.Product.destroy({
     //         where : {
     //             id : req.params.id
