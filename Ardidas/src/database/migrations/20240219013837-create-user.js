@@ -44,6 +44,7 @@ module.exports = {
           },
           key:'id'
         },
+        onDelete:"cascade"
       },
       id_category: {
         allowNull: false,
@@ -53,7 +54,8 @@ module.exports = {
             tableName:'Categories'
           },
           key:'id'
-        }
+        },
+        onDelete:"cascade"
       },
     });
   },

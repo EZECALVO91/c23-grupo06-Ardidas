@@ -18,7 +18,8 @@ module.exports = {
             tableName:'Products'
           },
           key:'id'
-        }
+        },
+        onDelete:"cascade"
       },
       id_size: {
         allowNull:false,
@@ -28,7 +29,8 @@ module.exports = {
             tableName:'Sizes'
           },
           key:'id'
-        }
+        },
+        onDelete:"cascade"
       },
       id_color: {
         allowNull:false,
@@ -38,7 +40,8 @@ module.exports = {
             tableName:'Colors'
           },
           key:'id'
-        }
+        },
+        onDelete:"cascade"
       },
     });
   },

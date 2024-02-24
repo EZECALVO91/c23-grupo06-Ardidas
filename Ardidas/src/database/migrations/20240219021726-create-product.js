@@ -29,7 +29,8 @@ module.exports = {
             tableName:'Category_products'
           },
           key:'id'
-        }
+        },
+        onDelete:"cascade"
       }
     });
   },
