@@ -11,15 +11,18 @@
 
                 </div>
 
-                <section class="contenedor-productos1 section_products_main_index">
+                <section class="users_dashboard_db section_products_main_index">
 
                     <% users.forEach(element=> { %>
 
-                        <article class="articulos">
-                            <img src="/images/users/<%= element.image %>" alt="Zapatillas Nike" />
+                        <article class="users_depto">
+                            <div class="container_Avatar_dashboard">
+                                <img class="avatar_user_dashboard" src="/images/users/<%= element.image %>" alt="Avatar Usuario" />
+                            </div>
+                            
                             <div class="">
                                 <div class="main_descuento_precio_articulo">
-                                    <p class="precio"><%= element.name %>
+                                    <p class="user_name_db"><%= element.name %>
                                     </p>
                                 </div>
                                 <p class="modelo">

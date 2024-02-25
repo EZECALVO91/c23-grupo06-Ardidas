@@ -3,6 +3,7 @@ const { setJson, getJson } = require("../utility/jsonMethod");
 const bcrypt = require("bcryptjs");
 const {validationResult} = require('express-validator');
 const db = require("../database/models");
+const { Op } = require("sequelize");
 
 
 const usersController = {
@@ -11,11 +12,11 @@ const usersController = {
     logout:(req,res)=>{
         req.session.destroy();
         if (req.cookies.recuerdame) {
-          res.clearCookie('user');
-          res.clearCookie('recuerdame');
+        res.clearCookie('user');
+        res.clearCookie('recuerdame');
         }
         res.redirect('/');
-      },
+    },
 
     // Registro
     formRegister:(req,res)=>{
@@ -87,9 +88,27 @@ const usersController = {
     //Dashboard de Usuarios
 
     UsersDashboard: (req, res) => {
-        const users = getJson("users");
-        res.render('users/usersDashboard', { title: "Users Dashboard", users, usuarioLogeado: req.session.usuarioLogin });
-    },
+        db.User.findAll({
+            where: {
+            id: { [Op.ne]: req.session.usuarioLogin.id },
+            }
+        })
+            .then((users) => {
+            console.log('dashboard users', users);
+            console.log('dashboard users', users);
+            res.render('users/usersDashboard', {
+                title: 'Dashboard',
+                users: users,
+                usuarioLogeado: req.session.usuarioLogin,
+            });
+         })
+        .catch((err) => console.log(err));
+      },
+    
+    // (req, res) => {
+    //     const users = getJson("users");
+    //     res.render('users/usersDashboard', { title: "Users Dashboard", users, usuarioLogeado: req.session.usuarioLogin });
+    // },
 
     //Dashboar crear usuarios con provilegios
     createPrivileges:(req, res)=> {
@@ -166,47 +185,47 @@ const usersController = {
     
 
     // Profile para que el usuario pueda editar y/o agregar informacion a su Base de DATOS.
-    userProfile:(req, res) =>{
+    userProfile:(req, res) => {
         const { id } = req.params;
-        const users = getJson("users");
-        const user = users.find(elemento => elemento.id == id);
-        res.render("users/profileEdit", { title: "Editar Usuario", user, usuarioLogeado: req.session.usuarioLogin })
+
+        db.User.findByPk(req.session.usuarioLogin.id)
+        .then((response) => {
+                    res.render("users/profileEdit", { title: "Editar Usuario", user: response.dataValues, usuarioLogeado: req.session.usuarioLogin })
+        }).catch((err) => console.log(err));
     },
 
     userProfileEdit: (req, res) =>{
         const errores = validationResult(req);
-
         if(!errores.isEmpty()){
             
-            res.render('users/profileEdit',{errores:errores.mapped(), old:req.body, title:"Errores Privilegios", usuarioLogeado: req.session.usuarioLogin})
-        }
-        else{
-        const {id} =req.params;
-        const {name, date, localidad,sobremi,category} = req.body;
-        
-        const users = getJson("users");
-        const usuarios = users.map(element => {    
-            if (element.id == id){
-                return{
-                    id:+id,
-                    name:name.trim(),
-                    email: element.email,
-                    password: element.password,
-                    category: category ? category : element.category,
-                    date,
-                    localidad:localidad.trim(),
-                    sobremi: sobremi.trim(),
-                    image:req.file ? req.file.filename : element.image,
-                }
+            res.render('users/profileEdit',{errores:errores.mapped(), old:req.body, title:"Error", usuarioLogeado: req.session.usuarioLogin})
+        }else{
+            const { id } = req.params;
+            const {name,category,date,locality,aboutMe,image} = req.body;
+            const file = req.file;
+
+                db.User.update({
+                    name,
+                    category,
+                    date:date,
+                    locality: locality.trim(),
+                    aboutMe: aboutMe.trim(),
+                    image: file ? file.filename : image,
+                    createdAt:new Date,
+                    updatedAt:new Date
+                },
+                {
+                    where:{id}
             }
-            return element
-        })
-        setJson(usuarios, "users")
-        const editarUsuario = usuarios.find(element => element.id == id);
-        req.session.user = editarUsuario;
-        res.cookie("user", {name:editarUsuario.name,image:editarUsuario.image, email:editarUsuario.email, id:editarUsuario.id},{maxAge: 1000 * 0 * 15})
-        res.redirect(`/`)
-    }
+            ).then((user) => {
+                req.session.usuarioLogin = user.dataValues;
+                res.cookie("user", user.dataValues, { maxAge: 1000 * 60 * 15 });
+                res.redirect(`/`)
+
+                // res.redirect(`users/profileEdit/${id}`)
+            })
+            .catch((err) => console.log(err));
+        }
     },
 
 
