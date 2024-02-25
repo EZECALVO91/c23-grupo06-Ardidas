@@ -30,11 +30,6 @@ module.exports = (sequelize, DataTypes) => {
         timestamps:false
       }) 
       
-      this.belongsTo(models.Stock,{
-        as:'Stocks',
-        foreignKey:'id_product'
-      })
-
       this.belongsToMany(models.Size,{
         as:'Sizes',
         through:'Stocks',

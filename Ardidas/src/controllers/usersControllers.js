@@ -2,6 +2,7 @@ const fs = require('fs')
 const { setJson, getJson } = require("../utility/jsonMethod");
 const bcrypt = require("bcryptjs");
 const {validationResult} = require('express-validator');
+const db = require("../database/models");
 
 
 const usersController = {
@@ -32,27 +33,19 @@ const usersController = {
         }
         else{
         const file = req.file
-        const user = getJson("users");
-        const idnew = Date.now();
-        const { name, email, password } = req.body;
-        const newUser = {
-            id:+idnew,
-            name: name.trim(),
-            email:email.trim(),
+        const { name, email, password, id_category,} = req.body;
+        db.User.create({
+            name,
+            email,
             password: bcrypt.hashSync(password,10),
-            category:"USER",
-            date:"",
-            localidad:"",
-            sobremi:"",
             image: file ? file.filename : "default-avatar-profile.jpg",
-        };
-
-        const newJson = [...user, newUser];
-        setJson(newJson, "users");
-            
-        
-        res.redirect("/users/login")
-        }
+            id_category:2,
+            createdAt:new Date,
+            updatedAt:new Date
+        }).then(()=>{
+            res.redirect("/users/login")
+        })
+    }
     },
 
     formLogin:(req,res)=>{
