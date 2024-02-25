@@ -84,40 +84,6 @@ const usersController = {
         }
     },
 
-    //Login
-    // login: (req,res) => {
-    //     let errors = validationResult(req);
-    //     let usuarioLogin
-    //     if (errors.isEmpty()){
-    //         let users = getJson('users')
-    //         for (let i = 0; i < users.length; i++) {
-    //             if (users[i].email.toLowerCase() == req.body.email.toLowerCase()) {
-    //                 if (bcrypt.compareSync(req.body.password, users[i].password)) {
-    //                     usuarioLogin = users[i]
-    //                     break;
-    //                     }
-    //                 }
-    //             }
-    //             if (usuarioLogin == undefined) {
-    //                 return res.render('./users/login', {errors: [
-    //                     {msg: 'Credenciales invalidas'}
-    //                 ], title: 'Login',usuarioLogeado: req.session.usuarioLogin})
-    
-    //         }
-    //         req.session.usuarioLogin = usuarioLogin
-    //         if (req.body.recuerdame != undefined) {
-    //             const cookieUser = {id: usuarioLogin.id, email: usuarioLogin.email}
-    //             res.cookie('recuerdame',cookieUser,{ maxAge: 900000 })
-    //         }
-    //         res.redirect('/')
-
-
-    //     }else{
-    //         return res.render('./users/login', {errors: errors.errors, title:'Login',usuarioLogeado: req.session.usuarioLogin})
-    //     }
-    // },
-
-    
     //Dashboard de Usuarios
 
     UsersDashboard: (req, res) => {
