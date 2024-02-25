@@ -22,6 +22,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(100)
       },
+      image: {
+        allowNull: false,
+        type: Sequelize.STRING(80)
+      },
       date: {
         allowNull: true,
         type: Sequelize.DATEONLY
@@ -34,18 +38,6 @@ module.exports = {
         allowNull: true,
         type: Sequelize.TEXT
       },
-      id_image: {
-        unique:true,
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references:{
-          model:{
-            tableName:'Images'
-          },
-          key:'id'
-        },
-        onDelete:"cascade"
-      },
       id_category: {
         allowNull: false,
         type: Sequelize.INTEGER,
@@ -57,6 +49,14 @@ module.exports = {
         },
         onDelete:"cascade"
       },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATEONLY
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATEONLY
+      }
     });
   },
   async down(queryInterface, Sequelize) {

@@ -17,11 +17,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey:'id_product'
       })
 
-      this.belongsTo(models.Color,{
-        as:'Colors',
-        foreignKey:'id_color'
-      })
-
       this.belongsTo(models.Size,{
         as:'Sizes',
         foreignKey:'id_size'
@@ -29,9 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Stock.init({
-    product_id: DataTypes.INTEGER,
+    id_product: DataTypes.INTEGER,
     id_size: DataTypes.INTEGER,
-    id_color: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Stock',

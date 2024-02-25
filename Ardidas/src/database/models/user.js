@@ -11,10 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
        // define association here
-      this.hasOne(models.Image,{
-        as:'Images',
-        foreignKey:'id_image'
-      })
 
       this.belongsTo(models.Category,{
         as:'Categories',
@@ -35,10 +31,10 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
+    image: DataTypes.STRING,
     date: DataTypes.DATEONLY,
     locality: DataTypes.STRING,
     aboutMe: DataTypes.TEXT,
-    id_image: DataTypes.INTEGER,
     id_category: DataTypes.INTEGER
   }, {
     sequelize,

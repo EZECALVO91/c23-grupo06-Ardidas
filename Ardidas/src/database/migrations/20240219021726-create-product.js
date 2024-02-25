@@ -13,6 +13,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(75)
       },
+      color: {
+        allowNull: false,
+        type: Sequelize.STRING(80)
+      },
       price: {
         allowNull: true,
         type: Sequelize.DECIMAL(10,2)
@@ -31,7 +35,16 @@ module.exports = {
           key:'id'
         },
         onDelete:"cascade"
-      }
+      },  
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATEONLY
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATEONLY
+      },
+      
     });
   },
   async down(queryInterface, Sequelize) {
