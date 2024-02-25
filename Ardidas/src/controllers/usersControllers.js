@@ -52,39 +52,70 @@ const usersController = {
             res.render('./users/login',{title:"Login", usuarioLogeado: req.session.usuarioLogin})
     },
 
-    //Login
-    login: (req,res) => {
-        let errors = validationResult(req);
-        let usuarioLogin
-        if (errors.isEmpty()){
-            let users = getJson('users')
-            for (let i = 0; i < users.length; i++) {
-                if (users[i].email.toLowerCase() == req.body.usuario.toLowerCase()) {
-                    if (bcrypt.compareSync(req.body.password, users[i].password)) {
-                        usuarioLogin = users[i]
-                        break;
-                        }
-                    }
-                }
-                if (usuarioLogin == undefined) {
-                    return res.render('./users/login', {errors: [
-                        {msg: 'Credenciales invalidas'}
-                    ], title: 'Login',usuarioLogeado: req.session.usuarioLogin})
+    login: (req, res) => {
+        const errores = validationResult(req);
+        
     
-            }
-            req.session.usuarioLogin = usuarioLogin
-            if (req.body.recuerdame != undefined) {
-                const cookieUser = {id: usuarioLogin.id, email: usuarioLogin.email}
-                res.cookie('recuerdame',
-                cookieUser,{ maxAge: 900000 })
-            }
-            res.redirect('/')
-
-
-        }else{
-            return res.render('./users/login', {errors: errors.errors, title:'Login',usuarioLogeado: req.session.usuarioLogin})
+        if (!errores.isEmpty()) {
+        console.log("errores:", errores.mapped());
+        res.render('./users/login', {errores:errores.mapped(), title:"Login",usuarioLogeado: req.session.usuarioLogin});
+        } else {
+        const { email } = req.body;
+        db.User.findOne({
+            attributes: { exclude: ["password"] },
+            where: {
+            email,
+            },
+        })
+            .then((user) => {
+                console.log("user info:", user);
+            req.session.usuarioLogin = user.dataValues;
+    
+                if (req.body.recuerdame == "true") {
+                res.cookie("user", user.dataValues, { maxAge: 1000 * 60 * 15 });
+                res.cookie("recuerdame", "true", { maxAge: 1000 * 60 * 15 });
+                }
+    
+                res.redirect("/");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
         }
     },
+
+    //Login
+    // login: (req,res) => {
+    //     let errors = validationResult(req);
+    //     let usuarioLogin
+    //     if (errors.isEmpty()){
+    //         let users = getJson('users')
+    //         for (let i = 0; i < users.length; i++) {
+    //             if (users[i].email.toLowerCase() == req.body.email.toLowerCase()) {
+    //                 if (bcrypt.compareSync(req.body.password, users[i].password)) {
+    //                     usuarioLogin = users[i]
+    //                     break;
+    //                     }
+    //                 }
+    //             }
+    //             if (usuarioLogin == undefined) {
+    //                 return res.render('./users/login', {errors: [
+    //                     {msg: 'Credenciales invalidas'}
+    //                 ], title: 'Login',usuarioLogeado: req.session.usuarioLogin})
+    
+    //         }
+    //         req.session.usuarioLogin = usuarioLogin
+    //         if (req.body.recuerdame != undefined) {
+    //             const cookieUser = {id: usuarioLogin.id, email: usuarioLogin.email}
+    //             res.cookie('recuerdame',cookieUser,{ maxAge: 900000 })
+    //         }
+    //         res.redirect('/')
+
+
+    //     }else{
+    //         return res.render('./users/login', {errors: errors.errors, title:'Login',usuarioLogeado: req.session.usuarioLogin})
+    //     }
+    // },
 
     
     //Dashboard de Usuarios

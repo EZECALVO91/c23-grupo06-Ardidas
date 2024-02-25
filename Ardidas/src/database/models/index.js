@@ -40,10 +40,10 @@ Object.keys(db).forEach(modelName => {
 sequelize
         .authenticate()
         .then(() => {
-            console.log('Connection has been established successfully.');
+            console.log('--->LA CONEXION A LA BASE DE DATOS FUE CORRECTA<---');
         })
         .catch((err) => {
-            console.log('Unable to connect to the database:', err);
+            console.log('No se pudo conectar a la base de datos:', err);
         });
 
 db.sequelize = sequelize;
