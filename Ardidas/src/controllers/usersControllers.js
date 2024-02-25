@@ -11,11 +11,11 @@ const usersController = {
     logout:(req,res)=>{
         req.session.destroy();
         if (req.cookies.recuerdame) {
-          res.clearCookie('user');
-          res.clearCookie('recuerdame');
+        res.clearCookie('user');
+        res.clearCookie('recuerdame');
         }
         res.redirect('/');
-      },
+    },
 
     // Registro
     formRegister:(req,res)=>{
@@ -83,39 +83,6 @@ const usersController = {
             });
         }
     },
-
-    //Login
-    // login: (req,res) => {
-    //     let errors = validationResult(req);
-    //     let usuarioLogin
-    //     if (errors.isEmpty()){
-    //         let users = getJson('users')
-    //         for (let i = 0; i < users.length; i++) {
-    //             if (users[i].email.toLowerCase() == req.body.email.toLowerCase()) {
-    //                 if (bcrypt.compareSync(req.body.password, users[i].password)) {
-    //                     usuarioLogin = users[i]
-    //                     break;
-    //                     }
-    //                 }
-    //             }
-    //             if (usuarioLogin == undefined) {
-    //                 return res.render('./users/login', {errors: [
-    //                     {msg: 'Credenciales invalidas'}
-    //                 ], title: 'Login',usuarioLogeado: req.session.usuarioLogin})
-    
-    //         }
-    //         req.session.usuarioLogin = usuarioLogin
-    //         if (req.body.recuerdame != undefined) {
-    //             const cookieUser = {id: usuarioLogin.id, email: usuarioLogin.email}
-    //             res.cookie('recuerdame',cookieUser,{ maxAge: 900000 })
-    //         }
-    //         res.redirect('/')
-
-
-    //     }else{
-    //         return res.render('./users/login', {errors: errors.errors, title:'Login',usuarioLogeado: req.session.usuarioLogin})
-    //     }
-    // },
 
     
     //Dashboard de Usuarios
@@ -200,47 +167,47 @@ const usersController = {
     
 
     // Profile para que el usuario pueda editar y/o agregar informacion a su Base de DATOS.
-    userProfile:(req, res) =>{
+    userProfile:(req, res) => {
         const { id } = req.params;
-        const users = getJson("users");
-        const user = users.find(elemento => elemento.id == id);
-        res.render("users/profileEdit", { title: "Editar Usuario", user, usuarioLogeado: req.session.usuarioLogin })
+
+        db.User.findByPk(req.session.usuarioLogin.id)
+        .then((response) => {
+                    res.render("users/profileEdit", { title: "Editar Usuario", user: response.dataValues, usuarioLogeado: req.session.usuarioLogin })
+        }).catch((err) => console.log(err));
     },
 
     userProfileEdit: (req, res) =>{
         const errores = validationResult(req);
-
         if(!errores.isEmpty()){
             
-            res.render('users/profileEdit',{errores:errores.mapped(), old:req.body, title:"Errores Privilegios", usuarioLogeado: req.session.usuarioLogin})
-        }
-        else{
-        const {id} =req.params;
-        const {name, date, localidad,sobremi,category} = req.body;
-        
-        const users = getJson("users");
-        const usuarios = users.map(element => {    
-            if (element.id == id){
-                return{
-                    id:+id,
-                    name:name.trim(),
-                    email: element.email,
-                    password: element.password,
-                    category: category ? category : element.category,
-                    date,
-                    localidad:localidad.trim(),
-                    sobremi: sobremi.trim(),
-                    image:req.file ? req.file.filename : element.image,
-                }
+            res.render('users/profileEdit',{errores:errores.mapped(), old:req.body, title:"Error", usuarioLogeado: req.session.usuarioLogin})
+        }else{
+            const { id } = req.params;
+            const {name,category,date,locality,aboutMe,image} = req.body;
+            const file = req.file;
+
+                db.User.update({
+                    name,
+                    category,
+                    date:date,
+                    locality: locality.trim(),
+                    aboutMe: aboutMe.trim(),
+                    image: file ? file.filename : image,
+                    createdAt:new Date,
+                    updatedAt:new Date
+                },
+                {
+                    where:{id}
             }
-            return element
-        })
-        setJson(usuarios, "users")
-        const editarUsuario = usuarios.find(element => element.id == id);
-        req.session.user = editarUsuario;
-        res.cookie("user", {name:editarUsuario.name,image:editarUsuario.image, email:editarUsuario.email, id:editarUsuario.id},{maxAge: 1000 * 0 * 15})
-        res.redirect(`/`)
-    }
+            ).then((user) => {
+                req.session.usuarioLogin = user.dataValues;
+                res.cookie("user", user.dataValues, { maxAge: 1000 * 60 * 15 });
+                res.redirect(`/`)
+
+                // res.redirect(`users/profileEdit/${id}`)
+            })
+            .catch((err) => console.log(err));
+        }
     },
 
 

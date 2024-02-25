@@ -27,7 +27,7 @@ router
 .get('/dashboard',isAdmin, UsersDashboard)
 
 .get('/createPrivileges', isAdmin, createPrivileges)
-.post('/createPrivileges',uploadImgPro.single("image"), isAdmin, validationPrivi, createUserPrivileges)
+.post('/createPrivileges',uploadImgPro.single("image"), isAdmin, createUserPrivileges)
 
 //Edicion de usuarios departe de Dashboar
 .get('/update/:id',isAdmin , usersEdit )
