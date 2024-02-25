@@ -3,6 +3,7 @@ const { setJson, getJson } = require("../utility/jsonMethod");
 const bcrypt = require("bcryptjs");
 const {validationResult} = require('express-validator');
 const db = require("../database/models");
+const { Op } = require("sequelize");
 
 
 const usersController = {
@@ -88,9 +89,27 @@ const usersController = {
     //Dashboard de Usuarios
 
     UsersDashboard: (req, res) => {
-        const users = getJson("users");
-        res.render('users/usersDashboard', { title: "Users Dashboard", users, usuarioLogeado: req.session.usuarioLogin });
-    },
+        db.User.findAll({
+            where: {
+            id: { [Op.ne]: req.session.usuarioLogin.id },
+            }
+        })
+            .then((users) => {
+            console.log('dashboard users', users);
+            console.log('dashboard users', users);
+            res.render('users/usersDashboard', {
+                title: 'Dashboard',
+                users: users,
+                usuarioLogeado: req.session.usuarioLogin,
+            });
+         })
+        .catch((err) => console.log(err));
+      },
+    
+    // (req, res) => {
+    //     const users = getJson("users");
+    //     res.render('users/usersDashboard', { title: "Users Dashboard", users, usuarioLogeado: req.session.usuarioLogin });
+    // },
 
     //Dashboar crear usuarios con provilegios
     createPrivileges:(req, res)=> {
