@@ -13,6 +13,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(75)
       },
+      color: {
+        allowNull: false,
+        type: Sequelize.STRING(80)
+      },
       price: {
         allowNull: true,
         type: Sequelize.DECIMAL(10,2)
@@ -29,29 +33,18 @@ module.exports = {
             tableName:'Category_products'
           },
           key:'id'
-        }
-      },
-      id_size: {
+        },
+        onDelete:"cascade"
+      },  
+      createdAt: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references:{
-          model:{
-            tableName:'Sizes'
-          },
-          key:'id'
-        }
+        type: Sequelize.DATEONLY
       },
-      id_color: {
+      updatedAt: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references:{
-          model:{
-            tableName:'Colors'
-          },
-          key:'id'
-        }
-      }
-
+        type: Sequelize.DATEONLY
+      },
+      
     });
   },
   async down(queryInterface, Sequelize) {
