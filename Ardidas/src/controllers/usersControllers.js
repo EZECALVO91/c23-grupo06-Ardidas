@@ -2,6 +2,8 @@ const fs = require('fs')
 const { setJson, getJson } = require("../utility/jsonMethod");
 const bcrypt = require("bcryptjs");
 const {validationResult} = require('express-validator');
+const db = require("../database/models");
+const { Op } = require("sequelize");
 
 
 const usersController = {
@@ -10,11 +12,11 @@ const usersController = {
     logout:(req,res)=>{
         req.session.destroy();
         if (req.cookies.recuerdame) {
-          res.clearCookie('user');
-          res.clearCookie('recuerdame');
+        res.clearCookie('user');
+        res.clearCookie('recuerdame');
         }
         res.redirect('/');
-      },
+    },
 
     // Registro
     formRegister:(req,res)=>{
@@ -32,74 +34,81 @@ const usersController = {
         }
         else{
         const file = req.file
-        const user = getJson("users");
-        const idnew = Date.now();
-        const { name, email, password } = req.body;
-        const newUser = {
-            id:+idnew,
-            name: name.trim(),
-            email:email.trim(),
+        const { name, email, password, id_category,} = req.body;
+        db.User.create({
+            name,
+            email,
             password: bcrypt.hashSync(password,10),
-            category:"USER",
-            date:"",
-            localidad:"",
-            sobremi:"",
             image: file ? file.filename : "default-avatar-profile.jpg",
-        };
-
-        const newJson = [...user, newUser];
-        setJson(newJson, "users");
-            
-        
-        res.redirect("/users/login")
-        }
+            id_category:2,
+            createdAt:new Date,
+            updatedAt:new Date
+        }).then(()=>{
+            res.redirect("/users/login")
+        })
+    }
     },
 
     formLogin:(req,res)=>{
             res.render('./users/login',{title:"Login", usuarioLogeado: req.session.usuarioLogin})
     },
 
-    //Login
-    login: (req,res) => {
-        let errors = validationResult(req);
-        let usuarioLogin
-        if (errors.isEmpty()){
-            let users = getJson('users')
-            for (let i = 0; i < users.length; i++) {
-                if (users[i].email.toLowerCase() == req.body.usuario.toLowerCase()) {
-                    if (bcrypt.compareSync(req.body.password, users[i].password)) {
-                        usuarioLogin = users[i]
-                        break;
-                        }
-                    }
-                }
-                if (usuarioLogin == undefined) {
-                    return res.render('./users/login', {errors: [
-                        {msg: 'Credenciales invalidas'}
-                    ], title: 'Login',usuarioLogeado: req.session.usuarioLogin})
+    login: (req, res) => {
+        const errores = validationResult(req);
+        
     
-            }
-            req.session.usuarioLogin = usuarioLogin
-            if (req.body.recuerdame != undefined) {
-                const cookieUser = {id: usuarioLogin.id, email: usuarioLogin.email}
-                res.cookie('recuerdame',
-                cookieUser,{ maxAge: 900000 })
-            }
-            res.redirect('/')
-
-
-        }else{
-            return res.render('./users/login', {errors: errors.errors, title:'Login',usuarioLogeado: req.session.usuarioLogin})
+        if (!errores.isEmpty()) {
+        console.log("errores:", errores.mapped());
+        res.render('./users/login', {errores:errores.mapped(), title:"Login",usuarioLogeado: req.session.usuarioLogin});
+        } else {
+        const { email } = req.body;
+        db.User.findOne({
+            attributes: { exclude: ["password"] },
+            where: {
+            email,
+            },
+        })
+            .then((user) => {
+                console.log("user info:", user);
+            req.session.usuarioLogin = user.dataValues;
+    
+                if (req.body.recuerdame == "true") {
+                res.cookie("user", user.dataValues, { maxAge: 1000 * 60 * 15 });
+                res.cookie("recuerdame", "true", { maxAge: 1000 * 60 * 15 });
+                }
+    
+                res.redirect("/");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
         }
     },
 
-    
     //Dashboard de Usuarios
 
     UsersDashboard: (req, res) => {
-        const users = getJson("users");
-        res.render('users/usersDashboard', { title: "Users Dashboard", users, usuarioLogeado: req.session.usuarioLogin });
-    },
+        db.User.findAll({
+            where: {
+            id: { [Op.ne]: req.session.usuarioLogin.id },
+            }
+        })
+            .then((users) => {
+            console.log('dashboard users', users);
+            console.log('dashboard users', users);
+            res.render('users/usersDashboard', {
+                title: 'Dashboard',
+                users: users,
+                usuarioLogeado: req.session.usuarioLogin,
+            });
+         })
+        .catch((err) => console.log(err));
+      },
+    
+    // (req, res) => {
+    //     const users = getJson("users");
+    //     res.render('users/usersDashboard', { title: "Users Dashboard", users, usuarioLogeado: req.session.usuarioLogin });
+    // },
 
     //Dashboar crear usuarios con provilegios
     createPrivileges:(req, res)=> {
@@ -176,47 +185,47 @@ const usersController = {
     
 
     // Profile para que el usuario pueda editar y/o agregar informacion a su Base de DATOS.
-    userProfile:(req, res) =>{
+    userProfile:(req, res) => {
         const { id } = req.params;
-        const users = getJson("users");
-        const user = users.find(elemento => elemento.id == id);
-        res.render("users/profileEdit", { title: "Editar Usuario", user, usuarioLogeado: req.session.usuarioLogin })
+
+        db.User.findByPk(req.session.usuarioLogin.id)
+        .then((response) => {
+                    res.render("users/profileEdit", { title: "Editar Usuario", user: response.dataValues, usuarioLogeado: req.session.usuarioLogin })
+        }).catch((err) => console.log(err));
     },
 
     userProfileEdit: (req, res) =>{
         const errores = validationResult(req);
-
         if(!errores.isEmpty()){
             
-            res.render('users/profileEdit',{errores:errores.mapped(), old:req.body, title:"Errores Privilegios", usuarioLogeado: req.session.usuarioLogin})
-        }
-        else{
-        const {id} =req.params;
-        const {name, date, localidad,sobremi,category} = req.body;
-        
-        const users = getJson("users");
-        const usuarios = users.map(element => {    
-            if (element.id == id){
-                return{
-                    id:+id,
-                    name:name.trim(),
-                    email: element.email,
-                    password: element.password,
-                    category: category ? category : element.category,
-                    date,
-                    localidad:localidad.trim(),
-                    sobremi: sobremi.trim(),
-                    image:req.file ? req.file.filename : element.image,
-                }
+            res.render('users/profileEdit',{errores:errores.mapped(), old:req.body, title:"Error", usuarioLogeado: req.session.usuarioLogin})
+        }else{
+            const { id } = req.params;
+            const {name,category,date,locality,aboutMe,image} = req.body;
+            const file = req.file;
+
+                db.User.update({
+                    name,
+                    category,
+                    date:date,
+                    locality: locality.trim(),
+                    aboutMe: aboutMe.trim(),
+                    image: file ? file.filename : image,
+                    createdAt:new Date,
+                    updatedAt:new Date
+                },
+                {
+                    where:{id}
             }
-            return element
-        })
-        setJson(usuarios, "users")
-        const editarUsuario = usuarios.find(element => element.id == id);
-        req.session.user = editarUsuario;
-        res.cookie("user", {name:editarUsuario.name,image:editarUsuario.image, email:editarUsuario.email, id:editarUsuario.id},{maxAge: 1000 * 0 * 15})
-        res.redirect(`/`)
-    }
+            ).then((user) => {
+                req.session.usuarioLogin = user.dataValues;
+                res.cookie("user", user.dataValues, { maxAge: 1000 * 60 * 15 });
+                res.redirect(`/`)
+
+                // res.redirect(`users/profileEdit/${id}`)
+            })
+            .catch((err) => console.log(err));
+        }
     },
 
 

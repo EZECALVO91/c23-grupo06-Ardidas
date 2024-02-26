@@ -17,7 +17,8 @@ module.exports = {
             tableName:'Products'
           },
           key:'id'
-        }
+        },
+        onDelete:"cascade"
       },
       id_user: {
         allowNull: false,
@@ -27,7 +28,8 @@ module.exports = {
             tableName:'Users'
           },
           key:'id'
-        }
+        },
+        onDelete:"cascade"
       }
     });
   },

@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./src/bin/www",
+    "db": "sequelize db:drop & sequelize db:create & sequelize db:migrate & sequelize db:seed:all",
     "migrate": "npx sequelize-cli db:migrate",
     "migrate:undo": "npx sequelize-cli db:migrate:undo:all",
     "seed": "npx sequelize db:seed:all",
