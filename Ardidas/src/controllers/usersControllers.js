@@ -104,11 +104,6 @@ const usersController = {
          })
         .catch((err) => console.log(err));
       },
-    
-    // (req, res) => {
-    //     const users = getJson("users");
-    //     res.render('users/usersDashboard', { title: "Users Dashboard", users, usuarioLogeado: req.session.usuarioLogin });
-    // },
 
     //Dashboar crear usuarios con provilegios
     createPrivileges:(req, res)=> {
@@ -218,11 +213,19 @@ const usersController = {
                     where:{id}
             }
             ).then((user) => {
+                // res.redirect(`users/profileEdit/${id}`);
+                
                 req.session.usuarioLogin = user.dataValues;
-                res.cookie("user", user.dataValues, { maxAge: 1000 * 60 * 15 });
-                res.redirect(`/`)
+                res.cookie("user",user.dataValues, { maxAge: 1000 * 60 * 15 });
+                res.redirect(`users/profileEdit/${id}`)
 
-                // res.redirect(`users/profileEdit/${id}`)
+                // setJson(usuarios, "users")
+                // const editarUsuario = usuarios.find(element => element.id == id);
+                // req.session.user = editarUsuario;
+                // res.cookie("user", {name:editarUsuario.name,image:editarUsuario.image, email:editarUsuario.email, id:editarUsuario.id},{maxAge: 1000 * 0 * 15})
+                // res.redirect(`/`)
+
+
             })
             .catch((err) => console.log(err));
         }

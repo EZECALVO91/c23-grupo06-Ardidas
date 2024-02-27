@@ -14,34 +14,54 @@ module.exports = {
     */
     await queryInterface.bulkInsert('Sizes', [
       {
-      size:"36"
+      size:"36",
+      createdAt:  new Date,
+      updatedAt: new Date
     },
     {
-      size:"37"
+      size:"37",
+      createdAt:  new Date,
+      updatedAt: new Date
     },
     {
-      size:"38"
+      size:"38",
+      createdAt:  new Date,
+      updatedAt: new Date
     },
     {
-      size:"39"
+      size:"39",
+      createdAt:  new Date,
+      updatedAt: new Date
     },
     {
-      size:"40"
+      size:"40",
+      createdAt:  new Date,
+      updatedAt: new Date
     },
     {
-      size:"41"
+      size:"41",
+      createdAt:  new Date,
+      updatedAt: new Date
     },
     {
-      size:"42"
+      size:"42",
+      createdAt:  new Date,
+      updatedAt: new Date
     },
     {
-      size:"43"
+      size:"43",
+      createdAt:  new Date,
+      updatedAt: new Date
     },
     {
-      size:"44"
+      size:"44",
+      createdAt:  new Date,
+      updatedAt: new Date
     },
     {
-      size:"45"
+      size:"45",
+      createdAt:  new Date,
+      updatedAt: new Date
     },
   ], {});
   },

@@ -23,7 +23,7 @@ module.exports = {
       },
       description: {
         allowNull: true,
-        type: Sequelize.STRING(100)
+        type: Sequelize.STRING(1000)
       },
       id_category_product: {
         allowNull: false,
