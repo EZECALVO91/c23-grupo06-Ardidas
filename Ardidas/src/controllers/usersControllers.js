@@ -214,28 +214,16 @@ const usersController = {
             }
             ).then((user) => {
                 // res.redirect(`users/profileEdit/${id}`);
-
-        //         db.User.findOne(user)
-        // .then((user) => {
-        //     res.redirect(`users/profileEdit/${id}`);
-        // })
-        // .catch((err) => {
-        //     console.log(err);
-        // });
                 
                 req.session.usuarioLogin = user.dataValues;
                 res.cookie("user",user.dataValues, { maxAge: 1000 * 60 * 15 });
                 res.redirect(`users/profileEdit/${id}`)
-                // res.render(`users/profileEdit`,{title:"Profile", usuarioLogeado:user.dataValues})
-                
 
-                // res.render(`users/profileEdit/${id}`,{title:"User Profile", usuarioLogeado : req.session.usuarioLogin})
-
-                setJson(usuarios, "users")
-                const editarUsuario = usuarios.find(element => element.id == id);
-                req.session.user = editarUsuario;
-                res.cookie("user", {name:editarUsuario.name,image:editarUsuario.image, email:editarUsuario.email, id:editarUsuario.id},{maxAge: 1000 * 0 * 15})
-                res.redirect(`/`)
+                // setJson(usuarios, "users")
+                // const editarUsuario = usuarios.find(element => element.id == id);
+                // req.session.user = editarUsuario;
+                // res.cookie("user", {name:editarUsuario.name,image:editarUsuario.image, email:editarUsuario.email, id:editarUsuario.id},{maxAge: 1000 * 0 * 15})
+                // res.redirect(`/`)
 
 
             })
