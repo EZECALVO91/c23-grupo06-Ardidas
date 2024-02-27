@@ -190,13 +190,13 @@ const productsController = {
     res.redirect(`/products/detalle/${id}`);
   },
   destroy: (req, res) => {
-    //     db.Product.destroy({
-    //         where : {
-    //             id : req.params.id
-    //         }
-    //     })
-    //     .then(()=>res.redirect("/products/dashboard"))
-    //     .catch(error => console.log(error))
+         db.Product.destroy({
+             where : {
+                 id : req.params.id
+             }
+         })
+         .then(()=>res.redirect("/products/dashboard"))
+         .catch(error => console.log(error))
   },
 };
 
