@@ -91,24 +91,6 @@ const productsController = {
     });
   },
   create: (req, res) => {
-    // const file = req.file;
-    // const products = getJson("product");
-    // const Nuevaid = Date.now();
-    // const { nombre, talles, color, precio, descripcion, category } = req.body;
-    // console.log("Que llega?: ", req.body.color);
-    // let nuevoJson = {
-    //   id: +Nuevaid,
-    //   nombre: nombre.trim(),
-    //   talles: talles >= 1 ? [talles] : talles,
-    //   color: Array.isArray(color) ? color : [color],
-    //   precio: +precio,
-    //   descripcion: descripcion.trim(),
-    //   imagen: file ? file.filename : "default-image.png",
-    //   category,
-    // };
-    // let productoNuevo = [...products, nuevoJson];
-    // setJson(productoNuevo, "product");
-    // res.redirect("/products/dashboard");
     const file = req.file;
     const { name, price,  category,  description, sizes, color} = req.body;
     db.Product.create({
@@ -122,8 +104,7 @@ const productsController = {
     })
      .then((resp)=>{
        db.Image_product.create({
-          name: file ? file.filename : "default-image.png",
-          path: file ? file.filename : "default-image.png",
+          filename: file ? file.filename : "default-image.png",
           id_product: resp.dataValues.id,
           createdAt:new Date,
          updatedAt:new Date
