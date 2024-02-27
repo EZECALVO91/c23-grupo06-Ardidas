@@ -6,14 +6,9 @@ const { Sequelize } = require("../database/models");
 const productsController = {
   index: (req, res) => {
     let products = db.Product.findAll({
-      include: [
-        {
-          association: "Image_products",
-          attributes: ["id", "filename", "id_product"],
-        },
-      ],
+      include: [{ 
+        association: "Image_products"}],
     });
-
     Promise.all([products])
       .then(([products]) => {
         res.render("products/products", {
@@ -26,19 +21,12 @@ const productsController = {
   },
   productDetail: (req, res) => {
     let product = db.Product.findByPk(req.params.id,{
-        include: [
+        include: [{
+            association: "Image_products"},
           {
-            association: "Image_products",
-          },
+            association: "Category_products"},
           {
-            association: "Category_products",
-            attributes: ["id", "category"],
-          },
-          {
-            association: "Sizes",
-            attributes: ["id","size"],
-          },
-        ],
+            association: "Sizes"}],
       });
       Promise.all([product])
         .then(([product]) => {
@@ -51,11 +39,8 @@ const productsController = {
   },
   productCart: (req, res) => {
     let product = db.Product.findByPk(req.params.id,{
-      include: [
-        {
-          association: "Image_products",
-        },
-      ],
+      include: [{
+          association: "Image_products"}],
     });
     Promise.all([product])
       .then(([product]) => {
@@ -68,12 +53,9 @@ const productsController = {
   },
   dashboard: (req, res) => {
     let products = db.Product.findAll({
-        include: [
-            {association:"Image_products",
-        }
-        ]     
-    })
-    
+        include: [{
+          association:"Image_products"}]     
+    })  
     Promise.all([products])
     .then(([products]) => {
         res.render("products/dashboard",{
@@ -120,36 +102,17 @@ const productsController = {
    })
     .then(()=>{
      res.redirect("/products/dashboard");
-    
-    
     })
     .catch(error=> console.log(error));
   },
-
   productEdit: (req, res) => {
-    // const { id } = req.params;
-    // const products = getJson("product");
-    // const product = products.find((elemento) => elemento.id == id);
-    // res.render("products/productEdit", {
-    //   title: "Editar producto",
-    //   product,
-    //   usuarioLogeado: req.session.usuarioLogin,
-    // });
     let product = db.Product.findByPk(req.params.id,{
-      include: [
+      include: [{
+          association: "Image_products"},
         {
-          association: "Image_products",
-          attributes: ["id", "name", "path", "id_product"],
-        },
+          association: "Category_products"},
         {
-          association: "Category_products",
-          attributes: ["id", "category"],
-        },
-        {
-          association: "Sizes",
-          attributes: ["id","size"],
-        },
-      ],
+          association: "Sizes"}],
     });
     Promise.all([product])
       .then(([product]) => {
@@ -157,8 +120,10 @@ const productsController = {
            product,
            usuarioLogeado: req.session.usuarioLogin,
            title: "Editar producto",
-          // res.send(product.Sizes[0].size)
+          
        })
+      // res.send(product.Sizes)
+      // console.log("Holaaaaaaaaaaaaaa", product.Sizes[0].id == 3)
     })
       .catch(error=> console.log(error));
   },
