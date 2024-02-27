@@ -11,7 +11,6 @@ const indexController = {
             include: [
               {
                 association: "Image_products",
-                attributes: ["id", "name", "path", "id_product"],
               },
               {
                 association: "Category_products",
@@ -25,7 +24,6 @@ const indexController = {
             include: [
               {
                 association: "Image_products",
-                attributes: ["id", "name", "path", "id_product"],
               },
               {
                 association: "Category_products",

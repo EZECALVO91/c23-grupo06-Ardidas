@@ -69,7 +69,7 @@
       <section class="contenedor-productos1 section_products_main_index">
         <% ofertas.forEach(product => { %>
                   <article class="articulos">
-          <a href="../products/detalle/<%= product.id%>"><img src="/images/products/<%=product.Image_products[0].name %>" alt="Zapatillas Nike" /></a>
+          <a href="../products/detalle/<%= product.id%>"><img src="/images/products/<%=product.Image_products[0].filename %>" alt="Zapatillas Nike" /></a>
           <div class="product-texto">
             <div class="main_descuento_precio_articulo">
               <p class="precio">$<%=product.price%></p>
@@ -90,7 +90,7 @@
       <section class="contenedor-productos2 section_products_main_index">
         <% destacados.forEach(product => { %>
         <article class="articulos">
-          <a href="/products/detalle/<%= product.id%>"><img src="/images/products/<%= product.Image_products[0].name %>" alt="Zapatillas Nike" /></a>
+          <a href="/products/detalle/<%= product.id%>"><img src="/images/products/<%= product.Image_products[0].filename %>" alt="Zapatillas Nike" /></a>
           <div class="product-texto">
             <div class="main_descuento_precio_articulo">
               <p class="precio">$<%= product.price%></p>
