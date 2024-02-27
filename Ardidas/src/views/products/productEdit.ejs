@@ -13,97 +13,91 @@
 
           <section class="form__createProduct">
             <div class="img_update_fast">
-              <img src="/images/products/<%= product.imagen%>" alt="imagen principal" class="imagen_grande input_edit_img">
-              <input class="dashboard__image" name="image" type="file" accept="image/*" value="<%= product.imagen %>">
+              <img src="/images/products/<%= product.Image_products[0].name %>" alt="imagen principal" class="imagen_grande input_edit_img">
+              <input class="dashboard__image" name="image" type="file" accept="image/*" value="<%= product.Image_products[0].name %>">
             </div>
 
             <div class="update_box_intern">
-              <label for="nombre">Nombre :</label>
-              <input type="text" name="nombre" id="nombre" value="<%= product.nombre %>" />
+              <label for="name">Nombre :</label>
+              <input type="text" name="name" id="name" value="<%= product.name %>" />
 
-              <label for="precio">Precio :</label>
-              <input type="number" name="precio" value="<%= product.precio %>" />
+              <label for="price">Precio :</label>
+              <input type="number" name="price" value="<%= product.price %>" />
 
               <label for="category" >Categoría :</label>
-              <select name="category" id="category" value="<%= product.category %>">
-                <option value="oferta" <%=product.category == "oferta" ? "selected" : null %>>Oferta</option>
-                <option value="destacado"  <%=product.category == "destacado" ? "selected" : null  %>>Destacado</option>
-                <option value="lanzamiento" <%=product.category == "lanzamiento" ? "selected" : null  %>>Lanzamiento</option>
+              <select name="category" id="category" value="<%= product.Category_products.category %>">
+                <option value="1" <%=product.Category_products.category == "Oferta" ? "selected" : null %>>Oferta</option>
+                <option value="2"  <%=product.Category_products.category == "Destacado" ? "selected" : null  %>>Destacado</option>
+                <option value="3" <%=product.Category_products.category == "Lanzamiento" ? "selected" : null  %>>Lanzamiento</option>
+                <option value="4" <%=product.Category_products.category == "Temporada" ? "selected" : null  %>>Temporada</option>
               </select>
               <div>
-                <label for="descripcion">Descripción</label>
-                <textarea name="descripcion" id="descripcion"><%=product.descripcion %></textarea>
+                <label for="description">Descripción</label>
+                <textarea name="description" id="description"><%=product.description %></textarea>
               </div>
             </div>
             <div class="talles_update">
              
               <label>Talles :</label>
-             
+               <!-- for (let i=0; i<product.Sizes.length; i++){  -->
               <div>
-                <input type="checkbox" name="talles" value="36" <%=product.talles.includes("36") ? "checked" : null %> id="talles">
+                <input type="checkbox" name="talles" value="1" <%=product.Sizes[0].size == 36 ? "checked" : null %> id="talles">
                 <label for="talles" >36</label>
               </div>
               <div>
-                <input type="checkbox" name="talles" value="37" <%=product.talles.includes("37") ? "checked" : null %> id="talles">
+                <input type="checkbox" name="talles" value="2" <%=product.Sizes[1].size == 37 ? "checked" : null %> id="talles">
                 <label for="talles" >37</label>
               </div>
               <div>
-                <input type="checkbox" name="talles" value="38" <%=product.talles.includes("38") ? "checked" : null %> id="talles">
+                <input type="checkbox" name="talles" value="3" <%=product.Sizes[2].size == 38 ? "checked" : null %> id="talles">
                 <label for="talles" >38</label>
               </div>
               <div>
-                <input type="checkbox" name="talles" value="39" <%=product.talles.includes("39") ? "checked" : null %> id="talles" >
+                <input type="checkbox" name="talles" value="4" <%=product.Sizes[0].size == 39 ? "checked" : null %> id="talles" >
                 <label for="talles" >39</label>
               </div>
               <div>
-                <input type="checkbox" name="talles" value="40" <%=product.talles.includes("40") ? "checked" : null %> id="talles">
+                <input type="checkbox" name="talles" value="5" <%=product.Sizes[1].size == 40 ? "checked" : null %> id="talles">
                 <label for="talles" >40</label>
               </div>
               <div>
-                <input type="checkbox" name="talles" value="41" <%=product.talles.includes("41") ? "checked" : null %> id="talles">
-                <label for="talles" >41</label>
+                <input type="checkbox" name="sizes" value="6" <%=product.Sizes[0].size == 41 ? "checked" : null %> id="talles">
+                <label for="sizes" >41</label>
               </div>            
               <div>
-                <input type="checkbox" name="talles" value="42" <%=product.talles.includes("42") ? "checked" : null %> id="talles">
-                <label for="talles" >42</label>
+                <input type="checkbox" name="sizes" value="7" <%=product.Sizes[0].size == 42 ? "checked" : null %> id="talles">
+                <label for="sizes" >42</label>
               </div>
-              
+              <div>
+                <input type="checkbox" name="sizes" value="8" <%=product.Sizes[0].size == 43 ? "checked" : null %> id="talles">
+                <label for="sizes" >43</label>
+              </div>
+              <div>
+                <input type="checkbox" name="sizes" value="9" <%=product.Sizes[0].size == 44 ? "checked" : null %> id="talles">
+                <label for="sizes" >44</label>
+              </div>
+              <div>
+                <input type="checkbox" name="sizes" value="10" <%=product.Sizes[0].size == 45 ? "checked" : null %> id="talles">
+                <label for="sizes" >45</label>
+              </div>
+             <!-- }  -->
               </div>
 
               <div class="input_colores_create">
-                <label>Colores disponibles :</label>
-             
-                <div>
-                  <input type="checkbox" name="color" value="Negro" <%=product.color.includes("Negro") ? "checked" : null %> id="color">
-                  <label for="color" >Negro</label>
-                </div>
-              
-                <div>
-                  <input type="checkbox" name="color" value="Blanco" <%=product.color.includes("Blanco") ? "checked" : null %> id="color">
-                  <label for="color" >Blanco</label>
-                </div>
-
-                <div>
-                  <input type="checkbox" name="color" value="Gris" <%=product.color.includes("Gris") ? "checked" : null %> id="color">
-                  <label for="color" >Gris</label>
-                </div>
-
-                <div>
-                  <input type="checkbox" name="color" value="Rosa" <%=product.color.includes("Rosa") ? "checked" : null %> id="color">
-                  <label for="color" >Rosa</label>
-                </div>
-
-                <div>
-                  <input type="checkbox" name="color" value="Azul" <%=product.color.includes("Azul") ? "checked" : null %> id="color">
-                  <label for="color" >Azul</label>
-                </div>
-
-                <div>
-                  <input type="checkbox" name="color" value="Beige" <%=product.color.includes("Beige") ? "checked" : null %> id="color">
-                  <label for="color" >Beige</label>
-                </div>
-
-              </div>
+                <label class="label_colores" for="color">Color :</label>
+                
+              <select name="color" id="color" >                                           
+                <option value="Azul" <%=product.color == "Azul" ? "selected" : null %>>Azul</option>
+                <option value="Beige" <%=product.color == "Beige" ? "selected" : null %>>Beige</option>
+                <option value="Blanco" <%=product.color == "Blanco" ? "selected" : null %>>Blanco</option>
+                <option value="Gris" <%=product.color == "Gris" ? "selected" : null %>>Gris</option>
+                <option value="Marron" <%=product.color == "Marron" ? "selected" : null %>>Marron</option>
+                <option value="Negro" <%=product.color == "Negro" ? "selected" : null %>>Negro</option>
+                <option value="Rojo" <%=product.color == "Rojo" ? "selected" : null %>>Rojo</option>
+                <option value="Rosa" <%=product.color == "Rosa" ? "selected" : null %>>Rosa</option>
+              </select>
+            
+              </div> 
 
             </div>
           

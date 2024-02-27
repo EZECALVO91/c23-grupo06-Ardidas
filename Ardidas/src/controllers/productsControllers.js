@@ -94,24 +94,6 @@ const productsController = {
     });
   },
   create: (req, res) => {
-    // const file = req.file;
-    // const products = getJson("product");
-    // const Nuevaid = Date.now();
-    // const { nombre, talles, color, precio, descripcion, category } = req.body;
-    // console.log("Que llega?: ", req.body.color);
-    // let nuevoJson = {
-    //   id: +Nuevaid,
-    //   nombre: nombre.trim(),
-    //   talles: talles >= 1 ? [talles] : talles,
-    //   color: Array.isArray(color) ? color : [color],
-    //   precio: +precio,
-    //   descripcion: descripcion.trim(),
-    //   imagen: file ? file.filename : "default-image.png",
-    //   category,
-    // };
-    // let productoNuevo = [...products, nuevoJson];
-    // setJson(productoNuevo, "product");
-    // res.redirect("/products/dashboard");
     const file = req.file;
     const { name, price,  category,  description, sizes, color} = req.body;
     db.Product.create({
@@ -149,14 +131,40 @@ const productsController = {
   },
 
   productEdit: (req, res) => {
-    const { id } = req.params;
-    const products = getJson("product");
-    const product = products.find((elemento) => elemento.id == id);
-    res.render("products/productEdit", {
-      title: "Editar producto",
-      product,
-      usuarioLogeado: req.session.usuarioLogin,
+    // const { id } = req.params;
+    // const products = getJson("product");
+    // const product = products.find((elemento) => elemento.id == id);
+    // res.render("products/productEdit", {
+    //   title: "Editar producto",
+    //   product,
+    //   usuarioLogeado: req.session.usuarioLogin,
+    // });
+    let product = db.Product.findByPk(req.params.id,{
+      include: [
+        {
+          association: "Image_products",
+          attributes: ["id", "name", "path", "id_product"],
+        },
+        {
+          association: "Category_products",
+          attributes: ["id", "category"],
+        },
+        {
+          association: "Sizes",
+          attributes: ["id","size"],
+        },
+      ],
     });
+    Promise.all([product])
+      .then(([product]) => {
+           return res.render("products/productEdit",{
+           product,
+           usuarioLogeado: req.session.usuarioLogin,
+           title: "Editar producto",
+          // res.send(product.Sizes[0].size)
+       })
+    })
+      .catch(error=> console.log(error));
   },
   update: (req, res) => {
     const { id } = req.params;
