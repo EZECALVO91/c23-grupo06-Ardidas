@@ -30,7 +30,14 @@ module.exports = {
           key:'id'
         },
         onDelete:"cascade"
-      }
+      },      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATEONLY
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATEONLY
+      },
     });
   },
   async down(queryInterface, Sequelize) {

@@ -14,16 +14,24 @@ module.exports = {
     */
     await queryInterface.bulkInsert('Category_products', [
       {
-        category:"Oferta"
+        category:"Oferta",
+        createdAt:  new Date,
+        updatedAt: new Date 
       },
       {
-        category:"Destacado"
+        category:"Destacado",
+        createdAt:  new Date,
+        updatedAt: new Date 
       },
       {
-        category:"Lanzamiento"
+        category:"Lanzamiento",
+        createdAt:  new Date,
+        updatedAt: new Date 
       },
       {
-        category:"Temporada"
+        category:"Temporada",
+        createdAt:  new Date,
+        updatedAt: new Date 
       }
   ], {});
   },
