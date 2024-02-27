@@ -9,13 +9,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      filename: {
         allowNull: false,
         type: Sequelize.STRING(150)
-      },
-      path: {
-        allowNull: false,
-        type: Sequelize.STRING(100)
       },
       id_product: {
         allowNull: false,
@@ -27,7 +23,16 @@ module.exports = {
           key:'id'
         },
         onDelete:"cascade"
-      }
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATEONLY
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATEONLY
+      },
+      
     });
   },
   async down(queryInterface, Sequelize) {
