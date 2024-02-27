@@ -23,11 +23,7 @@ const uploadFile = multer({ storage})
 router
 .get("/", index)
 
-// .get('/carrito/:id', sessionValidate, productCart)
-// Estoy teniendo problemas porque no me valida la sesión, por ende me manda 
-// a la vista de iniciar sesión, a pesar de tener un perfil abierto.(Seguro
-// se debe a que estoy haciendo uso de los users del json)
-.get('/carrito/:id', productCart)
+.get('/carrito/:id', sessionValidate, productCart)
 
 .get('/detalle/:id', productDetail)
 

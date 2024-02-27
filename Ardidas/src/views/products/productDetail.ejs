@@ -22,25 +22,20 @@
           <div class="select-options-details-products">
           <div class="detalles_talles">
             <p>Talles</p>
-            <!-- <select name="talles" id="" class="numero">
-               product.talles.forEach(talles => { 
-              <option value= talles > talles</option>
-              }) 
-            </select> -->
-            <!-- Saqué todos los tags de ejs, tanto de lógica como de impresión -->
+             <select name="sizes" id="" class="numero">
+              <% product.Sizes.forEach(talles => { %>
+                <option value=<%= talles.size %>><%= talles.size %></option>
+              <% }) %>
+            </select> 
+          
           </div>
           <div class="detalles_cantidad">
             <p>Cantidad</p>
             <input type="number" class="numero" value="1">
           </div>
           <div class="detalles_color">
-            <p>Colores</p>
-            <!-- <select name="color" id="" class="color_detail">
-               product.color.forEach(color => { 
-              <option value= color > color </option>
-               })
-              </select> -->
-                <!-- Saqué todos los tags de ejs, tanto de lógica como de impresión -->
+            <p>Color :</p>
+            <h4><%= product.color%></h4>      
             </div>
           <a href="/products/carrito/<%= product.id%>">
           </div>
