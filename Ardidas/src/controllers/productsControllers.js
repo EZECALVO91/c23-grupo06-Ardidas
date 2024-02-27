@@ -9,7 +9,7 @@ const productsController = {
       include: [
         {
           association: "Image_products",
-          attributes: ["id", "name", "path", "id_product"],
+          attributes: ["id", "filename", "id_product"],
         },
       ],
     });
@@ -29,7 +29,6 @@ const productsController = {
         include: [
           {
             association: "Image_products",
-            attributes: ["id", "name", "path", "id_product"],
           },
           {
             association: "Category_products",
@@ -55,7 +54,6 @@ const productsController = {
       include: [
         {
           association: "Image_products",
-          attributes: ["id", "name", "path", "id_product"],
         },
       ],
     });
@@ -72,7 +70,6 @@ const productsController = {
     let products = db.Product.findAll({
         include: [
             {association:"Image_products",
-            attributes:["id","name","path","id_product"]
         }
         ]     
     })
