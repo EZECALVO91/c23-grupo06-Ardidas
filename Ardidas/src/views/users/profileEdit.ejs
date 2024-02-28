@@ -15,32 +15,32 @@
       </div>
 
       <form action="/users/profile/<%= usuarioLogeado.id %>?_method=PUT" method="post" class="main__form__register" enctype="multipart/form-data" >
-        <label for="name">NOMBRE</label>
+        <label for="name">NOMBRE Y APELLIDO:</label>
         <input type="text" name="name"  id="name" value="<%= usuarioLogeado.name %>"/>
         <p class="errores_validacion_profile"> <%= locals.errores && errores.name ? errores.name.msg : null %> </p>
 
-        <!-- <label for="email">EMAIL</label>
-        <input type="email" name="email"  value="<%= usuarioLogeado.email %>"/>
-        <p class="errores_validacion_profile"> <%= locals.errores && errores.email ? errores.email.msg : null %> </p> -->
+        <label for="email">EMAIL:</label>
+        <input type="email" name="email"  value="<%= usuarioLogeado.email %>" disabled/>
+        <p class="errores_validacion_profile"> <%= locals.errores && errores.email ? errores.email.msg : null %> </p>
 
-        <!-- <label for="password">CONTRASEÑA</label>
+        <label for="password">CONTRASEÑA:</label>
         <div class="main__form__register__password">
-        <input type="password" name="password" class="main__form__register__password" value="<%= usuarioLogeado.password %>"/>
+        <input type="password" name="password" class="main__form__register__password" value="<%= usuarioLogeado.password %>" disabled/>
         <p class="errores_validacion_profile"> <%= locals.errores && errores.password ? errores.password.msg : null %> </p>
         <i class="fa-regular fa-eye"></i>
-        </div> -->
+        </div>
 
         <label for="date">FECHA DE NACIMIENTO: </label>
         <input type="date" name="date"  value="<%= usuarioLogeado.date %>"/>
         <p class="errores_validacion_profile"> <%= locals.errores && errores.date ? errores.date.msg : null %> </p>
 
-        <label for="localidad">LOCALIDAD: </label>
-        <input type="TEXT" name="localidad"  value="<%= usuarioLogeado.localidad %>"/>
-        <p class="errores_validacion_profile"> <%= locals.errores && errores.localidad ? errores.localidad.msg : null %> </p>
+        <label for="locality">LOCALIDAD: </label>
+        <input type="TEXT" name="locality"  value="<%= usuarioLogeado.locality %>"/>
+        <p class="errores_validacion_profile"> <%= locals.errores && errores.locality ? errores.locality.msg : null %> </p>
 
-        <label for="sobremi">SOBRE MI: </label>
-        <textarea name="sobremi" id="sobremi" cols="30" rows="10" ><%= usuarioLogeado.sobremi %></textarea>
-        <p class="errores_validacion_profile"> <%= locals.errores && errores.sobremi ? errores.sobremi.msg : null %> </p>
+        <label for="aboutMe">SOBRE MI: </label>
+        <textarea name="aboutMe" id="aboutMe" cols="30" rows="10" ><%= usuarioLogeado.aboutMe %></textarea>
+        <p class="errores_validacion_profile"> <%= locals.errores && errores.aboutMe ? errores.aboutMe.msg : null %> </p>
 
         <label for="image">CAMBIO DE AVATAR: </label>
         <input type="file" name="image" id="image" accept="image/*" value="<%= usuarioLogeado.image %>">

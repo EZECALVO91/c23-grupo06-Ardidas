@@ -1,5 +1,5 @@
 const isAdminValidate = (req,res,next) => {
-    if (req.session.usuarioLogin && req.session.usuarioLogin.category == "ADMIN") {
+    if (req.session.usuarioLogin && req.session.usuarioLogin.id_category == 1) {
         next();
     } else {
         res.redirect("/");

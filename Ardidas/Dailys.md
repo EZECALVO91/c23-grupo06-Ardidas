@@ -82,3 +82,14 @@
 * Nicolas Badino = Yo hoy estuve repasando el pg , termine con mi parte del trabajo en la tarea que compartia con Esteban (implementar la funcion de recordar usuario), mañana la verdad por temas familiares no voy a poder dedicarle mucho tiempo al sprint. Domingo : los detalles que me faltan es validar el confirmar contraseña y la imagen. Con esto mi parte estaria finalizada
 
 * Esteban Figueroa = Falta completar.
+
+
+## Daily 15/2/2024
+
+* Ezequiel Calvo = En este sexto sprint me toca ser nuevamente el Lider asi que con los chicos, los dias anteriores estuvimos en reunion, Esteban por temas de corte de luz no pudo estar presente, asi que entre tres repartimos las tareas equitativamente, tambien repartiendo equitativamente los puntos para tener un buen valance de tareas. Tambien revisamos lo que era la base de datos, viendo algunas modificaciones pero que si o si ibamos a tener que esperar a la clase para poder resolver nuestras dudas, asi que aprovechamos y en clase resolvimos gran parte de la base de datos. Tambien estuve realizando de a poco los modelos de cada una de las tablas para que los chicos puedan trabajar, eso lo tengo resulto casi todo solo faltan detallitos. Mi idea es poder tenerlo finalizado para el dia sabado o domingo asi ellos tiempo tiempo suficiente de poder trabajar y no estar a las corridas. Tambien me encargue de Jira, Daily y Retro que son las tareas que tiene que realizar el lider.
+
+* Leonel Anchaba = En estos dias estuvimos repartiendo las tareas y armando la base de datos. El dia de hoy estuve completando el playgraund que lo tenia atrasado, me queda una unica solapa de la ultima clase y sus trabajos, tambien estuve adelantando el tp de la clase 38, despues en cuanto a trabas no, solamente faltaba terminar de corregir la base de datos para poder avanzar en el sprint. Falta unicamente en clase ver un par de cosas sobre crud, pero por el momento sigo sin trabas.
+
+* Nicolas Badino = Hoy estuve terminando basicamente lo del playgraund, le meti un poco a la clase 39 porque estaba un poco atrasado y mañana pienso terminarlo y empezar con mi parte del trabajo del sprint, estuvimos viendo la base de datos con los chicos y pudimos corregirlo con los compañeros y el profesor en clase asi que una ves que Eze termine con los modelos puedo empezar mi parte del sprint.
+
+* Esteban Figueroa = Falta completar.

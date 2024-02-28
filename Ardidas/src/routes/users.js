@@ -10,6 +10,7 @@ const loginValidation = require('../validation/validationLogin')
 const validationProfile = require('../validation/validationProfile')
 const uploadImgPro = require ('../validation/valitationProfileImg')
 const validationPrivi = require ('../validation/validationRegisterPrivi')
+const validationUpdate = require("../validation/validationUserUpdateDashboar")
 const sessionValidate = require("../middleware/sessionValidate");
 const isAdmin = require("../middleware/isAdminValidate");
 
@@ -31,7 +32,7 @@ router
 
 //Edicion de usuarios departe de Dashboar
 .get('/update/:id',isAdmin , usersEdit )
-.put('/update/:id', uploadImgPro.single("image"), usersUpdate)
+.put('/update/:id', uploadImgPro.single("image"),validationUpdate, usersUpdate)
 
 //Profile para el usuario y su cambio de informacion
 .get('/profile/:id', sessionValidate, userProfile)

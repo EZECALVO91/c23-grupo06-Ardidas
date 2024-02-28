@@ -41,6 +41,10 @@
     
     
 }
+
+.errores_validacion_login{
+    color: red;
+}
 .login_contra_up{
    
     color: var(--color-negro);
