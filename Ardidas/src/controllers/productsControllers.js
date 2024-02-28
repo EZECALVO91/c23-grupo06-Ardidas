@@ -126,26 +126,63 @@ const productsController = {
   },
   update: (req, res) => {
     const { id } = req.params;
-    const products = getJson("product");
-    const { nombre, precio, descripcion, imagen, category, talles, color } =
-      req.body;
-    const nuevoArray = products.map((product) => {
-      if (product.id == id)
-        return {
-          id: +id,
-          nombre: nombre.trim(),
-          talles: talles >= 1 ? [talles] : talles,
-          color: Array.isArray(color) ? color : [color],
-          precio: +precio,
-          descripcion: descripcion.trim(),
-          imagen: imagen ? imagen : product.imagen,
-          category,
-        };
+    // const products = getJson("product");
+    //const { nombre, precio, descripcion, imagen, category, talles, color } = req.body;
+    // const nuevoArray = products.map((product) => {
+    //   if (product.id == id)
+    //     return {
+    //       id: +id,
+    //       nombre: nombre.trim(),
+    //       talles: talles >= 1 ? [talles] : talles,
+    //       color: Array.isArray(color) ? color : [color],
+    //       precio: +precio,
+    //       descripcion: descripcion.trim(),
+    //       imagen: imagen ? imagen : product.imagen,
+    //       category,
+    //     };
 
-      return product;
-    });
-    setJson(nuevoArray, "product");
+    //   return product;
+    // });
+    // setJson(nuevoArray, "product");
+    // res.redirect(`/products/detalle/${id}`);
+    const file = req.file;
+    const { name, price,  category,  description, sizes, color, image} = req.body;
+    db.Product.update({
+      name,
+      color,
+      price,
+      description,
+      id_category_product: category,
+      createdAt:new Date,
+      updatedAt:new Date
+    },
+    {
+      where:{id}
+    })
+      .then((resp)=>{
+        db.Image_product.update({
+           filename: file ? file.filename : image,
+           id_product: resp.id,
+           createdAt:new Date,
+          updatedAt:new Date
+        },
+        {
+          where:{id}
+        })
+      //   for (let i=0; i<sizes.length; i++){
+      //   db.Stock.update({
+      //    id_product: resp.id,
+      //    id_size: sizes[i],
+      //    createdAt:new Date,
+      //    updatedAt:new Date
+      //  })
+      //  }
+    })
+    .then(()=>{
     res.redirect(`/products/detalle/${id}`);
+    console.log("Holiiiiiiiiiiii", file)
+    })
+    .catch(error=> console.log(error));
   },
   destroy: (req, res) => {
          db.Product.destroy({

@@ -33,7 +33,7 @@ router
 .post("/",uploadFile.single("image"), isAdmin, create)
 
 .get("/update/:id", isAdmin, productEdit)
-.put("/update/:id", isAdmin, update)
+.put("/update/:id",uploadFile.single("image"), isAdmin, update)
 
 .delete('/delete/:id', isAdmin, destroy)
 
