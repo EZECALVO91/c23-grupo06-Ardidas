@@ -119,11 +119,8 @@ const productsController = {
            return res.render("products/productEdit",{
            product,
            usuarioLogeado: req.session.usuarioLogin,
-           title: "Editar producto",
-          
+           title: "Editar producto",   
        })
-      // res.send(product.Sizes)
-      // console.log("Holaaaaaaaaaaaaaa", product.Sizes[0].id == 3)
     })
       .catch(error=> console.log(error));
   },
