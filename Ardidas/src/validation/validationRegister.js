@@ -1,5 +1,4 @@
 const {body} = require('express-validator');
-const {getJson} = require("../utility/jsonMethod");
 const db = require ("../database/models")
 
 module.exports = [
