@@ -351,13 +351,13 @@ module.exports = {
         updatedAt: new Date
       },
       {
-        filename: 'John Doe',
+        filename: 'nike9.webp',
         id_product: 57,
         createdAt:  new Date,
         updatedAt: new Date
       },
       {
-        filename: 'John Doe',
+        filename: 'nike9.webp',
         id_product: 58,
         createdAt:  new Date,
         updatedAt: new Date
