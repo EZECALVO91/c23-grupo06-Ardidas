@@ -23,7 +23,7 @@
 
         <label for="password">CONTRASEÑA:</label>
         <div class="main__form__register__password">
-          <input type="password" name="password" class="main__form__register__password" required value="<%= locals.old && old.password ? old.name : null %>" >
+          <input type="password" name="password" class="main__form__register__password" required >
           <p><%= locals.errores && errores.password ? errores.password.msg : null %> </p>
           <i class="fa-regular fa-eye"></i>
         </div>
