@@ -62,19 +62,19 @@
 
       <div class="main_title_box">
         <hr class="hr_txt" />
-        <h2 id="productos_home">LANZAMIENTO</h2>
+        <h2 id="productos_home">OFERTAS</h2>
         <hr class="hr_txt" />
       </div>
 
       <section class="contenedor-productos1 section_products_main_index">
-        <% lanzamientoProducts.forEach(product => { %>
+        <% ofertas.forEach(product => { %>
                   <article class="articulos">
-          <a href="../products/detalle/<%= product.id%>"><img src="/images/products/<%=product.imagen %>" alt="Zapatillas Nike" /></a>
+          <a href="../products/detalle/<%= product.id%>"><img src="/images/products/<%=product.Image_products[0].filename %>" alt="Zapatillas Nike" /></a>
           <div class="product-texto">
             <div class="main_descuento_precio_articulo">
-              <p class="precio">$<%=product.precio%></p>
+              <p class="precio">$<%=product.price%></p>
             </div>
-            <p class="modelo"><%=product.nombre%></p>
+            <p class="modelo"><%=product.name%></p>
             <button><a href="/products/carrito/<%= product.id%>">SUMAR AL CARRITO</a></button>
           </div>
         </article>
@@ -88,14 +88,14 @@
       </div>
 
       <section class="contenedor-productos2 section_products_main_index">
-        <% featuredCategory.forEach(product => { %>
+        <% destacados.forEach(product => { %>
         <article class="articulos">
-          <a href="/products/detalle/<%= product.id%>"><img src="/images/products/<%= product.imagen %>" alt="Zapatillas Nike" /></a>
+          <a href="/products/detalle/<%= product.id%>"><img src="/images/products/<%= product.Image_products[0].filename %>" alt="Zapatillas Nike" /></a>
           <div class="product-texto">
             <div class="main_descuento_precio_articulo">
-              <p class="precio">$<%= product.precio%></p>
+              <p class="precio">$<%= product.price%></p>
             </div>
-            <p class="modelo"><%=product.nombre%></p>
+            <p class="modelo"><%=product.name%></p>
             <button><a href="/products/carrito/<%= product.id%>">SUMAR AL CARRITO</a></button>
           </div>
         </article>

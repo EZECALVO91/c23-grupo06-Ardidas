@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {index, productCart, productDetail, dashboard, productLoad, create, productEdit, update, destroy} = require('../controllers/productsControllers')
+const {index, productCart, productDetail, dashboard, productLoad, create, productEdit, update, destroy, loadStock} = require('../controllers/productsControllers')
 const multer = require("multer");
 const path = require("path");
 
@@ -33,7 +33,7 @@ router
 .post("/",uploadFile.single("image"), isAdmin, create)
 
 .get("/update/:id", isAdmin, productEdit)
-.put("/update/:id", isAdmin, update)
+.put("/update/:id",uploadFile.single("image"), isAdmin, update)
 
 .delete('/delete/:id', isAdmin, destroy)
 

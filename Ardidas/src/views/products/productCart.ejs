@@ -10,7 +10,7 @@
     </header>
     <main class="productCart-main">
       <div class="productCart-main-div-promo">
-        <p>Cuotas sin interes con todos los bancos.</p>
+        <p>3 Cuotas sin interés con todos los bancos.</p>
       </div>
         <section class="productCart-main-section-principal">
             <div class="productCart-main-section-principal-encabezado">
@@ -18,43 +18,21 @@
             </div>
             <article class="productCart-main-section-principal-article">
                 <div class="productCart-main-section-principal-article-div-1">
-                    <img src="/images/products/<%= product.imagen%>" alt="zapatillas">
+                    <img src="/images/products/<%= product.Image_products[0].filename %>" alt="zapatillas">
                 </div>
                 <div class="productCart-main-section-principal-article-div-2">
-                    <p id="productCart-article-nombre"><%= product.nombre%></p>
-                    <p id="productCart-article-precio">$<%= product.precio%></p>
+                    <p id="productCart-article-nombre"><%= product.name%></p>
+                    <p id="productCart-article-precio">$<%= product.price%></p>
                     <a href="" id="productCart-article-borrar"><i class="fa-solid fa-trash-can"></i></a>
                     <input type="number" name="cantidad" id="productCart-article-cantidad" value="1">
                 </div>
             </article>
-            <!-- <article class="productCart-main-section-principal-article">
-              <div class="productCart-main-section-principal-article-div-1">
-                  <img src="/images/nikeb3.webp" alt="zapatillas">
-              </div>
-              <div class="productCart-main-section-principal-article-div-2">
-                  <p id="productCart-article-nombre">Zapatillas Nike Air max 95</p>
-                  <p id="productCart-article-precio">$90.000</p>
-                  <a href="" id="productCart-article-borrar"><i class="fa-solid fa-trash-can"></i></a>
-                  <input type="number" name="cantidad" id="productCart-article-cantidad" value="1">
-              </div>
-          </article>
-          <article class="productCart-main-section-principal-article">
-            <div class="productCart-main-section-principal-article-div-1">
-                <img src="/images/nike8.webp" alt="zapatillas">
-            </div>
-            <div class="productCart-main-section-principal-article-div-2">
-                <p id="productCart-article-nombre">Zapatillas Nike Air max 95</p>
-                <p id="productCart-article-precio">$100.000</p>
-                <a href="" id="productCart-article-borrar"><i class="fa-solid fa-trash-can"></i></a>
-                <input type="number" name="cantidad" id="productCart-article-cantidad" value="1">
-            </div>
-        </article> -->
         </section>
       <section class="productCart-main-section-secundario">
         <p class="productCart-main-section-secundario-resumen">Resumen de compra</p>      
         <div class="productCart-main-section-secundario-div-1">
         <p id="productCart-section-secundario-text-total">Total</p>
-        <p id="productCart-precio-total">$<%= product.precio%></p>
+        <p id="productCart-precio-total">$<%= product.price%></p>
       </div>
       <div class="productCart-main-section-secundario-div-2">
         <button id="button-pagar-productCart">PAGAR</button>
