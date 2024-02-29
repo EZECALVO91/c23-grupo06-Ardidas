@@ -14,10 +14,14 @@ module.exports = {
     */
     await queryInterface.bulkInsert('Categories', [
       {
-      category:'ADMIN'
+      category:'ADMIN',
+      createdAt:  new Date,
+      updatedAt: new Date 
       },
       {
       category:'USER',
+      createdAt:  new Date,
+      updatedAt: new Date 
       }
     ], {});
   },
