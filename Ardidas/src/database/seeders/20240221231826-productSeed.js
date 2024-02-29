@@ -29,527 +29,529 @@ module.exports = {
 
     await queryInterface.bulkInsert('Products', [
       {
-        name:"Air Max Plus",
-        color:"Beige",
-        price:100000,
-        description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+        name:"Nike Air Max 97",
+        color:"Azul",
+        price:105000,
+        description:"Impulsa tu estilo a toda velocidad con el Air Max 97. El diseño icónico está inspirado en las gotas de agua y los trenes bala japoneses. La amortiguación Nike Air de largo completo te permite andar con comodidad de alto rendimiento. Amárrate las agujetas y sal a dar un paseo de primera clase.",
         id_category_product:1,
         createdAt:  new Date,
         updatedAt: new Date
       },
       {
-        name:"Air Max Plus",
+        name:"Nike Air Max 97",
         color:"Beige",
-        price:120000,
-        description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-        id_category_product:1,
+        price:180000,
+        description:"Elegante. Con estilo. Simple. El diseño del Air Max 97 inspirado en el agua es ideal tanto para correr como para salir una noche por la ciudad. La amortiguación Nike Air de largo completo te permite andar con comodidad de alto rendimiento.",
+        id_category_product:2,
         createdAt:  new Date,
         updatedAt: new Date
       },
       {
-        name:"Air Max Plus",
-        color:"Beige",
-        price:130000,
-        description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-        id_category_product:1,
+        name:"Nike Air Max 97",
+        color:"Blanco",
+        price:230000,
+        description:"Impulsa tu estilo a toda velocidad con el Air Max 97. El diseño icónico está inspirado en las gotas de agua y los trenes bala japoneses. La amortiguación Nike Air de largo completo te permite andar con comodidad de alto rendimiento. Amárrate las agujetas y sal a dar un paseo de primera clase.",
+        id_category_product:3,
         createdAt:  new Date,
         updatedAt: new Date
       },
       {
-        name:"Air Max Plus",
-        color:"Beige",
+        name:"Nike Air Max 97",
+        color:"Gris",
         price:140000,
-        description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-        id_category_product:1,
+        description:"Elegante. Con estilo. Simple. El diseño del Air Max 97 inspirado en el agua es ideal tanto para correr como para salir una noche por la ciudad. La amortiguación Nike Air de largo completo te permite andar con comodidad de alto rendimiento.",
+        id_category_product:4,
         createdAt:  new Date,
         updatedAt: new Date
       },
       {
-        name:"Air Max Plus",
-        color:"Beige",
+        name:"Nike Air Max 97",
+        color:"Marron",
         price:150000,
-        description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+        description:"Elegante. Con estilo. Simple. El diseño del Air Max 97 inspirado en el agua es ideal tanto para correr como para salir una noche por la ciudad. La amortiguación Nike Air de largo completo te permite andar con comodidad de alto rendimiento.",
         id_category_product:1,
         createdAt:  new Date,
         updatedAt: new Date
     },
     {
-      name:"Air Max Plus",
-      color:"Beige",
+      name:"Nike Air Max 97",
+      color:"Negro",
       price:100000,
-      description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+      description:"Impulsa tu estilo a toda velocidad con el Air Max 97. El diseño icónico está inspirado en las gotas de agua y los trenes bala japoneses. La amortiguación Nike Air de largo completo te permite andar con comodidad de alto rendimiento. Amárrate las agujetas y sal a dar un paseo de primera clase.",
       id_category_product:1,
       createdAt:  new Date,
       updatedAt: new Date
     },
     {
-      name:"Air Max II",
+      name:"Nike Air Max 97",
       color:"Rosa",
       price:120000,
-      description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-      id_category_product:1,
+      description:"mpulsa tu estilo a toda velocidad con el Nike Air Max 97. Su icónico diseño ondulado se inspira en los trenes bala japoneses. Además, la amortiguación Nike Air de largo completo te permite moverte con comodidad de primer nivel donde sea que te lleve el día.",
+      id_category_product:2,
       createdAt:  new Date,
       updatedAt: new Date
     },
     {
-      name:"Air Max II",
-      color:"Rosa",
+      name:"Nike Air Force 1",
+      color:"Azul",
       price:130000,
-      description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-      id_category_product:1,
+      description:"El fulgor vive en el Nike Air Force 1 ’07, el OG de básquetbol que le da un toque fresco a lo que mejor conoces: revestimientos con costuras duraderas, acabados impecables y la cantidad perfecta de destellos para que brilles.",
+      id_category_product:3,
       createdAt:  new Date,
       updatedAt: new Date
     },
     {
-      name:"Air Max II",
-      color:"Rosa",
-      price:140000,
-      description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-      id_category_product:1,
+      name:"Nike Air Force 1",
+      color:"Beige",
+      price:170000,
+      description:"El fulgor vive en el Nike Air Force 1 ’07, el OG de básquetbol que le da un toque fresco a lo que mejor conoces: revestimientos con costuras duraderas, acabados impecables y la cantidad perfecta de destellos para que brilles.",
+      id_category_product:4,
       createdAt:  new Date,
       updatedAt: new Date
     },
     {
-      name:"Air Max II",
-      color:"Rosa",
-      price:150000,
-      description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-      id_category_product:1,
+      name:"Nike Air Force 1",
+      color:"Blanco",
+      price:190000,
+      description:"El fulgor vive en el Nike Air Force 1 ’07, el OG de básquetbol que le da un toque fresco a lo que mejor conoces: revestimientos con costuras duraderas, acabados impecables y la cantidad perfecta de destellos para que brilles.",
+      id_category_product:4,
       createdAt:  new Date,
       updatedAt: new Date
   },
   {
-    name:"Air Max II",
-    color:"Rosa",
-    price:100000,
-    description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-    id_category_product:1,
+    name:"Nike Air Force 1",
+    color:"Gris",
+    price:170000,
+    description:"El fulgor vive en el Nike Air Force 1 ’07, el OG de básquetbol que le da un toque fresco a lo que mejor conoces: revestimientos con costuras duraderas, acabados impecables y la cantidad perfecta de destellos para que brilles.",
+    id_category_product:2,
     createdAt:  new Date,
     updatedAt: new Date
   },
   {
-    name:"Air Max IV",
+    name:"Nike Air Force 1",
     color:"Negro",
-    price:120000,
-    description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-    id_category_product:1,
+    price:220000,
+    description:"El fulgor vive en el Nike Air Force 1 ’07, el OG de básquetbol que le da un toque fresco a lo que mejor conoces: revestimientos con costuras duraderas, acabados impecables y la cantidad perfecta de destellos para que brilles.",
+    id_category_product:3,
     createdAt:  new Date,
     updatedAt: new Date
   },
   {
-    name:"Air Max IV",
-    color:"Negro",
+    name:"Nike Air Force 1",
+    color:"Rojo",
     price:130000,
-    description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+    description:"El fulgor vive en el Nike Air Force 1 ’07, el OG de básquetbol que le da un toque fresco a lo que mejor conoces: revestimientos con costuras duraderas, acabados impecables y la cantidad perfecta de destellos para que brilles.",
     id_category_product:1,
     createdAt:  new Date,
     updatedAt: new Date
   },
   {
-    name:"Air Max IV",
-    color:"Negro",
+    name:"Nike Air Force 1",
+    color:"Rosa",
     price:140000,
-    description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+    description:"El fulgor vive en el Nike Air Force 1 ’07, el OG de básquetbol que le da un toque fresco a lo que mejor conoces: revestimientos con costuras duraderas, acabados impecables y la cantidad perfecta de destellos para que brilles.",
     id_category_product:1,
     createdAt:  new Date,
     updatedAt: new Date
   },
+  //Hasta aca arriba van 14
   {
-    name:"Air Max IV",
-    color:"Negro",
+    name:"Nike Air Jordan Mid",
+    color:"Azul",
     price:150000,
-    description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+    description:"Inspirada en el AJ1 original, esta edición de corte mid mantiene el look icónico que te encanta, y los colores selectos y el cuero impecable le dan una identidad distintiva.",
     id_category_product:1,
     createdAt:  new Date,
     updatedAt: new Date
 },
 {
-  name:"Air Max IV",
-  color:"Negro",
+  name:"Nike Air Jordan Mid",
+  color:"Blanco",
+  price:200000,
+  description:"Inspirada en el AJ1 original, esta edición de corte mid mantiene el look icónico que te encanta, y los colores selectos y el cuero impecable le dan una identidad distintiva.",
+  id_category_product:2,
+  createdAt:  new Date,
+  updatedAt: new Date
+},
+{
+  name:"Nike Air Jordan Mid",
+  color:"Gris",
+  price:220000,
+  description:"Inspirada en el AJ1 original, esta edición de corte mid mantiene el look icónico que te encanta, y los colores selectos y el cuero impecable le dan una identidad distintiva.",
+  id_category_product:2,
+  createdAt:  new Date,
+  updatedAt: new Date
+},
+{
+  name:"Nike Air Jordan Mid",
+  color:"Rojo",
+  price:130000,
+  description:"Inspirada en el AJ1 original, esta edición de corte mid mantiene el look icónico que te encanta, y los colores selectos y el cuero impecable le dan una identidad distintiva.",
+  id_category_product:4,
+  createdAt:  new Date,
+  updatedAt: new Date
+},
+{
+  name:"Nike Dunk Low",
+  color:"Azul",
+  price:140000,
+  description:"El ícono del básquetbol de los 80, que se creó para la cancha pero conquistó las calles, vuelve con revestimientos perfectamente brillantes y colores del equipo clásicos. Con su diseño icónico de básquetbol, el clásico Nike Dunk Low canaliza el espíritu vintage de la década de los 80 y vuelve a las calles, al tiempo que su cuello acolchado de corte low te permite llevar tu juego a cualquier lugar con comodidad.",
+  id_category_product:2,
+  createdAt:  new Date,
+  updatedAt: new Date
+},
+{
+  name:"Nike Dunk Low",
+  color:"Rosa",
+  price:150000,
+  description:"El ícono del básquetbol de los 80, que se creó para la cancha pero conquistó las calles, vuelve con revestimientos perfectamente brillantes y colores del equipo clásicos. Con su diseño icónico de básquetbol, el clásico Nike Dunk Low canaliza el espíritu vintage de la década de los 80 y vuelve a las calles, al tiempo que su cuello acolchado de corte low te permite llevar tu juego a cualquier lugar con comodidad.",
+  id_category_product:2,
+  createdAt:  new Date,
+  updatedAt: new Date
+},
+{
+name:"Nike Air Zoom Pegasus",
+color:"Azul",
+price:100000,
+description:"ENERGÍA DURANTE KILÓMETROS. El running es tu ritual diario; cada paso te lleva más cerca de tu objetivo personal. Ya sea en el entrenamiento o corriendo, llega a nuevas alturas con el Nike Air Zoom Pegasus 39 y su diseño intuitivo.",
+id_category_product:1,
+createdAt:  new Date,
+updatedAt: new Date
+},
+{
+name:"Nike Air Zoom Pegasus",
+color:"Blanco",
+price:220000,
+description:"ENERGÍA DURANTE KILÓMETROS. El running es tu ritual diario; cada paso te lleva más cerca de tu objetivo personal. Ya sea en el entrenamiento o corriendo, llega a nuevas alturas con el Nike Air Zoom Pegasus 39 y su diseño intuitivo.",
+id_category_product:3,
+createdAt:  new Date,
+updatedAt: new Date
+},
+{
+name:"Nike Air Zoom Pegasus",
+color:"Negro",
+price:230000,
+description:"ENERGÍA DURANTE KILÓMETROS. El running es tu ritual diario; cada paso te lleva más cerca de tu objetivo personal. Ya sea en el entrenamiento o corriendo, llega a nuevas alturas con el Nike Air Zoom Pegasus 39 y su diseño intuitivo.",
+id_category_product:4,
+createdAt:  new Date,
+updatedAt: new Date
+},
+{
+name:"Nike Air Zoom Pegasus",
+color:"Rosa",
+price:240000,
+description:"ENERGÍA DURANTE KILÓMETROS. El running es tu ritual diario; cada paso te lleva más cerca de tu objetivo personal. Ya sea en el entrenamiento o corriendo, llega a nuevas alturas con el Nike Air Zoom Pegasus 39 y su diseño intuitivo.",
+id_category_product:4,
+createdAt:  new Date,
+updatedAt: new Date
+},
+{
+name:"Nike Air Max 90",
+color:"Blanco",
+price:150000,
+description:"Nada más ligero, nada más cómodo, nada más probado: el Nike Air Max 90 se mantiene fiel a sus raíces con la icónica suela tipo waffle, los revestimientos cosidos y los detalles clásicos de TPU. Los nuevos detalles le dan un look moderno, al mismo tiempo que la amortiguación Max Air agrega comodidad a tu recorrido.",
+id_category_product:4,
+createdAt:  new Date,
+updatedAt: new Date
+},
+{
+name:"Nike Air Max 90",
+color:"Rosa",
+price:100000,
+description:"Nada más ligero, nada más cómodo, nada más probado: el Nike Air Max 90 se mantiene fiel a sus raíces con la icónica suela tipo waffle, los revestimientos cosidos y los detalles clásicos de TPU. Los nuevos detalles le dan un look moderno, al mismo tiempo que la amortiguación Max Air agrega comodidad a tu recorrido.",
+id_category_product:4,
+createdAt:  new Date,
+updatedAt: new Date
+},
+////van 26
+{
+name:"Nike Revolution 6 Next Nature",
+color:"Azul",
+price:120000,
+description:"Por nuevos desafíos en el pavimento. Ata las agujetas 100% recicladas y marca el ritmo al comienzo de tu experiencia de running con la sensación de suavidad del Nike Revolution 6 Next Nature. Sabemos que la comodidad es la clave de una carrera exitosa, así que nos aseguramos de que tus pasos sean amortiguados y flexibles para brindar una pisada suave. Es una evolución de un favorito, con un diseño transpirable confeccionado con al menos un 20% de contenido reciclado por peso.",
+id_category_product:4,
+createdAt:  new Date,
+updatedAt: new Date
+},
+{
+name:"Nike Revolution 6 Next Nature",
+color:"Blanco",
+price:230000,
+description:"Por nuevos desafíos en el pavimento. Ata las agujetas 100% recicladas y marca el ritmo al comienzo de tu experiencia de running con la sensación de suavidad del Nike Revolution 6 Next Nature. Sabemos que la comodidad es la clave de una carrera exitosa, así que nos aseguramos de que tus pasos sean amortiguados y flexibles para brindar una pisada suave. Es una evolución de un favorito, con un diseño transpirable confeccionado con al menos un 20% de contenido reciclado por peso.",
+id_category_product:3,
+createdAt:  new Date,
+updatedAt: new Date
+},
+{
+name:"Nike Revolution 6 Next Nature",
+color:"Gris",
+price:240000,
+description:"Por nuevos desafíos en el pavimento. Ata las agujetas 100% recicladas y marca el ritmo al comienzo de tu experiencia de running con la sensación de suavidad del Nike Revolution 6 Next Nature. Sabemos que la comodidad es la clave de una carrera exitosa, así que nos aseguramos de que tus pasos sean amortiguados y flexibles para brindar una pisada suave. Es una evolución de un favorito, con un diseño transpirable confeccionado con al menos un 20% de contenido reciclado por peso.",
+id_category_product:2,
+createdAt:  new Date,
+updatedAt: new Date
+},
+{
+name:"Nike Revolution 6 Next Nature",
+color:"Negro",
+price:250000,
+description:"Por nuevos desafíos en el pavimento. Ata las agujetas 100% recicladas y marca el ritmo al comienzo de tu experiencia de running con la sensación de suavidad del Nike Revolution 6 Next Nature. Sabemos que la comodidad es la clave de una carrera exitosa, así que nos aseguramos de que tus pasos sean amortiguados y flexibles para brindar una pisada suave. Es una evolución de un favorito, con un diseño transpirable confeccionado con al menos un 20% de contenido reciclado por peso.",
+id_category_product:2,
+createdAt:  new Date,
+updatedAt: new Date
+},
+{
+  name:"Nike Revolution 6 Next Nature",
+  color:"Rosa",
   price:100000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+  description:"Por nuevos desafíos en el pavimento. Ata las agujetas 100% recicladas y marca el ritmo al comienzo de tu experiencia de running con la sensación de suavidad del Nike Revolution 6 Next Nature. Sabemos que la comodidad es la clave de una carrera exitosa, así que nos aseguramos de que tus pasos sean amortiguados y flexibles para brindar una pisada suave. Es una evolución de un favorito, con un diseño transpirable confeccionado con al menos un 20% de contenido reciclado por peso.",
   id_category_product:1,
   createdAt:  new Date,
   updatedAt: new Date
 },
 {
-  name:"Air Max Skyline",
-  color:"Gris",
-  price:120000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+  name:"Nike Winflo 9",
+  color:"Azul",
+  price:220000,
+  description:"AJUSTE LIGERO Y CÓMODO PARA UNA PISADA ENÉRGICA. El Winflo 9 te brinda el soporte que necesitas para igualar tu velocidad. Además, cuenta con un ajuste seguro que mantiene el pie en su sitio en cada kilómetro. Agregamos mucha espuma en toda la entresuela, dándote más energía a cada paso.",
   id_category_product:2,
   createdAt:  new Date,
   updatedAt: new Date
 },
 {
-  name:"Air Max Skyline",
-  color:"Gris",
-  price:130000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:2,
-  createdAt:  new Date,
-  updatedAt: new Date
-},
-{
-  name:"Air Max Skyline",
-  color:"Gris",
-  price:140000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:2,
-  createdAt:  new Date,
-  updatedAt: new Date
-},
-{
-  name:"Air Max Skyline",
-  color:"Gris",
-  price:150000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:2,
-  createdAt:  new Date,
-  updatedAt: new Date
-},
-{
-name:"Air Max Skyline",
-color:"Gris",
-price:100000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max 720",
-color:"Beige",
-price:120000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max 720",
-color:"Beige",
-price:130000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max 720",
-color:"Beige",
-price:140000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max 720",
-color:"Beige",
-price:150000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max 720",
-color:"Beige",
-price:100000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max+",
-color:"Negro",
-price:120000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max+",
-color:"Negro",
-price:130000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max+",
-color:"Negro",
-price:140000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max+",
-color:"Negro",
-price:150000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-  name:"Air Max 200",
-  color:"Blanco",
-  price:100000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:2,
-  createdAt:  new Date,
-  updatedAt: new Date
-},
-{
-  name:"Air Max 200",
-  color:"Blanco",
-  price:120000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:2,
-  createdAt:  new Date,
-  updatedAt: new Date
-},
-{
-  name:"Air Max 200",
+  name:"Nike Winflo 9",
   color:"Blanco",
   price:130000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:2,
+  description:"AJUSTE LIGERO Y CÓMODO PARA UNA PISADA ENÉRGICA. El Winflo 9 te brinda el soporte que necesitas para igualar tu velocidad. Además, cuenta con un ajuste seguro que mantiene el pie en su sitio en cada kilómetro. Agregamos mucha espuma en toda la entresuela, dándote más energía a cada paso.",
+  id_category_product:3,
   createdAt:  new Date,
   updatedAt: new Date
 },
 {
-  name:"Air Max 200",
-  color:"Blanco",
+  name:"Nike Winflo 9",
+  color:"Negro",
   price:140000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+  description:"AJUSTE LIGERO Y CÓMODO PARA UNA PISADA ENÉRGICA. El Winflo 9 te brinda el soporte que necesitas para igualar tu velocidad. Además, cuenta con un ajuste seguro que mantiene el pie en su sitio en cada kilómetro. Agregamos mucha espuma en toda la entresuela, dándote más energía a cada paso.",
   id_category_product:2,
   createdAt:  new Date,
   updatedAt: new Date
 },
 {
-  name:"Air Max I",
+  name:"Nike Winflo 9",
   color:"Rojo",
   price:150000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:2,
+  description:"AJUSTE LIGERO Y CÓMODO PARA UNA PISADA ENÉRGICA. El Winflo 9 te brinda el soporte que necesitas para igualar tu velocidad. Además, cuenta con un ajuste seguro que mantiene el pie en su sitio en cada kilómetro. Agregamos mucha espuma en toda la entresuela, dándote más energía a cada paso.",
+  id_category_product:3,
   createdAt:  new Date,
   updatedAt: new Date
 },
 {
-name:"Air Max I",
-color:"Rojo",
-price:100000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max I",
-color:"Rojo",
-price:120000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max I",
-color:"Rojo",
-price:130000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:2,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Total Max 95",
-color:"Gris",
-price:140000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Total Max 95",
-color:"Gris",
-price:150000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Total Max 95",
-color:"Gris",
-price:100000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Total Max 95",
-color:"Gris",
-price:120000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max Solas",
+name:"Nike Winflo 9",
 color:"Rosa",
-price:130000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
+price:300000,
+description:"AJUSTE LIGERO Y CÓMODO PARA UNA PISADA ENÉRGICA. El Winflo 9 te brinda el soporte que necesitas para igualar tu velocidad. Además, cuenta con un ajuste seguro que mantiene el pie en su sitio en cada kilómetro. Agregamos mucha espuma en toda la entresuela, dándote más energía a cada paso.",
+id_category_product:4,
 createdAt:  new Date,
 updatedAt: new Date
 },
 {
-name:"Air Max Solas",
-color:"Rosa",
-price:140000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
+name:"Nike Winflo 10",
+color:"Azul",
+price:220000,
+description:"Ponte el Winflo 10, un recorrido equilitopdo que impulsará tu carrera, ya sea que seas una persona rutinaria que registra sus kilómetros semanales, un amateur con la esperanza de convertir la curiosidad en rutina o simplemente acompañes a un amigo a una carrera esporádica de fin de semana.",
+id_category_product:4,
 createdAt:  new Date,
 updatedAt: new Date
 },
 {
-name:"Air Max Solas",
-color:"Rosa",
-price:150000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-  name:"Air Max Solas",
-  color:"Rosa",
-  price:100000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:3,
-  createdAt:  new Date,
-  updatedAt: new Date
-},
-{
-  name:"Air Max LTDx",
-  color:"Beige",
-  price:120000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:3,
-  createdAt:  new Date,
-  updatedAt: new Date
-},
-{
-  name:"Air Max LTDx",
-  color:"Beige",
-  price:130000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:3,
-  createdAt:  new Date,
-  updatedAt: new Date
-},
-{
-  name:"Air Max LTDx",
-  color:"Beige",
-  price:140000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:3,
-  createdAt:  new Date,
-  updatedAt: new Date
-},
-{
-  name:"Air Max LTDx",
-  color:"Beige",
-  price:150000,
-  description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-  id_category_product:3,
-  createdAt:  new Date,
-  updatedAt: new Date
-},
-{
-name:"Air Max LTD 2",
-color:"Negro",
-price:100000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max LTD 2",
-color:"Negro",
-price:120000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max LTD 2",
-color:"Negro",
-price:130000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Nike AirMax",
-color:"Blanco",
-price:140000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Nike AirMax",
-color:"Blanco",
-price:150000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Nike AirMax",
-color:"Blanco",
-price:100000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:3,
-createdAt:  new Date,
-updatedAt: new Date
-},
-{
-name:"Air Max+ 2009",
+name:"Nike Winflo 10",
 color:"Beige",
-price:120000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+price:230000,
+description:"Ponte el Winflo 10, un recorrido equilitopdo que impulsará tu carrera, ya sea que seas una persona rutinaria que registra sus kilómetros semanales, un amateur con la esperanza de convertir la curiosidad en rutina o simplemente acompañes a un amigo a una carrera esporádica de fin de semana.",
+id_category_product:2,
+createdAt:  new Date,
+updatedAt: new Date
+},
+{
+name:"Nike Winflo 10",
+color:"Blanco",
+price:240000,
+description:"Ponte el Winflo 10, un recorrido equilitopdo que impulsará tu carrera, ya sea que seas una persona rutinaria que registra sus kilómetros semanales, un amateur con la esperanza de convertir la curiosidad en rutina o simplemente acompañes a un amigo a una carrera esporádica de fin de semana.",
+id_category_product:3,
+createdAt:  new Date,
+updatedAt: new Date
+},
+{
+name:"Nike Winflo 10",
+color:"Negro",
+price:150000,
+description:"Ponte el Winflo 10, un recorrido equilitopdo que impulsará tu carrera, ya sea que seas una persona rutinaria que registra sus kilómetros semanales, un amateur con la esperanza de convertir la curiosidad en rutina o simplemente acompañes a un amigo a una carrera esporádica de fin de semana.",
 id_category_product:1,
 createdAt:  new Date,
 updatedAt: new Date
 },
-{
-name:"Air Max+ 2009",
-color:"Beige",
-price:130000,
-description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
-id_category_product:1,
-createdAt:  new Date,
-updatedAt: new Date
-}
+// {
+// name:"Air Total Max 95",
+// color:"Gris",
+// price:100000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:3,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+// name:"Air Total Max 95",
+// color:"Gris",
+// price:120000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:3,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+// name:"Air Max Solas",
+// color:"Rosa",
+// price:130000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:3,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+// name:"Air Max Solas",
+// color:"Rosa",
+// price:140000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:3,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+// name:"Air Max Solas",
+// color:"Rosa",
+// price:150000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:3,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+//   name:"Air Max Solas",
+//   color:"Rosa",
+//   price:100000,
+//   description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+//   id_category_product:3,
+//   createdAt:  new Date,
+//   updatedAt: new Date
+// },
+// {
+//   name:"Air Max LTDx",
+//   color:"Beige",
+//   price:120000,
+//   description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+//   id_category_product:3,
+//   createdAt:  new Date,
+//   updatedAt: new Date
+// },
+// {
+//   name:"Air Max LTDx",
+//   color:"Beige",
+//   price:130000,
+//   description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+//   id_category_product:3,
+//   createdAt:  new Date,
+//   updatedAt: new Date
+// },
+// {
+//   name:"Air Max LTDx",
+//   color:"Beige",
+//   price:140000,
+//   description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+//   id_category_product:3,
+//   createdAt:  new Date,
+//   updatedAt: new Date
+// },
+// {
+//   name:"Air Max LTDx",
+//   color:"Beige",
+//   price:150000,
+//   description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+//   id_category_product:3,
+//   createdAt:  new Date,
+//   updatedAt: new Date
+// },
+// {
+// name:"Air Max LTD 2",
+// color:"Negro",
+// price:100000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:3,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+// name:"Air Max LTD 2",
+// color:"Negro",
+// price:120000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:3,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+// name:"Air Max LTD 2",
+// color:"Negro",
+// price:130000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:3,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+// name:"Nike AirMax",
+// color:"Blanco",
+// price:140000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:3,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+// name:"Nike AirMax",
+// color:"Blanco",
+// price:150000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:3,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+// name:"Nike AirMax",
+// color:"Blanco",
+// price:100000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:3,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+// name:"Air Max+ 2009",
+// color:"Beige",
+// price:120000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:1,
+// createdAt:  new Date,
+// updatedAt: new Date
+// },
+// {
+// name:"Air Max+ 2009",
+// color:"Beige",
+// price:130000,
+// description:"Max Air se refiere a una línea de zapatillas deportivas fabricadas por la marca Nike. Estas zapatillas son conocidas por su tecnología de amortiguación de aire visible, que proporciona una excelente comodidad y absorción de impactos durante la actividad física.",
+// id_category_product:1,
+// createdAt:  new Date,
+// updatedAt: new Date
+// }
   ], {});
   },
 

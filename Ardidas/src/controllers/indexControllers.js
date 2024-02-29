@@ -1,9 +1,11 @@
 
 const db = require("../database/models");
+const { Sequelize } = require("../database/models");
 
 const indexController = {
     index:(req,res)=>{
         let ofertas = db.Product.findAll({
+            order: Sequelize.literal('rand()'),
             where: { id_category_product: 1 },
             include: [
               {
@@ -17,6 +19,7 @@ const indexController = {
             limit: 3, 
           });
           let destacados = db.Product.findAll({
+            order: Sequelize.literal('rand()'),
             where: { id_category_product: 2 },
             include: [
               {

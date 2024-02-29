@@ -30,11 +30,12 @@ const productsController = {
       });
       Promise.all([product])
         .then(([product]) => {
-            return res.render("products/productDetail",{
-            product,
-            usuarioLogeado: req.session.usuarioLogin,
-            title: "Detalle"
-        })})
+             return res.render("products/productDetail",{
+             product,
+             usuarioLogeado: req.session.usuarioLogin,
+             title: "Detalle"
+         })
+      })
         .catch(error=> console.log(error));
   },
   productCart: (req, res) => {

@@ -121,7 +121,7 @@ userProfileEdit : (req, res) => {
         const file = req.file;
 
         const deletePreviousImage = (imageName) => {  // logica parecida a destroy
-            if (imageName) {
+            if (imageName && imageName !== "default-avatar-profile.jpg") {
                 const imagePath = path.join(__dirname, '../../public/images/users/', imageName);
                 
                 fs.unlinkSync(imagePath);
