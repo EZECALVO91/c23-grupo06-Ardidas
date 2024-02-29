@@ -33,7 +33,6 @@ const usersController = {
             image: file ? file.filename : "default-avatar-profile.jpg",
             id_category:2,
             createdAt:new Date,
-            updatedAt:new Date
         })
         .then(()=>{
             res.redirect("/users/login")
@@ -102,35 +101,57 @@ userProfile:(req, res) => {  // vista del formulario para que el usuario pueda e
 
 },
 
-userProfileEdit: (req, res) =>{  // el usuario puede editar su propio perfil.
+
+
+userProfileEdit : (req, res) => {
     const errores = validationResult(req);
-    if(!errores.isEmpty()){
-        
-        res.render('users/profileEdit',{errores:errores.mapped(), old:req.body, title:"Error", usuarioLogeado: req.session.usuarioLogin})
-    }else{
+    if (!errores.isEmpty()) {
+        db.User.findByPk(req.session.usuarioLogin.id)
+            .then((response) => {
+                res.render('users/profileEdit', {
+                    errores: errores.mapped(),
+                    old: req.body,
+                    title: "Error",
+                    usuarioLogeado: response.dataValues
+                });
+            }).catch((err) => console.log(err));
+    } else {
         const { id } = req.params;
-        const {name,category,date,locality,aboutMe,image} = req.body;
+        const { name, category, date, locality, aboutMe, image } = req.body;
         const file = req.file;
 
-            db.User.update({
-                name,
-                category,
-                date:date,
-                locality: locality.trim(),
-                aboutMe: aboutMe.trim(),
-                image: file ? file.filename : image,
-                createdAt:new Date,
-                updatedAt:new Date
-            },
-            {
-                where:{id}
-        }
-        ).then(() => {
+        const deletePreviousImage = (imageName) => {  // logica parecida a destroy
+            if (imageName) {
+                const imagePath = path.join(__dirname, '../../public/images/users/', imageName);
+                
+                fs.unlinkSync(imagePath);
+                console.log(`Imagen anterior "${imageName}" eliminada`);
+            }
+        };
+
+        db.User.findByPk(id)
+            .then((user) => {
+                if (!user) {
+                    throw new Error("El usuario no esta registrado");
+                }
+                deletePreviousImage(user.image); // eliminar la imagen anterior del usuario
+                return user.update({
+                    name: name,
+                    category,
+                    date: date ? date : null,
+                    locality: locality ? locality : null,
+                    aboutMe: aboutMe ? aboutMe : null,
+                    image: file ? file.filename : image,
+                    updatedAt: new Date()
+                });
+            })
+            .then(() => {
                 res.redirect(`/users/profile/${id}`);
             })
-        .catch((err) => console.log(err));
+            .catch((err) => console.log(err));
     }
 },
+
 
 // ---------------ACA EMPIEZA EL DASHBOARD--------------------------------------------------------------------------------------------------------------
 
@@ -178,7 +199,6 @@ userProfileEdit: (req, res) =>{  // el usuario puede editar su propio perfil.
             image: file ? file.filename : "default-avatar-profile.jpg",
             id_category,
             createdAt:new Date,
-            updatedAt:new Date
             })
                 .then(()=>{
                     res.redirect('dashboard')
@@ -216,7 +236,6 @@ userProfileEdit: (req, res) =>{  // el usuario puede editar su propio perfil.
                 name,
                 id_category,
                 image: file ? file.filename : image,
-                createdAt:new Date,
                 updatedAt:new Date
         },
         {
@@ -227,14 +246,8 @@ userProfileEdit: (req, res) =>{  // el usuario puede editar su propio perfil.
         })
         .catch((err) => console.log(err));
         }
-
-
-
         })
         .catch((err) => console.log(err));
-
-
-       
         
 },
 

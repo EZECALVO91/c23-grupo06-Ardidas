@@ -16,7 +16,7 @@
 
       <form action="/users/profile/<%= usuarioLogeado.id %>?_method=PUT" method="post" class="main__form__register" enctype="multipart/form-data" >
         <label for="name">NOMBRE Y APELLIDO:</label>
-        <input type="text" name="name"  id="name" value="<%= usuarioLogeado.name %>"/>
+        <input type="text" name="name"  id="name" value="<%= usuarioLogeado.name %>" />
         <p class="errores_validacion_profile"> <%= locals.errores && errores.name ? errores.name.msg : null %> </p>
 
         <label for="email">EMAIL:</label>
