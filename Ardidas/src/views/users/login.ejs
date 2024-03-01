@@ -11,16 +11,20 @@
           <section>
             <article class="articulo_login_main">
 
-                  <h2 class="login_h_all">EMAIL</h2>
-                  <label for="email"></label>
-                  <input class="input_login" type="email" name="email" placeholder="tu-email@email.com*" required>
-                  <p class="errores_validacion_login"> <%= locals.errores && errores.email ? errores.email.msg : null %> </p>
+              <h2 class="login_h_all">EMAIL</h2>
+              <label for="email"></label>
+              <input class="input_login" type="email" name="email" placeholder="tu-email@email.com*" required>
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.email ? errores.email.msg : null %>
+              </p>
             </article>
             <article class="articulo_login_main">
               <h2 class="login_h_all">CONTRASEÑA</h2>
               <label for="contraseña"></label>
               <input class="input_login" name="password" type="password" placeholder=" " required>
-              <p class="errores_validacion_login"> <%= locals.errores && errores.password ? errores.password.msg : null %> </p>
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.password ? errores.password.msg : null %>
+              </p>
 
               <a href="" class="login_contra_up">
                 <h6 class="login_h_all">¿Olvidaste tu contraseña?</h6>

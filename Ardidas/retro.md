@@ -135,7 +135,7 @@ al caso el compañero no llega a la solucion, poder resolverlo entre todos.
 ______________________________________________________________
 # Conclusiones del Sexto Sprint:
 
-### LIDER :
+### LIDER : EZEQUIEL CALVO
 
 
 #### Dejar de Hacer:

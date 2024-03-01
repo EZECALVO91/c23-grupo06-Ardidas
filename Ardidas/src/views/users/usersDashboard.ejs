@@ -1,36 +1,27 @@
-<%-include("../partials/head.ejs")%>
-
+<%-include(".. /partials/head.ejs")%>
     <body>
-
-        <%-include("../partials/header.ejs")%>
-
+        <%-include(".. /partials/header.ejs")%>
             <main>
                 <div class="box_redirect_create">
-
                     <a class="btn_redirect_create" href="/users/createPrivileges">Crear Privilegios</a>
-
                 </div>
-
                 <section class="users_dashboard_db section_products_main_index">
-
                     <% users.forEach(element=> { %>
-
                         <article class="users_depto">
                             <div class="container_Avatar_dashboard">
-                                <img class="avatar_user_dashboard" src="/images/users/<%= element.image %>" alt="Avatar Usuario" />
+                                <img class="avatar_user_dashboard" src="/images/users/<%= element.image %>"
+                                    alt="Avatar Usuario" />
                             </div>
-                            
                             <div class="">
                                 <div class="main_descuento_precio_articulo">
-                                    <p class="user_name_db"><%= element.name %>
+                                    <p class="user_name_db">
+                                        <%= element.name %>
                                     </p>
                                 </div>
                                 <p class="modelo">
                                     <%= element.email %>
                                 </p>
                             </div>
-
-
                             <div class="box_dashboard_option">
                                 <a class="icon_edit_dashboard" href="/users/update/<%= element.id %>"><i
                                         class="fa-solid fa-highlighter"></i>
@@ -43,9 +34,7 @@
                             </div>
                         </article>
                         <% }) %>
-
             </main>
             <%- include("../partials/footer.ejs") %>
     </body>
-
     </html>

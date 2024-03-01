@@ -15,7 +15,6 @@
 
 
 ## Daily 7/12/2023
-## Daily 7/12/2023
 
 * Nicolas Badino = Los dias antes de la deily estuvo ayudando a los compañeros a realizar los trabajos, hacer commits
                 y ayudar con los request, trabaje junto con mis compañeros para armar la estructura y el funcionamiento de dashboard. Hoy ayude a terminar el css de stylo del dashboad y estoy mirando los videos de las clases y leo documentacion para mañana poder terminar con su tarea de FORMULARIO DE CREACION.
@@ -92,4 +91,4 @@
 
 * Nicolas Badino = Hoy estuve terminando basicamente lo del playgraund, le meti un poco a la clase 39 porque estaba un poco atrasado y mañana pienso terminarlo y empezar con mi parte del trabajo del sprint, estuvimos viendo la base de datos con los chicos y pudimos corregirlo con los compañeros y el profesor en clase asi que una ves que Eze termine con los modelos puedo empezar mi parte del sprint.
 
-* Esteban Figueroa = Falta completar.
+* Esteban Figueroa = Falta completar.(ESTEBAN POR TEMAS LABORALES ABANDONO EL CURSO)
