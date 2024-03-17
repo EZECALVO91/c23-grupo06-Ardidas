@@ -12,9 +12,7 @@ const productsController = {
     Promise.all([products])
       .then(([products]) => {
         res.render("products/products", {
-          title: "Ardidas",
-          usuarioLogeado: req.session.usuarioLogin,
-          products,
+          title: "Ardidas",usuarioLogeado: req.session.usuarioLogin, products,
         });
       })
       .catch((error) => console.log(error));
