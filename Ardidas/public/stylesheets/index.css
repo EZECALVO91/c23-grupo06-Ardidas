@@ -34,16 +34,18 @@
     padding: 15px 0 ;
 }
 .articulos{
-    background-color: var(--color-verde-muzgo);
+    /* background-color: var(--color-verde-muzgo); */
+    background:linear-gradient(black 50%, grey );
+
+
     margin-bottom: 15px;
     text-align: center;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
-    border: 1px solid var(--color-negro);
 }
 .articulos a{
     background-color: var(--color-negro);
-    color: var(--color-beige);
+    color: var(--color-blanco);
     
 }
 .articulos img {
@@ -67,12 +69,12 @@
     text-decoration: none;
 }
 .precio {
-    color: var(--color-beige);
+    color: var(--color-blanco);
     font-size: 22px;
     font-weight: bold;
 }
 .modelo {
-    color: var(--color-negro);
+    color: var(--color-blanco);
     font-size: 18px;
 }
 .ver_productos{
@@ -123,6 +125,7 @@
     }
     .articulos{
         margin: 15px;
+        border-radius: 0px 100px / 120px 100px;
         box-shadow: 0px 0px 10px rgb(0, 0, 0);
     }
     .ver_productos{
