@@ -3,7 +3,7 @@ const db = require("../database/models")
 
 module.exports = [
     body('name').notEmpty().withMessage("*El campo no puede estar vacio*").bail()
-        .isLength({ min: 3, max: 30 }).withMessage("*El valor ingresado debe tener al menos 3 caracteres y maximo 30*").bail(),
+        .isLength({ min:5, max: 30 }).withMessage("*El valor ingresado debe tener al menos 5 caracteres y maximo 30*").bail(),
 
 
     body('email').notEmpty().withMessage("*El campo no puede estar vacio*").bail()
@@ -27,6 +27,7 @@ module.exports = [
 
 
     body('password').notEmpty().withMessage("*El campo no puede estar vacio*").bail()
+    .isLength({min:6,max:20}).withMessage("La contraseña debe tener entre 6 y 20 caracteres")
         .custom((value, { req }) => {
             return value == req.body.password2;
         }).withMessage("*Los password no coinciden*"),

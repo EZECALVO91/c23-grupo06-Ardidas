@@ -13,12 +13,7 @@ const usersController = {
     },
     register: (req, res) => {
         const errores = validationResult(req);  // registro directo a la base de datos.
-        console.log("errores:", errores);
-        if (!errores.isEmpty()) {
-            console.log("Ingrese en errores");
-            res.render("./users/register", {errores: errores.mapped(),old: req.body,title: "registro",usuarioLogeado: null,
-            });
-        } else {
+        if (errores.isEmpty()) {
             const file = req.file;
             const { name, email, password, id_category } = req.body;
             db.User.create({
@@ -30,7 +25,13 @@ const usersController = {
                 createdAt: new Date(),
             }).then(() => {
                 res.redirect("/users/login");
-            });
+            })
+            .catch(error => console.log(error))
+            // console.log("Ingrese en errores");
+            // res.render("./users/register", {errores: errores.mapped(),old: req.body,title: "registro",usuarioLogeado: null,
+            // });
+        } else {
+            return res.render ("./users/register", {errores: errores.mapped(),old: req.body,title: "registro",usuarioLogeado: null})
         }
     },
 

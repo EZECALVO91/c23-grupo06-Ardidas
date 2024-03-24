@@ -18,49 +18,49 @@
           enctype="multipart/form-data">
           <label for="name">NOMBRE Y APELLIDO:</label>
           <input type="text" name="name" id="name" value="<%= usuarioLogeado.name %>" />
-          <p class="errores_validacion_profile">
+          <small class="nameErrors">
             <%= locals.errores && errores.name ? errores.name.msg : null %>
-          </p>
+          </small>
 
           <label for="email">EMAIL:</label>
           <input type="email" name="email" value="<%= usuarioLogeado.email %>" disabled />
-          <p class="errores_validacion_profile">
+          <small class="errores_validacion_profile">
             <%= locals.errores && errores.email ? errores.email.msg : null %>
-          </p>
+          </small>
 
           <label for="password">CONTRASEÑA:</label>
           <div class="main__form__register__password">
             <input type="password" name="password" class="main__form__register__password"
               value="<%= usuarioLogeado.password %>" disabled />
-            <p class="errores_validacion_profile">
+            <small class="errores_validacion_profile">
               <%= locals.errores && errores.password ? errores.password.msg : null %>
-            </p>
+            </small>
             <i class="fa-regular fa-eye"></i>
           </div>
 
           <label for="date">FECHA DE NACIMIENTO: </label>
           <input type="date" name="date" value="<%= usuarioLogeado.date %>" />
-          <p class="errores_validacion_profile">
+          <small class="errores_validacion_profile">
             <%= locals.errores && errores.date ? errores.date.msg : null %>
-          </p>
+          </small>
 
           <label for="locality">LOCALIDAD: </label>
           <input type="TEXT" name="locality" value="<%= usuarioLogeado.locality %>" />
-          <p class="errores_validacion_profile">
+          <small class="errores_validacion_profile">
             <%= locals.errores && errores.locality ? errores.locality.msg : null %>
-          </p>
+          </small>
 
           <label for="aboutMe">SOBRE MI: </label>
           <textarea name="aboutMe" id="aboutMe" cols="30" rows="10"><%= usuarioLogeado.aboutMe %></textarea>
-          <p class="errores_validacion_profile">
+          <small class="errores_validacion_profile">
             <%= locals.errores && errores.aboutMe ? errores.aboutMe.msg : null %>
-          </p>
+          </small>
 
           <label for="image">CAMBIO DE AVATAR: </label>
           <input type="file" name="image" id="image" accept="image/*" value="<%= usuarioLogeado.image %>">
-          <p class="errores_validacion_profile">
+          <small class="imageError">
             <%= locals.errores && errores.image ? errores.image.msg : null %>
-          </p>
+          </small>
 
           <div class="main__form__register__box">
             <div class="container_avatar_img">
@@ -74,7 +74,7 @@
           </div>
         </form>
       </main>
-
+      <script src="/js/users/validationProfile.js"></script>
       <!--ACA SE INCLUYE EL PARTIAL : -->
       <%- include("../partials/footer.ejs") %>
 

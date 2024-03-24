@@ -11,23 +11,23 @@ module.exports = [
                 where: { email: value }
             }).then(user => {
                 if (!user) {
-                    return Promise.reject('*Email no registrado*')
+                    return Promise.reject('Email no registrado')
                 }
             }).catch(() => {
-                return Promise.reject('*Email no registrado*')
+                return Promise.reject('Email no registrado')
             })
         }),
 
-    body('password').notEmpty().withMessage("*El campo no puede estar vacio*").bail()
+    body('password').notEmpty().withMessage("El campo no puede estar vacio").bail()
         .custom((value, { req }) => {
             return db.User.findOne({
                 where: { email: req.body.email }
             }).then(user => {
                 if (!bcrypt.compareSync(value, user.dataValues.password)) {
-                    return Promise.reject('*Mal tipeo de contraseña*')
+                    return Promise.reject('Mal tipeo de contraseña')
                 }
             }).catch(() => {
-                return Promise.reject('*Contraseña incorrecta*')
+                return Promise.reject('Contraseña incorrecta')
             })
         })
 ];

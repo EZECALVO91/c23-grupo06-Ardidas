@@ -17,7 +17,7 @@ const fileFilter = (req, file, cb) => {
         cb(null, true);
     } else {
         // Si da error de formato envia este msg.
-        req.errorImgProfile = "*Esta imagen no tiene un formato valido*";
+        req.errorImgProfile = "Esta imagen no tiene un formato valido";
         cb(null, false);
     }
 };
