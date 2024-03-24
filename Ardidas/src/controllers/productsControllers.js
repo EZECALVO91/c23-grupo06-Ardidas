@@ -2,6 +2,7 @@ const fs = require("fs");
 const { setJson, getJson } = require("../utility/jsonMethod");
 const db = require("../database/models");
 const { Sequelize } = require("../database/models");
+const { validationResult } = require("express-validator");
 
 const productsController = {
   index: (req, res) => {
@@ -72,6 +73,12 @@ const productsController = {
     });
   },
   create: (req, res) => {
+    const errores = validationResult(req); 
+    if (!errores.isEmpty()) {
+      console.log("Ingrese en errores");
+      res.render("products/productLoad", {errores: errores.mapped(),old: req.body,title: "Error al crear",usuarioLogeado: req.session.usuarioLogin,
+      });
+  } else {
     const file = req.file;
     const { name, price,  category,  description, sizes, color} = req.body;
     db.Product.create({
@@ -103,6 +110,8 @@ const productsController = {
      res.redirect("/products/dashboard");
     })
     .catch(error=> console.log(error));
+  }
+    
   },
   productEdit: (req, res) => {
     let product = db.Product.findByPk(req.params.id,{
