@@ -1,5 +1,4 @@
-const elemento = (element) => document.querySelector(element);
-
+// documentacion = https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
 const expresionesRegulares = {
     exRegAlfa: /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/,
     exRegEmail: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
@@ -10,6 +9,8 @@ const expresionesRegulares = {
     exRegEsp: /[$@$!%*?&]/,
     exRegMinMax: /.{6,8}/,
 };
+
+const elemento = (element) => document.querySelector(element);
 
 const messageError = (element, msg, target) => {
     elemento(element).innerText = msg;
@@ -27,7 +28,8 @@ window.addEventListener("load",() => {
 
 });
 
-elemento("#name").addEventListener("blur", function({target}) {
+const inputName = document.querySelector("#name");
+    inputName.addEventListener("blur", function({target}) {
     switch (true) {
         case !this.value.trim():
             messageError(".nameErrors", "Debes completar el campo con tu nombre", target);
@@ -50,7 +52,8 @@ elemento("#name").addEventListener("blur", function({target}) {
 
 const filtro = /\.(jpg|jpeg|png|gif|webp|svg)$/;
 
-elemento('#image').addEventListener('change', function({target}) {
+const inputImg = document.querySelector('#image')
+    inputImg.addEventListener('change', function({target}) {
     const file = target.files[0];
     if (!file) {
         messageError(".imageError", "Formato valido.", target);

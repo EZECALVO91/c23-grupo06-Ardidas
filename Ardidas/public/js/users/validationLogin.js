@@ -1,15 +1,9 @@
-const elemento = (element) => document.querySelector(element);
-
+// documentacion = https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
 const expresionesRegulares = {
-    exRegAlfa: /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/,
     exRegEmail: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
-    exRegPass: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d$@$!%*?&]{6,8}/,
-    exRegMayu: /[A-Z]/,
-    exRegMinu: /[a-z]/,
-    exRegNum: /[0-9]/,
-    exRegEsp: /[$@$!%*?&]/,
-    exRegMinMax: /.{6,8}/,
 };
+
+const elemento = (element) => document.querySelector(element);
 
 const messageError = (element, msg, target) => {
     elemento(element).innerText = msg;
@@ -27,7 +21,8 @@ window.addEventListener("load",() => {
 
 });
 
-elemento("#email").addEventListener("blur", async function({target}) {
+const inputEmail = document.querySelector("#email")
+    inputEmail.addEventListener("blur", async function({target}) {
     switch (true) {
         case !this.value.trim():
             messageError(".emailError", "Debes completar este campo con tu email", target);
@@ -37,10 +32,15 @@ elemento("#email").addEventListener("blur", async function({target}) {
             messageError(".emailError", "No tiene formato de email", target);
             this.style.borderColor = "red";
             break;
+        default:
+            validatorInput(".emailError", target)
+            this.style.borderColor= "#4F7F3F"
+            break;
     }
 });
 
-elemento("#password").addEventListener("blur", function({target}) {
+const inputPassword = document.querySelector("#password")
+    inputPassword.addEventListener("blur", function({target}) {
     switch (true) {
         case !this.value.trim():
             messageError(".passwordError","Debes completar el campo con tu contraseña",target);
