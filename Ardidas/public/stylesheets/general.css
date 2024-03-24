@@ -14,7 +14,7 @@
     text-decoration: none;
     list-style: none;
     font-family: 'Open Sans', sans-serif;
-    cursor: none;
+    /* cursor: none; */
 
 }
 
@@ -44,7 +44,7 @@ img{
 
 
 /* CURSOR NIKE */
-.custom-cursor{
+/* .custom-cursor{
     position: fixed;
     z-index: 1;
     width: 23px;
@@ -54,7 +54,7 @@ img{
     pointer-events: none;
     -webkit-transition:all 30ms linear;
     transition: all 30ms linear;
-}
+} */
 
 small{
     display: block;
