@@ -18,13 +18,13 @@
           enctype="multipart/form-data">
           <label for="name">NOMBRE Y APELLIDO:</label>
           <input type="text" name="name" id="name" value="<%= user.name %>" />
-          <small class="errores_validacion_userUpdate">
+          <small class="nameError">
             <%= locals.errores && errores.name ? errores.name.msg : null %>
           </small>
 
           <label for="email">EMAIL:</label>
-          <input type="email" name="email" value="<%= user.email %>" />
-          <small class="errores_validacion_userUpdate">
+          <input type="email" name="email" id="email" value="<%= user.email %>" />
+          <small class="emailError">
             <%= locals.errores && errores.email ? errores.email.msg : null %>
           </small>
 
@@ -32,7 +32,7 @@
           <div class="main__form__register__password">
             <input type="password" name="password" class="main__form__register__password" value="<%= user.password %>"
               disabled />
-            <small class="errores_validacion_userUpdate">
+            <small class="passwordError">
               <%= locals.errores && errores.password ? errores.password.msg : null %>
             </small>
             <i class="fa-regular fa-eye"></i>
@@ -66,10 +66,9 @@
 
           <label for="image">CAMBIO DE AVATAR: </label>
           <input type="file" name="image" id="image" accept="image/*" value="<%= user.image %>">
-          <small class="errores_validacion_userUpdate">
+          <small class="imageError">
             <%= locals.errores && errores.image ? errores.image.msg : null %>
           </small>
-
 
           <div class="container_avatar_img">
             <h3 class="main__form__title">AVATAR: </h3>
@@ -82,6 +81,7 @@
 
         </form>
       </main>
+      <script src="/js/users/validationDashUpdateUser.js"></script>
 
       <!--ACA SE INCLUYE EL PARTIAL : -->
       <%- include("../partials/footer.ejs") %>

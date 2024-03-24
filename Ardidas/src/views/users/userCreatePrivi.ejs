@@ -16,22 +16,22 @@
           <label for="name">NOMBRE</label>
           <input type="text" name="name" placeholder="Nombre y Apellido" id="name"
             value="<%= locals.old && old.name ? old.name : null %>">
-          <small>
+          <small class="nameError">
             <%= locals.errores && errores.name ? errores.name.msg : null %>
           </small>
 
           <label for="email">EMAIL</label>
-          <input type="email" name="email" placeholder="tuemail@email.com"
+          <input type="email" name="email" id="email" placeholder="tuemail@email.com"
             value="<%= locals.old && old.email ? old.email : null %>">
-          <small>
+          <small class="emailError">
             <%= locals.errores && errores.email ? errores.email.msg : null %>
           </small>
 
           <label for="password">CONTRASEÑA</label>
           <div class="main__form__register__password">
-            <input type="password" name="password" class="main__form__register__password"
+            <input type="password" name="password" id="password" class="main__form__register__password"
               value="<%= locals.old && old.password ? old.name : null %>">
-            <small>
+            <small class="passError">
               <%= locals.errores && errores.password ? errores.password.msg : null %>
             </small>
             <i class="fa-regular fa-eye"></i>
@@ -51,7 +51,7 @@
 
           <label for="image">AVATAR : </label>
           <input type="file" name="image" id="image" accept="image/*">
-          <small>
+          <small class="imageError">
             <%= locals.errores && errores.image ? errores.image.msg : null %>
           </small>
           <div class="main__form__register__box">
@@ -61,6 +61,7 @@
           </div>
         </form>
       </main>
+      <script src="/js/users/validationDashRegister.js"></script>
 
       <!--ACA SE INCLUYE EL PARTIAL : -->
       <%- include("../partials/footer.ejs") %>
