@@ -4,6 +4,8 @@ const {index, productCart, productDetail, dashboard, productLoad, create, produc
 const multer = require("multer");
 const path = require("path");
 
+const createProductValidation = require('../validation/validationCreateProduct');
+
 const sessionValidate = require("../middleware/sessionValidate");
 const isAdmin = require("../middleware/isAdminValidate");
 
@@ -30,7 +32,7 @@ router
 .get('/dashboard', isAdmin, dashboard)
 
 .get("/create", isAdmin, productLoad)
-.post("/",uploadFile.single("image"), isAdmin, create)
+.post("/",uploadFile.single("image"), isAdmin, createProductValidation, create)
 
 .get("/update/:id", isAdmin, productEdit)
 .put("/update/:id",uploadFile.single("image"), isAdmin, update)

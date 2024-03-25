@@ -19,9 +19,15 @@
             <div class="update_box_intern">
               <label for="name">Nombre :</label>
               <input type="text" name="name" id="name" />
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.name ? errores.name.msg : null %>
+              </p>
 
               <label for="price">Precio :</label>
-              <input type="number" name="price" />
+              <input type="number" name="price" id="price"/>
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.price ? errores.price.msg : null %>
+              </p>
 
               <label for="category" >Categoría :</label>
               <select name="category" id="category" >
@@ -95,11 +101,14 @@
               </select>
             
               </div> 
+              <p class="errores_validacion_login" id="sizesError">
+                <%= locals.errores && errores.sizes ? errores.sizes.msg : null %>
+              </p>
           </section>
           <button class="main_ver-todos-productos" type="submit">CREAR PRODUCTO</button>
 
         </form>
-
+        <script src="/js/productCreate.js"></script>
       </main>
 
       <!--ACA SE INCLUYE EL PARTIAL : -->
