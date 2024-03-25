@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const nameInput = document.getElementById('name');
     const priceInput = document.getElementsByName('price')[0];
-    const descriptionInput = document.getElementById('description');
     const sizesInputs = document.getElementsByName('sizes');
 
     
@@ -13,15 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
       validatePrice();
     });
   
-    descriptionInput.addEventListener('blur', function() {
-      validateDescription();
-    });
-  
     sizesInputs.forEach(function(sizeInput) {
       sizeInput.addEventListener('change', function() {
         validateSizes();
       });
     });
+
+    window.addEventListener('load', function() {
+      validateSizes();
+  });
   
     function validateName() {
       const nameValue = nameInput.value.trim();
@@ -39,23 +38,40 @@ document.addEventListener('DOMContentLoaded', function() {
       const priceValue = priceInput.value.trim();
       if (priceValue === '') {
         showError(priceInput, 'El precio no puede quedar vacío');
+      } else if (priceValue < 0) {
+        showError(priceInput, 'El precio debe ser mayor a 0');
       } else if (isNaN(priceValue)) {
         showError(priceInput, 'Ingrese un número válido');
       } else {
         hideError(priceInput);
       }
     }
+
+
+    function validateSizes() {
+      const selectedSizes = Array.from(sizesInputs).some(input => input.checked);
+      const sizesErrorElement = document.getElementById('sizesError');
+      
+      if (!selectedSizes) {
+          sizesErrorElement.textContent = 'Por favor, seleccione al menos un talle.';
+      } else {
+          sizesErrorElement.textContent = '';
+      }
+  }
   
     function showError(input, message) {
-      const errorElement = input.parentElement.querySelector('.errores_validacion_login');
+      const errorElement = input.nextElementSibling;
       errorElement.textContent = message;
       input.style.borderColor = 'red';
     }
   
     function hideError(input) {
-      const errorElement = input.parentElement.querySelector('.errores_validacion_login');
+      const errorElement = input.nextElementSibling;
       errorElement.textContent = '';
       input.style.borderColor = '';
     }
+
   });
+
+ 
   
