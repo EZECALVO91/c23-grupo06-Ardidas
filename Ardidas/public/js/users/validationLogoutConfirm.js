@@ -13,7 +13,7 @@ function confirmLogout() {
         denyButtonText: "No"
     }).then((result) => {
         if (result.isConfirmed) {
-            // Si el usuario confirma cerrar sesión, redirige a la página de cierre de sesión
+            // Si el usuario confirma cerrar sesion, redirige a la pagina de cierre de sesion
             window.location.href = "/users/logout";
         }
     });

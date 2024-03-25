@@ -1,13 +1,6 @@
 // documentacion = https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
 const expresionesRegulares = {
     exRegAlfa: /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/,
-    exRegEmail: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
-    exRegPass: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d$@$!%*?&]{6,8}/,
-    exRegMayu: /[A-Z]/,
-    exRegMinu: /[a-z]/,
-    exRegNum: /[0-9]/,
-    exRegEsp: /[$@$!%*?&]/,
-    exRegMinMax: /.{6,8}/,
 };
 
 const elemento = (element) => document.querySelector(element);
