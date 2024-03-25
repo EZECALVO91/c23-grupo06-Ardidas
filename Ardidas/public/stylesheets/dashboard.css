@@ -53,9 +53,13 @@
     }
 }
 
-@media  (min-width: 1014px){
+@media  (min-width: 1024px){
     .box_redirect_create a{
         font-size: 40px;
+    }
+    .section_products_main_index{
+        max-width: 1024px;
+        margin:auto
     }
 }
 

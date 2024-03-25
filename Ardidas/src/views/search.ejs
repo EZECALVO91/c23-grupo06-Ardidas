@@ -1,0 +1,94 @@
+<!--ACA SE INCLUYE EL PARTIAL : HEAD -->
+<%- include("./partials/head.ejs") %>
+
+<body class="body_home">
+
+<!--ACA SE INCLUYE EL PARTIAL : HEADER -->
+<%- include("./partials/header.ejs") %>
+
+    <main class="productos">
+      <section class="carrusel_home">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active d-item">
+              <img
+                src="/images/baner1.png"
+                class="d-block w-100 d-img"
+                alt="Zapatillas Nike"
+              />
+            </div>
+            <div class="carousel-item d-item">
+              <img
+                src="/images/baner3.jpg"
+                class="d-block w-100 d-img"
+                alt="imagen zapatilla"
+              />
+            </div>
+            <div class="carousel-item d-item">
+              <img
+                src="/images/baner4.png"
+                class="d-block w-100 d-img"
+                alt="imagen zapatilla"
+              />
+            </div>
+            <div class="carousel-item d-item">
+              <img
+                src="/images/baner6.jpg"
+                class="d-block w-100 d-img"
+                alt="imagen zapatilla"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <div class="main_title_box">
+        <hr class="hr_txt" />
+        <h2 id="productos_home">RESULTADOS DE: "<%= keywords%>" </h2>
+        <hr class="hr_txt" />
+      </div>
+
+      <section class="contenedor-productos1 section_products_main_index">
+        <% products.forEach(product => { %>
+                  <article class="articulos">
+          <a href="../products/detalle/<%= product.id%>"><img src="/images/products/<%=product.Image_products[0].filename %>" alt="Zapatillas Nike" /></a>
+          <div class="product-texto">
+            <div class="main_descuento_precio_articulo">
+              <p class="precio">$<%=product.price%></p>
+            </div>
+            <p class="modelo"><%=product.name%></p>
+            <button><a href="/products/carrito/<%= product.id%>">SUMAR AL CARRITO</a></button>
+          </div>
+        </article>
+          <% }); %>
+      </section>
+
+      <article class="ver_productos">
+        <a href="/products">VER TODOS LOS PRODUCTOS</a>
+      </article>
+    </main>
+
+<!--ACA SE INCLUYE EL PARTIAL : -->
+<%- include("./partials/footer.ejs") %>
+
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="login_header_index">
+    <div class="login_header_index headerSinFondo">
         <% if (usuarioLogeado && usuarioLogeado.id_category==1) {%>
             <a href="/products/dashboard"> Productos |</a>
             <a href="/users/dashboard"> Usuarios | </a>
@@ -27,7 +27,7 @@
                         </a>
                         <%}%>
     </div>
-    <div class="header_top">
+    <div class="header_top headerSinFondo">
         <a href="" class="menu_hambu_contenedor">
             <i class="menu_hamburguesa fa-solid fa-bars" style="color: #fcfce7"></i>
         </a>
@@ -44,9 +44,9 @@
                     <li><a href="#">¿COMO COMPRAR?</a></li>
                 </ul>
             </nav>
-            <form class="busqueda-contenedor" action="">
-                <input class="busqueda home-logo-busqueda" type="text" placeholder="      Buscar" />
-                <i class="fa-solid fa-magnifying-glass" style="color: #fefefe"></i>
+            <form class="busqueda-contenedor" action="/search" method="GET">
+                <input class="busqueda home-logo-busqueda" type="text" name="keywords" placeholder="Buscar" />
+                <button type="submit"><i class="fa-solid fa-magnifying-glass" ></i></button>
                 <a class="carrito_header_index" href="/products/carrito"><i class="fa-solid fa-bag-shopping"
                         style="color: #fcfce7"></i></a>
             </form>

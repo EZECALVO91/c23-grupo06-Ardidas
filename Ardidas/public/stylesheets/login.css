@@ -1,6 +1,4 @@
 .main_login{
-    display: flex;
-    flex-direction: column;
     text-align: center;
     background-color: var(--color-beige);
     padding: 10% 0;
@@ -106,9 +104,9 @@
         font-weight: bold;
 
     }
-    .main_login{
-        margin-bottom : 200px;
-    }
+     .main_login{
+        margin-bottom : 50px;
+    } 
     .btn_login_main{
         width: 20%;
         height: 50px;
@@ -135,10 +133,9 @@
     .btn_login_up h6{
         font-size: 14px;
     }
+    .box_home_form {
+        max-width: 1024px;
+        margin: auto;
     }
-    @media  (min-width: 1440px){
-        .login_h_all{
-            margin-left:115px;
-        }
-
     }
+  
