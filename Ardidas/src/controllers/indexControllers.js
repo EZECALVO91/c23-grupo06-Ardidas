@@ -1,6 +1,7 @@
 
 const db = require("../database/models");
 const { Sequelize } = require("../database/models");
+const { Op } = require("sequelize");
 
 const indexController = {
     index:(req,res)=>{
@@ -43,6 +44,42 @@ const indexController = {
               });
             })
             .catch((error) => console.log(error));
-    }
+    },
+    search: (req, res) => {
+      const {keywords} = req.query;
+  
+      let productsSearch = db.Product.findAll({
+        where : {
+          [Op.or] : [
+            {
+              name: {
+                [Op.substring]: keywords
+              }
+            },
+            {
+              color: {
+                [Op.substring]: keywords
+              }
+            },
+          ]
+        },
+        include: [
+          {
+            association: "Image_products",
+          },
+        ]
+      })  
+          Promise.all([productsSearch])
+        .then(([productsSearch]) => {
+          return res.render('search', {
+            title: "Resultados",
+            usuarioLogeado: req.session.usuarioLogin,
+            products : productsSearch,
+            keywords,
+          })
+        })
+        .catch(error => console.log(error))
+  
+    },
 }
 module.exports = indexController
