@@ -211,11 +211,13 @@
     }
     .productCart-main-section-principal{
         width: 50%;
+        max-width: 512px;
     }
     .productCart-main-section-secundario{
         height: 400px;
         width: 30%;
         margin-left: 2%;
+        max-width: 312px;
     }
     .productCart-main-section-secundario{
         justify-content: center;
