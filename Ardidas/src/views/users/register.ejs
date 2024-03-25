@@ -16,52 +16,52 @@
           <label for="name">NOMBRE Y APELLIDO:</label>
           <input type="text" name="name" placeholder="Nombre y Apellido" id="name"
             value="<%= locals.old && old.name ? old.name : null %>">
-          <p>
+          <small class="nameError">
             <%= locals.errores && errores.name ? errores.name.msg : null %>
-          </p>
+          </small>
 
           <label for="email">EMAIL:</label>
-          <input type="email" name="email" placeholder="tuemail@email.com"
-            value="<%= locals.old && old.email ? old.email : null %>">
-          <p>
+          <input type="email" name="email" placeholder="tuemail@email.com" id="email" value="<%= locals.old && old.email ? old.email : null %>">
+          <small class="emailError">
             <%= locals.errores && errores.email ? errores.email.msg : null %>
-          </p>
+          </small>
 
           <label for="password">CONTRASEÑA:</label>
           <div class="main__form__register__password">
-            <input type="password" name="password" class="main__form__register__password" required>
-            <p>
+            <input type="password" name="password" id="password" class="main__form__register__password" required>
+            <small class="passError">
               <%= locals.errores && errores.password ? errores.password.msg : null %>
-            </p>
+            </small>
             <i class="fa-regular fa-eye"></i>
           </div>
 
           <label for="password2">CONFIRMAR CONTRASEÑA:</label>
           <div class="main__form__register__password">
-            <input type="password" name="password2" required>
-            <p>
+            <input type="password" name="password2" id="password2" required>
+            <small class="passError2">
               <%= locals.errores && errores.password ? errores.password.msg : null %>
-            </p>
+            </small>
             <i class="fa-regular fa-eye"></i>
           </div>
           <label for="image">AVATAR: </label>
           <input type="file" name="image" id="image" accept="image/*"
             value="<%= locals.old && old.image ? old.image : null %>">
-          <p>
+          <small class="imageError">
             <%= locals.errores && errores.image ? errores.image.msg : null %>
-          </p>
+          </small>
           <div class="main__form__register__box">
             <button class="main__form__button" type="submit">CREAR CUENTA</button>
 
             <h6>¿Ya tenés una cuenta? <a href="/users/login">Iniciar sesión</a></h6>
           </div>
+
         </form>
       </main>
-
+          <script src="/js/users/validationRegister.js"></script>
       <!--ACA SE INCLUYE EL PARTIAL : -->
       <%- include("../partials/footer.ejs") %>
 
-
+      
   </body>
 
   </html>

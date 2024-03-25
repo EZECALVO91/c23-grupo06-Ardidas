@@ -13,12 +13,7 @@ const usersController = {
     },
     register: (req, res) => {
         const errores = validationResult(req);  // registro directo a la base de datos.
-        console.log("errores:", errores);
-        if (!errores.isEmpty()) {
-            console.log("Ingrese en errores");
-            res.render("./users/register", {errores: errores.mapped(),old: req.body,title: "registro",usuarioLogeado: null,
-            });
-        } else {
+        if (errores.isEmpty()) {
             const file = req.file;
             const { name, email, password, id_category } = req.body;
             db.User.create({
@@ -30,7 +25,13 @@ const usersController = {
                 createdAt: new Date(),
             }).then(() => {
                 res.redirect("/users/login");
-            });
+            })
+            .catch(error => console.log(error))
+            // console.log("Ingrese en errores");
+            // res.render("./users/register", {errores: errores.mapped(),old: req.body,title: "registro",usuarioLogeado: null,
+            // });
+        } else {
+            return res.render ("./users/register", {errores: errores.mapped(),old: req.body,title: "registro",usuarioLogeado: null})
         }
     },
 
@@ -226,9 +227,14 @@ const usersController = {
     // --------------DESTROY DASHBOAD---------------------------------------------------------------------------------------------------------------
 
     destroy: (req, res) => {
-        db.User.findOne({ where: { id: req.params.id } }) // borra usuarios (no es un delete soft)
+        db.User.findOne({ 
+            where: 
+            { id: req.params.id }
+         }) // borra usuarios (no es un delete soft)
             .then((user) => {
-                return db.User.destroy({ where: { id: req.params.id } }).then(() => {
+                return db.User.destroy({ 
+                    where: { id: req.params.id } 
+                }).then(() => {
                     if (user.image && user.image !== "default-avatar-profile.jpg") {
                         const imagePath = path.join(
                             __dirname,
