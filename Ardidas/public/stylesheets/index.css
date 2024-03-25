@@ -150,5 +150,10 @@
     .product-texto button{
         margin-bottom: 20px;
     }
+    .productos {
+        max-width: 1024px;
+        margin:auto
+    }
+
 
 }

@@ -25,8 +25,8 @@ a {
     border-radius: 10px;
     text-align: center;
     position: relative;
-    left: 5%;
     top: 10px;
+    margin:auto
 }
 
 .main_carrito {
@@ -172,7 +172,7 @@ main {
         width: 85%;
 }
 .detalles_div_descripcion{
-    padding: 6% 4%;
+    padding: 2% 4%;
 }
 
 .detalles_div_descripcion h3{
@@ -227,7 +227,7 @@ main {
         top: 10px;
     }
     .detalles_div_descripcion{
-        margin: 0% 4%;
+        padding: 2% 4%;
     }
     .color_detail {
         width:100px;
@@ -237,5 +237,22 @@ main {
     .detalles_color {
         width:220px
      }
+
+    .main-productDetail .producto{
+        max-width: 1024px;
+        margin:auto;
+    }
+    .main-productDetail .detalles_div_descripcion{
+        max-width: 1024px;
+        margin:auto;
+    }
+    .main-productDetail .main_ver-todos-productos{
+        max-width: 830px;
+        margin:auto;
+    }
+    .main-productDetail .secciones-productDetail {
+        max-width: 1024px;
+        margin:auto
+    }
 
     }
