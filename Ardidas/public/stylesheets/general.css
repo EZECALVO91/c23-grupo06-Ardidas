@@ -15,6 +15,7 @@
     list-style: none;
     font-family: 'Open Sans', sans-serif;
     cursor: none;
+
 }
 
 
@@ -37,7 +38,7 @@ img{
     animation-timeline: --image;
     animation-name: show;
 
-    animation-range : entry 25% cover 20%;
+    animation-range : entry 25% cover 45%;
     animation-fill-mode: both;
 }
 
@@ -45,12 +46,12 @@ img{
 /* CURSOR NIKE */
 .custom-cursor{
     position: fixed;
-    z-index: 10;
-    width: 40px;
-    height: 40px;
-    background-image: url(/images/cursor/nike-cursor.png);
+    z-index: 1;
+    width: 23px;
+    height: 23px;
+    background-image: url(/images/cursor/arrow.png);
     background-size: cover;
     pointer-events: none;
-    -webkit-transition:all 30ms linear;
-    transition: all 30ms linear;
+    -webkit-transition:all 5ms linear;
+    transition: all 5ms linear;
 }

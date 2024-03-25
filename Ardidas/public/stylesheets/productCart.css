@@ -12,7 +12,7 @@
 }
 .productCart-main-div-promo{
     display: none;
-    background-color: var(--color-verde-muzgo);
+    background:linear-gradient(black 50%, grey );;
     width: 100%;
 }
 .productCart-main{
@@ -23,7 +23,7 @@
     padding: 6%;
 }
 .productCart-main-section-principal{
-    background-color: var(--color-verde-muzgo);
+    background:linear-gradient(black 35%, grey );;
     border-radius: 16px;
     padding: 4%;
     margin-bottom: 10px;
@@ -75,6 +75,7 @@
 .productCart-main-section-principal-article-div-2 #productCart-article-nombre{
     font-size: 14px;
     width: 50%;
+    color: white;
 
 }
 .productCart-main-section-principal-article-div-2 #productCart-article-borrar{
@@ -87,7 +88,7 @@
 .productCart-main-section-secundario{
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--color-verde-muzgo);
+    background:linear-gradient(black 35%, grey );
     border-radius: 16px;
     text-align: center;
     padding: 20px;
