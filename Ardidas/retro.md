@@ -138,25 +138,27 @@ ______________________________________________________________
 ### LIDER : EZEQUIEL CALVO
 
 
-#### Dejar de Hacer:
+#### Dejar de Hacer: 
+No dar respuesta al equipo
 
 
 #### Hacer menos:
-
+-
 
 #### Continuar Haciendo:
-
+Seguir trabajando de la misma manera, comunicando los avances y las trabas.
+Seguir cumpliendo con las tareas con tiempo de sobra a la hora de cierres de sprint para tener más tiempo de revisar los posibles errores
 
 #### Hacer más:
-
+Coordinar entre todo el equipo para poder llevar a cabo las dailys tal y como las tenemos pactadas
 
 #### Comenzar a Hacer:
-
+Si tengo dificultades personales dar aviso de la situación a mi equipo para que se encuentre enterado
 
 ______________________________________________________________
 # Conclusiones del Septimo Sprint:
 
-### LIDER :
+### LIDER : LEONEL ANCHABA
 
 
 #### Dejar de Hacer:
