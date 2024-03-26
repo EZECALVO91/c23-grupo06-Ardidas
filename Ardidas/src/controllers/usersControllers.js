@@ -46,8 +46,7 @@ const usersController = {
         const errores = validationResult(req); // logueo de cuenta mas cookis para guardar en las vistas.
         if (!errores.isEmpty()) {
             console.log("errores:", errores.mapped());
-            res.render("./users/login", {errores: errores.mapped(),title: "Login",usuarioLogeado: req.session.usuarioLogin,
-            });
+            res.render("./users/login", {errores: errores.mapped(),title: "Login",usuarioLogeado: req.session.usuarioLogin});
         } else {
             const { email } = req.body;
             db.User.findOne({
@@ -92,8 +91,7 @@ const usersController = {
         const { id } = req.params;
         db.User.findByPk(req.session.usuarioLogin.id)
             .then((response) => {
-                res.render("users/profileEdit", {title: "Editar Usuario",usuarioLogeado: response.dataValues,
-                });
+                res.render("users/profileEdit", {title:"Editar Usuario", usuarioLogeado:response.dataValues});
             })
             .catch((err) => console.log(err));
     },
@@ -103,8 +101,7 @@ const usersController = {
         if (!errores.isEmpty()) {
             db.User.findByPk(req.session.usuarioLogin.id)
                 .then((response) => {
-                    res.render("users/profileEdit", {errores: errores.mapped(),old: req.body,title: "Error",usuarioLogeado: response.dataValues,
-                    });
+                    res.render("users/profileEdit", {errores: errores.mapped(), old: req.body,title: "Error",usuarioLogeado:response.dataValues,});
                 })
                 .catch((err) => console.log(err));
         } else {
@@ -113,25 +110,38 @@ const usersController = {
             const file = req.file;
             const deletePreviousImage = (imageName) => {   // logica parecida a destroy
                 if (imageName && imageName !== "default-avatar-profile.jpg") {
-                    const imagePath = path.join(__dirname,"../../public/images/users/",imageName);
+                    const imagePath = path.join(__dirname, "../../public/images/users/", imageName);
                     fs.unlinkSync(imagePath);
                     console.log(`Imagen anterior "${imageName}" eliminada`);
-                }};
+                }
+            };
             db.User.findByPk(id)
                 .then((user) => {
                     if (!user) {
                         throw new Error("El usuario no esta registrado");
                     }
-                    deletePreviousImage(user.image); // eliminar la imagen anterior del usuario
-                    return user.update({
-                        name: name,
-                        category,
-                        date: date ? date : null,
-                        locality: locality ? locality : null,
-                        aboutMe: aboutMe ? aboutMe : null,
-                        image: file ? file.filename : image,
-                        updatedAt: new Date(),
-                    });
+                    if (file && file !== user.image) { // Si se proporciona un nuevo archivo de imagen y es diferente al anterior
+                        deletePreviousImage(user.image); // eliminar la imagen anterior del usuario
+                        return user.update({
+                            name: name,
+                            category,
+                            date: date ? date : null,
+                            locality: locality ? locality : null,
+                            aboutMe: aboutMe ? aboutMe : null,
+                            image: file ? file.filename : image,
+                            updatedAt: new Date(),
+                        });
+                    } else { // Si no se proporciona un nuevo archivo de imagen o es igual al anterior
+                        return user.update({
+                            name: name,
+                            category,
+                            date: date ? date : null,
+                            locality: locality ? locality : null,
+                            aboutMe: aboutMe ? aboutMe : null,
+                            image: file ? file.filename : image,
+                            updatedAt: new Date(),
+                        });
+                    }
                 })
                 .then(() => {
                     res.redirect(`/users/profile/${id}`);

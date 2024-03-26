@@ -65,7 +65,7 @@
           </div>
 
           <label for="image">CAMBIO DE AVATAR: </label>
-          <input type="file" name="image" id="image" accept="image/*" value="<%= user.image %>">
+          <input type="file" name="image" id="image" accept="image/*" value="<%= user.image %>" disabled>
           <small class="imageError">
             <%= locals.errores && errores.image ? errores.image.msg : null %>
           </small>
