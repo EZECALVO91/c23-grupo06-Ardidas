@@ -92,3 +92,14 @@
 * Nicolas Badino = Hoy estuve terminando basicamente lo del playgraund, le meti un poco a la clase 39 porque estaba un poco atrasado y mañana pienso terminarlo y empezar con mi parte del trabajo del sprint, estuvimos viendo la base de datos con los chicos y pudimos corregirlo con los compañeros y el profesor en clase asi que una ves que Eze termine con los modelos puedo empezar mi parte del sprint.
 
 * Esteban Figueroa = Falta completar.(ESTEBAN POR TEMAS LABORALES ABANDONO EL CURSO)
+
+
+
+## Daily 25/3/2024
+Sprint 7.
+
+* Ezequiel Calvo = El sábado, cuando el profe mandó el cuadro de tareas seleccioné las tareas a realizar y en el transcurso del día las arranqué y las terminé para el domingo a la noche. Aproveché el Domingo también para ponerme al dia con el PG que venía un poco atrasado. Durante el finde con Leo también estuvimos retocando estilos de la página, y una vez que terminé con todo aproveché a agregar SweetAlert a la hora de borrar un usuario y a la hora de cerrar sesión. Y hoy Lunes estuve corrigiendo algunas cuestiones de las tareas y viendo con Leo como ir finalizando el Sprint.
+
+* Leonel Anchaba = Siendo que me tocaba liderar en este Sprint y estuve varios días con cuestiones de salud, ya nos habíamos anticipado con los chicos y les dejé dicho que se agarren las tareas con las cuales se sientan cómodos así podían empezar a trabajar cuando quisieran y no tenían que esperarme a que me encuentre mejor como para coordinar y hacer la división de tareas entre todos, así que una vez que me encontré mejor armé el tablero para que lo tengamos disponible y sea todo mas cómodo y claro, asigné las tareas que habían elegido y empecé a desarrollar las validaciones de creación de productos. Durante el finde coordinamos un rato con Eze y aprovechamos a retocar cuestiones de diseño y dejar anotadas otras para después ir trabajando tranquilos e ir integrandolas a medida que estén. Y hoy ya tenemos todas las tareas listas, excepto 1, y aprovechamos a hacer la retro y la daily una vez terminada la clase.
+
+* Nicolas Badino =
