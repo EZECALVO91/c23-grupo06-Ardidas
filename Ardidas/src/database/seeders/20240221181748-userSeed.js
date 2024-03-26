@@ -17,7 +17,7 @@ module.exports = {
         name:'Eze Calvo',
         email:'eze@admin.com',
         password:"$2a$10$qPvE1uQsz9e97UCv0LYUfuXSHPcaF2Gexrcv6APFFuPhJGQqrI/ia",
-        image:"1709092347036_img_.jpg",
+        image:"1711402123079_img_.jpg",
         date:null,
         locality:'San Miguel',
         aboutMe:'Estoy practicando codeo1',
