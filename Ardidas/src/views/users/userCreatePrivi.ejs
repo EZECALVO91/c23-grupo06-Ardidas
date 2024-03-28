@@ -13,7 +13,7 @@
           <hr class="main__form__lines">
         </div>
         <form action="/users/createPrivileges" method="post" class="main__form__register" enctype="multipart/form-data">
-          <label for="name">NOMBRE</label>
+          <label for="name">NOMBRE Y APELLIDO</label>
           <input type="text" name="name" placeholder="Nombre y Apellido" id="name"
             value="<%= locals.old && old.name ? old.name : null %>">
           <small class="nameError">

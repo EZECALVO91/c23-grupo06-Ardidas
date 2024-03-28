@@ -96,59 +96,48 @@ const usersController = {
             .catch((err) => console.log(err));
     },
 
+
     userProfileEdit: (req, res) => {
-        const errores = validationResult(req);
-        if (!errores.isEmpty()) {
-            db.User.findByPk(req.session.usuarioLogin.id)
-                .then((response) => {
-                    res.render("users/profileEdit", {errores: errores.mapped(), old: req.body,title: "Error",usuarioLogeado:response.dataValues,});
-                })
-                .catch((err) => console.log(err));
-        } else {
-            const { id } = req.params;
-            const { name, category, date, locality, aboutMe, image } = req.body;
-            const file = req.file;
-            const deletePreviousImage = (imageName) => {   // logica parecida a destroy
-                if (imageName && imageName !== "default-avatar-profile.jpg") {
-                    const imagePath = path.join(__dirname, "../../public/images/users/", imageName);
-                    fs.unlinkSync(imagePath);
-                    console.log(`Imagen anterior "${imageName}" eliminada`);
-                }
+        const { id } = req.params;
+    const { name, category, date, locality, aboutMe, image } = req.body;
+    const file = req.file;
+
+    db.User.findByPk(id)
+        .then((user) => {
+            if (!user) {
+                throw new Error("El usuario no está registrado");
+            }
+
+            if (file && file !== user.image && user.image !== "default-avatar-profile.jpg") {
+                const imagePath = path.join(__dirname, "../../public/images/users/", user.image);
+                fs.unlinkSync(imagePath);
+                console.log(`Imagen anterior "${user.image}" eliminada`);
+            }
+
+            const newData = {
+                name,
+                category,
+                date: date ? date : null,
+                locality: locality ? locality : null,
+                aboutMe: aboutMe ? aboutMe : null,
+                image: file ? file.filename : user.image,
+                updatedAt: new Date(),
             };
-            db.User.findByPk(id)
-                .then((user) => {
-                    if (!user) {
-                        throw new Error("El usuario no esta registrado");
-                    }
-                    if (file && file !== user.image) { // Si se proporciona un nuevo archivo de imagen y es diferente al anterior
-                        deletePreviousImage(user.image); // eliminar la imagen anterior del usuario
-                        return user.update({
-                            name: name,
-                            category,
-                            date: date ? date : null,
-                            locality: locality ? locality : null,
-                            aboutMe: aboutMe ? aboutMe : null,
-                            image: file ? file.filename : image,
-                            updatedAt: new Date(),
-                        });
-                    } else { // Si no se proporciona un nuevo archivo de imagen o es igual al anterior
-                        return user.update({
-                            name: name,
-                            category,
-                            date: date ? date : null,
-                            locality: locality ? locality : null,
-                            aboutMe: aboutMe ? aboutMe : null,
-                            image: file ? file.filename : image,
-                            updatedAt: new Date(),
-                        });
-                    }
-                })
-                .then(() => {
-                    res.redirect(`/users/profile/${id}`);
-                })
-                .catch((err) => console.log(err));
-        }
-    },
+
+            return user.update(newData);
+        })
+        .then((updatedUser) => {
+            console.log("LO QUE ME GUARDA EL NUEVO USUARIO", updatedUser);
+            req.session.usuarioLogin = updatedUser;
+            // res.cookies = req.session.usuarioLogin
+            console.log("LO QUE ME COOKIS",res.cookies);
+            res.redirect(`/users/profile/${id}`);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).send("Error interno del servidor");
+        });
+},
 
     // ---------------ACA EMPIEZA EL DASHBOARD--------------------------------------------------------------------------------------------------------------
 

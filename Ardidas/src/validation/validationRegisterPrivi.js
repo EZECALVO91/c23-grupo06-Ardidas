@@ -4,8 +4,15 @@ const db = require("../database/models")
 module.exports = [
     //Input: Name
     body('name').notEmpty().withMessage("El campo no puede estar vacio").bail()
-        .isLength({ min: 3, max: 30 }).withMessage("El valor ingresado debe tener al menos 3 caracteres y maximo 30").bail(),
-
+    .isLength({ min:6, max: 30 }).withMessage("El valor ingresado debe tener un mínimo de 6 y máximo de 30 caracteres").bail()
+    .custom(value => {
+        // Expresión regular para verificar si el valor contiene solo letras
+        const expresionRegular = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/;
+        if (!expresionRegular.test(value)) {
+            throw new Error("El campo solo puede contener letras");
+        }
+        return true;
+    }),
     //Input:Email
     body('email').notEmpty().withMessage("El campo no puede estar vacio").bail()
         .isEmail().withMessage('Debe ser un correo con formato valido').bail()
@@ -27,7 +34,8 @@ module.exports = [
 
     //Input:Password
     body('password').notEmpty().withMessage("El campo no puede estar vacio").bail()
-        .isLength({ min: 3, max: 20 }).withMessage("El minimo son 3 caracteres y el maximo es de 20").bail(),
+    .isLength({ min: 6, max: 20 }).withMessage("Contraseña mínimo (6) a máximo (20) caracteres").bail()
+    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&.,;'" ])[A-Za-z\d$@$!%*?&.,;'" ]{6,20}$/).withMessage("Debes incluir números, mayúscula, minúscula y  un caracter especial(d$@$!%*?&.,;')").bail(),
 
     //Input:Image
     body('image').custom((value, { req }) => {

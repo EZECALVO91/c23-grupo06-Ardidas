@@ -6,16 +6,16 @@ const expresionesRegulares = {
 
 const elemento = (element) => document.querySelector(element);
 
-const messageError = (element, msg, target) => {
+const messageError = (element, msg, select) => {
     elemento(element).innerText = msg;
     elemento(element).style.color = "red";
-    target.classList.add("is-invalid");
+    select.classList.add("is-invalid");
 };
 
-const validatorInput = (element, target) => {
+const validatorInput = (element, select) => {
     elemento(element).innerText = null;
-    target.classList.add("is-valid");
-    target.classList.remove("is-invalid");
+    select.classList.add("is-valid");
+    select.classList.remove("is-invalid");
 };
 
 window.addEventListener("load",() => {
@@ -23,22 +23,26 @@ window.addEventListener("load",() => {
 });
 
 const inputName = document.querySelector("#name");
-    inputName.addEventListener("blur", function({target}) {
+    inputName.addEventListener("blur", function({select}) {
     switch (true) {
         case !this.value.trim():
-            messageError(".nameError", "Debes completar el campo con el nombre de usuario", target);
+            messageError(".nameError", "Debes completar el campo con tu nombre", select);
             this.style.borderColor = "red";
             break;
-        case this.value.trim().length < 5:
-            messageError(".nameError", "El nombre debe tener 5 o mas caracteres", target);
+        case this.value.trim().length < 6:
+            messageError(".nameError", "El nombre debe tener minimo(6) o mas caracteres", select);
+            this.style.borderColor = "red";
+            break;
+        case this.value.trim().length > 30:
+            messageError(".nameError", "El nombre debe tener maximo(30) caracteres", select);
             this.style.borderColor = "red";
             break;
         case !expresionesRegulares.exRegAlfa.test(this.value):
-            messageError(".nameError", "Solo caracteres alfabetico", target);
+            messageError(".nameError", "Solo caracteres alfabetico", select);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".nameError", target);
+            validatorInput(".nameError", select);
             this.style.borderColor = "#4F7F3F";
             break;
     }
@@ -46,18 +50,18 @@ const inputName = document.querySelector("#name");
 
 
 const inputEmail = document.querySelector("#email")
-    inputEmail.addEventListener("blur", async function({target}) {
+    inputEmail.addEventListener("blur", async function({select}) {
     switch (true) {
         case !this.value.trim():
-            messageError(".emailError", "Debes completar este campo con tu email", target);
+            messageError(".emailError", "Debes completar este campo con tu email", select);
             this.style.borderColor = "red";
             break;
         case !expresionesRegulares.exRegEmail.test(this.value):
-            messageError(".emailError", "No tiene formato de email", target);
+            messageError(".emailError", "No tiene formato de email", select);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".emailError", target)
+            validatorInput(".emailError", select)
             this.style.borderColor= "#4F7F3F"
             break;
     }
@@ -65,15 +69,19 @@ const inputEmail = document.querySelector("#email")
 
 const filtro = /\.(jpg|jpeg|png|gif|webp|svg)$/;
 
-const inputImg = document.querySelector('#image')
-    inputImg.addEventListener('change', function({target}) {
-    const file = target.files[0];
+const inputImg = document.querySelector('#image');
+inputImg.addEventListener('change', function({select}) {
+    const file = select.files[0];
     if (!file) {
-        messageError(".imageError", "Formato valido.", target);
+        messageError(".imageError", "Formato válido.", select);
         return;
     }
-    if (!filtro.test(file.name.toLowerCase())) {
-        messageError(".imageError", "Solo se permiten formatos de imagen (jpg, jpeg, png, gif, webp, svg).", target);
-        this.style.borderColor = "red";
+    switch (true) {
+        case !filtro.test(file.name.toLowerCase()):
+            messageError(".imageError", "Solo se permiten formatos de imagen (jpg, jpeg, png, gif, webp, svg).", select);
+            break;
+        default:
+            validatorInput(".imageError", select);
+            break;
     }
 });
