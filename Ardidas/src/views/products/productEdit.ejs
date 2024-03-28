@@ -15,14 +15,23 @@
             <div class="img_update_fast">
               <img src="/images/products/<%= product.Image_products[0].filename %>" alt="imagen principal" class="imagen_grande input_edit_img">
               <input class="dashboard__image" name="image" type="file" accept="image/*" value="<%= product.Image_products[0].filename %>">
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.image ? errores.image.msg : null %>
+              </p>
             </div>
 
             <div class="update_box_intern">
               <label for="name">Nombre :</label>
               <input type="text" name="name" id="name" value="<%= product.name %>" />
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.name ? errores.name.msg : null %>
+              </p>
 
               <label for="price">Precio :</label>
               <input type="number" name="price" value="<%= product.price %>" />
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.price ? errores.price.msg : null %>
+              </p>
 
               <label for="category" >Categoría :</label>
               <select name="category" id="category" value="<%= product.Category_products.category %>">
@@ -96,7 +105,9 @@
               </select>
             
               </div> 
-
+              <p class="errores_validacion_login" id="sizesError">
+                <%= locals.errores && errores.sizes ? errores.sizes.msg : null %>
+              </p>
             </div>
           
           </section>

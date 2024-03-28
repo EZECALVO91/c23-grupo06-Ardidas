@@ -133,6 +133,24 @@ const productsController = {
       .catch(error=> console.log(error));
   },
   update: (req, res) => {
+    const errores = validationResult(req); 
+    let product = db.Product.findByPk(req.params.id,{
+      include: [{
+          association: "Image_products"},
+        {
+          association: "Category_products"},
+        {
+          association: "Sizes"}],
+    });
+    Promise.all([product])
+      .then(([product]) => {
+      
+    
+    if (!errores.isEmpty()) {
+      console.log("Ingrese en errores de edición PUT");
+      res.render("products/productEdit", {errores: errores.mapped(),old: req.body,title: "Error al editar",usuarioLogeado: req.session.usuarioLogin, product
+      });
+  } else {
     const { id } = req.params;
     const file = req.file;
     const { name, price,  category,  description, sizes, color, image} = req.body;
@@ -183,7 +201,10 @@ const productsController = {
     .then(()=>{
     res.redirect(`/products/detalle/${id}`);
     })
+  
     .catch(error=> console.log(error));
+  }
+})
   },
   destroy: (req, res) => {
          db.Product.destroy({
