@@ -35,7 +35,7 @@ router
 .post("/",uploadFile.single("image"), isAdmin, createProductValidation, create)
 
 .get("/update/:id", isAdmin, productEdit)
-.put("/update/:id",uploadFile.single("image"), isAdmin, update)
+.put("/update/:id",uploadFile.single("image"), isAdmin, createProductValidation, update)
 
 .delete('/delete/:id', isAdmin, destroy)
 
