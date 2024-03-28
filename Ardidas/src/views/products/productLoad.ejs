@@ -14,7 +14,11 @@
 
             <div class="img_create_fast">
               <input class="dashboard__image" name="image" type="file" accept="image/*">
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.image ? errores.image.msg : null %>
+              </p>
             </div>
+            
 
             <div class="update_box_intern">
               <label for="name">Nombre :</label>
@@ -40,6 +44,9 @@
                 <label for="description">Descripción :</label>
                 <textarea name="description" id="description"></textarea>
               </div>
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.description ? errores.description.msg : null %>
+              </p>
               </div>
                <div class="talles_update">
                 <label>Talles :</label>

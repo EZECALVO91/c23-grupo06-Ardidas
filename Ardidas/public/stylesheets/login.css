@@ -22,10 +22,10 @@
     padding: 0;
 }
 .input_login{
-
-    width: 99%;
-    height: 45px;
-    border:1px solid var(--color-verde-muzgo);
+    padding: 15px;
+    border-radius: 10px;
+    border: solid 1px #75798b;
+    margin: 10px 0px;
 
 
 }
@@ -63,6 +63,8 @@
     color: red;
     font-weight: 600;
 }
+
+
 @media(min-width: 768px){
     .input_login{
         width: 85%;
@@ -87,7 +89,15 @@
         font-size: 12px;
         margin-bottom: 10px
     }
-
+    .div_login_password input{
+        position: relative
+    }
+    .div_login_password i {
+        position:absolute;
+        margin-top:-40px;
+        margin-left: 280px;
+        
+    }
 }
 
 @media  (min-width: 1024px){
@@ -136,6 +146,15 @@
     .box_home_form {
         max-width: 1024px;
         margin: auto;
+    }
+    .div_login_password input{
+        position: relative
+    }
+    .div_login_password i {
+        position:absolute;
+        margin-top:-50px;
+        margin-left: 380px;
+        
     }
     }
   

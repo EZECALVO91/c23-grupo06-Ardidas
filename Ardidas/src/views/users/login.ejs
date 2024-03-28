@@ -7,7 +7,12 @@
     <%- include("../partials/header.ejs") %>
 
       <main class="main_login">
-        <form class="box_home_form" action="/users/login" method="post">
+        <div class="main__title__box">
+          <hr class="main__form__lines">
+          <h2 class="main__form__title">INGRESAR</h2>
+          <hr class="main__form__lines">
+        </div>
+        <form class="box_home_form " action="/users/login" method="post">
           <section>
             <article class="articulo_login_main">
 
@@ -20,11 +25,14 @@
             </article>
             <article class="articulo_login_main">
               <h2 class="login_h_all">CONTRASEÑA</h2>
-              <label for="contraseña"></label>
-              <input class="input_login" name="password" type="password" id="password" placeholder=" " required>
-              <small class="passwordError">
-                <%= locals.errores && errores.password ? errores.password.msg : null %>
-              </small>
+              
+              <div class="div_login_password">
+                <input type="password" name="password" id="password" class="input_login" required>
+                <small class="passError passwordError">
+                  <%= locals.errores && errores.password ? errores.password.msg : null %>
+                </small>
+                <i class="fa-regular fa-eye"></i>
+              </div>
 
               <a href="" class="login_contra_up">
                 <h6 class="login_h_all">¿Olvidaste tu contraseña?</h6>
