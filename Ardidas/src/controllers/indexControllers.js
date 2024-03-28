@@ -81,5 +81,8 @@ const indexController = {
         .catch(error => console.log(error))
   
     },
+    contacto: (req, res) => {
+      res.render("contacto", {title:"Contacto", usuarioLogeado: req.session.usuarioLogin })
+    }
 }
 module.exports = indexController
