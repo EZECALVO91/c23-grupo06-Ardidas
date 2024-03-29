@@ -14,7 +14,7 @@
           <hr class="main__form__lines">
         </div>
 
-        <form action="/users/profile/<%= usuarioLogeado.id %>?_method=PUT" method="post" class="main__form__register"
+        <form action="/users/profile/<%= usuarioLogeado.id %>?_method=PUT" method="post" class="main__form__register form_updateProfile"
           enctype="multipart/form-data">
           <label for="name">NOMBRE Y APELLIDO:</label>
           <input type="text" name="name" id="name" value="<%= usuarioLogeado.name %>" />
@@ -68,8 +68,9 @@
               <img class="img_avatar" src="/images/users/<%= usuarioLogeado.image %>" alt="imagen principal">
             </div>
 
+            <button class="main__form__button" type="submit">CONFIRMAR</button>
+            <div id="error-message-profileEdit">Por favor, corrija los errores del formulario.</div> 
 
-            <button class="main__form__button" type="">CONFIRMAR</button>
 
           </div>
         </form>

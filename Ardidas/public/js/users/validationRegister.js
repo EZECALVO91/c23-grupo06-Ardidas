@@ -114,9 +114,9 @@ const inputPasswordDos= document.querySelector("#password2")
 
 document.addEventListener('DOMContentLoaded', function() {
     const passwordInputs = document.querySelectorAll('.main__form__register__password input[type="password"]');
-    const showPasswordIcons = document.querySelectorAll('.main__form__register__password .fa-eye');
+    const PasswordIcons = document.querySelectorAll('.main__form__register__password .fa-eye');
 
-    showPasswordIcons.forEach(function(icon, index) {
+    PasswordIcons.forEach(function(icon, index) {
         icon.addEventListener('click', function() {
             const passwordInput = passwordInputs[index];
             if (passwordInput.type == 'password') {
@@ -148,5 +148,29 @@ inputImg.addEventListener('change', function({target}) {
         default:
             validatorInput(".imageError", target);
             break;
+    }
+});
+
+
+const form = document.querySelector('.main__form__register');
+const errorMessage = document.getElementById('error-message-registerUser');
+
+form.addEventListener('submit', function(event) {
+    // capturo los errores
+    const nameError = document.querySelector('.nameError');
+    const emailError = document.querySelector('.emailError');
+    const passError = document.querySelector('.passError');
+    const passError2 = document.querySelector('.passError2');
+    const imageError = document.querySelector('.imageError');
+
+    // si alguno de elementos tiene un error
+    const hasError = nameError.innerText || emailError.innerText || passError.innerText || passError2.innerText || imageError.innerText;
+
+    // si alguno cumple con la condicion el furmulario no se envia y manda un msj
+    if (hasError) {
+        errorMessage.style.display = 'block'; // msj
+        event.preventDefault();
+    } else {
+        errorMessage.style.display = 'none'; // oculta el msj si no hay errores
     }
 });

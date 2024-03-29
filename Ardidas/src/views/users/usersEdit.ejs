@@ -14,7 +14,7 @@
           <hr class="main__form__lines">
         </div>
 
-        <form action="/users/update/<%= user.id %>?_method=PUT" method="post" class="main__form__register"
+        <form action="/users/update/<%= user.id %>?_method=PUT" method="post" class="main__form__register main_form_userUpdateDash"
           enctype="multipart/form-data">
           <label for="name">NOMBRE Y APELLIDO:</label>
           <input type="text" name="name" id="name" value="<%= user.name %>" />
@@ -65,7 +65,7 @@
           </div>
 
           <label for="image">CAMBIO DE AVATAR: </label>
-          <input type="file" name="image" id="image" accept="image/*" value="<%= user.image %>" disabled>
+          <input type="file" name="image" id="image" accept="image/*" value="<%= user.image %>">
           <small class="imageError">
             <%= locals.errores && errores.image ? errores.image.msg : null %>
           </small>
@@ -76,7 +76,10 @@
           </div>
 
           <div class="main__form__register__box">
+            <div id="error-message-updateUser">Por favor, corrija los errores del formulario.</div> 
             <button class="main__form__button" type="">CONFIRMAR</button>
+          
+
           </div>
 
         </form>

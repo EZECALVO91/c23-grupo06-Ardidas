@@ -128,3 +128,26 @@ inputImg.addEventListener('change', function({select}) {
             break;
     }
 });
+
+
+const form = document.querySelector('.main__form__registerDash');
+const errorMessage = document.getElementById('error-message-registerUserPrivi');
+
+form.addEventListener('submit', function(event) {
+    // capturo los errores
+    const nameError = document.querySelector('.nameError');
+    const emailError = document.querySelector('.emailError');
+    const passError = document.querySelector('.passError');
+    const imageError = document.querySelector('.imageError');
+
+    // si alguno de elementos tiene un error
+    const hasError = nameError.innerText || emailError.innerText || passError.innerText || imageError.innerText;
+
+    // si alguno cumple con la condicion el furmulario no se envia y manda un msj
+    if (hasError) {
+        errorMessage.style.display = 'block'; // msj
+        event.preventDefault();
+    } else {
+        errorMessage.style.display = 'none'; // oculta el msj si no hay errores
+    }
+});

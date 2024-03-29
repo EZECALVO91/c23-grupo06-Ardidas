@@ -25,3 +25,24 @@
     color:red;
     font-weight: bold;
 }
+
+#error-message-updateUser {
+    color: red;
+    display: none;
+    margin: auto;
+    margin-top: 2%;
+}
+
+#error-message-registerUserPrivi {
+    color: red;
+    display: none;
+    margin: auto;
+    margin-top: 2%;
+}
+
+#error-message-profileEdit{
+    color: red;
+    display: none;
+    margin: auto;
+    margin-top: 2%;
+}
