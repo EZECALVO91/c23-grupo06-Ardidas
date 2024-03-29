@@ -82,7 +82,15 @@ const indexController = {
   
     },
     contacto: (req, res) => {
-      res.render("contacto", {title:"Contacto", usuarioLogeado: req.session.usuarioLogin })
+      if(req.session.usuarioLogin){
+        db.User.findByPk(req.session.usuarioLogin.id)
+        .then((response) => {
+        res.render("contacto", {title:"Contacto", usuarioLogeado: response.dataValues })
+      })
+      .catch((err) => console.log(err));
+      } else {
+       res.render("contacto", {title:"Contacto", usuarioLogeado: req.session.usuarioLogin })
+     }
     },
     ayuda: (req, res) => {
       res.render("ayuda",  {title:"Ayuda", usuarioLogeado: req.session.usuarioLogin } )
