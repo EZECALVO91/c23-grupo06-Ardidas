@@ -113,18 +113,18 @@ document.addEventListener('DOMContentLoaded', function() {
 const filtro = /\.(jpg|jpeg|png|gif|webp|svg)$/;
 
 const inputImg = document.querySelector('#image');
-inputImg.addEventListener('change', function({select}) {
-    const file = select.files[0];
+inputImg.addEventListener('change', function({target}) {
+    const file = target.files[0];
     if (!file) {
-        messageError(".imageError", "Formato válido.", select);
+        messageError(".imageError", "Formato válido.", target);
         return;
     }
     switch (true) {
         case !filtro.test(file.name.toLowerCase()):
-            messageError(".imageError", "Solo se permiten formatos de imagen (jpg, jpeg, png, gif, webp, svg).", select);
+            messageError(".imageError", "Solo se permiten formatos de imagen (jpg, jpeg, png, gif, webp, svg).", target);
             break;
         default:
-            validatorInput(".imageError", select);
+            validatorInput(".imageError", target);
             break;
     }
 });
