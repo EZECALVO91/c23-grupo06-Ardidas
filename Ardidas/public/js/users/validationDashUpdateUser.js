@@ -6,39 +6,39 @@ const expresionesRegulares = {
 
 const elemento = (element) => document.querySelector(element);
 
-const messageError = (element, msg, select) => {
+const messageError = (element, msg, target) => {
     elemento(element).innerText = msg;
     elemento(element).style.color = "red";
-    select.classList.add("is-invalid");
+    target.classList.add("is-invalid");
 };
 
-const validatorInput = (element, select) => {
+const validatorInput = (element, target) => {
     elemento(element).innerText = null;
-    select.classList.add("is-valid");
-    select.classList.remove("is-invalid");
+    target.classList.add("is-valid");
+    target.classList.remove("is-invalid");
 };
 
 const inputName = document.querySelector("#name");
-    inputName.addEventListener("blur", function({select}) {
+    inputName.addEventListener("blur", function({target}) {
     switch (true) {
         case !this.value.trim():
-            messageError(".nameError", "Debes completar el campo con tu nombre", select);
+            messageError(".nameError", "Debes completar el campo con tu nombre", target);
             this.style.borderColor = "red";
             break;
         case this.value.trim().length < 6:
-            messageError(".nameError", "El nombre debe tener minimo(6) o mas caracteres", select);
+            messageError(".nameError", "El nombre debe tener minimo(6) o mas caracteres", target);
             this.style.borderColor = "red";
             break;
         case this.value.trim().length > 30:
-            messageError(".nameError", "El nombre debe tener maximo(30) caracteres", select);
+            messageError(".nameError", "El nombre debe tener maximo(30) caracteres", target);
             this.style.borderColor = "red";
             break;
         case !expresionesRegulares.exRegAlfa.test(this.value):
-            messageError(".nameError", "Solo caracteres alfabetico", select);
+            messageError(".nameError", "Solo caracteres alfabetico", target);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".nameError", select);
+            validatorInput(".nameError", target);
             this.style.borderColor = "#4F7F3F";
             break;
     }
@@ -46,18 +46,18 @@ const inputName = document.querySelector("#name");
 
 
 const inputEmail = document.querySelector("#email")
-    inputEmail.addEventListener("blur", async function({select}) {
+    inputEmail.addEventListener("blur", async function({target}) {
     switch (true) {
         case !this.value.trim():
-            messageError(".emailError", "Debes completar este campo con tu email", select);
+            messageError(".emailError", "Debes completar este campo con tu email", target);
             this.style.borderColor = "red";
             break;
         case !expresionesRegulares.exRegEmail.test(this.value):
-            messageError(".emailError", "No tiene formato de email", select);
+            messageError(".emailError", "No tiene formato de email", target);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".emailError", select)
+            validatorInput(".emailError", target)
             this.style.borderColor= "#4F7F3F"
             break;
     }

@@ -5,16 +5,16 @@ const expresionesRegulares = {
 
 const elemento = (element) => document.querySelector(element);
 
-const messageError = (element, msg, select) => {
+const messageError = (element, msg, target) => {
     elemento(element).innerText = msg;
     elemento(element).style.color = "red";
-    select.classList.add("is-invalid");
+    target.classList.add("is-invalid");
 };
 
-const validatorInput = (element, select) => {
+const validatorInput = (element, target) => {
     elemento(element).innerText = null;
-    select.classList.add("is-valid");
-    select.classList.remove("is-invalid");
+    target.classList.add("is-valid");
+    target.classList.remove("is-invalid");
 };
 
 window.addEventListener("load",() => {
@@ -22,22 +22,22 @@ window.addEventListener("load",() => {
 });
 
 const inputName = document.querySelector("#name");
-    inputName.addEventListener("blur", function({select}) {
+    inputName.addEventListener("blur", function({target}) {
     switch (true) {
         case !this.value.trim():
-            messageError(".nameErrors", "Debes completar el campo con tu nombre", select);
+            messageError(".nameErrors", "Debes completar el campo con tu nombre", target);
             this.style.borderColor = "red";
             break;
         case this.value.trim().length < 6:
-            messageError(".nameErrors", "El nombre debe tener 6 o mas caracteres", select);
+            messageError(".nameErrors", "El nombre debe tener 6 o mas caracteres", target);
             this.style.borderColor = "red";
             break;
         case !expresionesRegulares.exRegAlfa.test(this.value):
-            messageError(".nameErrors", "Solo caracteres alfabetico", select);
+            messageError(".nameErrors", "Solo caracteres alfabetico", target);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".nameErrors", select);
+            validatorInput(".nameErrors", target);
             this.style.borderColor = "#4F7F3F";
             break;
     }
