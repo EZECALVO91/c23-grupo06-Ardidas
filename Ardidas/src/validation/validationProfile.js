@@ -12,11 +12,9 @@ module.exports = [
         }
         return true;
     }),
-    body("date")
-    .optional() // Hacer que el campo sea opcional
+    body("date").optional()
     .custom((value, { req }) => {
-        // Si el campo no se proporciona, se considera válido
-        if (!value) {
+        if (!value) {// Si el campo no se proporciona, se considera válido
             return true;
         }
         const fechaIngresada = new Date(value);

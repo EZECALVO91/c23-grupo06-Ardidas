@@ -115,13 +115,7 @@ const usersController = {
   userProfileEdit: (req, res) => {
     const errores = validationResult(req); 
     if (!errores.isEmpty()) {
-      console.log("errores:", errores.mapped());
-      console.log("holi", req.body);
-      res.render("./users/profileEdit", {
-        errores: errores.mapped(),
-        old: req.body,
-        title: "Editar usuario",
-        usuarioLogeado: req.session.usuarioLogin,
+      res.render("./users/profileEdit", {errores: errores.mapped(),old: req.body,title: "Editar usuario", usuarioLogeado: req.session.usuarioLogin,
       });
     } else {
       const { id } = req.params;
@@ -139,11 +133,7 @@ const usersController = {
             file !== user.image &&
             user.image !== "default-avatar-profile.jpg"
           ) {
-            const imagePath = path.join(
-              __dirname,
-              "../../public/images/users/",
-              user.image
-            );
+            const imagePath = path.join(__dirname,"../../public/images/users/",user.image);
             fs.unlinkSync(imagePath);
             console.log(`Imagen anterior "${user.image}" eliminada`);
           }
@@ -161,10 +151,8 @@ const usersController = {
           return user.update(newData);
         })
         .then((updatedUser) => {
-          console.log("LO QUE ME GUARDA EL NUEVO USUARIO", updatedUser);
           req.session.usuarioLogin = updatedUser;
-          // res.cookies = req.session.usuarioLogin
-          console.log("LO QUE ME COOKIS", res.cookies);
+          res.cookie("user", updatedUser, { maxAge: 1000 * 60 * 15 });
           res.redirect(`/users/profile/${id}`);
         })
         .catch((err) => {
@@ -287,15 +275,10 @@ const usersController = {
       where: { id: req.params.id },
     }) // borra usuarios (no es un delete soft)
       .then((user) => {
-        return db.User.destroy({
-          where: { id: req.params.id },
+        return db.User.destroy({where: { id: req.params.id },
         }).then(() => {
           if (user.image && user.image !== "default-avatar-profile.jpg") {
-            const imagePath = path.join(
-              __dirname,
-              "../../public/images/users",
-              user.image
-            );
+            const imagePath = path.join(__dirname,"../../public/images/users",user.image);
             fs.unlinkSync(imagePath);
             console.log(`BORRE LA IMAGEN: ${user.image}`);
           }

@@ -28,7 +28,7 @@
             <%= locals.errores && errores.email ? errores.email.msg : null %>
           </small>
 
-           <!-- <label for="password">CONTRASEÑA:</label>
+          <!-- <label for="password">CONTRASEÑA:</label>
           <div class="main__form__register__password">
             <input type="password" name="password" class="main__form__register__password"
               value="%= usuarioLogeado.password %>" disabled />
@@ -40,7 +40,7 @@
 
           <label for="date">FECHA DE NACIMIENTO: </label>
           <input type="date" name="date" id="date" value="<%= locals.old && old.date ? old.date : usuarioLogeado.date %>" />
-          <small class="errores_validacion_profile_date">
+          <small class="errores_validacion_profile_date errorDate">
             <%= locals.errores && errores.date ? errores.date.msg : null %>
           </small>
 
