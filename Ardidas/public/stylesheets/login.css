@@ -63,6 +63,12 @@
     color: red;
     font-weight: 600;
 }
+#error-message-login {
+    color: red;
+    display: none;
+    margin: auto;
+    margin-top: 2%;
+}
 
 
 @media(min-width: 768px){

@@ -7,16 +7,16 @@ const expresionesRegulares = {
 
 const elemento = (element) => document.querySelector(element);
 
-const messageError = (element, msg, select) => {
+const messageError = (element, msg, target) => {
     elemento(element).innerText = msg;
     elemento(element).style.color = "red";
-    select.classList.add("is-invalid");
+    target.classList.add("is-invalid");
 };
 
-const validatorInput = (element, select) => {
+const validatorInput = (element, target) => {
     elemento(element).innerText = null;
-    select.classList.add("is-valid");
-    select.classList.remove("is-invalid");
+    target.classList.add("is-valid");
+    target.classList.remove("is-invalid");
 };
 
 window.addEventListener("load",() => {
@@ -24,88 +24,84 @@ window.addEventListener("load",() => {
 });
 
 const inputName = document.querySelector("#name");
-    inputName.addEventListener("blur", function({select}) {
+    inputName.addEventListener("blur", function({target}) {
     switch (true) {
         case !this.value.trim():
-            messageError(".nameError", "Debes completar el campo con tu nombre", select);
+            messageError(".nameError", "Debes completar el campo con tu nombre", target);
             this.style.borderColor = "red";
             break;
         case this.value.trim().length < 6:
-            messageError(".nameError", "El nombre debe tener minimo(6) o mas caracteres", select);
+            messageError(".nameError", "El nombre debe tener minimo(6) o mas caracteres", target);
             this.style.borderColor = "red";
             break;
         case this.value.trim().length > 30:
-            messageError(".nameError", "El nombre debe tener maximo(30) caracteres", select);
+            messageError(".nameError", "El nombre debe tener maximo(30) caracteres", target);
             this.style.borderColor = "red";
             break;
         case !expresionesRegulares.exRegAlfa.test(this.value):
-            messageError(".nameError", "Solo caracteres alfabetico", select);
+            messageError(".nameError", "Solo caracteres alfabetico", target);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".nameError", select);
+            validatorInput(".nameError", target);
             this.style.borderColor = "#4F7F3F";
             break;
     }
 });
 
 const inputEmail = document.querySelector("#email")
-    inputEmail.addEventListener("blur", async function({select}) {
+    inputEmail.addEventListener("blur", async function({target}) {
     switch (true) {
         case !this.value.trim():
-            messageError(".emailError", "Debes completar este campo con tu email", select);
+            messageError(".emailError", "Debes completar este campo con tu email", target);
             this.style.borderColor = "red";
             break;
         case !expresionesRegulares.exRegEmail.test(this.value):
-            messageError(".emailError", "No tiene formato de email", select);
+            messageError(".emailError", "No tiene formato de email", target);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".emailError", select)
+            validatorInput(".emailError", target)
             this.style.borderColor= "#4F7F3F"
             break;
     }
 });
 
 const inputPassword = document.querySelector("#password")
-    inputPassword.addEventListener("blur", function({select}) {
+    inputPassword.addEventListener("blur", function({target}) {
     switch (true) {
         case this.value.trim().length <= 5:
-            messageError(".passError","Contraseña minimo(6) a maximo(20) caracteres",select);
+            messageError(".passError","Contraseña minimo(6) a maximo(20) caracteres",target);
             this.style.borderColor = "red";
             break;
         case this.value.trim().length > 20:
-            messageError(".passError","Contraseña minimo(6) a maximo(20) caracteres", select);
+            messageError(".passError","Contraseña minimo(6) a maximo(20) caracteres", target);
             this.style.borderColor = "red";
             break;
         case !expresionesRegulares.exRegPass.test(this.value):
-            messageError(".passError","Debes incluir números, mayúscula, minúscula y un caracter especial(d$@$!%*?&.,;')",select);
+            messageError(".passError","Debes incluir números, mayúscula, minúscula y un caracter especial(d$@$!%*?&.,;')",target);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".passError", select);
+            validatorInput(".passError", target);
             this.style.borderColor = "#4F7F3F";
             break;
     }
 });
 
 const inputPasswordDos= document.querySelector("#password2")
-    inputPasswordDos.addEventListener("blur", function({select}) {
+    inputPasswordDos.addEventListener("blur", function({target}) {
     switch (true) {
         case !this.value.trim():
-            messageError(
-                ".passError2",
-                "Debes completar el campo con tu contraseña",
-                select
-            );
+            messageError(".passError2","Debes completar el campo con tu contraseña",target);
             this.style.borderColor = "red";
             break;
         case this.value.trim() !== elemento("#password").value.trim():
-            messageError(".passError2", "Las contraseñas no coinciden", select);
+            messageError(".passError2", "Las contraseñas no coinciden", target);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".passError2", select);
+            validatorInput(".passError2", target);
             this.style.borderColor = "#4F7F3F";
             break;
     }
@@ -114,9 +110,9 @@ const inputPasswordDos= document.querySelector("#password2")
 
 document.addEventListener('DOMContentLoaded', function() {
     const passwordInputs = document.querySelectorAll('.main__form__register__password input[type="password"]');
-    const showPasswordIcons = document.querySelectorAll('.main__form__register__password .fa-eye');
+    const PasswordIcons = document.querySelectorAll('.main__form__register__password .fa-eye');
 
-    showPasswordIcons.forEach(function(icon, index) {
+    PasswordIcons.forEach(function(icon, index) {
         icon.addEventListener('click', function() {
             const passwordInput = passwordInputs[index];
             if (passwordInput.type == 'password') {
@@ -148,5 +144,29 @@ inputImg.addEventListener('change', function({target}) {
         default:
             validatorInput(".imageError", target);
             break;
+    }
+});
+
+
+const form = document.querySelector('.main__form__register');
+const errorMessage = document.getElementById('error-message-registerUser');
+
+form.addEventListener('submit', function(event) {
+    // capturo los errores
+    const nameError = document.querySelector('.nameError');
+    const emailError = document.querySelector('.emailError');
+    const passError = document.querySelector('.passError');
+    const passError2 = document.querySelector('.passError2');
+    const imageError = document.querySelector('.imageError');
+
+    // si alguno de elementos tiene un error
+    const hasError = nameError.innerText || emailError.innerText || passError.innerText || passError2.innerText || imageError.innerText;
+
+    // si alguno cumple con la condicion el furmulario no se envia y manda un msj
+    if (hasError) {
+        errorMessage.style.display = 'block'; // msj
+        event.preventDefault();
+    } else {
+        errorMessage.style.display = 'none'; // oculta el msj si no hay errores
     }
 });

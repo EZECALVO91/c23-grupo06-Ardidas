@@ -18,7 +18,7 @@
 
               <h2 class="login_h_all">EMAIL</h2>
               <label for="email"></label>
-              <input class="input_login" type="email" name="email" id="email" placeholder="tu-email@email.com*" required>
+              <input class="input_login" type="email" name="email" id="email" placeholder="tu-email@email.com*">
               <small class="emailError">
                 <%= locals.errores && errores.email ? errores.email.msg : null %>
               </small>
@@ -27,11 +27,11 @@
               <h2 class="login_h_all">CONTRASEÑA</h2>
               
               <div class="div_login_password">
-                <input type="password" name="password" id="password" class="input_login" required>
-                <small class="passError passwordError">
+                <input type="password" name="password" id="password" class="input_login">
+                <small class="passwordError">
                   <%= locals.errores && errores.password ? errores.password.msg : null %>
                 </small>
-                <i class="fa-regular fa-eye"></i>
+                <i class="fa-regular eye-login fa-eye"></i>
               </div>
 
               <a href="" class="login_contra_up">
@@ -44,6 +44,8 @@
             </article>
             <article class="articulo_login_main">
               <button class="btn_login_main" type="submit">INICIAR SESIÓN</button>
+              <div id="error-message-login">Información invalida.</div> 
+
               <a href="/users/register" class="btn_login_up">
                 <h6>¿No tenés cuenta? Crear cuenta.</h6>
               </a>

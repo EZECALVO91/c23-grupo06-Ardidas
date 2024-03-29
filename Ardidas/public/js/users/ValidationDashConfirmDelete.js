@@ -17,8 +17,8 @@ function confirmDelete(userId) {
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
-            // Si el usuario confirma la eliminación, envía el formulario de eliminación
-            var form = document.createElement('form');
+            // Si el usuario confirma la eliminacion, envia el formulario de eliminacion
+            let form = document.createElement('form');
             form.method = 'POST';
             form.action = '/users/delete/' + userId + '?_method=DELETE';
             document.body.appendChild(form);

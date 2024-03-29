@@ -28,7 +28,7 @@
 
           <label for="password">CONTRASEÑA:</label>
           <div class="main__form__register__password">
-            <input type="password" name="password" id="password" class="main__form__register__password" required>
+            <input type="password" name="password" id="password" class="main__form__register__password">
             <small class="passError">
               <%= locals.errores && errores.password ? errores.password.msg : null %>
             </small>
@@ -37,7 +37,7 @@
 
           <label for="password2">CONFIRMAR CONTRASEÑA:</label>
           <div class="main__form__register__password">
-            <input type="password" name="password2" id="password2" required>
+            <input type="password" name="password2" id="password2">
             <small class="passError2">
               <%= locals.errores && errores.password ? errores.password.msg : null %>
             </small>
@@ -49,8 +49,10 @@
           <small class="imageError">
             <%= locals.errores && errores.image ? errores.image.msg : null %>
           </small>
-          <div class="main__form__register__box">
+          <div class="main__form__register__box">  
+          <div id="error-message-registerUser">Errores en los datos para la creacion de Usuario.</div> 
             <button class="main__form__button" type="submit">CREAR CUENTA</button>
+
 
             <h6>¿Ya tenés una cuenta? <a href="/users/login">Iniciar sesión</a></h6>
           </div>
