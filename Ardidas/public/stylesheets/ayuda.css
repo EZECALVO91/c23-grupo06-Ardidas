@@ -1,0 +1,14 @@
+.ayuda h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.div_ayuda {
+    background:linear-gradient(black 50%, grey );
+    border-radius: 10%;
+    padding:3%;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    color:white;
+}

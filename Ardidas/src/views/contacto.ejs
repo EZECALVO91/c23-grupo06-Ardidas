@@ -1,0 +1,51 @@
+<!--ACA SE INCLUYE EL PARTIAL : HEAD -->
+<%- include("./partials/head.ejs") %>
+
+<body class="body_home">
+
+<!--ACA SE INCLUYE EL PARTIAL : HEADER -->
+<%- include("./partials/header.ejs") %>
+
+    <main class="productos contacto">
+        
+            
+      <h1 class="titulo_contacto">Envianos tu consulta</h1>
+      <h6 class="titulo_contacto">La misma será respondida a la brevedad</h6>
+        <div class="div_contacto_formulario" >
+          
+
+          <img class="logo" src="/images/LOGO-ARDIDAS.png" alt="Logo MercadoLiebre" class="logo" />
+
+          <form action="/" method="get" class="main__form__register form_updateProfile"
+          enctype="multipart/form-data">
+          <label class="label_form_contacto" for="name">NOMBRE Y APELLIDO:</label>
+          <input type="text" name="name" id="name" value="<%= usuarioLogeado ? usuarioLogeado.name : null %>" />
+
+          <label class="label_form_contacto" for="email">EMAIL:</label>
+          <input type="email" name="email" value="<%= usuarioLogeado ? usuarioLogeado.email : null%>" />
+        
+          <label class="label_form_contacto" for="mensaje">MENSAJE:</label>
+          <input type="text" name="mensaje" placeholder="Dejanos aquí tu consulta"></input>
+                <button class="main__form__button" type="submit">Enviar</button>
+                          
+          </form>
+        </div>
+       
+
+
+        <h4 class="titulo_contacto">Nuestro local :</h4>
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3277.6412899076486!2d-58.40629432341153!3d-34.76462786601558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd3134199996b%3A0x2221c5d1542e71d4!2sAdidas%20Outlet%20Lomas%20de%20Zamora!5e0!3m2!1ses-419!2sar!4v1711604256075!5m2!1ses-419!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+      <article class="ver_productos">
+        <a href="/products">VOLVER AL HOME</a>
+      </article>
+    </main>
+
+<!--ACA SE INCLUYE EL PARTIAL : -->
+<%- include("./partials/footer.ejs") %>
+
+</body>
+
+</html>
