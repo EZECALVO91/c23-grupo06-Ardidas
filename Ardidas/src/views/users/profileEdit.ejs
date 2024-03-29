@@ -17,7 +17,7 @@
         <form action="/users/profile/<%= usuarioLogeado.id %>?_method=PUT" method="post" class="main__form__register form_updateProfile"
           enctype="multipart/form-data">
           <label for="name">NOMBRE Y APELLIDO:</label>
-          <input type="text" name="name" id="name" value="<%= usuarioLogeado.name %>" />
+          <input type="text" name="name" id="name" value="<%= locals.old && old.name ? old.name : usuarioLogeado.name %>" />
           <small class="nameErrors">
             <%= locals.errores && errores.name ? errores.name.msg : null %>
           </small>
@@ -28,30 +28,30 @@
             <%= locals.errores && errores.email ? errores.email.msg : null %>
           </small>
 
-          <label for="password">CONTRASEÑA:</label>
+           <!-- <label for="password">CONTRASEÑA:</label>
           <div class="main__form__register__password">
             <input type="password" name="password" class="main__form__register__password"
-              value="<%= usuarioLogeado.password %>" disabled />
+              value="%= usuarioLogeado.password %>" disabled />
             <small class="errores_validacion_profile">
-              <%= locals.errores && errores.password ? errores.password.msg : null %>
+              %= locals.errores && errores.password ? errores.password.msg : null %>
             </small>
             <i class="fa-regular fa-eye"></i>
-          </div>
+          </div>  -->
 
           <label for="date">FECHA DE NACIMIENTO: </label>
-          <input type="date" name="date" value="<%= usuarioLogeado.date %>" />
-          <small class="errores_validacion_profile">
+          <input type="date" name="date" id="date" value="<%= locals.old && old.date ? old.date : usuarioLogeado.date %>" />
+          <small class="errores_validacion_profile_date">
             <%= locals.errores && errores.date ? errores.date.msg : null %>
           </small>
 
           <label for="locality">LOCALIDAD: </label>
-          <input type="TEXT" name="locality" value="<%= usuarioLogeado.locality %>" />
+          <input type="TEXT" name="locality" value="<%= locals.old && old.locality ? old.locality : usuarioLogeado.locality %>" />
           <small class="errores_validacion_profile">
             <%= locals.errores && errores.locality ? errores.locality.msg : null %>
           </small>
 
           <label for="aboutMe">SOBRE MI: </label>
-          <textarea name="aboutMe" id="aboutMe" cols="30" rows="10"><%= usuarioLogeado.aboutMe %></textarea>
+          <textarea name="aboutMe" id="aboutMe" cols="30" rows="10"><%= locals.old && old.aboutMe ? old.aboutMe : usuarioLogeado.aboutMe %></textarea>
           <small class="errores_validacion_profile">
             <%= locals.errores && errores.aboutMe ? errores.aboutMe.msg : null %>
           </small>
@@ -75,7 +75,7 @@
           </div>
         </form>
       </main>
-      <script src="/js/users/validationProfile.js"></script>
+       <script src="/js/users/validationProfile.js"></script> 
       <!--ACA SE INCLUYE EL PARTIAL : -->
       <%- include("../partials/footer.ejs") %>
 
