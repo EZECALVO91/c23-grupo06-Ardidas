@@ -113,18 +113,41 @@ document.addEventListener('DOMContentLoaded', function() {
 const filtro = /\.(jpg|jpeg|png|gif|webp|svg)$/;
 
 const inputImg = document.querySelector('#image');
-inputImg.addEventListener('change', function({select}) {
-    const file = select.files[0];
+inputImg.addEventListener('change', function({target}) {
+    const file = target.files[0];
     if (!file) {
-        messageError(".imageError", "Formato válido.", select);
+        messageError(".imageError", "Formato válido.", target);
         return;
     }
     switch (true) {
         case !filtro.test(file.name.toLowerCase()):
-            messageError(".imageError", "Solo se permiten formatos de imagen (jpg, jpeg, png, gif, webp, svg).", select);
+            messageError(".imageError", "Solo se permiten formatos de imagen (jpg, jpeg, png, gif, webp, svg).", target);
             break;
         default:
-            validatorInput(".imageError", select);
+            validatorInput(".imageError", target);
             break;
+    }
+});
+
+
+const form = document.querySelector('.main__form__registerDash');
+const errorMessage = document.getElementById('error-message-registerUserPrivi');
+
+form.addEventListener('submit', function(event) {
+    // capturo los errores
+    const nameError = document.querySelector('.nameError');
+    const emailError = document.querySelector('.emailError');
+    const passError = document.querySelector('.passError');
+    const imageError = document.querySelector('.imageError');
+
+    // si alguno de elementos tiene un error
+    const hasError = nameError.innerText || emailError.innerText || passError.innerText || imageError.innerText;
+
+    // si alguno cumple con la condicion el furmulario no se envia y manda un msj
+    if (hasError) {
+        errorMessage.style.display = 'block'; // msj
+        event.preventDefault();
+    } else {
+        errorMessage.style.display = 'none'; // oculta el msj si no hay errores
     }
 });

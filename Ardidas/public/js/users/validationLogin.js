@@ -52,3 +52,41 @@ const inputPassword = document.querySelector("#password")
             break;
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const passwordInput = document.getElementById('password');
+    const PasswordIcon = document.querySelector('.div_login_password .fa-eye');
+
+    PasswordIcon.addEventListener('click', function() {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            PasswordIcon.classList.remove('fa-eye');
+            PasswordIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            PasswordIcon.classList.remove('fa-eye-slash');
+            PasswordIcon.classList.add('fa-eye');
+        }
+    });
+});
+
+
+const form = document.querySelector('.box_home_form');
+const errorMessage = document.getElementById('error-message-login');
+
+form.addEventListener('submit', function(event) {
+    // capturo los errores
+    const emailError = document.querySelector('.emailError');
+    const passError = document.querySelector('.passwordError');
+
+    // si alguno de elementos tiene un error
+    const hasError =emailError.innerText || passError.innerText;
+
+    // si alguno cumple con la condicion el furmulario no se envia y manda un msj
+    if (hasError) {
+        errorMessage.style.display = 'block'; // msj
+        event.preventDefault();
+    } else {
+        errorMessage.style.display = 'none'; // oculta el msj si no hay errores
+    }
+});

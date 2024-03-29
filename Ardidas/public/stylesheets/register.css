@@ -75,6 +75,13 @@
     color:var(--color-verde-agua)
 }
 
+#error-message-registerUser {
+    color: red;
+    display: none;
+    margin: auto;
+    margin-top: 2%;
+}
+
 @media (min-width:768px) {
     .main__form__lines {
         display:flex;

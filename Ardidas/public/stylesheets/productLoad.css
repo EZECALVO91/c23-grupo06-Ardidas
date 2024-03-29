@@ -70,6 +70,12 @@
 .input_colores_create {
     text-align: center;
 }
+#error-message-updateProduct {
+    color: red;
+    display: none;
+    margin: auto;
+    margin-top: 2%;
+}
 
 @media (min-width: 768px){ 
     .input_edit_img {

@@ -14,24 +14,24 @@
           <section class="form__createProduct">
             <div class="img_update_fast">
               <img src="/images/products/<%= product.Image_products[0].filename %>" alt="imagen principal" class="imagen_grande input_edit_img">
-              <input class="dashboard__image" name="image" type="file" accept="image/*" value="<%= product.Image_products[0].filename %>">
-              <p class="errores_validacion_login">
+              <input class="dashboard__image" name="image" id="image" type="file" accept="image/*" value="<%= product.Image_products[0].filename %>">
+              <small class="imageError">
                 <%= locals.errores && errores.image ? errores.image.msg : null %>
-              </p>
+              </small>
             </div>
 
             <div class="update_box_intern">
               <label for="name">Nombre :</label>
               <input type="text" name="name" id="name" value="<%= product.name %>" />
-              <p class="errores_validacion_login">
+              <small class="errorName">
                 <%= locals.errores && errores.name ? errores.name.msg : null %>
-              </p>
+              </small>
 
               <label for="price">Precio :</label>
-              <input type="number" name="price" value="<%= product.price %>" />
-              <p class="errores_validacion_login">
+              <input type="number" name="price" id="price" value="<%= product.price %>" />
+              <small class="errorPrice" >
                 <%= locals.errores && errores.price ? errores.price.msg : null %>
-              </p>
+              </small>
 
               <label for="category" >Categoría :</label>
               <select name="category" id="category" value="<%= product.Category_products.category %>">
@@ -43,10 +43,12 @@
               <div>
                 <label for="description">Descripción</label>
                 <textarea name="description" id="description"><%=product.description %></textarea>
+                <small class="errorDescription">
+                  <%= locals.errores && errores.description ? errores.description.msg : null %>
+                </small>
               </div>
             </div>
             <div class="talles_update">
-             
               <label>Talles :</label>
               <div>
                 <input type="checkbox" name="sizes" value="1" <%=product.Sizes.some((pSize) => pSize.size == 36) ? "checked" : null %> id="sizes">
@@ -105,17 +107,18 @@
               </select>
             
               </div> 
-              <p class="errores_validacion_login" id="sizesError">
+              <small class="errores_validacion_login sizesError">
                 <%= locals.errores && errores.sizes ? errores.sizes.msg : null %>
-              </p>
+              </small>
             </div>
           
           </section>
-        <button class="main_ver-todos-productos" type="submit">ACTUALIZAR PRODUCTO</button>      
-        </form>
-      
-      </main>
+        <button class="main_ver-todos-productos" type="submit">ACTUALIZAR PRODUCTO</button>     
+        <div id="error-message-updateProduct">Por favor, corrija los errores en el formulario.</div> 
+      </form>
 
+      </main>
+        <script src="/js/products/updateProduct.js"></script>
       <!--ACA SE INCLUYE EL PARTIAL : -->
       <%- include("../partials/footer.ejs") %>
   </body>
