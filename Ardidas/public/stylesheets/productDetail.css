@@ -14,7 +14,6 @@ a {
 .producto {
     border-radius: 10px;
     padding: 1%;
-    margin-bottom: 4%;
 }
 
 .main_ver-todos-productos {
@@ -68,9 +67,12 @@ main {
 }
 
 .detalles_div_descripcion{
+    background:linear-gradient(white 50%, #FCFCE7 );
     padding:  8% 6%;
     border-radius: 16px;
     box-shadow: 0px 0px 5px rgb(100, 100, 100);
+    width:92%;
+    margin:auto
 
 }
 .detalles_div_descripcion_p{
@@ -134,6 +136,11 @@ main {
     }
     .detalles_color p{
         width: 45%;
+    }
+
+    .detalles_color h4 {
+        margin-left: 22px;
+        font-style: italic;
     }
 
     .numero {
@@ -238,6 +245,9 @@ main {
     .detalles_color {
         width:220px
      }
+    .detalles_color h4 {
+        margin-left: 14px;
+    }
 
     .main-productDetail .producto{
         max-width: 1024px;
