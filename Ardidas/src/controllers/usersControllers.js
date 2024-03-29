@@ -13,9 +13,9 @@ const usersController = {
   },
   register: (req, res) => {
     const errores = validationResult(req); // registro directo a la base de datos.
-    if (errores.isEmpty()) {
+    if(errores.isEmpty()) {
       const file = req.file;
-      const { name, email, password, id_category } = req.body;
+      const { name, email, password} = req.body;
       db.User.create({
         name,
         email,
@@ -28,10 +28,7 @@ const usersController = {
           res.redirect("/users/login");
         })
         .catch((error) => console.log(error));
-      // console.log("Ingrese en errores");
-      // res.render("./users/register", {errores: errores.mapped(),old: req.body,title: "registro",usuarioLogeado: null,
-      // });
-    } else {
+    }else{
       return res.render("./users/register", {
         errores: errores.mapped(),
         old: req.body,
@@ -54,12 +51,8 @@ const usersController = {
     const errores = validationResult(req); // logueo de cuenta mas cookis para guardar en las vistas.
     if (!errores.isEmpty()) {
       console.log("errores:", errores.mapped());
-      res.render("./users/login", {
-        errores: errores.mapped(),
-        title: "Login",
-        usuarioLogeado: req.session.usuarioLogin,
-      });
-    } else {
+      res.render("./users/login", {errores: errores.mapped(),title: "Login",usuarioLogeado: req.session.usuarioLogin,});
+    }else{
       const { email } = req.body;
       db.User.findOne({
         attributes: { exclude: ["password"] },
@@ -104,60 +97,54 @@ const usersController = {
     const { id } = req.params;
     db.User.findByPk(req.session.usuarioLogin.id)
       .then((response) => {
-        res.render("users/profileEdit", {
-          title: "Editar Usuario",
-          usuarioLogeado: response.dataValues,
-        });
+        res.render("users/profileEdit", {title: "Editar Usuario",usuarioLogeado: response.dataValues,});
       })
       .catch((err) => console.log(err));
   },
 
   userProfileEdit: (req, res) => {
-    const errores = validationResult(req); 
+    const errores = validationResult(req);
     if (!errores.isEmpty()) {
-      res.render("./users/profileEdit", {errores: errores.mapped(),old: req.body,title: "Editar usuario", usuarioLogeado: req.session.usuarioLogin,
-      });
-    } else {
-      const { id } = req.params;
-      const { name, category, date, locality, aboutMe, image } = req.body;
+      db.User.findByPk(req.session.usuarioLogin.id)
+        .then((respons) => {
+          res.render("users/profileEdit", {errores: errores.mapped(),old: req.body,title: "Error",usuarioLogeado: respons.dataValues,});
+        })
+        .catch((err) => console.log(err));
+    }else{
+      const {id}=req.params;
+      const {name, category, date, locality, aboutMe } = req.body;
       const file = req.file;
-
       db.User.findByPk(id)
-        .then((user) => {
-          if (!user) {
+        .then((newUser) => {
+          if (!newUser) {
             throw new Error("El usuario no está registrado");
-          }
-
-          if (
+          }if(
             file &&
-            file !== user.image &&
-            user.image !== "default-avatar-profile.jpg"
-          ) {
-            const imagePath = path.join(__dirname,"../../public/images/users/",user.image);
-            fs.unlinkSync(imagePath);
-            console.log(`Imagen anterior "${user.image}" eliminada`);
+            file !== newUser.image &&
+            newUser.image !== "default-avatar-profile.jpg"
+          ){
+            const rutaImg = path.join(__dirname,"../../public/images/users/",newUser.image);
+            fs.unlinkSync(rutaImg);
           }
-
-          const newData = {
+          const nuevoProfile = {
             name,
             category,
             date: date ? date : null,
             locality: locality ? locality : null,
             aboutMe: aboutMe ? aboutMe : null,
-            image: file ? file.filename : user.image,
+            image: file ? file.filename : newUser.image,
             updatedAt: new Date(),
           };
-
-          return user.update(newData);
+          return newUser.update(nuevoProfile);
         })
-        .then((updatedUser) => {
-          req.session.usuarioLogin = updatedUser;
-          res.cookie("user", updatedUser, { maxAge: 1000 * 60 * 15 });
+        .then((updatedProfile) => {
+          req.session.usuarioLogin = updatedProfile;
+          res.cookie("user", updatedProfile, { maxAge: 1000 * 60 * 15 });
           res.redirect(`/users/profile/${id}`);
         })
-        .catch((err) => {
-          console.log(err);
-          res.status(500).send("Error interno del servidor");
+        .catch((error) => {
+          console.log(error);
+          res.status(400).send("error en el servidor");
         });
     }
   },
@@ -183,10 +170,7 @@ const usersController = {
   //Dashboar crear usuarios con provilegios
   createPrivileges: (req, res) => {
     // vista de la creacion de usuario desde el dashboard.
-    res.render("users/userCreatePrivi", {
-      title: "Users Privileges",
-      usuarioLogeado: req.session.usuarioLogin,
-    });
+    res.render("users/userCreatePrivi", {title: "Users Privileges",usuarioLogeado: req.session.usuarioLogin,});
   },
 
   createUserPrivileges: (req, res) => {
@@ -195,12 +179,7 @@ const usersController = {
     if (!errores.isEmpty()) {
       // creacion de usuarios desde el dashboard.
       console.log("Ingrese en errores");
-      res.render("users/userCreatePrivi", {
-        errores: errores.mapped(),
-        old: req.body,
-        title: "Errores Privilegios",
-        usuarioLogeado: req.session.usuarioLogin,
-      });
+      res.render("users/userCreatePrivi", {errores: errores.mapped(),old: req.body,title: "Errores Privilegios",usuarioLogeado: req.session.usuarioLogin,});
     } else {
       const file = req.file;
       const { name, email, password, id_category } = req.body;
@@ -211,8 +190,7 @@ const usersController = {
         image: file ? file.filename : "default-avatar-profile.jpg",
         id_category,
         createdAt: new Date(),
-      }).then(() => {
-        res.redirect("dashboard");
+      }).then(() => {res.redirect("dashboard");
       });
     }
   },
@@ -221,11 +199,7 @@ const usersController = {
     const { id } = req.params;
     db.User.findByPk(req.params.id) // vista de edicion de usuario desde el dashboard.
       .then((user) => {
-        res.render("users/usersEdit", {
-          title: "Editar Usuario",
-          user,
-          usuarioLogeado: req.session.usuarioLogin,
-        });
+        res.render("users/usersEdit", {title: "Editar Usuario",user,usuarioLogeado: req.session.usuarioLogin,});
       })
       .catch((err) => console.log(err));
   },
@@ -239,32 +213,22 @@ const usersController = {
       .then((user) => {
         if (!errores.isEmpty()) {
           console.log("Ingrese en errores");
-          res.render("users/usersEdit", {
-            errores: errores.mapped(),
-            old: req.body,
-            title: "Editar Usuario",
-            user,
-            usuarioLogeado: req.session.usuarioLogin,
-          });
+          res.render("users/usersEdit", {errores: errores.mapped(),old: req.body,title: "Editar Usuario",user,usuarioLogeado: req.session.usuarioLogin,});
         } else {
           const { id } = req.params;
           const { name, image, id_category } = req.body;
           const file = req.file;
-          db.User.update(
-            {
+          db.User.update({
               name,
               id_category,
               image: file ? file.filename : image,
               updatedAt: new Date(),
-            },
-            { where: { id } }
-          )
+            },{ where: { id } })
             .then(() => {
               res.redirect(`/users/update/${id}`);
             })
             .catch((err) => console.log(err));
-        }
-      })
+          }})
       .catch((err) => console.log(err));
   },
 
@@ -275,7 +239,8 @@ const usersController = {
       where: { id: req.params.id },
     }) // borra usuarios (no es un delete soft)
       .then((user) => {
-        return db.User.destroy({where: { id: req.params.id },
+        return db.User.destroy({
+          where: { id: req.params.id },
         }).then(() => {
           if (user.image && user.image !== "default-avatar-profile.jpg") {
             const imagePath = path.join(__dirname,"../../public/images/users",user.image);
