@@ -53,7 +53,7 @@ const inputDescription = document.querySelector('#description');
     const descripcionLength = descripcion.length;
 
     switch (true) {
-        case descripcionLength === 0:
+        case descripcionLength == 0:
             validatorInput('.errorDescription', target);
             this.style.borderColor = "#4F7F3F";
             break;
@@ -92,6 +92,27 @@ const inputImage = document.querySelector('#image');
 });
 
 
+const checkboxes = document.querySelectorAll('input[name="sizes"]');
+const sizesError = document.querySelector('.sizesError');
+
+function validateSizes() {
+    const checkedCheckboxes = document.querySelectorAll('input[name="sizes"]:checked');
+    if (checkedCheckboxes.length == 0) {
+        sizesError.textContent = 'Por favor, seleccione al menos un talle.';
+        return false;
+    } else {
+        sizesError.textContent = '';
+        return true;
+    }
+}
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        validateSizes();
+    });
+});
+
+
+
 const form = document.querySelector('.form_loadProduct');
 const errorMessage = document.getElementById('error-message-updateProduct');
 
@@ -101,9 +122,10 @@ form.addEventListener('submit', function(event) {
     const errorPrice = document.querySelector('.errorPrice');
     const errorDescription = document.querySelector('.errorDescription');
     const imageError = document.querySelector('.imageError');
+    const sizesInputs = document.querySelector('sizesError');
 
     // si alguno de elementos tiene un error
-    const hasError = errorName.innerText || errorPrice.innerText || errorDescription.innerText || imageError.innerText;
+    const hasError = errorName.innerText || errorPrice.innerText || errorDescription.innerText || imageError.innerText || sizesError.innerText;
 
     // si alguno cumple con la condicion el furmulario no se envia y manda un msj
     if (hasError) {
