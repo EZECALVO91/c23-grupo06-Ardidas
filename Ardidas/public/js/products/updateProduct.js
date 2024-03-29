@@ -1,30 +1,30 @@
 const elemento = (element) => document.querySelector(element)
 
-const messageError = (element, msg, select) => {
+const messageError = (element, msg, target) => {
     elemento(element).innerText = msg;
     elemento(element).style.color = "red";
-    select.classList.add('is-invalid')
+    target.classList.add('is-invalid')
 };
 
-const validatorInput = (element, select) => {
+const validatorInput = (element, target) => {
     elemento(element).innerText = null;
-    select.classList.add('is-valid')
-    select.classList.remove('is-invalid')
+    target.classList.add('is-valid')
+    target.classList.remove('is-invalid')
 }
 
     const inputName = document.querySelector("#name");
-        inputName.addEventListener("blur", function({select}){
+        inputName.addEventListener("blur", function({target}){
     switch (true) {
         case !this.value.trim():
-            messageError('.errorName', 'El nombre es obligatorio', select)
+            messageError('.errorName', 'El nombre es obligatorio', target)
             this.style.borderColor = "red";
             break;
         case this.value.trim().length < 3:
-            messageError('.errorName', 'El nombre debe tener de 3 a 50 carácteres', select)
+            messageError('.errorName', 'El nombre debe tener de 3 a 50 carácteres', target)
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".errorName", select)
+            validatorInput(".errorName", target)
             this.style.borderColor = "#4F7F3F";
             break; 
     }
@@ -32,15 +32,15 @@ const validatorInput = (element, select) => {
 
 
 const inputPrice = document.querySelector('#price');
-    inputPrice.addEventListener("blur", function({select}) {
+    inputPrice.addEventListener("blur", function({target}) {
 
 switch (true) {
 case !this.value.trim():
-    messageError('.errorPrice', 'El precio es obligatorio', select)
+    messageError('.errorPrice', 'El precio es obligatorio', target)
     this.style.borderColor = "red"
     break;
 default:
-    validatorInput('.errorPrice', select)
+    validatorInput('.errorPrice', target)
     this.style.borderColor = "#4F7F3F"
     break; 
 }
@@ -48,23 +48,25 @@ default:
 
 
 const inputDescription = document.querySelector('#description');
-    inputDescription.addEventListener("blur", function({select}) {
+    inputDescription.addEventListener("blur", function({target}) {
     const descripcion = this.value.trim();
     const descripcionLength = descripcion.length;
 
     switch (true) {
-        case descripcionLength == 0:
+        case descripcionLength === 0:
+            validatorInput('.errorDescription', target);
+            this.style.borderColor = "#4F7F3F";
             break;
         case descripcionLength < 20:
-            messageError('.errorDescription', 'La descripción debe tener al menos 20 caracteres', select);
+            messageError('.errorDescription', 'La descripción debe tener al menos 20 caracteres', target);
             this.style.borderColor = "red";
             break;
         case descripcionLength > 500:
-            messageError('.errorDescription', 'La descripción debe tener como máximo 500 caracteres', select);
+            messageError('.errorDescription', 'La descripción debe tener como máximo 500 caracteres', target);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput('.errorDescription', select);
+            validatorInput('.errorDescription', target);
             this.style.borderColor = "#4F7F3F";
             break;
     }

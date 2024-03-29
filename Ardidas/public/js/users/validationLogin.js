@@ -5,16 +5,16 @@ const expresionesRegulares = {
 
 const elemento = (element) => document.querySelector(element);
 
-const messageError = (element, msg, select) => {
+const messageError = (element, msg, target) => {
     elemento(element).innerText = msg;
     elemento(element).style.color = "red";
-    select.classList.add("is-invalid");
+    target.classList.add("is-invalid");
 };
 
-const validatorInput = (element, select) => {
+const validatorInput = (element, target) => {
     elemento(element).innerText = null;
-    select.classList.add("is-valid");
-    select.classList.remove("is-invalid");
+    target.classList.add("is-valid");
+    target.classList.remove("is-invalid");
 };
 
 window.addEventListener("load",() => {
@@ -22,32 +22,32 @@ window.addEventListener("load",() => {
 });
 
 const inputEmail = document.querySelector("#email")
-    inputEmail.addEventListener("blur", async function({select}) {
+    inputEmail.addEventListener("blur", async function({target}) {
     switch (true) {
         case !this.value.trim():
-            messageError(".emailError", "Debes completar este campo con tu email", select);
+            messageError(".emailError", "Debes completar este campo con tu email", target);
             this.style.borderColor = "red";
             break;
         case !expresionesRegulares.exRegEmail.test(this.value):
-            messageError(".emailError", "No tiene formato de email", select);
+            messageError(".emailError", "No tiene formato de email", target);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".emailError", select)
+            validatorInput(".emailError", target)
             this.style.borderColor= "#4F7F3F"
             break;
     }
 });
 
 const inputPassword = document.querySelector("#password")
-    inputPassword.addEventListener("blur", function({select}) {
+    inputPassword.addEventListener("blur", function({target}) {
     switch (true) {
         case !this.value.trim():
-            messageError(".passwordError","Debes completar el campo con tu contraseña",select);
+            messageError(".passwordError","Debes completar el campo con tu contraseña",target);
             this.style.borderColor = "red";
             break;
         default:
-            validatorInput(".passwordError", select);
+            validatorInput(".passwordError", target);
             this.style.borderColor = "#4F7F3F";
             break;
     }
