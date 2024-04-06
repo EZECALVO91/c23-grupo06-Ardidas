@@ -53,6 +53,12 @@ const usersController = {
                 const userModificade = { ...user.toJSON() };
                 delete userModificade.id_category;
                 delete userModificade.password;
+                delete userModificade.date;
+                delete userModificade.locality;
+                delete userModificade.aboutMe;
+                delete userModificade.createdAt;
+                delete userModificade.updatedAt;
+                delete userModificade.image;
                 userModificade.url = `/api/users/${userModificade.id}`
                 return userModificade;
             });
