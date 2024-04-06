@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {logout,formRegister,register, formLogin, login, usersEdit,usersUpdate ,
     UsersDashboard, userProfile, userProfileEdit, createPrivileges,
-    createUserPrivileges, destroy} = require('../controllers/usersControllers');
+    createUserPrivileges, destroy, DashboardReact} = require('../controllers/usersControllers');
 
 
 const registerValidation = require('../validation/validationRegister');
@@ -26,6 +26,9 @@ router
 
 //Dashboard de Usurios
 .get('/dashboard',isAdmin, UsersDashboard)
+
+//Dashboard de React
+.get('/dashboardReact',isAdmin, DashboardReact)
 
 .get('/createPrivileges', isAdmin, createPrivileges)
 .post('/createPrivileges',uploadImgPro.single("image"), isAdmin, validationPrivi, createUserPrivileges)

@@ -143,6 +143,15 @@ userProfileEdit: (req, res) => {
       }
     },
 
+// ---------------ACA EMPIEZA EL DASHBOARD DE REACT--------------------------------------------------------------------------------------------------------------
+
+    DashboardReact:(req, res) => {
+      res.render("./users/dashboardReact", {title: "Dashboard",usuarioLogeado: req.session.usuarioLogin,}); // vista de formulario de login.
+    },
+
+
+
+
 // ---------------ACA EMPIEZA EL DASHBOARD--------------------------------------------------------------------------------------------------------------
 
 UsersDashboard: (req, res) => {
@@ -161,8 +170,9 @@ UsersDashboard: (req, res) => {
         .catch((err) => console.log(err));
     },
 
+  
     //Dashboar crear usuarios con provilegios
-    createPrivileges: (req, res) => {
+createPrivileges: (req, res) => {
       // vista de la creacion de usuario desde el dashboard.
       res.render("users/userCreatePrivi", {title: "Users Privileges",usuarioLogeado: req.session.usuarioLogin,});
     },
