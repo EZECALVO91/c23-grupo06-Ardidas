@@ -43,52 +43,81 @@ const usersController = {
         }
     },
 
+
     allUsers: async (req, res) => {
         try {
             const users = await db.User.findAll();
+    
+            
+            const usersMap = users.map(user => {// mapeo los usuarios para sacar algunos datos
+                const userModificade = { ...user.toJSON() };
+                delete userModificade.id_category;
+                delete userModificade.password;
+                delete userModificade.date;
+                delete userModificade.locality;
+                delete userModificade.aboutMe;
+                delete userModificade.createdAt;
+                delete userModificade.updatedAt;
+                delete userModificade.image;
+                userModificade.url = `/api/users/${userModificade.id}`
+                return userModificade;
+            });
+            const countUsers = usersMap.length; //con esto se cuantos usuarios hay en la lista.
+
             let respuesta = {
                 meta:{
                     status: 200,
-                    url: "/api/users/:id",
-                    total: users,
-                }
-            }
+                    url: "/api/users",
+                    count: countUsers,
+                    total: usersMap
+                },
+                
+            };
+    
             res.json(respuesta);
         } catch (error) {
             const respuestaError = {
                 meta:{
                     status: 404,
-                    url: "/api/users/:id",
+                    url: "/api/users",
                     error: "Error en el Servidor",
                 }
-            }
+            };
             console.log(error);
-            res.json(respuestaError);
+            res.status(500).json(respuestaError); // Enviar el estado 500 y la respuesta de error
         }
     },
+
 
     userId: async (req, res) => {
         try {
             const { id } = req.params;
-            const user = await db.User.findByPk(id);
+            const user = await db.User.findByPk(id, {
+                attributes: {
+                    exclude: ['password', 'id_category'] // sacar los atributos password y id_category
+                }
+            });
 
             if (!user) {
                 return res.status(404).json({ error: "No existe un usuario con id: " + id });
             }
+            
             let respuesta = {
                 meta: {
                     status: 200,
                     url: "/api/users/:id",
-                    total: user,
+                    count: 1, // hay un solo usuario en buscar por ID por eso se hardcodea
+                    total: { ...user.toJSON(), url_image: `http://localhost:3000/images/users/${user.image}`},
                 }
-            }
+            };
             res.json(respuesta);
-
+    
         } catch (error) {
             console.log(error);
-            res.status(404).json({ error: "Error en el Servidor" });
+            res.status(500).json({ error: "Error en el Servidor" });
         }
     },
+
 
     updateUser :async (req, res) => {
         try {
