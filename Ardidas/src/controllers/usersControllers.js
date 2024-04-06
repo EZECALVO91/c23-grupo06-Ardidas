@@ -143,14 +143,6 @@ userProfileEdit: (req, res) => {
       }
     },
 
-// ---------------ACA EMPIEZA EL DASHBOARD DE REACT--------------------------------------------------------------------------------------------------------------
-
-    DashboardReact:(req, res) => {
-      res.render("./users/dashboardReact", {title: "Dashboard",usuarioLogeado: req.session.usuarioLogin,}); // vista de formulario de login.
-    },
-
-
-
 
 // ---------------ACA EMPIEZA EL DASHBOARD--------------------------------------------------------------------------------------------------------------
 

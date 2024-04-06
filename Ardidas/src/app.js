@@ -12,6 +12,7 @@ const userLoggedMiddleware = require('./middleware/userLoggedMiddleware')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products')
+const dashReactRouter = require('./routes/dashboardReact')
 
 //APIS
 const usersApiRouter = require('./routes/APIS/userApis');
@@ -38,6 +39,7 @@ app.use(userLoggedMiddleware)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/dashboard', dashReactRouter);
 
 //APIS APP.USE
 app.use('/api', usersApiRouter);
