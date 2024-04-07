@@ -6,25 +6,79 @@
 <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
 <%- include("../partials/header.ejs") %>
 
-<main>
+<main class="">
     <div class="div_container_button_dasboard">
-        <a class="btn_redirect_create" href="/products/dashboard"> Productos</a>
-        <a class="btn_redirect_create" href="/users/dashboard"> Usuarios</a>
+        <a class="btn_redirect_userYproduct" href="/products/dashboard"> PRODUCTOS</a>
+        <a class="btn_redirect_userYproduct" href="/users/dashboard"> USUARIOS</a>
     </div>
+    <div class="container_main_product">
+        <section class="section_info1">
+
+            <div><h3>ULTIMA ENTRADA</h3></div>
+
+            <div class="div_articulos_dash info1">
+                
+                <% if (product) { %>
+                    <div class="img_dashReact">
+                        <img src="/images/products/<%= product.Image_products[0] ? product.Image_products[0].filename  : product.Image_products[0].filename%>" alt="Imagen del producto">
+                    </div>
+                    <div class="dash_description">
+                        <h3><%= product.name %></h3>
+                        <p><%= product.description %></p>
+                    </div>
+                
+                <% } else { %>
+                    <p>No hay productos disponibles.</p>
+                <% } %>
+            </div>
+
+            <div><h2>Categoría con mas Stock</h2></div>
+
+            <div class="div_articulos_dash info2">
+                <% if (maxCategories) { %>
+                    <h3><%= maxCategories.category %></h3>
+                    <!-- Puedes mostrar más detalles de la categoría según sea necesario -->
+                    <div class="miniaturas-productos">
+            <% maxCategories.Products.forEach(producto => { %>
+                <% product.Image_products.forEach(imagen => { %>
+                    <img src="/images/products/<%= producto.Image_products %>" alt="<%= producto.name %>">
+                <% }); %>
+            <% }); %>
+            </div>
+                <% } else { %>
+                    <p>No hay ninguna categoria con productos.</p>
+                <% } %>
+
+            </div>
+
+        </section>
+
+        <section class="section_info2">
+                <h2>CATEGORIAS</h2>
+            <div class="div_articulos_dash dash1">
+                <div class="dash_description">
+                    
+                    <ul>
+                        <% categories.forEach(category => { %>
+                            <li>
+                                <h3><%= category.category %></h3>
+                                <ul>
+                                    <% category.Products.forEach(product => { %>
+                                        <a href="/products/detalle/<%= product.id %>"><%= product.name %></li></a><li>
+                                        <!-- Agrega más detalles del producto según sea necesario -->
+                                    <% }); %>
+                                </ul>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </div>
+
+            </div>
 
 
+        </section>
 
-
-<h1>HOLA CAMPEON</h1>
-
-
-
-
-
-
-
-
-
+    </div>
         
 </main>
 <script src="/js/users/validationLogin.js"></script>
