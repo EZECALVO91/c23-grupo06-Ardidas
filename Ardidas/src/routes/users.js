@@ -27,6 +27,7 @@ router
 //Dashboard de Usurios
 .get('/dashboard',isAdmin, UsersDashboard)
 
+//Creador de Privilegios
 .get('/createPrivileges', isAdmin, createPrivileges)
 .post('/createPrivileges',uploadImgPro.single("image"), isAdmin, validationPrivi, createUserPrivileges)
 

@@ -12,19 +12,23 @@
     text-align: center;
 }
 
-.box_redirect_create a{
+.box_redirect_create a {
     font-size: 20px;
     color: var(--color-blanco);
     font-weight: bolder;
 }
 
-.btn_redirect_create{
-    border: 3px solid var(--color-negro);
-    background-color: var(--color-negro);
+.btn_redirect_create {
+    border: 1px solid var(--color-negro);
+    background: linear-gradient(black 70%, grey);
     box-shadow: 0px 0px 10px var(--color-negro);
     border-radius: 15px;
     padding: 1px 10px;
+    transition: box-shadow 0.3s; 
+}
 
+.box_redirect_create a:hover {
+    box-shadow: 0 0 10px 1px #00ff00af;
 }
 
 .button-delete{
@@ -77,7 +81,6 @@
     text-align: center;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
-    /* border: 1px solid var(--color-negro); */
 }
 
 .container_Avatar_dashboard img{
@@ -129,6 +132,225 @@
         display: grid;
         grid-template-columns: repeat(3,2fr);
     }
+
+
+}
+
+/* DASHBOARD REACT */
+
+.main_dashReact{
+    padding: 1% 5% 5% 5%;
+}
+
+.div_container_button_dasboard {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.div_container_button_dasboard a {
+    background: linear-gradient(black 60%, grey);
+    border: 1px solid #686565;
+    color: white;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.div_container_button_dasboard a:hover {
+    border-color: #00ff00af;
+    box-shadow: 0 0 10px 1px #00ff00af; 
+}
+
+.btn_redirect_userYproduct{
+    border: 3px solid var(--color-negro);
+    background-color: var(--color-negro);
+    box-shadow: 0px 0px 10px var(--color-negro);
+    padding: 3px 6%;
+
+}
+
+.container_main_product{
+    width: 100%;
+    text-align: center;
+    padding: 2%;
+}
+
+.container_main_product section{
+    padding: 2%;
+}
+
+.div_articulos_dash{
+    width: 100%;
+    background: linear-gradient(black 35%, grey);
+    border: 1px solid var(--color-negro);
+    border-radius: 15px;
+    margin-bottom: 2%;
+}
+
+.info1{
+    height: 40%;
+    margin-bottom: 5%;
+    box-shadow: 0px 0px 25px rgb(0, 0, 0);
+}
+.info1 img{
+    width: 65%;
+    height: 30%;
+    border-radius: 10%;
+    padding: 3% 0% 0% 0%;
+}
+
+.info2{
+    height: 40%;
+    margin-bottom: 5%;
+    padding: 2% 10%;
+    box-shadow: 0px 0px 25px rgb(0, 0, 0);
+    color: white;
+}
+.info2 img{
+    width: 65%;
+    height: 30%;
+    border-radius: 10%;
+    padding: 3% 0% 0% 0%;
+}
+
+.box_container_count{
+    height: 100%;
+    outline: 1px solid white;
+    padding: 1%;
+    border-radius: 15px;
+}
+
+.box_container_count p{
+    font-size: 40px;
+}
+
+.users1{
+    margin-bottom: 3%;
+}
+
+
+.dash_description{
+    margin: auto;
+    padding: 3%;
+    color: white;
+}
+
+.dash_description ul{
+    margin: auto;
+    padding: 3%;
+}
+
+
+.dash_description a{
+    color: white;
+}
+
+.dash1{
+    box-shadow: 0px 0px 25px var(--color-negro);
+}
+
+.dash2{
+    box-shadow: 0px 0px 25px var(--color-negro);
+}
+
+.categories_div{
+    height: 21%;
+    margin-bottom: 8%;
+    padding: 4% 8%;
+    box-shadow: 0px 0px 25px rgb(0, 0, 0);
+    color: white;
+}
+
+.box_container_categories{
+    height: 100%;
+    outline: 1px solid white;
+    padding: 10%;
+    border-radius: 15px;
+}
+
+.box_container_categories p{
+    font-size: 40px;
+}
+
+/* ACA SE GUARDA LA CONFIGURACIONES DE LOS BOTONES */
+.acordion {
+    color: white;
+    background: var(--color-negro);
+    padding: 10px 0;
+    width: 90%; 
+    margin-bottom: 5%;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: box-shadow 0.3s, color 0.3s;
+}
+
+.acordion.active {
+    box-shadow: 0 0 10px 2px white;
+    color: black;
+    background: white;
+}
+
+.acordion:hover {
+    box-shadow: 0 0 10px 2px white;
+}
+
+.acordion_ul {
+    display: none;
+    padding-left: 20px;
+}
+
+/* Estilo para mostrar los paneles cuando el botón de acordeón está activo */
+.active {
+    background: var(--color-negro);
+}
+
+
+@media  (min-width: 768px ){
+
+    .btn_redirect_userYproduct{
+        padding: 2px 15%;
+        font-size: 1.5rem;
+    
+    }
+
+    .container_main_product{
+        display: flex;
+    }
+
+    .section_info1{
+        width: 60%;
+        height: 100%;
+    }
+
+    .section_info2{
+        width: 38%;
+    }
+
+    .info2 {
+        display: flex;
+        justify-content:space-evenly ;
+        padding: 2%;
+    }
+
+    .box_container_count{
+        padding: 5%;
+        width: 45%;
+    }
+
+    .users1{
+        margin-bottom: 0;
+    }
+
+}
+
+@media  (min-width: 1024px ){
+    .acordion {
+        padding: 16px 0;
+        width: 90%; 
+        margin-bottom: 5%;
+        font-size: 20px;
+        border: 2px solid white;
+    }
+
 
 
 }
