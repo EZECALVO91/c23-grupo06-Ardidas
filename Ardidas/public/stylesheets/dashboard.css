@@ -179,8 +179,9 @@
 }
 
 .div_articulos_dash{
+    width: 100%;
     background: linear-gradient(black 35%, grey);
-    border: 2px solid var(--color-negro);
+    border: 1px solid var(--color-negro);
     border-radius: 15px;
     margin-bottom: 2%;
 }
@@ -200,7 +201,9 @@
 .info2{
     height: 40%;
     margin-bottom: 5%;
+    padding: 2% 10%;
     box-shadow: 0px 0px 25px rgb(0, 0, 0);
+    color: white;
 }
 .info2 img{
     width: 65%;
@@ -209,12 +212,19 @@
     padding: 3% 0% 0% 0%;
 }
 
-.info2{
-    height: 40%;
+.box_container_count{
+    height: 100%;
+    outline: 1px solid white;
+    padding: 1%;
+    border-radius: 15px;
 }
 
-.info2 h3{
-    color: white;
+.box_container_count p{
+    font-size: 40px;
+}
+
+.users1{
+    margin-bottom: 3%;
 }
 
 
@@ -232,22 +242,53 @@
 }
 
 
-.dash_description ul a{
+.dash_description a{
     color: white;
 }
 
 .dash1{
-        box-shadow: 0px 0px 25px rgb(0, 0, 0);
+    box-shadow: 0px 0px 25px var(--color-negro);
 }
 
 .dash2{
-    box-shadow: 0px 0px 25px rgb(0, 0, 0);
+    box-shadow: 0px 0px 25px var(--color-negro);
+}
+
+/* ACA SE GUARDA LA CONFIGURACIONES DE LOS BOTONES */
+.acordion {
+    color: white;
+    background: var(--color-negro);
+    padding: 8px 20%;
+    margin-bottom: 5%;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: box-shadow 0.3s, color 0.3s;
+}
+
+.acordion.active {
+    box-shadow: 0 0 10px 2px white;
+    color: black;
+    background: white;
+}
+
+.acordion:hover {
+    box-shadow: 0 0 10px 2px white;
+}
+
+.acordion_ul {
+    display: none;
+    padding-left: 20px;
+}
+
+/* Estilo para mostrar los paneles cuando el botón de acordeón está activo */
+.active {
+    background: var(--color-negro);
 }
 
 
 @media  (min-width: 768px ){
     .btn_redirect_userYproduct{
-        padding: 2px 16%;
+        padding: 2px 15%;
         font-size: 1.5rem;
     
     }
@@ -264,6 +305,22 @@
     .section_info2{
         width: 38%;
     }
+
+    .info2 {
+        display: flex;
+        justify-content:space-evenly ;
+        padding: 2%;
+    }
+
+    .box_container_count{
+        padding: 5%;
+        width: 45%;
+    }
+
+    .users1{
+        margin-bottom: 0;
+    }
+
 
 
 }

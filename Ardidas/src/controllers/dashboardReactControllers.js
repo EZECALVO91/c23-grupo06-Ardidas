@@ -7,54 +7,6 @@ const { Op } = require("sequelize");
 
 const usersController = {
 // ---------------ACA EMPIEZA EL DASHBOARD DE REACT--------------------------------------------------------------------------------------------------------------
-
-// DashboardReact:  async (req, res) => {
-//     try {
-//         const ultimoProducto = await db.Product.findOne({
-//             include: [{
-//                 association: "Image_products"
-//             }],
-//             order: [['createdAt', 'DESC']],
-//         });
-
-//         if (!ultimoProducto) {
-//             return res.status(404).send("No se encontraron productos.");
-//         }
-
-//         res.render("./dashboardReact/dashboardReact", {title: "Último Producto",usuarioLogeado: req.session.usuarioLogin,product: ultimoProducto,});
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).send("Ocurrió un error al cargar el último producto.");
-//     }
-// },
-
-// DashboardReact : async (req, res) => {
-//     try {
-//         const ultimoProducto = await db.Product.findOne({
-//             include: [{
-//                 association: "Image_products"
-//             }],
-//             order: [['createdAt', 'DESC']],
-//         });
-
-//         const categories = await db.Category_product.findAll({
-//             include: [{
-//                 model: db.Product,
-//                 as: 'Products', // Utilizamos el alias definido en la asociación
-//                 attributes: ['id', 'name']
-//             }]
-//         });
-
-//         res.render("./dashboardReact/dashboardReact", {
-//             title: "Dashboard",usuarioLogeado: req.session.usuarioLogin,product: ultimoProducto,categories: categories
-//         });
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).send("Ocurrió un error al cargar el panel de control.");
-//     }
-// },
-
-
 DashboardReact : async (req, res) => {
     try {
         const ultimoProducto = await db.Product.findOne({
@@ -82,7 +34,19 @@ DashboardReact : async (req, res) => {
                 categoriaConMasProductos = category;
             }
         });
-        res.render("./dashboardReact/dashboardReact", {title: "Dashboard",usuarioLogeado: req.session.usuarioLogin,product: ultimoProducto, categories: categories, maxCategories: categoriaConMasProductos, products:products
+
+                // ACA CONSUMO LA API DE USER PARA UTILIZAR EL COUNT Y SABER CUANTOS USUARIOS EXISTEN.
+                const usersCount = await fetch('http://localhost:3001/api/allUsers');
+                const countApi = await usersCount.json();
+                const allUsers = countApi.meta.count;
+
+        res.render("./dashboardReact/dashboardReact", {title: "Dashboard",
+        usuarioLogeado: req.session.usuarioLogin,
+        product: ultimoProducto,
+        categories: categories,
+        maxCategories: categoriaConMasProductos,
+        products:products,
+        count:allUsers
         });
     } catch (error) {
         console.log(error);
