@@ -5,10 +5,11 @@
 
 .div_ayuda {
     background:linear-gradient(black 50%, grey );
-    border-radius: 10%;
+    border-radius: 0px 100px;
     padding:3%;
     display: flex; 
     align-items: center; 
     justify-content: space-between;
     color:white;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
