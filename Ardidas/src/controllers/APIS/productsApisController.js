@@ -6,8 +6,14 @@ const { validationResult } = require("express-validator");
 const apiProductsController = {
   list: async (req, res) => {
     try {
+        let { page = 1 } = req.query;
+        const limit = 10;
+
+        const offset = (page - 1) * limit;
         const products = await db.Product.findAll(
              {
+             limit: limit,
+             offset: offset,
              include: [{ 
                association: "Category_products"}],
            }
@@ -24,12 +30,38 @@ const apiProductsController = {
              productModificado.detail = `/api/products/${productModificado.id}`
             return productModificado
         })
-        const countProducts = productsMap.length
+        const countProducts = await db.Product.count();
 
-        const cantidadPorCategoria = {};
-        products.forEach(product => {
-            const categoryName = product.Category_products.category;
-            cantidadPorCategoria[categoryName] = (cantidadPorCategoria[categoryName] || 0) + 1;
+        const totalPages = Math.ceil(countProducts / limit);
+
+        let nextPath = null;
+        let previousPath = null;
+
+        if (page < totalPages) {
+            nextPath = `/api/products/?page=${parseInt(page) + 1}`;
+        }
+
+        if (page > 1) {
+            previousPath = `/api/products/?page=${parseInt(page) - 1}`;
+        }
+
+        const countByCategory = await db.Product.findAll({
+            attributes: [
+                [db.sequelize.col('Category_products.category'), 'category'], // Capturamos el nombre de la categoría
+                [db.sequelize.fn('COUNT', db.sequelize.col('Category_products.category')), 'count']
+            ],
+            include: [{ 
+                association: "Category_products",
+                attributes: []
+            }],
+            group: ['Category_products.category']
+        });
+        
+        let cantidadPorCategoria = {};
+        countByCategory.forEach(categoryCount => {
+            const categoryName = categoryCount.get('category'); 
+            const count = categoryCount.get('count'); 
+            cantidadPorCategoria[categoryName] = count;
         });
 
         let respuesta = {
@@ -38,13 +70,16 @@ const apiProductsController = {
                 url: "/api/products",
                 count: countProducts,
                 countByCategory: cantidadPorCategoria,
+                previous: previousPath,
+                next: nextPath,
                 products: productsMap
             }
         }
         res.json(respuesta)
 
        
-    } catch (error) {
+    } 
+    catch (error) {
         const respuestaError = {
             meta:{
                 status: 404,

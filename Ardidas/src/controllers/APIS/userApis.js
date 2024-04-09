@@ -46,45 +46,68 @@ const usersController = {
 
     allUsers: async (req, res) => {
         try {
-            const users = await db.User.findAll();
+            let { page = 1 } = req.query;
+            const limit = 6; // Cambiamos el límite a 6 usuarios por página
     
-            
-            const usersMap = users.map(user => {// mapeo los usuarios para sacar algunos datos
-                const userModificade = { ...user.toJSON() };
-                delete userModificade.id_category;
-                delete userModificade.password;
-                delete userModificade.date;
-                delete userModificade.locality;
-                delete userModificade.aboutMe;
-                delete userModificade.createdAt;
-                delete userModificade.updatedAt;
-                delete userModificade.image;
-                userModificade.url = `/api/users/${userModificade.id}`
-                return userModificade;
+            const offset = (page - 1) * limit;
+            const users = await db.User.findAll({
+                limit: limit,
+                offset: offset
             });
-            const countUsers = usersMap.length; //con esto se cuantos usuarios hay en la lista.
-
-            let respuesta = {
-                meta:{
+    
+            // Contar el total de usuarios
+            const totalCount = await db.User.count();
+    
+            const totalPages = Math.ceil(totalCount / limit);
+            
+            let nextPage = null;
+            let prevPage = null;
+    
+            if (page < totalPages) {
+                nextPage = `/api/allUsers?page=${parseInt(page) + 1}`;
+            }
+    
+            if (page > 1) {
+                prevPage = `/api/allUsers?page=${parseInt(page) - 1}`;
+            }
+    
+            const usersMap = users.map(user => {
+                const userModified = { ...user.toJSON() };
+                delete userModified.id_category;
+                delete userModified.password;
+                delete userModified.date;
+                delete userModified.locality;
+                delete userModified.aboutMe;
+                delete userModified.createdAt;
+                delete userModified.updatedAt;
+                delete userModified.image;
+                userModified.url = `/api/users/${userModified.id}`;
+                return userModified;
+            });
+    
+            let response = {
+                meta: {
                     status: 200,
-                    url: "/api/users",
-                    count: countUsers,
-                    total: usersMap
+                    url: "/api/allUsers",
+                    count: totalCount,
+                    totalPages: totalPages,
+                    nextPage: nextPage,
+                    prevPage: prevPage
                 },
-                
+                users: usersMap
             };
     
-            res.json(respuesta);
+            res.json(response);
         } catch (error) {
-            const respuestaError = {
-                meta:{
-                    status: 404,
-                    url: "/api/users",
+            console.log(error);
+            const errorResponse = {
+                meta: {
+                    status: 500,
+                    url: "/api/allUsers",
                     error: "Error en el Servidor",
                 }
             };
-            console.log(error);
-            res.status(500).json(respuestaError); // Enviar el estado 500 y la respuesta de error
+            res.status(500).json(errorResponse);
         }
     },
 
