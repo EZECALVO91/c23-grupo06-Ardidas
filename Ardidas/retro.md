@@ -165,16 +165,17 @@ ______________________________________________________________
 
 
 #### Hacer menos:
-
+Reducir las jornadas extensas de desarrollo sin cortes, buscando un mejor descanso para no terminar estresado.
 
 #### Continuar Haciendo:
-
+Que la comunicacion siga siendo fluida y que el trabajo continue con el formato que fuimos forjando con el correr de los sprints.
+Llegar con tiempo a la fecha de entrega, para poder seguir revisando y debugueando la pagina de e-commerce.
 
 #### Hacer más:
 
 
 #### Comenzar a Hacer:
-
+Salir a tomar aire para evitar estres y realizar alguna actividad de ocio.
 
 ______________________________________________________________
 # Conclusiones del Octavo Sprint:

@@ -103,3 +103,13 @@ Sprint 7.
 * Leonel Anchaba = Siendo que me tocaba liderar en este Sprint y estuve varios días con cuestiones de salud, ya nos habíamos anticipado con los chicos y les dejé dicho que se agarren las tareas con las cuales se sientan cómodos así podían empezar a trabajar cuando quisieran y no tenían que esperarme a que me encuentre mejor como para coordinar y hacer la división de tareas entre todos, así que una vez que me encontré mejor armé el tablero para que lo tengamos disponible y sea todo mas cómodo y claro, asigné las tareas que habían elegido y empecé a desarrollar las validaciones de creación de productos. Durante el finde coordinamos un rato con Eze y aprovechamos a retocar cuestiones de diseño y dejar anotadas otras para después ir trabajando tranquilos e ir integrandolas a medida que estén. Y hoy ya tenemos todas las tareas listas, excepto 1, y aprovechamos a hacer la retro y la daily una vez terminada la clase.
 
 * Nicolas Badino =
+
+
+## Daily 6/4/2024
+
+*Ezequiel Calvo = En estos dias estuvimos con Leo arreglando un poco nuestro proyecto, de apoco fue quedando mas lindo y me siento contento. Ayer mas o menos vimos
+las cosas que teniamos que hacer y decimos entre los dos juntarnos nuevamente hoy sabado 6/4/24 para charlar las correcciones pequeñas que tenemos y el trabajo
+que tenemos por delante en el sprint, estuve haciendo de todo un poco estuve editando un poco las vistas agregandole transiciones y cambiando botones y colores, hoy 
+estuve realizando desde temprano la nueva vista del Dashboard que vamos a utilizar para hacer los componentes, ya esta casi terminada hay que aplicarle detalles, tambien ayer termine las Apis de usuario que piden en el PDF. Y mañana queda terminar la vista y para el lunes poder empezar con react.
+
+*Leonel Anchaba = Entre ayer y hoy estuvimos viendo que implicaban las tareas del Sprint y craneando como vamos a ir desarrollando todo, y además, viendo correcciones o funcionalidades que faltan implementar para que nuestro trabajo quede lo mejor posible en todos los aspectos. Teniendo ya las pautas, tengo que hacerle modificaciones a las Apis de productos que fui desarrollando en la semana, para que cumplan bien con lo que se solicita.
