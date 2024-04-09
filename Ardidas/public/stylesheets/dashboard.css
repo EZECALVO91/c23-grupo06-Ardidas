@@ -229,14 +229,12 @@
 
 
 .dash_description{
-    width:  90%;
     margin: auto;
     padding: 3%;
     color: white;
 }
 
 .dash_description ul{
-    width:  90%;
     margin: auto;
     padding: 3%;
 }
@@ -254,11 +252,31 @@
     box-shadow: 0px 0px 25px var(--color-negro);
 }
 
+.categories_div{
+    height: 21%;
+    margin-bottom: 8%;
+    padding: 4% 8%;
+    box-shadow: 0px 0px 25px rgb(0, 0, 0);
+    color: white;
+}
+
+.box_container_categories{
+    height: 100%;
+    outline: 1px solid white;
+    padding: 10%;
+    border-radius: 15px;
+}
+
+.box_container_categories p{
+    font-size: 40px;
+}
+
 /* ACA SE GUARDA LA CONFIGURACIONES DE LOS BOTONES */
 .acordion {
     color: white;
     background: var(--color-negro);
-    padding: 8px 20%;
+    padding: 10px 0;
+    width: 90%; 
     margin-bottom: 5%;
     border: 1px solid white;
     cursor: pointer;
@@ -287,6 +305,7 @@
 
 
 @media  (min-width: 768px ){
+
     .btn_redirect_userYproduct{
         padding: 2px 15%;
         font-size: 1.5rem;
@@ -321,7 +340,19 @@
         margin-bottom: 0;
     }
 
+}
+
+@media  (min-width: 1024px ){
+    .acordion {
+        padding: 16px 0;
+        width: 90%; 
+        margin-bottom: 5%;
+        font-size: 20px;
+        border: 2px solid white;
+    }
+
 
 
 }
+
 

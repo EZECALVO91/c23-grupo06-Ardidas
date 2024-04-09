@@ -14,15 +14,15 @@
     <div class="container_main_product">
         <section class="section_info1">
 
-            <div><h2>Contabilizacion</h2></div>
+            <div><h2>Contabilizacion de:</h2></div>
             <div class="div_articulos_dash info2">
                 <div class="box_container_count users1">
                     <h3>Usuarios</h3>
-                    <p><i class="fa-solid fa-users"></i><%=" " + count %></p>
+                    <p><i class="fa-solid fa-users"></i><%=" " + usersCount %></p>
             </div>  
             <div class="box_container_count products1">
                     <h3>Productos</h3>
-                    <p><i class="fa-solid fa-boxes-stacked"></i><%= " " + count %></p>
+                    <p><i class="fa-solid fa-boxes-stacked"></i><%= " " + productsCount %></p>
             </div>
 
             </div>
@@ -50,7 +50,15 @@
 
         <section class="section_info2">
 
-            <h2>Categorias</h2>
+            <h2>Cantidad de:</h2>
+            <div class="div_articulos_dash categories_div">
+                <div class="box_container_categories">
+                    <h3>Categorias</h3>
+                    <p><i class="fa-solid fa-table-list"></i><%=" " + categoriesCount %></p>
+                </div>
+            </div>
+
+                        <h2>Articulos</h2>
             <div class="div_articulos_dash dash1">
                 <div class="dash_description">
                     <ul>
@@ -69,10 +77,7 @@
                         <% }); %>
                     </ul>
                 </div>
-
             </div>
-
-
         </section>
 
     </div>
