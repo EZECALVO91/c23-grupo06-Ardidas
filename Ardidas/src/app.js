@@ -15,6 +15,7 @@ const productsRouter = require('./routes/products')
 
 //APIS
 const usersApiRouter = require('./routes/APIS/userApis');
+const productsApiRouter = require('./routes/APIS/productsApis');
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.use('/products', productsRouter);
 
 //APIS APP.USE
 app.use('/api', usersApiRouter);
+app.use("/api/products", productsApiRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
