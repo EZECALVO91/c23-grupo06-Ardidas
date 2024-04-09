@@ -106,7 +106,6 @@ const usersController = {
                 meta: {
                     status: 200,
                     url: "/api/users/:id",
-                    count: 1, // hay un solo usuario en buscar por ID por eso se hardcodea
                     total: { ...user.toJSON(), url_image: `http://localhost:3000/images/users/${user.image}`},
                 }
             };
