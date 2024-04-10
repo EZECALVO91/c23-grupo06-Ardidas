@@ -113,3 +113,9 @@ que tenemos por delante en el sprint, estuve haciendo de todo un poco estuve edi
 estuve realizando desde temprano la nueva vista del Dashboard que vamos a utilizar para hacer los componentes, ya esta casi terminada hay que aplicarle detalles, tambien ayer termine las Apis de usuario que piden en el PDF. Y mañana queda terminar la vista y para el lunes poder empezar con react.
 
 *Leonel Anchaba = Entre ayer y hoy estuvimos viendo que implicaban las tareas del Sprint y craneando como vamos a ir desarrollando todo, y además, viendo correcciones o funcionalidades que faltan implementar para que nuestro trabajo quede lo mejor posible en todos los aspectos. Teniendo ya las pautas, tengo que hacerle modificaciones a las Apis de productos que fui desarrollando en la semana, para que cumplan bien con lo que se solicita.
+
+## Daily 9/4/2024
+
+*Ezequiel Calvo =yo el dia de ayer estuve terminando lo que era la vista en express del dashboard para tener un comienzo solido de una vista para poder separarlas en componentes tambien trabaje en su controlador sumando las apis de leo junto con las mias, actualice todo lo que es apis con ayuda del codigo de Leo sumandole el paginado, hoy estuvimos viendo con leo todo lo que es lo que el armo en react lo qur separo en componentes y quedo bien, queda nomas ir viendo en estos dias aplicarle la logica, trabajar un poco en su css.
+
+*Leonel Anchaba = El dia de ayer estuve terminando de hacerle correcciones a lo que es la api de productos, de lo que se solicitaba y con lo que tengo que seguir trabajando es implementar la parte opcional para el paginado y ya que tenemos nuestra vista de dashboard con ejs, la implemente en react arme todo lo que es componentes para poder seguir trabajando, ahora se puede usar nuestro proyecto express con react juntos que terminar de implementarle la logica y todavia seguimos viendo la parte opcional que sigue en el pdf. Y queda seguir viendo la logica de react.
