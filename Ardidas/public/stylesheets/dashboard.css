@@ -314,6 +314,7 @@
 
     .container_main_product{
         display: flex;
+        justify-content: space-between;
     }
 
     .section_info1{
