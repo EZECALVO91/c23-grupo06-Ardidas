@@ -227,7 +227,7 @@ const usersController = {
                     if (user.image && user.image !== "default-avatar-profile.jpg") {
                     const imagePath = path.join(__dirname, "../../public/images/users", user.image);
                     fs.unlinkSync(imagePath);
-                    console.log(`BORRE LA IMAGEN: ${user.image}`);
+                    // console.log(`BORRE LA IMAGEN: ${user.image}`);
             }
             const respuesta = {
                 meta:{
