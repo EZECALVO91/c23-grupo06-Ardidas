@@ -6,7 +6,10 @@
 .div_ayuda {
     background:linear-gradient(black 50%, grey );
     border-radius: 0px 100px;
-    padding:3%;
+    padding:3
+    
+    
+    0px 5% 5%;
     display: flex; 
     align-items: center; 
     justify-content: space-between;
