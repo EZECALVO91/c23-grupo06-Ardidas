@@ -30,7 +30,7 @@
 }
 .header_burgerbutton:hover .header_burgerbutton_desplegable {
     display:inline-block;
-    background:linear-gradient(black 50%, grey );
+    background:rgba(0,0,0,0.9);
     z-index: 1;
     position: absolute;
     width: 65vw;
