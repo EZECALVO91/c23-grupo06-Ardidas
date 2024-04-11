@@ -31,6 +31,7 @@ const apiProductsController = {
             return productModificado
         })
         const countProducts = await db.Product.count();
+        const countCategories = await db.Category_product.count();
 
         const totalPages = Math.ceil(countProducts / limit);
 
@@ -69,6 +70,7 @@ const apiProductsController = {
                 status: 200,
                 url: "/api/products",
                 count: countProducts,
+                categories: countCategories,
                 countByCategory: cantidadPorCategoria,
                 previous: previousPath,
                 next: nextPath,

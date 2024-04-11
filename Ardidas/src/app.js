@@ -8,6 +8,7 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session')
 const userLoggedMiddleware = require('./middleware/userLoggedMiddleware')
+const cors = require('cors')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -19,6 +20,12 @@ const usersApiRouter = require('./routes/APIS/userApis');
 const productsApiRouter = require('./routes/APIS/productsApis');
 
 const app = express();
+
+//Para usar las apis, se instala, se requiere y se implementa cors. Esto se hace para poder comunicar dos servidores distintos
+//al momento de setearlo, en el origen ponemos el servidor desde el cual hacemos el pedido a la api.
+app.use(cors({
+  origin: "http://localhost:8000"
+}))
 
 // view engine setup
 app.set('views', path.join(__dirname,'views'));

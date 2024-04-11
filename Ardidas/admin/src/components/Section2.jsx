@@ -1,4 +1,4 @@
-export default function Section2 () {
+export default function Section2 ({categoriesCount, categories}) {
     return (
         <section className="section_info2">
 
@@ -6,7 +6,7 @@ export default function Section2 () {
         <div className="div_articulos_dash categories_div">
             <div className="box_container_categories">
                 <h3>Categorias</h3>
-                <p><i className="fa-solid fa-table-list"></i> 20 </p>
+                <p><i className="fa-solid fa-table-list"></i> {categoriesCount} </p>
             </div>
         </div>
 
@@ -16,11 +16,56 @@ export default function Section2 () {
                 <ul>
                     
                         <li className="acordion_li">
-                            <button className="acordion"> category.category </button>
+                            <button className="acordion"> {categories} </button>
                             <ul className="acordion_ul">
                                 
                                     <li>
-                                        <a href="/products/detalle/<%= product.id %>"> product.name </a>
+                                        <a href="/products/detalle/<%= product.id %>"> asdasdasdasdasdas{categories} </a>
+                                       
+                                    </li>
+                              
+                            </ul>
+                        </li>
+                        <li className="acordion_li">
+                            <button className="acordion"> {categories} </button>
+                            <ul className="acordion_ul">
+                                
+                                    <li>
+                                        <a href="/products/detalle/<%= product.id %>">asdasd {categories} </a>
+                                       
+                                    </li>
+                                    <li>
+                                        <a href="/products/detalle/<%= product.id %>">asdasd {categories} </a>
+                                       
+                                    </li>
+                                    <li>
+                                        <a href="/products/detalle/<%= product.id %>">asdasd {categories} </a>
+                                       
+                                    </li>
+                                    <li>
+                                        <a href="/products/detalle/<%= product.id %>">asdasd {categories} </a>
+                                       
+                                    </li>
+                              
+                            </ul>
+                        </li>
+                        <li className="acordion_li">
+                            <button className="acordion"> {categories} </button>
+                            <ul className="acordion_ul">
+                                
+                                    <li>
+                                        <a href="/products/detalle/<%= product.id %>"> {categories} </a>
+                                       
+                                    </li>
+                              
+                            </ul>
+                        </li>
+                        <li className="acordion_li">
+                            <button className="acordion"> {categories} </button>
+                            <ul className="acordion_ul">
+                                
+                                    <li>
+                                        <a href="/products/detalle/<%= product.id %>"> {categories} </a>
                                        
                                     </li>
                               
@@ -29,6 +74,7 @@ export default function Section2 () {
                  
                 </ul>
             </div>
+            
         </div>
     </section>
     )

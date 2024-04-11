@@ -1,4 +1,4 @@
-export default function Section1 () {
+export default function Section1 ({productsCount}) {
     return (
 <section className="section_info1">
 
@@ -10,7 +10,7 @@ export default function Section1 () {
 </div>  
 <div className="box_container_count products1">
         <h3>Productos</h3>
-        <p><i className="fa-solid fa-boxes-stacked"></i>8</p>
+        <p><i className="fa-solid fa-boxes-stacked"></i>{productsCount}</p>
 </div>
 
 </div>
