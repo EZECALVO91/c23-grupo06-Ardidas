@@ -44,7 +44,7 @@ formLogin: (req, res) => {
 login: (req, res) => {
       const errores = validationResult(req); // logueo de cuenta mas cookis para guardar en las vistas.
       if (!errores.isEmpty()) {
-        console.log("errores:", errores.mapped());
+        // console.log("errores:", errores.mapped());
         res.render("./users/login", {errores: errores.mapped(),title: "Login",usuarioLogeado: req.session.usuarioLogin,});
       }else{
         const { email } = req.body;
@@ -53,7 +53,7 @@ login: (req, res) => {
           where: { email },
         })
           .then((user) => {
-            console.log("user info:", user);
+            // console.log("user info:", user);
             req.session.usuarioLogin = user.dataValues;
             if (req.body.recuerdame == "true") {
               const cookieUser = {
@@ -151,8 +151,8 @@ UsersDashboard: (req, res) => {
         where: { id: { [Op.ne]: req.session.usuarioLogin.id } },
       })
         .then((users) => {
-          console.log("dashboard users", users);
-          console.log("dashboard users", users);
+          // console.log("dashboard users", users);
+          // console.log("dashboard users", users);
           res.render("users/usersDashboard", {
             title: "Dashboard",
             users: users,
@@ -171,10 +171,10 @@ createPrivileges: (req, res) => {
 
 createUserPrivileges: (req, res) => {
       const errores = validationResult(req);
-      console.log("errores:", errores);
+      // console.log("errores:", errores);
       if (!errores.isEmpty()) {
         // creacion de usuarios desde el dashboard.
-        console.log("Ingrese en errores");
+        // console.log("Ingrese en errores");
         res.render("users/userCreatePrivi", {errores: errores.mapped(),old: req.body,title: "Errores Privilegios",usuarioLogeado: req.session.usuarioLogin,});
       } else {
         const file = req.file;
@@ -202,13 +202,13 @@ usersEdit: (req, res) => {
 
 usersUpdate: (req, res) => {
       const errores = validationResult(req); // edicion de usuario desde el dashboard.
-      console.log("errores:", errores);
+      // console.log("errores:", errores);
 
       const { id } = req.params;
       db.User.findByPk(req.params.id)
         .then((user) => {
           if (!errores.isEmpty()) {
-            console.log("Ingrese en errores");
+            // console.log("Ingrese en errores");
             res.render("users/usersEdit", {errores: errores.mapped(),old: req.body,title: "Editar Usuario",user,usuarioLogeado: req.session.usuarioLogin,});
           } else {
             const { id } = req.params;
@@ -241,7 +241,7 @@ destroy: (req, res) => {
             if (user.image && user.image !== "default-avatar-profile.jpg") {
               const imagePath = path.join(__dirname,"../../public/images/users",user.image);
               fs.unlinkSync(imagePath);
-              console.log(`BORRE LA IMAGEN: ${user.image}`);
+              // console.log(`BORRE LA IMAGEN: ${user.image}`);
             }
             res.redirect("/users/dashboard");
           });

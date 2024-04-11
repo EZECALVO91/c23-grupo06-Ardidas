@@ -1,7 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const logoutBtn = document.getElementById('logoutBtn');
+    const logoutBtnPhone = document.getElementById('logoutBtnPhone');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', confirmLogout);
+    }
+    if (logoutBtnPhone) {
+        logoutBtnPhone.addEventListener('click', confirmLogout);
     }
 });
 

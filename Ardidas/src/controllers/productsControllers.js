@@ -75,7 +75,7 @@ const productsController = {
   create: (req, res) => {
     const errores = validationResult(req); 
     if (!errores.isEmpty()) {
-      console.log("Ingrese en errores");
+      // console.log("Ingrese en errores");
       res.render("products/productLoad", {errores: errores.mapped(),old: req.body,title: "Error al crear",usuarioLogeado: req.session.usuarioLogin,
       });
   } else {
@@ -147,7 +147,7 @@ const productsController = {
       
     
     if (!errores.isEmpty()) {
-      console.log("Ingrese en errores de edición PUT");
+      // console.log("Ingrese en errores de edición PUT");
       res.render("products/productEdit", {errores: errores.mapped(),old: req.body,title: "Error al editar",usuarioLogeado: req.session.usuarioLogin, product
       });
   } else {

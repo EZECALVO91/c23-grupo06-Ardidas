@@ -3,23 +3,34 @@ import '../../public/stylesheets/styles.css'
 import DashboardExclusive from "./components/DashboardExclusive"
 import ContainerSections from "./components/ContainerSections"
 import Footer from "./components/Footer"
-import './App.css'
+import { useState, useEffect } from "react"
 
 function App() {
+  const [apiData, setApiData] = useState(null);
+
+  useEffect(() => {
+    const callApi = () => {
+      fetch("http://localhost:3000/api/products")
+      .then(response => response.json())
+      .then(data => setApiData(data))
+      // .then(data => console.log(data.meta.countByCategory))
+      .catch(error => console.error('Error fetching data:', error));
+    }
+    callApi();
+  }, [])
 
   return (
-    <body className="">
-        <Header></Header>
+    <>
+      <Header />
       <main className="main_react">
         <section className="section_products_main_index" >
-        <DashboardExclusive></DashboardExclusive>
-        <ContainerSections></ContainerSections>
+          <DashboardExclusive />
+          <ContainerSections apiData={apiData} />
         </section>
-        
       </main>
       <script src="../../public/js/dashboardReact/dashboard.js"></script>
-        <Footer></Footer>
-    </body>
+      <Footer />
+    </>
   )
 }
 
