@@ -10,10 +10,10 @@ function App() {
 
   useEffect(() => {
     const callApi = () => {
-      fetch("http://localhost:3000/api/products")
+      fetch("http://localhost:3000/api/dashboardReact")
       .then(response => response.json())
       .then(data => setApiData(data))
-      // .then(data => console.log(data.meta.countByCategory))
+        // .then(data => console.log(data))
       .catch(error => console.error('Error fetching data:', error));
     }
     callApi();

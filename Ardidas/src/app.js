@@ -18,6 +18,7 @@ const dashReactRouter = require('./routes/dashboardReact')
 //APIS
 const usersApiRouter = require('./routes/APIS/userApis');
 const productsApiRouter = require('./routes/APIS/productsApis');
+const dashboardApiVite = require('./routes/APIS/dashboardApis');
 
 const app = express();
 
@@ -52,6 +53,7 @@ app.use('/dashboard', dashReactRouter);
 //APIS APP.USE
 app.use('/api', usersApiRouter);
 app.use("/api/products", productsApiRouter)
+app.use("/api", dashboardApiVite)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
