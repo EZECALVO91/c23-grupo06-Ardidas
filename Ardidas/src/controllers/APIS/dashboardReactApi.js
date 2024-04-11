@@ -19,8 +19,6 @@ const dashboardAPI = {
       });
 
       const productsPromise = db.Product.findAll();
-
-      // Simulamos las llamadas a las otras APIs
       const productsCountPromise = fetch("http://localhost:3000/api/products")
         .then((response) => response.json())
         .then((data) => data.meta.count);
