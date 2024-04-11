@@ -5,10 +5,10 @@ export default function Footer () {
         <div className="hipervinculos link-footer">
             <h3 className="txt-footer-navegacion">NAVEGACIÓN</h3>
             <ul>
-                <li><a href="http:localhost:3000/">Inicio</a></li>
-                <li><a href="http:localhost:3000/contacto">Contacto</a></li>
-                <li><a href="http:localhost:3000/products">Productos</a></li>
-                <li><a href="http:localhost:3000/ayuda">¿Como comprar?</a></li>
+                <li><a href="http://localhost:3000/">Inicio</a></li>
+                <li><a href="http://localhost:3000/contacto">Contacto</a></li>
+                <li><a href="http://localhost:3000/products">Productos</a></li>
+                <li><a href="http://localhost:3000/ayuda">¿Como comprar?</a></li>
             </ul>
         </div>
 
@@ -30,16 +30,16 @@ export default function Footer () {
             <h3>REDES SOCIALES</h3>
             <ul className="redes">
                 <li>
-                    <a href="https://www.facebook.com/" target="_blank"><i className="fa-brands fa-square-facebook"
+                    <a href="https://www.facebook.com/adidasAR" target="_blank"><i className="fa-brands fa-square-facebook"
                             ></i></a>
                 </li>
                 <li>
-                    <a href="https://www.tiktok.com/" target="_blank"><i className="fa-brands fa-tiktok"
+                    <a href="https://www.tiktok.com/@adidas?lang=es" target="_blank"><i className="fa-brands fa-tiktok"
                             ></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/" target="_blank"><i className="fa-brands fa-instagram"
+                    <a href="https://www.instagram.com/adidasar/?hl=es-la" target="_blank"><i className="fa-brands fa-instagram"
                             ></i>
                     </a>
                 </li>

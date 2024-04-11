@@ -128,7 +128,8 @@
     }
     .busqueda-contenedor{
         position: relative;
-        width: 25%;
+        max-width: 192px;
+        height: 154px;
     }
     .home-logo-busqueda{
         display: flex;
@@ -163,6 +164,9 @@
     .logo{
         width: 200px;
     }
+    .busqueda-contenedor{
+        height: 200px;
+    }
     .home-logo-busqueda{
         font-size: 22px;
         width: 170px;
@@ -191,7 +195,7 @@
     }
 
     .headerSinFondo {
-        max-width: 1024px;
+        max-width: 1220px;
         margin:auto
     }
 }
