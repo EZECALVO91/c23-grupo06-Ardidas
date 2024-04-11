@@ -11,8 +11,11 @@ function App() {
     <body className="">
         <Header></Header>
       <main className="main_react">
+        <section className="section_products_main_index" >
         <DashboardExclusive></DashboardExclusive>
         <ContainerSections></ContainerSections>
+        </section>
+        
       </main>
       <script src="../../public/js/dashboardReact/dashboard.js"></script>
         <Footer></Footer>

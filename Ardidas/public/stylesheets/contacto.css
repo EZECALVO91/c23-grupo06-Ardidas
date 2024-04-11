@@ -7,7 +7,7 @@
 
 .div_contacto_formulario {
     background:linear-gradient(black 50%, grey );
-    border-radius: 10%;
+    border-radius: 100px;
     padding:3%;
     display: flex; 
     align-items: center; 
