@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 export default function Section2 ({categoriesCount, categories}) {
     return (
         <section className="section_info2">
@@ -81,3 +83,8 @@ export default function Section2 ({categoriesCount, categories}) {
     
     )
 }
+
+Section2.propTypes = {
+    categoriesCount: PropTypes.number,
+    categories: PropTypes.string,
+};

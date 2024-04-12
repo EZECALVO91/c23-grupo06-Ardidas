@@ -8,6 +8,8 @@ import { useState, useEffect } from "react"
 function App() {
   const [apiData, setApiData] = useState(null);
 
+
+ //Creamos una api que se encarga de llamar a las apis que pedia el sprint. 
   useEffect(() => {
     const callApi = () => {
       fetch("http://localhost:3000/api/dashboardReact")
