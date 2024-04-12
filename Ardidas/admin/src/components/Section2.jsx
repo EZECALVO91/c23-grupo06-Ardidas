@@ -76,6 +76,8 @@ export default function Section2 ({categoriesCount, categories}) {
             </div>
             
         </div>
+        <script src="../../../public/js/dashboardReact/dashboard.js"></script>
     </section>
+    
     )
 }

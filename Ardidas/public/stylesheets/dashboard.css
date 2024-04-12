@@ -1,14 +1,14 @@
-.box_dashboard_option a{
-    background:transparent;
+.box_dashboard_option a {
+    background: transparent;
 }
 
-.icon_edit_dashboard{
+.icon_edit_dashboard {
     font-size: 25px;
     padding: 0 10px;
-    
+
 }
 
-.box_redirect_create{
+.box_redirect_create {
     text-align: center;
 }
 
@@ -24,46 +24,49 @@
     box-shadow: 0px 0px 10px var(--color-negro);
     border-radius: 15px;
     padding: 1px 10px;
-    transition: box-shadow 0.3s; 
+    transition: box-shadow 0.3s;
 }
 
 .box_redirect_create a:hover {
     box-shadow: 0 0 10px 1px #00ff00af;
 }
 
-.button-delete{
-    background:transparent;
+.button-delete {
+    background: transparent;
     padding: 3px;
     border: transparent;
 }
 
-.fa-trash-can{
-    color: var(--color-blanco)  ;
+.fa-trash-can {
+    color: var(--color-blanco);
     font-size: 25px;
 }
-.fa-highlighter{
-    color: var(--color-blanco) ;
+
+.fa-highlighter {
+    color: var(--color-blanco);
     font-size: 25px;
 }
-.product_dasboards{
+
+.product_dasboards {
     border-radius: 20px;
 
 }
 
 
-@media  (min-width: 768px){
-    .box_redirect_create a{
+@media (min-width: 768px) {
+    .box_redirect_create a {
         font-size: 30px;
     }
 }
 
-@media  (min-width: 1024px){
-    .box_redirect_create a{
+@media (min-width: 1024px) {
+    .box_redirect_create a {
         font-size: 40px;
     }
-    .section_products_main_index{
+
+    .section_products_main_index {
         max-width: 1220px;
-        margin:auto
+        margin: auto
     }
 }
 
@@ -71,19 +74,19 @@
 /* DASHBOARD USUARIOS */
 
 
-.users_dashboard_db{
-    padding: 15px 0 ;
+.users_dashboard_db {
+    padding: 15px 0;
 }
 
-.users_depto{
-    background:linear-gradient(black 40%, grey );
+.users_depto {
+    background: linear-gradient(black 40%, grey);
     margin-bottom: 15px;
     text-align: center;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 
-.container_Avatar_dashboard img{
+.container_Avatar_dashboard img {
     padding: 3px;
     border: solid 4px rgb(255, 255, 255);
     border-radius: 100%;
@@ -91,7 +94,7 @@
     width: 235px;
 }
 
-.container_Avatar_dashboard{
+.container_Avatar_dashboard {
     padding: 5px;
     margin: auto;
 }
@@ -111,15 +114,15 @@
 
 
 
-@media  (min-width: 768px){ 
+@media (min-width: 768px) {
 
 
-    .users_dashboard_db{
+    .users_dashboard_db {
         display: grid;
-        grid-template-columns: repeat(2,2fr);
+        grid-template-columns: repeat(2, 2fr);
     }
 
-    .users_depto{
+    .users_depto {
         margin: 15px;
         box-shadow: 0px 0px 10px rgb(0, 0, 0);
     }
@@ -127,18 +130,18 @@
 }
 
 
-@media  (min-width: 1024px ){
-    .users_dashboard_db{
+@media (min-width: 1024px) {
+    .users_dashboard_db {
         display: grid;
-        grid-template-columns: repeat(3,2fr);
+        grid-template-columns: repeat(3, 2fr);
     }
 
 
 }
 
-/* DASHBOARD REACT */
+/* DASHBOARD DE EXPRESS PARA IR VIENDO COMO ARMAR EL DE REACT */
 
-.main_dashReact{
+.main_dashReact {
     padding: 1% 5% 5% 5%;
 }
 
@@ -157,10 +160,10 @@
 
 .div_container_button_dasboard a:hover {
     border-color: #00ff00af;
-    box-shadow: 0 0 10px 1px #00ff00af; 
+    box-shadow: 0 0 10px 1px #00ff00af;
 }
 
-.btn_redirect_userYproduct{
+.btn_redirect_userYproduct {
     border: 3px solid var(--color-negro);
     background-color: var(--color-negro);
     box-shadow: 0px 0px 10px var(--color-negro);
@@ -168,17 +171,17 @@
 
 }
 
-.container_main_product{
+.container_main_product {
     width: 100%;
     text-align: center;
     padding: 2%;
 }
 
-.container_main_product section{
+.container_main_product section {
     padding: 2%;
 }
 
-.div_articulos_dash{
+.div_articulos_dash {
     width: 100%;
     background: linear-gradient(black 35%, grey);
     border: 1px solid var(--color-negro);
@@ -186,73 +189,75 @@
     margin-bottom: 2%;
 }
 
-.info1{
+.info1 {
     height: 40%;
     margin-bottom: 5%;
     box-shadow: 0px 0px 25px rgb(0, 0, 0);
 }
-.info1 img{
+
+.info1 img {
     width: 65%;
     height: 30%;
     border-radius: 10%;
     padding: 3% 0% 0% 0%;
 }
 
-.info2{
+.info2 {
     height: 40%;
     margin-bottom: 5%;
     padding: 2% 10%;
     box-shadow: 0px 0px 25px rgb(0, 0, 0);
     color: white;
 }
-.info2 img{
+
+.info2 img {
     width: 65%;
     height: 30%;
     border-radius: 10%;
     padding: 3% 0% 0% 0%;
 }
 
-.box_container_count{
+.box_container_count {
     height: 100%;
     outline: 1px solid white;
     padding: 1%;
     border-radius: 15px;
 }
 
-.box_container_count p{
+.box_container_count p {
     font-size: 40px;
 }
 
-.users1{
+.users1 {
     margin-bottom: 3%;
 }
 
 
-.dash_description{
+.dash_description {
     margin: auto;
     padding: 3%;
     color: white;
 }
 
-.dash_description ul{
+.dash_description ul {
     margin: auto;
     padding: 3%;
 }
 
 
-.dash_description a{
+.dash_description a {
     color: white;
 }
 
-.dash1{
+.dash1 {
     box-shadow: 0px 0px 25px var(--color-negro);
 }
 
-.dash2{
+.dash2 {
     box-shadow: 0px 0px 25px var(--color-negro);
 }
 
-.categories_div{
+.categories_div {
     height: 21%;
     margin-bottom: 8%;
     padding: 4% 8%;
@@ -260,14 +265,14 @@
     color: white;
 }
 
-.box_container_categories{
+.box_container_categories {
     height: 100%;
     outline: 1px solid white;
     padding: 10%;
     border-radius: 15px;
 }
 
-.box_container_categories p{
+.box_container_categories p {
     font-size: 40px;
 }
 
@@ -276,7 +281,7 @@
     color: white;
     background: var(--color-negro);
     padding: 10px 0;
-    width: 90%; 
+    width: 90%;
     margin-bottom: 5%;
     border: 1px solid white;
     cursor: pointer;
@@ -304,49 +309,49 @@
 }
 
 
-@media  (min-width: 768px ){
+@media (min-width: 768px) {
 
-    .btn_redirect_userYproduct{
+    .btn_redirect_userYproduct {
         padding: 2px 15%;
         font-size: 1.5rem;
-    
+
     }
 
-    .container_main_product{
+    .container_main_product {
         display: flex;
         justify-content: space-between;
     }
 
-    .section_info1{
+    .section_info1 {
         width: 60%;
         height: 100%;
     }
 
-    .section_info2{
+    .section_info2 {
         width: 38%;
     }
 
     .info2 {
         display: flex;
-        justify-content:space-evenly ;
+        justify-content: space-evenly;
         padding: 2%;
     }
 
-    .box_container_count{
+    .box_container_count {
         padding: 5%;
         width: 45%;
     }
 
-    .users1{
+    .users1 {
         margin-bottom: 0;
     }
 
 }
 
-@media  (min-width: 1024px ){
+@media (min-width: 1024px) {
     .acordion {
         padding: 16px 0;
-        width: 90%; 
+        width: 90%;
         margin-bottom: 5%;
         font-size: 20px;
         border: 2px solid white;
@@ -357,3 +362,69 @@
 }
 
 
+/* DASHBOARD PARA VITE (MODIFICACIONES A LAS CLASES O CLASES NUEVA PRA QUE FUNCIONE LA VISTAN EN REACT) */
+.logo_container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.main_react {
+    padding: 3% 8% 3% 8%;
+}
+
+.nav_react a {
+    color: var(--color-beige);
+}
+
+.nav_react {
+    display: flex;
+    justify-content: end;
+    gap: 5%;
+    margin-bottom: 0;
+    padding: 0;
+    margin-right: 10%;
+    
+}
+
+
+
+.header_react{
+    padding: 0;
+}
+
+@media (min-width: 425px) {
+    .nav_react {
+    }
+}
+
+@media (min-width: 768px) {
+
+    .btn_redirect_userYproduct {
+        padding: 8px 16%;
+        font-size: 1rem;
+        margin: 1%;
+    }
+
+    .nav_react a {
+        font-size: 25px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .nav_react a {
+        font-size: 30px;
+    }
+
+
+}
+
+@media (min-width: 1440px) {
+    .logo_container img {
+        width: 220px;
+    }
+    .nav_react a {
+        font-size: 35px;
+    }
+}
