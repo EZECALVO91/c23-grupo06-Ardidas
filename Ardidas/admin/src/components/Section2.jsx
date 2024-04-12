@@ -8,11 +8,11 @@ export default function Section2 ({categoriesCount}) {
             const response = await fetch("http://localhost:3000/api/dashboardReact")
             const consulta = await response.json()
             setCategories(consulta.categories)
-            console.log(consulta.categories)
+            console.log(consulta.categories[0].Products[0].name)
         }
         getCategories()
     },[]);
-    
+
     return (
         <section className="section_info2">
 
@@ -31,7 +31,14 @@ export default function Section2 ({categoriesCount}) {
                 {categories.length > 0 &&
                     categories.map((categoria) => (
                     <li key={categoria.id} className="acordion_li">
-                        <button className="acordion">{categoria.category}</button>  
+                        <button className="acordion">{categoria.category}</button>
+                        <ul className="acordion_ul">
+                            {categoria.Products.map((product) => (
+                            <li key={product.id}>
+                                <a href={`http://localhost:3000/products/detalle/${product.id}`}>{product.name}</a>
+                            </li>
+                            ))}
+                        </ul>  
                     </li>
                     ))
                 }
