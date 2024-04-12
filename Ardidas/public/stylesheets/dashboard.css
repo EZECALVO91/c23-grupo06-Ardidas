@@ -65,7 +65,7 @@
     }
 
     .section_products_main_index {
-        max-width: 1220px;
+        max-width: 1080px;
         margin: auto
     }
 }
@@ -299,7 +299,7 @@
 }
 
 .acordion_ul {
-    display: none;
+  
     padding-left: 20px;
 }
 
@@ -393,10 +393,6 @@
     padding: 0;
 }
 
-@media (min-width: 425px) {
-    .nav_react {
-    }
-}
 
 @media (min-width: 768px) {
 

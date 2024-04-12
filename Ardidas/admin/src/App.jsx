@@ -8,13 +8,14 @@ import { useState, useEffect } from "react"
 function App() {
   const [apiData, setApiData] = useState(null);
 
+
+ //Creamos una api que se encarga de llamar a las apis que pedia el sprint. 
   useEffect(() => {
-    const callApi = () => {
-      fetch("http://localhost:3000/api/dashboardReact")
-      .then(response => response.json())
-      .then(data => setApiData(data))
-        // .then(data => console.log(data))
-      .catch(error => console.error('Error fetching data:', error));
+    const callApi = async () => {
+      const response = await fetch("http://localhost:3000/api/dashboardReact")
+      const consulta = await response.json()
+      setApiData(consulta)
+      // console.log(consulta.categories[3].category)
     }
     callApi();
   }, [])
