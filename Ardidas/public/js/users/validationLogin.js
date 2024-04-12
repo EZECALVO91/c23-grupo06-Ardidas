@@ -27,10 +27,12 @@ const inputEmail = document.querySelector("#email")
         case !this.value.trim():
             messageError(".emailError", "Debes completar este campo con tu email", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case !expresionesRegulares.exRegEmail.test(this.value):
             messageError(".emailError", "No tiene formato de email", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".emailError", target)
@@ -45,6 +47,7 @@ const inputPassword = document.querySelector("#password")
         case !this.value.trim():
             messageError(".passwordError","Debes completar el campo con tu contraseña",target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".passwordError", target);
