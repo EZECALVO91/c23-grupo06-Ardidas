@@ -15,7 +15,7 @@ function App() {
       const response = await fetch("http://localhost:3000/api/dashboardReact")
       const consulta = await response.json()
       setApiData(consulta)
-      console.log(consulta.categories)
+      // console.log(consulta.categories[3].category)
     }
     callApi();
   }, [])

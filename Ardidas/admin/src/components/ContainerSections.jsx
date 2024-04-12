@@ -12,7 +12,7 @@ export default function ContainerSections ({ apiData }) {
         productId={apiData && apiData.product.id}
         userCount ={apiData && apiData.usersCount} ></Section1>
 
-        <Section2 categoriesCount={apiData && apiData.categoriesCount} categories={apiData && apiData.categories[0].category} ></Section2>
+        <Section2 categoriesCount={apiData && apiData.categoriesCount} ></Section2>
 </div>
 
     )
