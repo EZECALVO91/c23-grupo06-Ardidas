@@ -29,18 +29,22 @@ const inputName = document.querySelector("#name");
         case !this.value.trim():
             messageError(".nameError", "Debes completar el campo con tu nombre", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case this.value.trim().length < 6:
             messageError(".nameError", "El nombre debe tener minimo(6) o mas caracteres", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case this.value.trim().length > 30:
             messageError(".nameError", "El nombre debe tener maximo(30) caracteres", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case !expresionesRegulares.exRegAlfa.test(this.value):
             messageError(".nameError", "Solo caracteres alfabetico", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".nameError", target);
@@ -55,10 +59,12 @@ const inputEmail = document.querySelector("#email")
         case !this.value.trim():
             messageError(".emailError", "Debes completar este campo con tu email", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case !expresionesRegulares.exRegEmail.test(this.value):
             messageError(".emailError", "No tiene formato de email", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".emailError", target)
@@ -73,14 +79,17 @@ const inputPassword = document.querySelector("#password")
         case this.value.trim().length <= 5:
             messageError(".passError","Contraseña minimo(6) a maximo(20) caracteres",target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case this.value.trim().length > 20:
             messageError(".passError","Contraseña minimo(6) a maximo(20) caracteres", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case !expresionesRegulares.exRegPass.test(this.value):
             messageError(".passError","Debes incluir números, mayúscula, minúscula y un caracter especial(d$@$!%*?&.,;')",target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".passError", target);
@@ -95,10 +104,12 @@ const inputPasswordDos= document.querySelector("#password2")
         case !this.value.trim():
             messageError(".passError2","Debes completar el campo con tu contraseña",target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case this.value.trim() !== elemento("#password").value.trim():
             messageError(".passError2", "Las contraseñas no coinciden", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".passError2", target);
@@ -140,9 +151,11 @@ inputImg.addEventListener('change', function({target}) {
     switch (true) {
         case !filtro.test(file.name.toLowerCase()):
             messageError(".imageError", "Solo se permiten formatos de imagen (jpg, jpeg, png, gif, webp, svg).", target);
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".imageError", target);
+            this.style.backgroundColor = "rgba(0, 128, 0, 0.2)";
             break;
     }
 });

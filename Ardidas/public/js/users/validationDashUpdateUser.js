@@ -9,6 +9,7 @@ const elemento = (element) => document.querySelector(element);
 const messageError = (element, msg, target) => {
     elemento(element).innerText = msg;
     elemento(element).style.color = "red";
+    this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
     target.classList.add("is-invalid");
 };
 
@@ -24,18 +25,22 @@ const inputName = document.querySelector("#name");
         case !this.value.trim():
             messageError(".nameError", "Debes completar el campo con tu nombre", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case this.value.trim().length < 6:
             messageError(".nameError", "El nombre debe tener minimo(6) o mas caracteres", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case this.value.trim().length > 30:
             messageError(".nameError", "El nombre debe tener maximo(30) caracteres", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case !expresionesRegulares.exRegAlfa.test(this.value):
             messageError(".nameError", "Solo caracteres alfabetico", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".nameError", target);
@@ -51,10 +56,12 @@ const inputEmail = document.querySelector("#email")
         case !this.value.trim():
             messageError(".emailError", "Debes completar este campo con tu email", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case !expresionesRegulares.exRegEmail.test(this.value):
             messageError(".emailError", "No tiene formato de email", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".emailError", target)
@@ -75,9 +82,11 @@ inputImg.addEventListener('change', function({target}) {
     switch (true) {
         case !filtro.test(file.name.toLowerCase()):
             messageError(".imageError", "Solo se permiten formatos de imagen (jpg, jpeg, png, gif, webp, svg).", target);
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)"
             break;
         default:
             validatorInput(".imageError", target);
+            this.style.backgroundColor = "rgba(0, 128, 0, 0.2)";
             break;
     }
 });
