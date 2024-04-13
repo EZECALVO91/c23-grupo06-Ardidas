@@ -67,18 +67,27 @@
       </div>
 
       <section class="contenedor-productos1 section_products_main_index">
-        <% ofertas.forEach(product => { %>
-                  <article class="articulos">
-          <a href="../products/detalle/<%= product.id%>"><img src="/images/products/<%=product.Image_products[0].filename %>" alt="Zapatillas Nike" /></a>
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$<%=product.price%></p>
+        <div class="carrusel">
+          <% 
+          // Iteramos sobre los productos en oferta
+          ofertas.forEach(product => { 
+          %>
+          <div class="articulos carrusel-item">
+            <a href="../products/detalle/<%= product.id %>">
+              <img src="/images/products/<%= product.Image_products[0].filename %>" alt="Zapatillas Nike" />
+            </a>
+            <div class="product-texto">
+              <div class="main_descuento_precio_articulo">
+                <p class="precio">$<%= product.price %></p>
+              </div>
+              <p class="modelo"><%= product.name %></p>
+              <button><a href="/products/carrito/<%= product.id %>">SUMAR AL CARRITO</a></button>
             </div>
-            <p class="modelo"><%=product.name%></p>
-            <button><a href="/products/carrito/<%= product.id%>">SUMAR AL CARRITO</a></button>
           </div>
-        </article>
           <% }); %>
+        </div>
+        <button class="atras" onclick="moveSlide(-1)"><</button>
+        <button class="adelante" onclick="moveSlide(1)">></button>
       </section>
 
       <div class="main_title_box">
@@ -101,11 +110,13 @@
         </article>
         <% }); %>
       </section>
+
+
       <article class="ver_productos">
         <a href="/products">VER TODOS LOS PRODUCTOS</a>
       </article>
     </main>
-
+    <script src="/js/carrusel.js"></script>
 <!--ACA SE INCLUYE EL PARTIAL : -->
 <%- include("./partials/footer.ejs") %>
 

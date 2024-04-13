@@ -17,7 +17,7 @@ const indexController = {
                 attributes: ["id", "category"],
               }, 
             ],
-            limit: 3, 
+
           });
           let destacados = db.Product.findAll({
             order: Sequelize.literal('rand()'),
