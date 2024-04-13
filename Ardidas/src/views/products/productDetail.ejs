@@ -20,6 +20,9 @@
           <h2><%= product.name%></h2>
           <h2>$<%= product.price %></h2>
           <div class="select-options-details-products">
+            <a class="boton_promoBancaria" id="promoBancariaBoton"><p style="font-family:Helvetica-Neue;color:black;font-weight:bold;text-decoration:underline">Conocé nuestras promociones</p>
+          </a>
+          <br><br>
           <div class="detalles_talles">
             <p>Talles</p>
              <select name="sizes" id="" class="numero">
@@ -56,6 +59,7 @@
     </main>
 
 <!--ACA SE INCLUYE EL PARTIAL : -->
+<script src="/js/products/promocionesBancarias.js"></script>
 <%- include("../partials/footer.ejs") %>
 
 
