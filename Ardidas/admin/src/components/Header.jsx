@@ -14,11 +14,11 @@ export default function Header () {
             <nav className="">
                 <ul className="nav_react">
                     <li>
-                        <a className="" href="http://localhost:3000/"><i class="fa-solid fa-house"></i></a>
+                        <a className="" href="http://localhost:3000/"><i className="fa-solid fa-house"></i></a>
                     </li>
-                    <li>
+                    {/* <li>
                         <a className="" href="http://localhost:3000/products"><i className="fa-solid fa-boxes-stacked "></i></a>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
 

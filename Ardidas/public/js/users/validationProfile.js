@@ -26,14 +26,17 @@ const inputName = document.querySelector("#name");
         case !this.value.trim():
             messageError(".nameErrors", "Debes completar el campo con tu nombre", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case this.value.trim().length < 6:
             messageError(".nameErrors", "El nombre debe tener 6 o mas caracteres", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case !expresionesRegulares.exRegAlfa.test(this.value):
             messageError(".nameErrors", "Solo caracteres alfabetico", target);
             this.style.borderColor = "red";
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".nameErrors", target);
@@ -88,9 +91,11 @@ inputImg.addEventListener('change', function({target}) {
     switch (true) {
         case !filtro.test(file.name.toLowerCase()):
             messageError(".imageError", "Solo se permiten formatos de imagen (jpg, jpeg, png, gif, webp, svg).", target);
+            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".imageError", target);
+            this.style.backgroundColor = "rgba(0, 128, 0, 0.2)";
             break;
     }
 });

@@ -1,4 +1,6 @@
-export default function Section1 ({productsCount,userCount,lastProductName,lastProductDescription,lastProductImage}) {
+import PropTypes from "prop-types"
+
+export default function Section1 ({productsCount,userCount,lastProductName,lastProductDescription,lastProductImage, productId}) {
     return (
 <section className="section_info1">
 
@@ -19,7 +21,7 @@ export default function Section1 ({productsCount,userCount,lastProductName,lastP
 <div className="div_articulos_dash info1">
     
         <div className="img_dashReact">
-            <a href="/products/detalle/">     
+        <a href={`http://localhost:3000/products/detalle/${productId}`}>   
                 <img src = {`http://localhost:3000/images/products/${lastProductImage}`} alt="Imagen del producto"/>
             </a>
         </div>
@@ -35,3 +37,12 @@ export default function Section1 ({productsCount,userCount,lastProductName,lastP
 
     )
 }
+
+Section1.propTypes = {
+    productsCount: PropTypes.number,
+    userCount: PropTypes.number,
+    lastProductName: PropTypes.string,
+    lastProductDescription: PropTypes.string,
+    lastProductImage: PropTypes.string,
+    productId: PropTypes.number
+};
