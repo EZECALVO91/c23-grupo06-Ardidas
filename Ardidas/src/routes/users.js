@@ -21,7 +21,7 @@ const isAdmin = require("../middleware/isAdminValidate");
 router
 //al validar la session en el controlador no estamos haciendo que funcione como middleware
 .get('/register', formRegister)
-.post("/register", uploadImgPro.single("image"),registerValidation, recaptcha.middleware.verify, register)
+//.post("/register", uploadImgPro.single("image"),registerValidation, recaptcha.middleware.verify, register)
 
 .get('/login', formLogin)
 .post("/login", loginValidation, login)
