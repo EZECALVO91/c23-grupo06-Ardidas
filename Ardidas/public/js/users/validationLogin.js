@@ -36,7 +36,8 @@ const inputEmail = document.querySelector("#email")
             break;
         default:
             validatorInput(".emailError", target)
-            this.style.borderColor= "#4F7F3F"
+            this.style.borderColor= "#4F7F3F";
+            this.style.backgroundColor = "white";
             break;
     }
 });
@@ -52,6 +53,7 @@ const inputPassword = document.querySelector("#password")
         default:
             validatorInput(".passwordError", target);
             this.style.borderColor = "#4F7F3F";
+            this.style.backgroundColor = "white";
             break;
     }
 });

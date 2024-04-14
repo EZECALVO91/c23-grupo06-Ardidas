@@ -31,13 +31,13 @@ const inputName = document.querySelector("#name");
             this.style.borderColor = "red";
             this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
-        case this.value.trim().length < 5:
-            messageError(".nameError", "El nombre debe tener minimo(5) o mas caracteres", target);
+        case this.value.trim().length < 6:
+            messageError(".nameError", "El nombre debe tener mínimo(6) caracteres", target);
             this.style.borderColor = "red";
             this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case this.value.trim().length > 30:
-            messageError(".nameError", "El nombre debe tener maximo(30) caracteres", target);
+            messageError(".nameError", "El nombre debe tener máximo(30) caracteres", target);
             this.style.borderColor = "red";
             this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
@@ -49,6 +49,7 @@ const inputName = document.querySelector("#name");
         default:
             validatorInput(".nameError", target);
             this.style.borderColor = "#4F7F3F";
+            this.style.backgroundColor = "white";
             break;
     }
 });
@@ -68,7 +69,8 @@ const inputEmail = document.querySelector("#email")
             break;
         default:
             validatorInput(".emailError", target)
-            this.style.borderColor= "#4F7F3F"
+            this.style.borderColor= "#4F7F3F";
+            this.style.backgroundColor = "white";
             break;
     }
 });
@@ -77,12 +79,12 @@ const inputPassword = document.querySelector("#password")
     inputPassword.addEventListener("blur", function({target}) {
     switch (true) {
         case this.value.trim().length <= 5:
-            messageError(".passError","Contraseña minimo(6) a maximo(20) caracteres",target);
+            messageError(".passError","Contraseña mínimo(6) a máximo(20) caracteres",target);
             this.style.borderColor = "red";
             this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case this.value.trim().length > 20:
-            messageError(".passError","Contraseña minimo(6) a maximo(20) caracteres", target);
+            messageError(".passError","Contraseña mínimo(6) a máximo(20) caracteres", target);
             this.style.borderColor = "red";
             this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
@@ -94,6 +96,7 @@ const inputPassword = document.querySelector("#password")
         default:
             validatorInput(".passError", target);
             this.style.borderColor = "#4F7F3F";
+            this.style.backgroundColor = "white";
             break;
     }
 });

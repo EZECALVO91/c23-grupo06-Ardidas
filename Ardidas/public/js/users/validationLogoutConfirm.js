@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function confirmLogout() {
     Swal.fire({
-        title: "¿Seguro queres cerrar sesión?",
+        title: "¿Seguro querés cerrar sesión?",
         showDenyButton: true,
         confirmButtonText: "Sí",
         denyButtonText: "No"

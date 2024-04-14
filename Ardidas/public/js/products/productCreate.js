@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (priceValue === '') {
         showError(priceInput, 'El precio no puede quedar vacío');
         validationErrors = true;
-      } else if (priceValue < 0) {
+      } else if (priceValue <= 0) {
         showError(priceInput, 'El precio debe ser mayor a 0');
         validationErrors = true;
       } else if (isNaN(priceValue)) {

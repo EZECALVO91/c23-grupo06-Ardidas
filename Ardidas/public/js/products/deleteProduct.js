@@ -8,7 +8,7 @@ function confirmDelete(productId) {
     });
 
     swalWithBootstrapButtons.fire({
-        title: "¿Seguro queres eliminar este producto?",
+        title: "¿Seguro querés eliminar este producto?",
         text: "¡No se puede revertir!",
         icon: "warning",
         showCancelButton: true,

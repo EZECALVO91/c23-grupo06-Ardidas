@@ -3,6 +3,8 @@ const router = express.Router();
 const {logout,formRegister,register, formLogin, login, usersEdit,usersUpdate ,
     UsersDashboard, userProfile, userProfileEdit, createPrivileges,
     createUserPrivileges, destroy} = require('../controllers/usersControllers');
+    const Recaptcha = require('express-recaptcha').RecaptchaV2;
+    const recaptcha = new Recaptcha( "6LdmI7opAAAAAJpZvPK1uY8EgP6eLuSdJG2EDDjY", "6LdmI7opAAAAALBNSgkCgz1CSB0XHHt2bAHuDZY6")
 
 
 const registerValidation = require('../validation/validationRegister');
@@ -19,7 +21,7 @@ const isAdmin = require("../middleware/isAdminValidate");
 router
 //al validar la session en el controlador no estamos haciendo que funcione como middleware
 .get('/register', formRegister)
-.post("/register", uploadImgPro.single("image"),registerValidation, register)
+.post("/register", uploadImgPro.single("image"),registerValidation, recaptcha.middleware.verify, register)
 
 .get('/login', formLogin)
 .post("/login", loginValidation, login)
