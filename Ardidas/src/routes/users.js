@@ -5,6 +5,7 @@ const {logout,formRegister,register, formLogin, login, usersEdit,usersUpdate ,
     createUserPrivileges, destroy} = require('../controllers/usersControllers');
 
 
+
 const registerValidation = require('../validation/validationRegister');
 const loginValidation = require('../validation/validationLogin')
 const validationProfile = require('../validation/validationProfile')

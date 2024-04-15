@@ -29,18 +29,19 @@ const inputName = document.querySelector("#name");
             this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case this.value.trim().length < 6:
-            messageError(".nameErrors", "El nombre debe tener 6 o mas caracteres", target);
+            messageError(".nameErrors", "El nombre debe tener 6 o más caracteres", target);
             this.style.borderColor = "red";
             this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         case !expresionesRegulares.exRegAlfa.test(this.value):
-            messageError(".nameErrors", "Solo caracteres alfabetico", target);
+            messageError(".nameErrors", "Solo caracteres alfabéticos", target);
             this.style.borderColor = "red";
             this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
             break;
         default:
             validatorInput(".nameErrors", target);
             this.style.borderColor = "#4F7F3F";
+            this.style.backgroundColor = "white";
             break;
     }
 });
@@ -55,7 +56,7 @@ inputDate.addEventListener("blur", function({target}) {
         if (fecha) {
             switch (true) {
                 case isNaN(new Date(fecha).getTime()):
-                    errorMessage = 'Fecha invalida';
+                    errorMessage = 'Fecha inválida';
                     break;
                 default:
                     const dateObject = new Date(fecha);
@@ -67,9 +68,9 @@ inputDate.addEventListener("blur", function({target}) {
                     fechaLimite.setFullYear(fechaLimite.getFullYear() - 16);
                     fechaMinima.setFullYear(fechaMinima.getFullYear() - 100);
                         if (dateObject >= fechaLimite) {
-                            errorMessage = 'Edad minima 16 años';
+                            errorMessage = 'Edad mínima 16 años';
                         } else if (dateObject <= fechaMinima) {
-                            errorMessage = 'Fecha fuera de termino';
+                            errorMessage = 'Fecha fuera de término';
                         }
                     break;
         }

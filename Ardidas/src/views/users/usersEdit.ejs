@@ -28,15 +28,15 @@
             <%= locals.errores && errores.email ? errores.email.msg : null %>
           </small>
 
-          <label for="password">CONTRASEÑA:</label>
+          <!-- <label for="password">CONTRASEÑA:</label>
           <div class="main__form__register__password">
-            <input type="password" name="password" class="main__form__register__password" value="<%= user.password %>"
+            <input type="password" name="password" class="main__form__register__password" value="%= user.password %>"
               disabled />
             <small class="passwordError">
-              <%= locals.errores && errores.password ? errores.password.msg : null %>
+              %= locals.errores && errores.password ? errores.password.msg : null %>
             </small>
             <i class="fa-regular fa-eye"></i>
-          </div>
+          </div> -->
 
           <label for="date">FECHA DE NACIMIENTO: </label>
           <input type="date" name="date" value="<%= user.date %>" disabled />

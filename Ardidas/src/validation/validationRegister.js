@@ -44,6 +44,23 @@ body('image').custom((value, { req }) => {
             return false;
         };
         return true;
-    }).withMessage("Esta imagen no tiene un formato valido")
+    }).withMessage("Esta imagen no tiene un formato valido"),
+
+   // Nueva validación para el token reCAPTCHA
+body('g-recaptcha-response').custom(async (value, { req }) => {
+    const secretKey = process.env.SECRET_KEY;
+    
+    const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${value}`, {
+        method: 'POST'
+    });
+
+    const data = await response.json();
+
+    if (!data.success) {
+        throw new Error('Fallo en la verificación reCAPTCHA');
+    }
+
+    return true;
+}).withMessage("No olvides validar el reCAPTCHA")
 
 ];

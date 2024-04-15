@@ -8,7 +8,7 @@ function confirmDelete(userId) {
     });
 
     swalWithBootstrapButtons.fire({
-        title: "¿Seguro queres eliminar al usuario?",
+        title: "¿Seguro querés eliminar al usuario?",
         text: "¡No se puede revertir!",
         icon: "warning",
         showCancelButton: true,
