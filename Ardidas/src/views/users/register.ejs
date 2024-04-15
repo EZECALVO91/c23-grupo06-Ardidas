@@ -54,7 +54,9 @@
 
             
               <div class="g-recaptcha captcha_register" data-theme="dark" data-size="normal" data-sitekey="<%=process.env.SITE_KEY%>" ></div>
-          
+              <small class="captchaError">
+                <%= locals.errores && errores["g-recaptcha-response"] ?errores["g-recaptcha-response"].msg : null %>
+              </small>
 
             <button class="main__form__button" type="submit">CREAR CUENTA</button>
 
