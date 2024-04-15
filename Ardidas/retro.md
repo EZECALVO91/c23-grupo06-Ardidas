@@ -9,6 +9,8 @@
 
 ![RETROSPECTIVA ESTRELLA DE MAR](https://psicologiaendesarrollo.com/wp-content/uploads/2022/07/image.png?w=1024)
 
+![LINEA DEL TIEMPO ARDIDAS](../Ardidas/public/images/lineaDeTiempo/Linea_de_tiempo_ARDIDAS.png)
+
 ________________________________________________________________
 # Conclusiones del Primer Sprint:
 
