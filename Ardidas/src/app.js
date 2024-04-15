@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const userLoggedMiddleware = require('./middleware/userLoggedMiddleware');
 const cors = require('cors');
-const Recaptcha = require('express-recaptcha').RecaptchaV2;
+
 
 
 const indexRouter = require('./routes/index');
@@ -24,7 +24,6 @@ const dashboardApiVite = require('./routes/APIS/dashboardApis');
 
 const app = express();
 
-const recaptcha = new Recaptcha( process.env.SECRET_KEY, process.env.SITE_KEY)
    
 //Para usar las apis, se instala, se requiere y se implementa cors. Esto se hace para poder comunicar dos servidores distintos
 //al momento de setearlo, en el origen ponemos el servidor desde el cual hacemos el pedido a la api.
@@ -48,7 +47,7 @@ app.use(session({
   saveUninitialized: false
 }))
 app.use(userLoggedMiddleware)
-app.use(recaptcha.middleware.render);
+
 /////
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -60,20 +59,6 @@ app.use('/api', usersApiRouter);
 app.use("/api/products", productsApiRouter)
 app.use("/api", dashboardApiVite);
 
-
-//El captcha no valida... No le encuentro la vuelta, me dice que la clave está mal pero es la que me dio google
-
- app.post('/users/register', recaptcha.middleware.verify, (req, res) => {
-   if (!req.recaptcha.error) {
-       // Captcha verified successfully, process the form here
-       console.log('Captcha verified:', req.body);
-       res.send('Registration successful');
-   } else {
-       // Captcha verification failed
-       console.error('Captcha verification error:', req.recaptcha.error);
-       res.status(400).send('Error: Captcha verification failed');
-   }
- });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
