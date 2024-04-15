@@ -81,6 +81,10 @@
     margin: auto;
     margin-top: 2%;
 }
+.captcha_register {
+    display: none;
+}
+
 
 @media (min-width:768px) {
     .main__form__lines {
@@ -111,10 +115,15 @@
         width:40%;
         margin:auto
     }
-}
-
-@media (min-width:768px) {
     .main__form__register {
         max-width: 768px;
+    }
+    
+}
+@media (min-width:1025px) {
+   .captcha_register {
+        display: block;
+        width: 300px;
+        margin:auto;
     }
 }
