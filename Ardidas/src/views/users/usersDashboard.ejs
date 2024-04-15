@@ -1,0 +1,40 @@
+<%- include("../partials/head.ejs") %>
+<body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+        <div class="box_redirect_create">
+            <a class="btn_redirect_create" href="/users/createPrivileges">Crear Privilegios</a>
+        </div>
+        <section class="users_dashboard_db section_products_main_index">
+            <% users.forEach(element => { %>
+                <article class="users_depto">
+                    <div class="container_Avatar_dashboard">
+                        <img class="avatar_user_dashboard" src="/images/users/<%= element.image %>"
+                            alt="Avatar Usuario" />
+                    </div>
+                    <div class="">
+                        <div class="main_descuento_precio_articulo">
+                            <p class="user_name_db">
+                                <%= element.name %>
+                            </p>
+                        </div>
+                        <p class="modelo">
+                            <%= element.email %>
+                        </p>
+                    </div>
+                    <div class="box_dashboard_option">
+                        <a class="icon_edit_dashboard" href="/users/update/<%= element.id %>"><i
+                                class="fa-solid fa-highlighter"></i>
+                        </a>
+                        <button class="button-delete" onclick="confirmDelete('<%= element.id %>')"><i
+                                class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </article>
+            <% }) %>
+        </section>
+    </main>
+    <%- include("../partials/footer.ejs") %>
+
+    <script src="/js/users/validationDashConfirmDelete.js"></script>
+</body>
+</html>

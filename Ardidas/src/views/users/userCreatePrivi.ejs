@@ -1,0 +1,72 @@
+<!--ACA SE INCLUYE EL PARTIAL : HEAD -->
+<%- include("../partials/head.ejs") %>
+
+  <body class="body_home">
+
+    <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
+    <%- include("../partials/header.ejs") %>
+
+      <main class="main__form main__formProfile">
+        <div class="main__title__box">
+          <hr class="main__form__lines">
+          <h2 class="main__form__title">CREADOR DE PRIVILEGIOS</h2>
+          <hr class="main__form__lines">
+        </div>
+        <form action="/users/createPrivileges" method="post" class="main__form__register main__form__registerDash" enctype="multipart/form-data">
+          <label for="name">NOMBRE Y APELLIDO</label>
+          <input type="text" name="name" placeholder="Nombre y Apellido" id="name"
+            value="<%= locals.old && old.name ? old.name : null %>">
+          <small class="nameError">
+            <%= locals.errores && errores.name ? errores.name.msg : null %>
+          </small>
+
+          <label for="email">EMAIL</label>
+          <input type="email" name="email" id="email" placeholder="tuemail@email.com"
+            value="<%= locals.old && old.email ? old.email : null %>">
+          <small class="emailError">
+            <%= locals.errores && errores.email ? errores.email.msg : null %>
+          </small>
+
+          <label for="password">CONTRASEÑA</label>
+          <div class="main__form__register__password">
+            <input type="password" name="password" id="password" class="main__form__register__password"
+              value="<%= locals.old && old.password ? old.name : null %>">
+            <small class="passError">
+              <%= locals.errores && errores.password ? errores.password.msg : null %>
+            </small>
+            <i class="fa-regular fa-eye"></i>
+          </div>
+
+          <!-- <label for="password2">CONFIRMAR CONTRASEÑA</label>
+        <div class="main__form__register__password">
+          <input type="password" name="password2" required >
+          <i class="fa-regular fa-eye"></i> -->
+          <div>
+            <label for="id_category">CATEGORIA :</label>
+            <select name="id_category" id="id_category">
+              <option value = 2 >USUARIO</option>
+              <option value = 1 >ADMIN</option>
+            </select>
+          </div>
+
+          <label for="image">AVATAR : </label>
+          <input type="file" name="image" id="image" accept="image/*">
+          <small class="imageError">
+            <%= locals.errores && errores.image ? errores.image.msg : null %>
+          </small>
+          <div class="main__form__register__box">
+
+            <div id="error-message-registerUserPrivi">Por favor, corrija los errores del formulario.</div> 
+            <button class="main__form__button" type="submit">CREAR CUENTA</button>
+          </div>
+        </form>
+      </main>
+      <script src="/js/users/validationDashRegister.js"></script>
+
+      <!--ACA SE INCLUYE EL PARTIAL : -->
+      <%- include("../partials/footer.ejs") %>
+
+
+  </body>
+
+  </html>

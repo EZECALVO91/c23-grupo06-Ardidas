@@ -1,0 +1,126 @@
+<!--ACA SE INCLUYE EL PARTIAL : HEAD -->
+<%-include("../partials/head.ejs")%>
+
+  <body class="update_body">
+
+    <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
+    <%-include("../partials/header.ejs")%>
+
+
+      <main>
+        <h2 class="h2_title_form">CARGA DE PRODUCTO</h2>
+          <form action="/products" method="post" class="form_loadProduct" id="createProductForm" enctype="multipart/form-data">
+          <section class="form__createProduct">
+
+            <div class="img_create_fast">
+              <input class="dashboard__image" name="image" type="file" accept="image/*" id="image">
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.image ? errores.image.msg : null %>
+              </p>
+            </div>
+            
+
+            <div class="update_box_intern">
+              <label for="name">Nombre :</label>
+              <input type="text" name="name" id="name" />
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.name ? errores.name.msg : null %>
+              </p>
+
+              <label for="price">Precio :</label>
+              <input type="number" name="price" id="price"/>
+              <p class="errores_validacion_login">
+                <%= locals.errores && errores.price ? errores.price.msg : null %>
+              </p>
+
+              <label for="category" >Categoría :</label>
+              <select name="category" id="category" >
+                <option value="1">Oferta</option>
+                <option value="2">Destacado</option>
+                <option value="3">Lanzamiento</option>
+                <option value="4">Temporada</option>
+              </select>
+              <div>
+                <label for="description">Descripción :</label>
+                <textarea name="description" id="description"></textarea>
+                <p class="errores_validacion_login">
+                  <%= locals.errores && errores.description ? errores.description.msg : null %>
+                </p>
+              </div>
+              
+              </div>
+               <div class="talles_update">
+                <label>Talles :</label>
+                <div>
+                  <input type="checkbox" name="sizes" value="1" id="sizes">
+                  <label for="sizes" >36</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="sizes" value="2" id="sizes">
+                  <label for="sizes" >37</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="sizes" value="3" id="sizes">
+                  <label for="sizes" >38</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="sizes" value="4" id="sizes">
+                  <label for="sizes" >39</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="sizes" value="5" id="sizes">
+                  <label for="sizes" >40</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="sizes" value="6" id="sizes">
+                  <label for="sizes" >41</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="sizes" value="7" id="sizes">
+                  <label for="sizes" >42</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="sizes" value="8" id="sizes">
+                  <label for="sizes" >43</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="sizes" value="9" id="sizes">
+                  <label for="sizes" >44</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="sizes" value="10" id="sizes">
+                  <label for="sizes" >45</label>
+                </div>
+
+              </div>
+           
+              <div class="input_colores_create">
+                <label class="label_colores" for="color">Color :</label>
+                
+              <select name="color" id="color" >
+                <option value="Azul">Azul</option>
+                <option value="Beige">Beige</option>
+                <option value="Blanco">Blanco</option>
+                <option value="Gris">Gris</option>
+                <option value="Marron">Marron</option>
+                <option value="Negro">Negro</option>
+                <option value="Rojo">Rojo</option>
+                <option value="Rosa">Rosa</option>           
+              </select>
+            
+              </div> 
+              <p class="errores_validacion_login" id="sizesError">
+                <%= locals.errores && errores.sizes ? errores.sizes.msg : null %>
+              </p>
+          </section>
+          <button class="main_ver-todos-productos" id="createProductButton" type="submit">CREAR PRODUCTO</button>
+
+        </form>
+        <script src="/js/products/productCreate.js"></script>
+      </main>
+
+      <!--ACA SE INCLUYE EL PARTIAL : -->
+      <%- include("../partials/footer.ejs") %>
+  </body>
+
+  </html>

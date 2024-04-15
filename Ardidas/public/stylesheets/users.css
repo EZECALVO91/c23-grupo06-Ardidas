@@ -1,0 +1,48 @@
+
+.container_avatar_img{
+    margin-bottom: 8%;
+    margin: auto;
+}
+
+.container_avatar_img img{
+    padding: 6px;
+    border: solid 2px black;
+    border-radius: 100%;
+    height: 250px;
+    width: 260px;
+}
+
+.avatar_header{
+    margin: 4px 6px 2px 6px;
+    padding: 0px;
+    border: solid 1px rgb(141, 136, 136);
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+}
+
+.main__userUpdate p{
+    color:red;
+    font-weight: bold;
+}
+
+#error-message-updateUser {
+    color: red;
+    display: none;
+    margin: auto;
+    margin-top: 2%;
+}
+
+#error-message-registerUserPrivi {
+    color: red;
+    display: none;
+    margin: auto;
+    margin-top: 2%;
+}
+
+#error-message-profileEdit{
+    color: red;
+    display: none;
+    margin: auto;
+    margin-top: 2%;
+}

@@ -1,0 +1,76 @@
+<!--ACA SE INCLUYE EL PARTIAL : HEAD -->
+<%- include("../partials/head.ejs") %>
+
+  <body class="body_home">
+
+    <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
+    <%- include("../partials/header.ejs") %>
+
+      <main class="main__form main__formProfile">
+        <div class="main__title__box">
+          <hr class="main__form__lines">
+          <h2 class="main__form__title">REGISTRARSE</h2>
+          <hr class="main__form__lines">
+        </div>
+        <form action="/users/register" method="post" class="main__form__register" enctype="multipart/form-data">
+          <label for="name">NOMBRE Y APELLIDO:</label>
+          <input type="text" name="name" placeholder="Nombre y Apellido" id="name"
+            value="<%= locals.old && old.name ? old.name : null %>">
+          <small class="nameError">
+            <%= locals.errores && errores.name ? errores.name.msg : null %>
+          </small>
+
+          <label for="email">EMAIL:</label>
+          <input type="email" name="email" placeholder="tuemail@email.com" id="email" value="<%= locals.old && old.email ? old.email : null %>">
+          <small class="emailError">
+            <%= locals.errores && errores.email ? errores.email.msg : null %>
+          </small>
+
+          <label for="password">CONTRASEÑA:</label>
+          <div class="main__form__register__password">
+            <input type="password" name="password" id="password" class="main__form__register__password">
+            <small class="passError">
+              <%= locals.errores && errores.password ? errores.password.msg : null %>
+            </small>
+            <i class="fa-regular fa-eye"></i>
+          </div>
+
+          <label for="password2">CONFIRMAR CONTRASEÑA:</label>
+          <div class="main__form__register__password">
+            <input type="password" name="password2" id="password2">
+            <small class="passError2">
+              <%= locals.errores && errores.password ? errores.password.msg : null %>
+            </small>
+            <i class="fa-regular fa-eye"></i>
+          </div>
+          <label for="image">AVATAR: </label>
+          <input type="file" name="image" id="image" accept="image/*"
+            value="<%= locals.old && old.image ? old.image : null %>">
+          <small class="imageError">
+            <%= locals.errores && errores.image ? errores.image.msg : null %>
+          </small>
+          <div class="main__form__register__box">  
+          <div id="error-message-registerUser">Errores en los datos para la creación de Usuario.</div> 
+
+            
+              <div class="g-recaptcha captcha_register" data-theme="dark" data-size="normal" data-sitekey="<%=process.env.SITE_KEY%>" ></div>
+              <small class="captchaError">
+                <%= locals.errores && errores["g-recaptcha-response"] ?errores["g-recaptcha-response"].msg : null %>
+              </small>
+
+            <button class="main__form__button" type="submit">CREAR CUENTA</button>
+
+
+            <h6>¿Ya tenés una cuenta? <a href="/users/login">Iniciar sesión</a></h6>
+          </div>
+
+        </form>
+      </main>
+          <script src="/js/users/validationRegister.js"></script>
+      <!--ACA SE INCLUYE EL PARTIAL : -->
+      <%- include("../partials/footer.ejs") %>
+
+      
+  </body>
+
+  </html>

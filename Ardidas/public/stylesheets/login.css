@@ -1,0 +1,176 @@
+.main_login{
+    text-align: center;
+    background-color: var(--color-beige);
+    padding: 10% 0;
+}
+.articulo_login_main{
+    padding: 18px;
+
+}
+.articulo_login_main h2{
+    text-align: left;
+    margin-bottom: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 5%;
+}
+    
+.box_home_form{
+    padding: 0;
+}
+.input_login{
+    padding: 15px;
+    border-radius: 10px;
+    border: solid 1px #75798b;
+    margin: 10px 0px;
+    width: 90%;
+
+}
+.btn_login_main{
+    width: 60%;
+    height: 30px;
+    background-color: var(--color-negro);
+    color: var(--color-beige);
+    border: 1px solid var(--color-negro);
+    border-radius: 30px;
+    
+    
+}
+
+.errores_validacion_login{
+    color: red;
+}
+.login_contra_up{
+   
+    color: var(--color-negro);
+    text-align: left;
+}
+.login_contra_up h6{
+    font-size: 12px;
+    margin-left: 5%
+}
+.btn_login_up{
+    color: var(--color-negro);
+    text-align: center;
+}
+.btn_login_up h6{
+    font-size: 12px;
+}
+.articulo_login_error_validator ul{
+    padding: 0;
+    color: red;
+    font-weight: 600;
+}
+#error-message-login {
+    color: red;
+    display: none;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.btnfos-5 {
+    border: 0 solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+
+.btnfos-5:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgb(255, 255, 255), 0 0 20px rgba(255, 255, 255, 0.2);
+
+}
+.div_login_password{
+    position: relative;
+}
+.ojo_contraseña_login {
+    position: absolute;
+    top: 35%;
+    right: 10%;
+}
+
+
+@media(min-width: 768px){
+    .input_login{
+        width: 85%;
+        height: 45px;
+    }
+    .articulo_login_main{
+        padding: 13px;
+    }
+    
+    .login_h_all{
+        margin-left:60px;
+    }
+    .btn_login_main{
+        width:250px;
+        height:50px ;
+    }
+    .btn_login_up{
+        margin-bottom: 2px;
+
+    }
+    .btn_login_up h6{
+        font-size: 12px;
+        margin-bottom: 10px
+    }
+    .articulo_login_main h2{
+        margin-left: 8%;
+    }
+    .login_contra_up h6{
+        font-size: 14px;
+        margin-left: 8%
+    }
+}
+
+@media  (min-width: 1024px){
+    .main_login{
+        padding: 5% 0;
+    }
+    .input_login{
+        height: 60px;
+        font-size: 22px;
+
+    }
+    .articulo_login_main h2{
+        font-size: 19px;
+        font-weight: bold;
+
+    }
+     .main_login{
+        margin-bottom : 50px;
+    } 
+    .btn_login_main{
+        width: 20%;
+        height: 50px;
+        background-color: var(--color-negro);
+        color: var(--color-beige);
+        border: 1px solid var(--color-negro);
+        border-radius: 30px;
+        
+        
+    }
+    .btn_login_main{
+        width:290px;
+        height:70px;
+        font-size: 20px;
+
+    }
+    .login_h_all{
+        margin-left:75px;
+    }
+    .login_contra_up h6{
+        font-size: 14px;
+
+    }
+    .btn_login_up h6{
+        font-size: 14px;
+    }
+    .box_home_form {
+        max-width: 1024px;
+        margin: auto;
+    }
+
+    }
+  

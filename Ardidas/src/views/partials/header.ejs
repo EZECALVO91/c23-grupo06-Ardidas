@@ -1,0 +1,99 @@
+<header class="header">
+    <div class="login_header_index headerSinFondo">
+        <% if (usuarioLogeado && usuarioLogeado.id_category==1) {%>
+            <!-- <a href="/dashboard/summary"> Dashboard |</a>  ESTE PATH LLEVA AL DASHBOARD CREADO EN EXPRESS PARA UTILIZAR DE EJEMPLO PARA EL DE REACT-->
+            <a href="http://localhost:8000/"> Dashboard |</a>
+
+            <%}%>
+
+                <% if (usuarioLogeado !=undefined) {%>
+                    <img class="avatar_header" src="/images/users/<%= usuarioLogeado.image %>"
+                        alt="imagen_avatar_usuario">
+                    <a href="/users/profile/<%= usuarioLogeado.id %>">
+                        <p>
+                            <%= usuarioLogeado.email %>
+                        </p>
+                    </a>
+                    <a href="">
+                        <p> | </p>
+                    </a>
+                    <a href="#" id="logoutBtn"><p>Cerrar Sesión</p></a>
+                    <%} else{%>
+                        <a href="/users/register">
+                            <p>Crear Cuenta |</p>
+                        </a>
+                        <a href="/users/login">
+                            <p>Iniciar Sesion</p>
+                        </a>
+                        <%}%>
+    </div>
+    <div class="header_top headerSinFondo">
+
+        <div class="header_burgerbutton">
+            <i class="menu_hamburguesa_icono fa-solid fa-bars header_boton"></i>
+           
+                <div class="header_burgerbutton_desplegable">
+                    <% if (usuarioLogeado && usuarioLogeado.id_category==1) {%>
+                        <a href="http://localhost:8000/"><strong>Dashboard</strong>  </a>
+            
+                        <%}%>
+                    <% if (usuarioLogeado !=undefined) {%>
+                        <div class="avatar_y_email">
+                            <img class="avatar_header " src="/images/users/<%= usuarioLogeado.image %>"
+                            alt="imagen_avatar_usuario">
+                        <a href="/users/profile/<%= usuarioLogeado.id %>">
+                            <p>
+                                <%= usuarioLogeado.email %>
+                            </p>
+                        </a>
+                        </div>
+                       
+                       
+                        
+                        <%} else{%>
+                            <div class="div_cuenta_burgerbutton">
+                            <a href="/users/register">
+                                <p>Crear Cuenta </p>
+                            </a>
+                            <a href="/users/login">
+                                <p>Iniciar Sesion</p>
+                            </a>
+                        </div>
+                            <%}%>
+
+                    <div class="header_desplegable_navbar">       
+                    <a href="/"><strong>INICIO</strong></a>
+                    <a href="/contacto">CONTACTO</a>
+                    <a href="/products">PRODUCTOS</a>
+                    <a href="/ayuda">¿COMO COMPRAR?</a>
+                    
+                    </div> 
+                    <% if (usuarioLogeado !=undefined) {%>
+                        <a href="#" id="logoutBtnPhone"><p class="cerrar_sesion_burgerbutton">Cerrar Sesión</p></a>
+                        <%}%>
+                </div>
+
+                </div> 
+        <div class="contenedor_search_nav_home">
+            <a class="logo-contenedor" href="/"><img class="logo" src="/images/LOGO-ARDIDAS.png"
+                    alt="LOGO-ARDIDAS" /></a>
+            <nav class="nav_home_index">
+                <ul class="nav_ul">
+                    <li>
+                        <a class="nav_header_sections" href="/"><strong>INICIO</strong></a>
+                    </li>
+                    <li><a class="nav_header_sections" href="/contacto">CONTACTO</a></li>
+                    <li><a class="nav_header_sections" href="/products">PRODUCTOS</a></li>
+                    <li><a class="nav_header_sections" href="/ayuda">¿COMO COMPRAR?</a></li>
+                </ul>
+            </nav>
+            <form class="busqueda-contenedor" action="/search" method="GET">
+                <input class="busqueda home-logo-busqueda" type="text" name="keywords" placeholder="Buscar" />
+                <i class="fa-solid fa-magnifying-glass" ></i>
+                <a class="carrito_header_index" href="/products/carrito"><i class="fa-solid fa-bag-shopping"
+                        style="color: #fcfce7"></i></a>
+            </form>
+        </div>
+    </div>
+
+</header>

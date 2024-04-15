@@ -1,0 +1,41 @@
+.div_contacto_formulario img {
+    display: none;
+}
+
+
+@media  (min-width: 768px){ 
+
+.div_contacto_formulario {
+    background:linear-gradient(black 50%, grey );
+    border-radius: 100px;
+    padding:3%;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+.titulo_contacto{
+    text-align: center;
+    margin: 10px;
+    font-weight: bold;
+}
+
+
+.div_contacto_formulario img {
+    display: flex;
+    width: 50%;
+    max-width: 50%;
+}
+
+.div_contacto_formulario form {
+    width:50%
+}
+
+.label_form_contacto {
+    color:white
+}
+
+.contacto iframe {
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    margin:20px;
+}
+}

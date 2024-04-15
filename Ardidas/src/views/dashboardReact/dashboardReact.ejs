@@ -1,0 +1,93 @@
+<!--ACA SE INCLUYE EL PARTIAL : HEAD -->
+<%- include("../partials/head.ejs") %>
+
+<body class="body_home">
+
+<!--ACA SE INCLUYE EL PARTIAL : HEADER -->
+<%- include("../partials/header.ejs") %>
+
+<main class="">
+    <div class="div_container_button_dasboard">
+        <a class="btn_redirect_userYproduct" href="/products/dashboard"> PRODUCTOS</a>
+        <a class="btn_redirect_userYproduct" href="/users/dashboard"> USUARIOS</a>
+    </div>
+    <div class="container_main_product">
+        <section class="section_info1">
+
+            <div><h2>Contabilizacion de:</h2></div>
+            <div class="div_articulos_dash info2">
+                <div class="box_container_count users1">
+                    <h3>Usuarios</h3>
+                    <p><i class="fa-solid fa-users"></i><%=" " + usersCount %></p>
+            </div>  
+            <div class="box_container_count products1">
+                    <h3>Productos</h3>
+                    <p><i class="fa-solid fa-boxes-stacked"></i><%= " " + productsCount %></p>
+            </div>
+
+            </div>
+
+            <div><h3>Ultimo producto Agregado</h3></div>
+            <div class="div_articulos_dash info1">
+                
+                <% if (product) { %>
+                    <div class="img_dashReact">
+                        <a href="/products/detalle/<%= product.id %>">     
+                            <img src="/images/products/<%= product.Image_products[0] ? product.Image_products[0].filename  : product.Image_products[0].filename%>" alt="Imagen del producto">
+                        </a>
+                    </div>
+                    <div class="dash_description">
+                        <a href="/products/detalle/<%= product.id %>"><h3><%= product.name %></h3></a>
+                        <p><%= product.description %></p>
+                    </div>
+                
+                <% } else { %>
+                    <p>No hay productos disponibles.</p>
+                <% } %>
+            </div>
+
+        </section>
+
+        <section class="section_info2">
+
+            <h2>Cantidad de:</h2>
+            <div class="div_articulos_dash categories_div">
+                <div class="box_container_categories">
+                    <h3>Categorias</h3>
+                    <p><i class="fa-solid fa-table-list"></i><%=" " + categoriesCount %></p>
+                </div>
+            </div>
+
+                        <h2>Articulos</h2>
+            <div class="div_articulos_dash dash1">
+                <div class="dash_description">
+                    <ul>
+                        <% categories.forEach(category => { %>
+                            <li class="acordion_li">
+                                <button class="acordion"><%= category.category %></button>
+                                <ul class="acordion_ul">
+                                    <% category.Products.forEach(product => { %>
+                                        <li>
+                                            <a href="/products/detalle/<%= product.id %>"><%= product.name %></a>
+                                            <!-- Agrega más detalles del producto según sea necesario -->
+                                        </li>
+                                    <% }); %>
+                                </ul>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+        
+</main>
+<script src="/js/dashboardReact/dashboard.js"></script>
+<!--ACA SE INCLUYE EL PARTIAL : -->
+<%- include("../partials/footer.ejs") %>
+
+
+</body>
+
+</html>

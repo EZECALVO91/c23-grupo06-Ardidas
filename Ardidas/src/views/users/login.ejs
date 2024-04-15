@@ -1,0 +1,63 @@
+<!--ACA SE INCLUYE EL PARTIAL : HEAD -->
+<%- include("../partials/head.ejs") %>
+
+  <body class="body_home">
+
+    <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
+    <%- include("../partials/header.ejs") %>
+
+      <main class="main_login">
+        <div class="main__title__box">
+          <hr class="main__form__lines">
+          <h2 class="main__form__title">INGRESAR</h2>
+          <hr class="main__form__lines">
+        </div>
+        <form class="box_home_form " action="/users/login" method="post">
+          <section>
+            <article class="articulo_login_main">
+
+              <h2 class="login_h_all">EMAIL</h2>
+              <label for="email"></label>
+              <input class="input_login" type="email" name="email" id="email" placeholder="tu-email@email.com*">
+              <small class="emailError">
+                <%= locals.errores && errores.email ? errores.email.msg : null %>
+              </small>
+            </article>
+            <article class="articulo_login_main">
+              <h2 class="login_h_all">CONTRASEÑA</h2>
+              
+              <div class="div_login_password">
+                <input type="password" name="password" id="password" class="input_login">
+                <small class="passwordError">
+                  <%= locals.errores && errores.password ? errores.password.msg : null %>
+                </small>
+                <i class="fa-regular eye-login fa-eye ojo_contraseña_login"></i>
+              </div>
+
+              <a href="" class="login_contra_up">
+                <h6 class="login_h_all">¿Olvidaste tu contraseña?</h6>
+              </a>
+              <div class="label_recordar">
+                <label for="recuerdame" class="r">Recuerdame</label>
+                <input type="checkbox" name="recuerdame" value="true">
+              </div>
+            </article>
+            <article class="articulo_login_main">
+              <button class="btn_login_main btnfos-5" type="submit">INICIAR SESIÓN</button>
+              <div id="error-message-login">Información invalida.</div> 
+
+              <a href="/users/register" class="btn_login_up">
+                <h6>¿No tenés cuenta? Crear cuenta.</h6>
+              </a>
+            </article>
+          </section>
+        </form>
+      </main>
+      <script src="/js/users/validationLogin.js"></script>
+      <!--ACA SE INCLUYE EL PARTIAL : -->
+      <%- include("../partials/footer.ejs") %>
+
+
+  </body>
+
+  </html>
