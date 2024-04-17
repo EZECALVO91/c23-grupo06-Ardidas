@@ -1,9 +1,20 @@
+document.addEventListener('DOMContentLoaded', function() {
+    //seleccionamos lo que vamos a utilizard
+    const title = document.querySelector('.main__form__title');
+    // y le pedimos que nos haga un scroll directo al titulo
+    title.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+
+
+
 // documentacion = https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
 const expresionesRegulares = {
     exRegAlfa: /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/,
     exRegEmail: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
     exRegPass: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&.,;'" ])[A-Za-z\d$@$!%*?&.,;'" ]{6,20}$/,
 };
+
 
 const elemento = (element) => document.querySelector(element);
 
@@ -101,27 +112,6 @@ const inputPassword = document.querySelector("#password")
     }
 });
 
-const inputPasswordDos= document.querySelector("#password2")
-    inputPasswordDos.addEventListener("blur", function({target}) {
-    switch (true) {
-        case !this.value.trim():
-            messageError(".passError2","Debes completar el campo con tu contraseña",target);
-            this.style.borderColor = "red";
-            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
-            break;
-        case this.value.trim() !== elemento("#password").value.trim():
-            messageError(".passError2", "Las contraseñas no coinciden", target);
-            this.style.borderColor = "red";
-            this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
-            break;
-        default:
-            validatorInput(".passError2", target);
-            this.style.borderColor = "#4F7F3F";
-            this.style.backgroundColor = "white";
-            break;
-    }
-});
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const passwordInputs = document.querySelectorAll('.main__form__register__password input[type="password"]');
@@ -164,6 +154,33 @@ inputImg.addEventListener('change', function({target}) {
     }
 });
 
+function validateForm() {
+    const isCaptchaValid = validateCaptcha();
+
+    if (!isCaptchaValid) {
+        return false;
+    }
+}
+
+function validateCaptcha() {
+    const captchaResponse = grecaptcha.getResponse();
+    const captchaErrorElement = document.querySelector('.captchaError');
+
+    if (!captchaResponse) {
+        captchaErrorElement.textContent = 'Por favor, completa el captcha.';
+        return false;
+    } else {
+        captchaErrorElement.textContent = ''; // Limpiar el mensaje de error
+        return true;
+    }
+}
+
+// Agregar un evento al captcha para limpiar el mensaje de error cuando se complete
+document.querySelector('.g-recaptcha').addEventListener('change', function () {
+    validateCaptcha();
+});
+
+
 
 const form = document.querySelector('.main__form__register');
 const errorMessage = document.getElementById('error-message-registerUser');
@@ -175,6 +192,9 @@ form.addEventListener('submit', function(event) {
     const passError = document.querySelector('.passError');
     const passError2 = document.querySelector('.passError2');
     const imageError = document.querySelector('.imageError');
+    // const captchaError = document.querySelector('.captchaError');
+
+
 
     // si alguno de elementos tiene un error
     const hasError = nameError.innerText || emailError.innerText || passError.innerText || passError2.innerText || imageError.innerText;
