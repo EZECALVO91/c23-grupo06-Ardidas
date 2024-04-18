@@ -91,16 +91,20 @@ const productsController = {
       updatedAt:new Date
     })
      .then((resp)=>{
-      if(file.length > 0) {
+      if(Object.keys(file).length > 0) {
         console.log("Llega algo en file: ", file)
-        file.forEach(element => { 
-          db.Image_product.create({
-             filename: element.filename,
-             id_product: resp.dataValues.id,
-             createdAt:new Date,
-            updatedAt:new Date
-          })
-         })
+        // file.forEach(element => { 
+          for (const key in file) {
+            file[key].forEach(element => {
+              db.Image_product.create({
+                filename: element.filename,
+                id_product: resp.dataValues.id,
+                createdAt:new Date,
+               updatedAt:new Date
+             })
+            });
+         
+         }
       } else {
         db.Image_product.create({
           filename: "default-image.png",
@@ -165,57 +169,72 @@ const productsController = {
       });
   } else {
     const { id } = req.params;
-    const file = req.file;
+    const file = req.files;
     const { name, price,  category,  description, sizes, color, image} = req.body;
    
+    console.log("Que llega en file:  ", file)
 
-        for (let i=0; i<sizes.length; i++){  
-        db.Stock.destroy({
-            where : {
-                id_product : id
-            }
-        })
-    }
- 
-    db.Product.update({
-      name,
-      color,
-      price,
-      description,
-      id_category_product: category,
-      createdAt:new Date,
-      updatedAt:new Date
-    },
-    {
-      where:{id}
+
+    db.Image_product.findAll({
+      where: { 
+        id_product : id
+      }
+    
+    
     })
-      .then((resp)=>{
-        db.Image_product.update({
-           filename: file ? file.filename : image,
-           id_product: resp.id,
-           createdAt:new Date,
-          updatedAt:new Date
-        },
-        {
-          where:{id}
-        })
-        for (let i=0; i<sizes.length; i++){
-                 db.Stock.create({
-                  id_product: req.params.id,
-                  id_size: sizes[i],
-                  createdAt:new Date,
-                  updatedAt:new Date
-               }
-                )
-                }
+    .then((resp) => {
+      console.log("Respuesta:", resp)
+    })
+    .catch (e => {
+      console.log(e)
+    })
+    //     for (let i=0; i<sizes.length; i++){  
+    //     db.Stock.destroy({
+    //         where : {
+    //             id_product : id
+    //         }
+    //     })
+    // }
+ 
+    // db.Product.update({
+    //   name,
+    //   color,
+    //   price,
+    //   description,
+    //   id_category_product: category,
+    //   createdAt:new Date,
+    //   updatedAt:new Date
+    // },
+    // {
+    //   where:{id}
+    // })
+    //   .then((resp)=>{
+    //     db.Image_product.update({
+    //        filename: file ? file.filename : image,
+    //        id_product: resp.id,
+    //        createdAt:new Date,
+    //       updatedAt:new Date
+    //     },
+    //     {
+    //       where:{id}
+    //     })
+    //     for (let i=0; i<sizes.length; i++){
+    //              db.Stock.create({
+    //               id_product: req.params.id,
+    //               id_size: sizes[i],
+    //               createdAt:new Date,
+    //               updatedAt:new Date
+    //            }
+    //             )
+    //             }
 
          
-    })
-    .then(()=>{
-    res.redirect(`/products/detalle/${id}`);
-    })
+    // })
+    // .then(()=>{
+    // res.redirect(`/products/detalle/${id}`);
+    // })
   
-    .catch(error=> console.log(error));
+    // .catch(error=> console.log(error));
   }
 })
   },

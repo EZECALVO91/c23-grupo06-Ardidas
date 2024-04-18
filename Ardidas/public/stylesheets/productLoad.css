@@ -23,6 +23,8 @@
 } 
 .img_create_fast {
     text-align: center;
+    position:relative
+    
 }
 .img_create_fast input {
     outline: solid red 2px;
@@ -34,8 +36,29 @@
     background-color: var(--color-blanco);
     margin-top:25px;
     width: 55%;
-    height: 150px; 
+    height: 150px;
+    color:white 
 }
+
+.div_img_chiquitas {
+    padding-top: 20px
+}
+
+.imagen__chiquita {
+    width: 100px;
+    height: 100px;
+    outline:solid green 3px;
+    margin-top:5px;
+    background-image: url("../images/img_add_form_productLoad.png");
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline:solid var(--color-verde-muzgo) 3px;
+    background-color: var(--color-blanco);
+    color:white;
+
+}
+
 
 
 .form_loadProduct {

@@ -11,14 +11,42 @@
         <h2 class="h2_title_form">CARGA DE PRODUCTO</h2>
           <form action="/products" method="post" class="form_loadProduct" id="createProductForm" enctype="multipart/form-data">
           <section class="form__createProduct">
+            <div class="div_img_chiquitas">
+              <div class="imagen__chiquita_div" style="position:relative">
+                <input class="imagen__chiquita" name="image2" type="file" accept="image/*" id="image2" >
+                <img id="previewImage2" src="#" alt="Vista previa de la imagen" style="display: none;width:100px;height:100px;position:absolute;top:4px;border-radius: 10px" class="dashboard__image">
+                <p class="errores_validacion_login">
+                  <%= locals.errores && errores.image2 ? errores.image2.msg : null %>
+                </p>
+              </div>
+  
+              <div class="imagen__chiquita_div" style="position:relative">
+                <input class="imagen__chiquita" name="image3" type="file" accept="image/*" id="image3" >
+                <img id="previewImage3" src="#" alt="Vista previa de la imagen" style="display: none;width:100px;height:100px;position:absolute;top:4px;border-radius: 10px" class="dashboard__image">
+                <p class="errores_validacion_login">
+                  <%= locals.errores && errores.image3 ? errores.image3.msg : null %>
+                </p>
+              </div>
 
-            <div class="img_create_fast">
-              <input class="dashboard__image" name="image" type="file" accept="image/*" id="image" multiple>
+              <div class="imagen__chiquita_div" style="position:relative">
+                <input class="imagen__chiquita" name="image4" type="file" accept="image/*" id="image4" >
+                <img id="previewImage4" src="#" alt="Vista previa de la imagen" style="display: none;width:100px;height:100px;position:absolute;top:4px;border-radius: 10px" class="dashboard__image">
+                <p class="errores_validacion_login">
+                  <%= locals.errores && errores.image4 ? errores.image4.msg : null %>
+                </p>
+              </div> 
+            </div>
+           
+
+            <div class="img_create_fast" style="position:relative">
+              <input class="dashboard__image" name="image" type="file" accept="image/*" id="image" >
+              <img id="previewImage" src="#" alt="Vista previa de la imagen" style="display: none;;position:absolute;top:25px;width:350px;height:350px;border-radius: 10px" class="dashboard__image">
               <p class="errores_validacion_login">
                 <%= locals.errores && errores.image ? errores.image.msg : null %>
               </p>
             </div>
-            
+
+
 
             <div class="update_box_intern">
               <label for="name">Nombre :</label>
@@ -117,6 +145,29 @@
 
         </form>
         <script src="/js/products/productCreate.js"></script>
+        <script>
+          function previewImage(event, previewId) {
+            const preview = document.getElementById(previewId);
+            preview.style.display = 'block';
+            preview.src = URL.createObjectURL(event.target.files[0]);
+          }
+        
+          document.getElementById('image').addEventListener('change', function(event) {
+            previewImage(event, 'previewImage');
+          });
+        
+          document.getElementById('image2').addEventListener('change', function(event) {
+            previewImage(event, 'previewImage2');
+          });
+        
+          document.getElementById('image3').addEventListener('change', function(event) {
+            previewImage(event, 'previewImage3');
+          });
+
+          document.getElementById('image4').addEventListener('change', function(event) {
+            previewImage(event, 'previewImage4');
+          });
+        </script>
       </main>
 
       <!--ACA SE INCLUYE EL PARTIAL : -->

@@ -12,13 +12,19 @@
         <form action="/products/update/<%= product.id %>?_method=PUT" method="post" class="form_loadProduct" enctype="multipart/form-data">
 
           <section class="form__createProduct">
-            <div class="img_update_fast">
-              <img src="/images/products/<%= product.Image_products[0].filename %>" alt="imagen principal" class="imagen_grande input_edit_img">
-              <input class="dashboard__image" name="image" id="image" type="file" accept="image/*" value="<%= product.Image_products[0].filename %>">
+            <img src="/images/products/<%= product.Image_products[1].filename %>" alt="imagen principal" style="width:50px;height:50px;">
+              <input  name="image2" id="image2" type="file" accept="image/*" value="<%= product.Image_products[1].filename %>">
+              <img src="/images/products/<%= product.Image_products[2].filename %>" alt="imagen principal" style="width:50px;height:50px;">
+              <input  name="image3" id="image3" type="file" accept="image/*" value="<%= product.Image_products[2].filename %>">
+              <img src="/images/products/<%= product.Image_products[3].filename %>" alt="imagen principal" style="width:50px;height:50px;">
+              <input  name="image4" id="image4" type="file" accept="image/*" value="<%= product.Image_products[3].filename %>">
+            <!-- <div class="img_update_fast"> -->
+              <img src="/images/products/<%= product.Image_products[0].filename %>" alt="imagen principal" style="width:50px;height:50px;">
+              <input  name="image" id="image" type="file" accept="image/*" value="<%= product.Image_products[0].filename %>">
               <small class="imageError">
                 <%= locals.errores && errores.image ? errores.image.msg : null %>
               </small>
-            </div>
+            <!-- </div> -->
 
             <div class="update_box_intern">
               <label for="name">Nombre :</label>
