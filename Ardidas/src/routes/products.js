@@ -21,7 +21,7 @@ router
 .get('/dashboard', isAdmin, dashboard)
 
 .get("/create", isAdmin, productLoad)
-.post("/",uploadImg.single("image"), isAdmin, createProductValidation, create)
+.post("/",uploadImg.array("image", 4), isAdmin, createProductValidation, create)
 
 .get("/update/:id", isAdmin, productEdit)
 .put("/update/:id",uploadImg.single("image"), isAdmin, createProductValidation, update)

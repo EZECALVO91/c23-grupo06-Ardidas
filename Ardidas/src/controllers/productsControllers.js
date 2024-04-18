@@ -79,7 +79,7 @@ const productsController = {
       res.render("products/productLoad", {errores: errores.mapped(),old: req.body,title: "Error al crear",usuarioLogeado: req.session.usuarioLogin,
       });
   } else {
-    const file = req.file;
+    const file = req.files;
     const { name, price,  category,  description, sizes, color} = req.body;
     db.Product.create({
       name,
@@ -91,12 +91,25 @@ const productsController = {
       updatedAt:new Date
     })
      .then((resp)=>{
-       db.Image_product.create({
-          filename: file ? file.filename : "default-image.png",
+      if(file.length > 0) {
+        console.log("Llega algo en file: ", file)
+        file.forEach(element => { 
+          db.Image_product.create({
+             filename: element.filename,
+             id_product: resp.dataValues.id,
+             createdAt:new Date,
+            updatedAt:new Date
+          })
+         })
+      } else {
+        db.Image_product.create({
+          filename: "default-image.png",
           id_product: resp.dataValues.id,
           createdAt:new Date,
          updatedAt:new Date
-       })
+        })
+      }
+      
        for (let i=0; i<sizes.length; i++){
        db.Stock.create({
         id_product: resp.dataValues.id,
