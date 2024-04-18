@@ -27,36 +27,57 @@
     
 }
 .img_create_fast input {
-    outline: solid red 2px;
     background-image: url("../images/img_add_form_productLoad.png");
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: center;
     outline:solid var(--color-verde-muzgo) 3px;
     background-color: var(--color-blanco);
-    margin-top:25px;
-    width: 55%;
-    height: 150px;
-    color:white 
+    width: 180px;
+    height: 180px;
+    color:white;
+    border-radius: 10px
 }
 
 .div_img_chiquitas {
-    padding-top: 20px
+     display: flex; 
+     flex-wrap: nowrap; 
+     width: auto;
+     margin: 0px 10px 0px
 }
 
-.imagen__chiquita {
-    width: 100px;
-    height: 100px;
-    outline:solid green 3px;
-    margin-top:5px;
+
+  .imagen__chiquita {
+    width: 45px;
+    height: 45px;
+    margin-top: 5px;
     background-image: url("../images/img_add_form_productLoad.png");
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: center;
-    outline:solid var(--color-verde-muzgo) 3px;
+    outline: solid var(--color-verde-muzgo) 3px;
     background-color: var(--color-blanco);
-    color:white;
+    color: white;
+    border-radius: 10px; 
+    margin: 0px 12px 0px
+  }
 
+  #previewImage2, #previewImage3, #previewImage4 {
+    width:45px;
+    height:45px;
+    position: absolute;
+    top: 0px;
+    right: 12px;
+    border-radius: 10px;
+
+  }
+
+  #previewImage {
+    position:absolute;
+    top:0px;
+    width:180px;
+    height:180px;
+    border-radius: 10px
 }
 
 
@@ -151,6 +172,42 @@ height:350px;
 width: 350px;
 opacity: 0;
 } 
+
+.div_img_chiquitas {
+    display:block;
+    padding-top: 20px;
+    width:100px;
+    margin-top:10px
+}
+
+.imagen__chiquita {
+    width: 100px;
+    height: 100px;
+    margin-top:5px;
+    background-image: url("../images/img_add_form_productLoad.png");
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline:solid var(--color-verde-muzgo) 3px;
+    background-color: var(--color-blanco);
+    color:white;
+    margin:0
+}
+
+
+#previewImage2, #previewImage3, #previewImage4 {
+    width:100px;
+    height:100px;
+    position:absolute;
+    top:0px;
+    right:0px;
+    border-radius: 10px
+}
+
+#previewImage {
+    position:absolute;top:25px;width:350px;height:350px;border-radius: 10px
+}
+
 
 .form_loadProduct {
     display:flex;
