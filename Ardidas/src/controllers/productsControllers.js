@@ -175,66 +175,66 @@ const productsController = {
     console.log("Que llega en file:  ", file)
 
 
-    db.Image_product.findAll({
-      where: { 
-        id_product : id
-      }
+    // db.Image_product.findAll({
+    //   where: { 
+    //     id_product : id
+    //   }
     
     
-    })
-    .then((resp) => {
-      console.log("Respuesta:", resp)
-    })
-    .catch (e => {
-      console.log(e)
-    })
-    //     for (let i=0; i<sizes.length; i++){  
-    //     db.Stock.destroy({
-    //         where : {
-    //             id_product : id
-    //         }
-    //     })
-    // }
- 
-    // db.Product.update({
-    //   name,
-    //   color,
-    //   price,
-    //   description,
-    //   id_category_product: category,
-    //   createdAt:new Date,
-    //   updatedAt:new Date
-    // },
-    // {
-    //   where:{id}
     // })
-    //   .then((resp)=>{
-    //     db.Image_product.update({
-    //        filename: file ? file.filename : image,
-    //        id_product: resp.id,
-    //        createdAt:new Date,
-    //       updatedAt:new Date
-    //     },
-    //     {
-    //       where:{id}
-    //     })
-    //     for (let i=0; i<sizes.length; i++){
-    //              db.Stock.create({
-    //               id_product: req.params.id,
-    //               id_size: sizes[i],
-    //               createdAt:new Date,
-    //               updatedAt:new Date
-    //            }
-    //             )
-    //             }
+    // .then((resp) => {
+    //   console.log("Respuesta:", resp)
+    // })
+    // .catch (e => {
+    //   console.log(e)
+    // })
+        for (let i=0; i<sizes.length; i++){  
+        db.Stock.destroy({
+            where : {
+                id_product : id
+            }
+        })
+    }
+ 
+    db.Product.update({
+      name,
+      color,
+      price,
+      description,
+      id_category_product: category,
+      createdAt:new Date,
+      updatedAt:new Date
+    },
+    {
+      where:{id}
+    })
+      .then((resp)=>{
+        db.Image_product.update({
+           filename: file ? file.filename : image,
+           id_product: resp.id,
+           createdAt:new Date,
+          updatedAt:new Date
+        },
+        {
+          where:{id}
+        })
+        for (let i=0; i<sizes.length; i++){
+                 db.Stock.create({
+                  id_product: req.params.id,
+                  id_size: sizes[i],
+                  createdAt:new Date,
+                  updatedAt:new Date
+               }
+                )
+                }
 
          
-    // })
-    // .then(()=>{
-    // res.redirect(`/products/detalle/${id}`);
-    // })
+    })
+    .then(()=>{
+    res.redirect(`/products/detalle/${id}`);
+    })
   
-    // .catch(error=> console.log(error));
+    .catch(error=> console.log(error));
   }
 })
   },

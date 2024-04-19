@@ -21,18 +21,31 @@
                   <%= locals.errores && errores.image ? errores.image.msg : null %>
                 </p>
               </div>
+
               <div class="div_img_chiquitas">
                 <div class="imagen__chiquita_div" style="position:relative">
+                  
                   <input class="imagen__chiquita" name="image2" type="file" accept="image/*" id="image2" value="<%= product.Image_products[1] ? product.Image_products[1].filename : "default-image.png" %>">
-                  <img id="previewImage2" src="/images/products/<%= product.Image_products[1] ? product.Image_products[1].filename : "default-image.png" %>" alt="Vista previa de la imagen" class="dashboard__image">
+                  <% if(product.Image_products[1]) { %> 
+                  <img id="previewImage2" src="/images/products/<%= product.Image_products[1].filename  %>" alt="Vista previa de la imagen" class="dashboard__image">
+                  <% } else { %>
+                    <img id="previewImage2" src="/images/products/<%= product.Image_products[1] %>" alt="Vista previa de la imagen" class="dashboard__image"  style="display:none">
+
+                  <% } %>
                   <p class="errores_validacion_login">
                     <%= locals.errores && errores.image2 ? errores.image2.msg : null %>
                   </p>
                 </div>
 
                 <div class="imagen__chiquita_div" style="position:relative">
-                  <input class="imagen__chiquita" name="image3" type="file" accept="image/*" id="image3" value="<%= product.Image_products[2] ? product.Image_products[2].filename : "default-image.png" %>">
-                  <img id="previewImage3" src="/images/products/<%= product.Image_products[2] ? product.Image_products[2].filename : "default-image.png"  %>" alt="Vista previa de la imagen" class="dashboard__image">
+                  <input class="imagen__chiquita" name="image3" type="file" accept="image/*" id="image3" value="<%= product.Image_products[2] ? product.Image_products[2].filename : null %>">
+                  <% if(product.Image_products[2]) { %> 
+                    <img id="previewImage3" src="/images/products/<%= product.Image_products[2].filename  %>" alt="Vista previa de la imagen" class="dashboard__image">
+                  <% } else { %>
+                    <img id="previewImage3" src="/images/products/<%= product.Image_products[2] %>" alt="Vista previa de la imagen" class="dashboard__image" style="display:none">
+
+                  <% } %>
+                  
                   <p class="errores_validacion_login">
                     <%= locals.errores && errores.image3 ? errores.image3.msg : null %>
                   </p>
@@ -40,7 +53,12 @@
 
                 <div class="imagen__chiquita_div" style="position:relative">
                   <input class="imagen__chiquita" name="image4" type="file" accept="image/*" id="image4" value="<%= product.Image_products[3] ? product.Image_products[3].filename : "default-image.png" %>">
-                  <img id="previewImage4" src="/images/products/<%= product.Image_products[3] ? product.Image_products[3].filename : "default-image.png" %>" alt="Vista previa de la imagen" class="dashboard__image">
+                  <% if(product.Image_products[3]) { %> 
+                  <img id="previewImage4" src="/images/products/<%= product.Image_products[3].filename %>" alt="Vista previa de la imagen" class="dashboard__image" >
+                  <% } else { %>
+                    <img id="previewImage4" src="/images/products/<%= product.Image_products[3] %>" alt="Vista previa de la imagen" class="dashboard__image" style="display:none">
+
+                    <% } %>
                   <p class="errores_validacion_login">
                     <%= locals.errores && errores.image4 ? errores.image4.msg : null %>
                   </p>
