@@ -9,12 +9,26 @@
     <main class="main-productDetail">
       <p class="secciones-productDetail"><a class="redirect-detalle" href="/">Inicio</a> > <a class="redirect-detalle" href="/products"> <%= product.Category_products.category %> </a>> Detalle > <%= product.name%></a></p>
       <article class="producto">
-        <div class="imagenes_pequeñas">
-          <img src="/images/products/<%= product.Image_products[1] ? product.Image_products[1].filename : product.Image_products[0].filename %>" alt="miniatura" class="imagen_pequeña">
-          <img src="/images/products/<%= product.Image_products[2] ? product.Image_products[2].filename : product.Image_products[0].filename %>"
-            alt="miniatura" class="imagen_pequeña">
-          <img src="/images/products/<%= product.Image_products[3] ? product.Image_products[3].filename  : product.Image_products[0].filename%>" alt="miniatura" class="imagen_pequeña">
+        <div class="detailProduct_img_chiquitas">
+          <div class="detailProduct_img_individual" style="position:relative">
+           
+            <img src="/images/products/<%= product.Image_products[1] ? product.Image_products[1].filename : "TablaDeTallesArdidas.png" %>" id="imagenChica2"  alt="Vista previa de la imagen" class="dashboard__image">
+           
+          </div>
+
+          <div class="detailProduct_img_individual" style="position:relative">
+           
+            <img src="/images/products/<%= product.Image_products[2] ? product.Image_products[2].filename : ("TablaDeTallesArdidas.png" ? "default-image.png" : "TablaDeTallesArdidas.png") %>" id="imagenChica3"  alt="Vista previa de la imagen" class="dashboard__image">
+        
+          </div>
+
+          <div class="detailProduct_img_individual" style="position:relative"> 
+            
+            <img src="/images/products/<%= product.Image_products[3] ? product.Image_products[3].filename  : ("TablaDeTallesArdidas.png" ? "default-image.png" : "TablaDeTallesArdidas.png") %>" id="imagenChica4"  alt="Vista previa de la imagen" class="dashboard__image">
+           
+          </div> 
         </div>
+        
         <img src="/images/products/<%= product.Image_products[0].filename %>" alt="imagen principal" class="imagen_grande">
         <div class="detalles">
           <h2><%= product.name%></h2>
@@ -22,7 +36,7 @@
           <div class="select-options-details-products">
             <a class="boton_promoBancaria" id="promoBancariaBoton"><p style="font-family:Helvetica-Neue;color:black;font-weight:bold;text-decoration:underline">Conocé nuestras promociones</p>
           </a>
-          <br><br>
+          
           <div class="detalles_talles">
             <p>Talles</p>
              <select name="sizes" id="" class="numero">
