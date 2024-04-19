@@ -1,6 +1,6 @@
  //Capturo toda la información del producto
  const addButton = document.getElementById("buttonAdd")
- const imageProduct = document.getElementById("image_product")
+ const imageProduct = document.getElementById("imagenGrande")
  const nameProduct = document.getElementById("name_product")
  const priceProduct = document.getElementById("price_product")
  const sizeProduct = document.getElementById("size_product")
