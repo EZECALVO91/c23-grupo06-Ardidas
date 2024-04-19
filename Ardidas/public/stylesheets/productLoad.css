@@ -8,6 +8,11 @@
     text-align: center;
     font-weight: bolder;  
 }
+
+.inputs_imagenes {
+    display:flex;
+    flex-direction: column-reverse;
+}
 .input_edit_img {
     position: absolute;
     height:150px;
@@ -59,8 +64,9 @@
     background-color: var(--color-blanco);
     color: white;
     border-radius: 10px; 
-    margin: 0px 12px 0px
+    margin: 0px 12px 0px;
   }
+  
 
   #previewImage2, #previewImage3, #previewImage4 {
     width:45px;
@@ -77,7 +83,8 @@
     top:0px;
     width:180px;
     height:180px;
-    border-radius: 10px
+    border-radius: 10px;
+    right: 24px;
 }
 
 
@@ -122,6 +129,19 @@
 }
 
 @media (min-width: 768px){ 
+    main .form_loadProduct {
+        max-width: 690px;
+    }
+
+    .form_loadProduct input {
+        padding: 15px;
+        border-radius: 10px;
+        border: solid 1px #75798b;
+    }
+    .inputs_imagenes {
+        display:flex;
+        flex-direction: row-reverse;
+    }
     .input_edit_img {
     position: absolute;
     height:300px;
@@ -135,6 +155,57 @@
     width: 300px;
     opacity: 0;
     } 
+
+    .img_create_fast input {
+        height:280px;
+        width: 280px;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+    .div_img_chiquitas {
+        display:block;
+        padding-top: 20px;
+        width:60px;
+        margin-top:20px
+    }
+    
+    .imagen__chiquita {
+        width: 60px;
+        height: 60px;
+        margin-top:5px;
+        background-image: url("../images/img_add_form_productLoad.png");
+        background-size: 40%;
+        background-repeat: no-repeat;
+        background-position: center;
+        outline:solid var(--color-verde-muzgo) 3px;
+        background-color: var(--color-blanco);
+        color:white;
+        margin:0
+    }
+    
+    
+    #previewImage2, #previewImage3, #previewImage4 {
+        width:60px;
+        height:60px;
+        position:absolute;
+        top:0px;
+        right:0px;
+        border-radius: 10px
+    }
+    
+    #previewImage {
+        position: absolute;
+    top: 21px;
+    width: 280px;
+    height: 279px;
+    border-radius: 10px;
+    right: 20px;
+    }
+    .talles_update {
+        display: flex;
+        justify-content: space-around;
+        width: 65%;
+    }
 }
 
 
@@ -147,6 +218,8 @@
     font-size: 30px;
     font-weight: bolder;  
 }
+
+
 .img_create_fast input{
     background-image: url("../images/img_add_form_productLoad.png");
     background-size: 40%;
@@ -264,7 +337,7 @@ opacity: 0;
 
 .input_colores_create {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     width: 60%;
 }
 
