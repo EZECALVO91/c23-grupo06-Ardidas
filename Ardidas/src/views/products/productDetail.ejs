@@ -34,7 +34,7 @@
           </div> 
         </div>
         
-        <img src="/images/products/<%= product.Image_products[0].filename %>" alt="imagen principal" class="imagen_grande">
+        <img src="/images/products/<%= product.Image_products[0].filename %>" alt="imagen principal" class="imagen_grande" id="imagenGrande">
         <div class="detalles">
           <h2><%= product.name%></h2>
           <h2>$<%= product.price %></h2>
@@ -79,6 +79,7 @@
 
 <!--ACA SE INCLUYE EL PARTIAL : -->
 <script src="/js/products/promocionesBancarias.js"></script>
+<script src="/js/products/detalleDeProducto.js"></script>
 <%- include("../partials/footer.ejs") %>
 
 
