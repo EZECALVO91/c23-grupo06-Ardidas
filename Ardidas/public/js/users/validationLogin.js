@@ -44,8 +44,8 @@ const inputEmail = document.querySelector("#email")
             break;
         default:
             validatorInput(".emailError", target)
-            this.style.borderColor= "#4F7F3F";
-            this.style.backgroundColor = "white";
+            this.style.borderColor= "green";//sino saca el msj de error y deja seguir con el formulario
+            this.style.backgroundColor = "rgba(0, 255, 0, 0.1)";
             break;
     }
 });
@@ -60,8 +60,8 @@ const inputPassword = document.querySelector("#password")
             break;
         default:
             validatorInput(".passwordError", target);
-            this.style.borderColor = "#4F7F3F";
-            this.style.backgroundColor = "white";
+            this.style.borderColor= "green";//sino saca el msj de error y deja seguir con el formulario
+            this.style.backgroundColor = "rgba(0, 255, 0, 0.1)";
             break;
     }
 });
