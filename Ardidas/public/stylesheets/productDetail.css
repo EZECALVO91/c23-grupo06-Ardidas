@@ -1,19 +1,35 @@
 a {
     text-decoration: none !important;
 }
+.secciones-productDetail {
+    font-size: 14px;
+}
 
 .imagen_grande {
-    width: 100%;
+    width: 295px;
+    height: 295px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border-radius: 10px;
 }
-.imagen_pequeña {
-    width: 0%;
+.detailProduct_img_chiquitas {
+    height: 100px;
+    display: flex;
+    gap:15px;
+    justify-content: center;
+}
+
+#imagenChica2, #imagenChica3, #imagenChica4 {
+    width: 75px;
+    height: 75px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border-radius: 10px
 }
+
 
 .producto {
     border-radius: 10px;
     padding: 1%;
+    text-align: center;
 }
 
 .main_ver-todos-productos {
@@ -88,6 +104,9 @@ main {
 
 }
 @media (min-width: 768px) {
+    .secciones-productDetail {
+        font-size: 16px;
+    }
     .producto {
         flex-direction: row;
         display: flex;
@@ -98,15 +117,23 @@ main {
         height: 300px;
         margin-right: 1%;
     }
-    .imagen_pequeña {
-        width: 80%;
-        height: auto;
+
+ 
+    .detailProduct_img_chiquitas {
+        width: 100px;
+        height: 100px;
+        margin: 0px 20px 0px 20px;
+        display: block;
     }
-    .imagenes_pequeñas {
-        width: 15%;
-        margin-left: 10%;
-        position: relative;
+    #imagenChica2, #imagenChica3, #imagenChica4 {
+        width: 80px;
+        height: 80px;
+        margin:10px;
+        border-radius: 10px
     }
+
+
+    
     .detalles {
         padding-left: 2%;
         text-align: left;
@@ -122,11 +149,7 @@ main {
     .detalles_talles p {
         width: 40%;
     }
-    .select-options-details-products{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
+
     .detalles_color {
         width: 200px;
         display: flex;
@@ -189,26 +212,36 @@ main {
 }
 
 @media (min-width: 1024px) {
+    .secciones-productDetail {
+        font-size: 18px;
+    }
     .producto {
         flex-direction: row;
         display: flex;
         border-radius: 10px;
         padding: 1%;
+        justify-content: center;
     }
     .imagen_grande {
         width: 360px;
         height: 360px;
+        border-radius: 10px;
     }
-    .imagen_pequeña {
-        width: 50%;
-        height: auto;
-        padding: 1px;
+    .detailProduct_img_chiquitas {
+        width: 100px; 
+        height: 100px;
+        margin: 0px 20px 0px 50px;
+        display:block
     }
-    .imagenes_pequeñas {
-        width: 15%;
-        margin-left: 10%;
-        position: relative;
+
+    #imagenChica2, #imagenChica3, #imagenChica4 {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        margin-left: 0px;
     }
+
+
     .detalles {
         text-align: left;
         position: relative;
@@ -251,7 +284,7 @@ main {
 
     .main-productDetail .producto{
         max-width: 1024px;
-        margin:auto;
+        margin: 20px auto 0px;
     }
     .main-productDetail .detalles_div_descripcion{
         max-width: 1024px;

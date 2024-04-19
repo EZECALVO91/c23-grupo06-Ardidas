@@ -17,15 +17,21 @@ function confirmDelete(userId) {
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
-            // Si el usuario confirma la eliminacion, envia el formulario de eliminacion
-            let form = document.createElement('form');
-            form.method = 'POST';
-            form.action = '/users/delete/' + userId + '?_method=DELETE';
-            document.body.appendChild(form);
-            form.submit();
+            swalWithBootstrapButtons.fire({
+                title: "Usuario eliminado con Exito!",
+                icon: "success"
+            }).then(() => {
+                let form = document.createElement('form');
+                form.method = 'POST';
+                form.action = '/users/delete/' + userId + '?_method=DELETE';
+                document.body.appendChild(form);
+                form.submit();
+            });
         } else if (result.dismiss === Swal.DismissReason.cancel) {
-            // Si el usuario cancela, no hagas nada
-            return false;
+            swalWithBootstrapButtons.fire({
+                title: "Tu usuario no fue Eliminado",
+                icon: "error"
+            });
         }
     });
 }

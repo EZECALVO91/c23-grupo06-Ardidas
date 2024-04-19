@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', function () {
+    ////seleccionamos lo que vamos a utilizard
+    const title = document.querySelector('.main__form__title');
+
+    // y le pedimos que nos haga un scroll directo al titulo
+    title.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
 // documentacion = https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
 const expresionesRegulares = {
     exRegEmail: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
@@ -36,8 +44,8 @@ const inputEmail = document.querySelector("#email")
             break;
         default:
             validatorInput(".emailError", target)
-            this.style.borderColor= "#4F7F3F";
-            this.style.backgroundColor = "white";
+            this.style.borderColor= "green";//sino saca el msj de error y deja seguir con el formulario
+            this.style.backgroundColor = "white"
             break;
     }
 });
@@ -52,8 +60,8 @@ const inputPassword = document.querySelector("#password")
             break;
         default:
             validatorInput(".passwordError", target);
-            this.style.borderColor = "#4F7F3F";
-            this.style.backgroundColor = "white";
+            this.style.borderColor= "green";//sino saca el msj de error y deja seguir con el formulario
+            this.style.backgroundColor = "white"
             break;
     }
 });

@@ -7,62 +7,15 @@
 <%- include("./partials/header.ejs") %>
 
     <main class="productos">
-      <section class="carrusel_home">
-        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active d-item">
-              <img
-                src="/images/baner1.png"
-                class="d-block w-100 d-img"
-                alt="Zapatillas Nike"
-              />
-            </div>
-            <div class="carousel-item d-item">
-              <img
-                src="/images/baner3.jpg"
-                class="d-block w-100 d-img"
-                alt="imagen zapatilla"
-              />
-            </div>
-            <div class="carousel-item d-item">
-              <img
-                src="/images/baner4.png"
-                class="d-block w-100 d-img"
-                alt="imagen zapatilla"
-              />
-            </div>
-            <div class="carousel-item d-item">
-              <img
-                src="/images/baner6.jpg"
-                class="d-block w-100 d-img"
-                alt="imagen zapatilla"
-              />
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
+      <div class="bannerGif_ayuda_propaganda">
+        <a href="http://localhost:3000/search?keywords=lanzamiento"><img src="/images/bannerGifs/new-shoes-gifs.gif" alt="Productos en Lanzamiento"></a>
+      </div>
 
       <div class="main_title_box">
         <hr class="hr_txt" />
-        <h2 id="productos_home">RESULTADOS DE: "<%= keywords%>" </h2>
+        <h2 id="productos_home">RESULTADOS DE:
+          <br> 
+          "<%= keywords%>" </h2>
         <hr class="hr_txt" />
       </div>
 

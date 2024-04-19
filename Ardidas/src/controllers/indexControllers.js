@@ -69,12 +69,37 @@ const indexController = {
           },
         ]
       })  
-          Promise.all([productsSearch])
-        .then(([productsSearch]) => {
+      // Buscamos el productos por categoría
+  let categorySearch = db.Category_product.findOne({
+    where: {
+      category: {
+        [Op.substring]: keywords
+      }
+    },
+    include: [              //a categoria le incluimos los productos y sus imagenes
+      {
+        association: 'Products',
+        include: [
+          {
+            association: 'Image_products'
+          }
+        ]
+      }
+    ]
+  });
+          Promise.all([productsSearch, categorySearch]) //a la promesa solo le agregamos la categoria para que busque tanto un producto como una categoria
+        .then(([productsResults, categoryResult]) => {
+          let products = [];//creamos una variable para guardar los productos y/o categoria que busquemos
+            if(productsResults){
+              products = products.concat(productsResults) //este if te trae todas las repuestas si buscamos por un producto especifico
+            }
+            if(categoryResult && categoryResult.Products){
+              products = products.concat(categoryResult.Products);//y este trae todos los productos que tiene esa categoria por eso nos fijamos los productos que tiene categoryResult
+            }
           return res.render('search', {
             title: "Resultados",
             usuarioLogeado: req.session.usuarioLogin,
-            products : productsSearch,
+            products : products,
             keywords,
           })
         })

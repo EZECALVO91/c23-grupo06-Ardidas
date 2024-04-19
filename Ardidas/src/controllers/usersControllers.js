@@ -26,7 +26,9 @@ formRegister: (req, res) => {
           createdAt:new Date(),
         })
           .then(() => {
-              res.redirect("/users/login");
+              // res.redirect("/users/login"); 
+      //SE COMITIO EL REDIRECT PARA QUE FUNCIONE EL SWEET ALERT DESPUES DEL REGISTRO
+      //ESTA EN LAS VALIDACIONES DEL FRONT REGISTRO.
           })
             .catch((error) => console.log(error));
       }else{

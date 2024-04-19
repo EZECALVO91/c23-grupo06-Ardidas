@@ -5,19 +5,36 @@ const { Sequelize } = require("../database/models");
 const { validationResult } = require("express-validator");
 
 const productsController = {
-  index: (req, res) => {
-    let products = db.Product.findAll({
-      include: [{ 
-        association: "Image_products"}],
-    });
-    Promise.all([products])
-      .then(([products]) => {
-        res.render("products/products", {
-          title: "Ardidas",usuarioLogeado: req.session.usuarioLogin, products,
-        });
-      })
-      .catch((error) => console.log(error));
+  index: async (req, res) => {
+    try {
+      const pageProducts = 9; // Define la cantidad de productos por página
+      const totalProducts = await db.Product.count(); // Obtiene el total de productos
+      const totalPages = Math.ceil(totalProducts / pageProducts); // Calcula el total de páginas
+      // Obtiene la página actual de la consulta de URL, si no está presente, establece la primera página como predeterminada
+      const currentPage = req.query.page ? parseInt(req.query.page) : 1;
+      // Calcula el índice de inicio y fin para la consulta de productos
+      const startIndex = (currentPage - 1) * pageProducts;
+      const endIndex = currentPage * pageProducts;
+      // Consulta los productos para la página actual
+      const products = await db.Product.findAll({
+        include: [{ association: "Image_products" }],
+        limit: pageProducts,
+        offset: startIndex,
+      });
+  
+      res.render("products/products", {
+        title: "Ardidas",
+        usuarioLogeado: req.session.usuarioLogin,
+        products,
+        currentPage,
+        totalPages,
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Error al cargar los productos");
+    }
   },
+
   productDetail: (req, res) => {
     let product = db.Product.findByPk(req.params.id,{
         include: [{
@@ -73,7 +90,7 @@ const productsController = {
       res.render("products/productLoad", {errores: errores.mapped(),old: req.body,title: "Error al crear",usuarioLogeado: req.session.usuarioLogin,
       });
   } else {
-    const file = req.file;
+    const file = req.files;
     const { name, price,  category,  description, sizes, color} = req.body;
     db.Product.create({
       name,
@@ -85,12 +102,29 @@ const productsController = {
       updatedAt:new Date
     })
      .then((resp)=>{
-       db.Image_product.create({
-          filename: file ? file.filename : "default-image.png",
+      if(Object.keys(file).length > 0) {
+        console.log("Llega algo en file: ", file)
+        // file.forEach(element => { 
+          for (const key in file) {
+            file[key].forEach(element => {
+              db.Image_product.create({
+                filename: element.filename,
+                id_product: resp.dataValues.id,
+                createdAt:new Date,
+               updatedAt:new Date
+             })
+            });
+         
+         }
+      } else {
+        db.Image_product.create({
+          filename: "default-image.png",
           id_product: resp.dataValues.id,
           createdAt:new Date,
          updatedAt:new Date
-       })
+        })
+      }
+      
        for (let i=0; i<sizes.length; i++){
        db.Stock.create({
         id_product: resp.dataValues.id,
@@ -146,9 +180,25 @@ const productsController = {
       });
   } else {
     const { id } = req.params;
-    const file = req.file;
+    const file = req.files;
     const { name, price,  category,  description, sizes, color, image} = req.body;
+   
+    console.log("Que llega en file:  ", file)
 
+
+    // db.Image_product.findAll({
+    //   where: { 
+    //     id_product : id
+    //   }
+    
+    
+    // })
+    // .then((resp) => {
+    //   console.log("Respuesta:", resp)
+    // })
+    // .catch (e => {
+    //   console.log(e)
+    // })
         for (let i=0; i<sizes.length; i++){  
         db.Stock.destroy({
             where : {

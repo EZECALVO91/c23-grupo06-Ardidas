@@ -12,13 +12,45 @@
           <form action="/products" method="post" class="form_loadProduct" id="createProductForm" enctype="multipart/form-data">
           <section class="form__createProduct">
 
-            <div class="img_create_fast">
-              <input class="dashboard__image" name="image" type="file" accept="image/*" id="image">
+            <div class="inputs_imagenes">
+            <div class="img_create_fast" style="position:relative">
+              <input class="dashboard__image" name="image" type="file" accept="image/*" id="image" >
+              <img id="previewImage" src="#" alt="Vista previa de la imagen" style="display: none;" class="dashboard__image">
               <p class="errores_validacion_login">
                 <%= locals.errores && errores.image ? errores.image.msg : null %>
               </p>
             </div>
-            
+
+            <div class="div_img_chiquitas">
+              <div class="imagen__chiquita_div" style="position:relative">
+                <input class="imagen__chiquita" name="image2" type="file" accept="image/*" id="image2" >
+                <img id="previewImage2" src="#" alt="Vista previa de la imagen" style="display: none;" class="dashboard__image">
+                <p class="errores_validacion_login">
+                  <%= locals.errores && errores.image2 ? errores.image2.msg : null %>
+                </p>
+              </div>
+  
+              <div class="imagen__chiquita_div" style="position:relative">
+                <input class="imagen__chiquita" name="image3" type="file" accept="image/*" id="image3" >
+                <img id="previewImage3" src="#" alt="Vista previa de la imagen" style="display: none;" class="dashboard__image">
+                <p class="errores_validacion_login">
+                  <%= locals.errores && errores.image3 ? errores.image3.msg : null %>
+                </p>
+              </div>
+
+              <div class="imagen__chiquita_div" style="position:relative">
+                <input class="imagen__chiquita" name="image4" type="file" accept="image/*" id="image4" >
+                <img id="previewImage4" src="#" alt="Vista previa de la imagen" style="display: none;" class="dashboard__image">
+                <p class="errores_validacion_login">
+                  <%= locals.errores && errores.image4 ? errores.image4.msg : null %>
+                </p>
+              </div> 
+            </div>
+           
+          </div>
+
+
+
 
             <div class="update_box_intern">
               <label for="name">Nombre :</label>
@@ -98,14 +130,14 @@
                 <label class="label_colores" for="color">Color :</label>
                 
               <select name="color" id="color" >
-                <option value="Azul">Azul</option>
+                <option value="Azules">Azules</option>
                 <option value="Beige">Beige</option>
-                <option value="Blanco">Blanco</option>
-                <option value="Gris">Gris</option>
-                <option value="Marron">Marron</option>
-                <option value="Negro">Negro</option>
-                <option value="Rojo">Rojo</option>
-                <option value="Rosa">Rosa</option>           
+                <option value="Blancas">Blancas</option>
+                <option value="Grises">Grises</option>
+                <option value="Marrones">Marrones</option>
+                <option value="Negras">Negras</option>
+                <option value="Rojas">Rojas</option>
+                <option value="Rosadas">Rosadas</option>           
               </select>
             
               </div> 
@@ -117,6 +149,7 @@
 
         </form>
         <script src="/js/products/productCreate.js"></script>
+        <script src="/js/products/previewImage.js"></script>
       </main>
 
       <!--ACA SE INCLUYE EL PARTIAL : -->

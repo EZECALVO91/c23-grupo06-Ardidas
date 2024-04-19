@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (nameValue === '') {
         showError(nameInput, 'El nombre es obligatorio');
         validationErrors = true;
-      } else if (nameValue.length < 5) {
-        showError(nameInput, 'Tiene que tener un mínimo de 5 caracteres');
+      } else if (nameValue.length < 3) {
+        showError(nameInput, 'Tiene que tener un mínimo de 3 caracteres');
         validationErrors = true;
       }
       else {
