@@ -4,14 +4,15 @@
 
 <body>
 
+
     <header class="productCart-header">
       <a href="/"><img src="/images/LOGO-ARDIDAS.png" alt="LOGO-ARDIDAS" class="logo" /></a>
       <a href="/ayuda" id="button-ayuda-productCart">AYUDA</a>
     </header>
 
-
-      <!-- % if (productInfo) { %> -->
-        <main class="productCart-main">
+<!-- 
+      % if (tengo algo en session) { %> -->
+        <main class="productCart-main" id="root">
       <div class="productCart-main-div-promo select-options-details-products">
         <a class="boton_promoBancaria" id="promoBancariaBoton" style="margin:auto">
           <p style="font-family:Helvetica-Neue;color:#fcfce7;font-weight:bold;text-decoration:underline">Conocé nuestras promociones</p>
@@ -35,7 +36,7 @@
                 </div>
             </article>
         </section>
-      <section class="productCart-main-section-secundario">
+      <section class="productCart-main-section-secundario" id="cart_sectionPago">
         <p class="productCart-main-section-secundario-resumen">Resumen de compra</p>      
         <div class="productCart-main-section-secundario-div-1">
         <p id="productCart-section-secundario-text-total">Total</p>
@@ -47,24 +48,11 @@
       </section>
     </div>
   </main> 
-    <!-- % }else{ %> 
-      <main class="productCart-main" style="height: 70vh;" id="root">
-      <div >
-        <p class="text-center alert alert-warning py-4">Aún no se han agregado productos en el carrito</p>
-        <section class="" >
-           
-          
-        <div class="productCart-main-section-secundario-div-2">
-          <a href="/" style="margin:auto;padding:50px"><button id="button-seguir-comprando-productCart">VOLVER AL HOME</button></a>
-        </div>
-        </section>
-      </div>
-    </main>
-    % } %>  -->
-
+   
     <!--ACA SE INCLUYE EL PARTIAL : -->
     <script src="/js/products/promocionesBancarias.js"></script>
     <script src="/js/cart.js"></script>
+   
 <%-include("../partials/footer.ejs")%>
 
 </body>

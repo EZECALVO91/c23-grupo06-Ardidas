@@ -1,5 +1,9 @@
 console.log("holiiiiii")
 
+const sectionCart = document.getElementById("cart")
+const sectionPagoCart = document.getElementById("cart_sectionPago")
+
+
 const productInfoJSON = sessionStorage.getItem("productInfo");
 
 if (productInfoJSON) {
@@ -41,52 +45,37 @@ if (productInfoJSON) {
 
 } else {
   console.log("No hay info en sessionStorage.");
-}
+    sectionCart.style.display = "none"
+    sectionPagoCart.style.display = "none";
 
-// window.onload = () => {
-//     const app = document.getElementById("root");
-//     const container = document.createElement("div");
-//     container.setAttribute("class", "container");
-//     app.appendChild(container);
+
+    const main = document.getElementById("root");
+    const container = document.createElement("div");
+    container.style.height = "30vh";
+
   
-//     // Aqui debemos agregar nuestro fetch
-//     fetch('http://localhost:3000/api/products')
-//     .then(function(response){
-//         return response.json()
-//     })
-//     .then((peliculas)=>{
-//        console.log(peliculas.meta.products)
-//       let data = peliculas.meta.products;
-  
-//       data.forEach((movie) => {
-//         const card = document.createElement("div");
-//         card.setAttribute("class", "card");
-  
+    const p = document.createElement("p");
+        p.setAttribute("class", "text-center alert alert-warning py-5")
+        p.textContent = `Aún no se han agregado productos en el carrito`;
+
+        main.appendChild(container)
+        container.appendChild(p)
+
+
+
+    const div = document.createElement("div");
+        div.setAttribute("class", "productCart-main-section-secundario-div-2")
        
-  
-//         const h1 = document.createElement("h1");
-//         h1.textContent = movie.name;
-  
-//         const p = document.createElement("p");
-//         p.textContent = `Rating: ${movie.description}`;
-  
-//         const duracion = document.createElement("p");
-//         duracion.textContent = `Duración: ${movie.length}`;
-  
-//         const toForm = document.createElement("a")
-//         toForm.textContent = "Editar";
-//         toForm.setAttribute("href", `/form/${movie.id}`)
-       
-  
-//         container.appendChild(card);
-//         card.appendChild(h1);
-//         card.appendChild(p);
-        
-//         card.appendChild(duracion);
-//         card.appendChild(toForm);
-   
-  
-//       });
-//     })
-//   };
-  
+    
+    const a = document.createElement("a");
+        a.setAttribute("href", "/")
+        a.setAttribute("id", "button-seguir-comprando-productCart")
+        a.textContent = `VOLVER AL HOME`;
+        a.style.textAlign = "center"
+        a.style.color = "#FCFCE7"
+        a.style.background = "black"
+    
+
+    main.appendChild(div)
+    div.appendChild(a)
+}
