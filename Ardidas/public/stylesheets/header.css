@@ -115,18 +115,18 @@
 .logo {
     max-width: 100%;
     height: auto;
-    border-radius: 15px; /* Ajusta según tu necesidad */
-    filter: drop-shadow(0 0 1px #00ff00); /* Agregar sombra verde alrededor de la imagen */
-    transition: filter 0.2s; /* Agregar transición para el filter */
-    animation: pulse 1s infinite alternate; /* Aplicar animación de pulso directamente a la imagen */
+    border-radius: 15px; 
+    filter: drop-shadow(0 0 1px #00ff00);
+    transition: filter 0.2s; 
+    animation: pulse 1s infinite alternate; 
 }
 
 @keyframes pulse {
     0% {
-        filter: drop-shadow(0 0 5px #00ff00); /* Sombra verde al principio de la animación */
+        filter: drop-shadow(0 0 5px #00ff00);
     }
     100% {
-        filter: drop-shadow(0 0 15px #00ff00); /* Sombra más intensa al final de la animación */
+        filter: drop-shadow(0 0 15px #00ff00);
     }
 }
 

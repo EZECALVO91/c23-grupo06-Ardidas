@@ -5,12 +5,12 @@
   <%-include("../partials/header.ejs")%>
 
 <main>
-    <div class="box_redirect_create">
-
-      <a class="btn_redirect_create" href="/products/create">Crear Producto</a>
-    
+    <div class="div_container_buttons">
+        <a href="http://localhost:8000/" id="replyIcon"><i class="fa-solid fa-reply-all fa-beat-fade"></i></a>
+      <div class="box_redirect_create">
+        <a class="btn_redirect_create" href="/products/create">Crear Producto</a>
+      </div>
     </div>
-
   <section class="contenedor-productos1 section_products_main_index">
         
         <% products.forEach(element => { %>
