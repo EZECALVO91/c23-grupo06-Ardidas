@@ -149,29 +149,7 @@
 
         </form>
         <script src="/js/products/productCreate.js"></script>
-        <script>
-          function previewImage(event, previewId) {
-            const preview = document.getElementById(previewId);
-            preview.style.display = 'block';
-            preview.src = URL.createObjectURL(event.target.files[0]);
-          }
-        
-          document.getElementById('image').addEventListener('change', function(event) {
-            previewImage(event, 'previewImage');
-          });
-        
-          document.getElementById('image2').addEventListener('change', function(event) {
-            previewImage(event, 'previewImage2');
-          });
-        
-          document.getElementById('image3').addEventListener('change', function(event) {
-            previewImage(event, 'previewImage3');
-          });
-
-          document.getElementById('image4').addEventListener('change', function(event) {
-            previewImage(event, 'previewImage4');
-          });
-        </script>
+        <script src="/js/products/previewImage.js"></script>
       </main>
 
       <!--ACA SE INCLUYE EL PARTIAL : -->
