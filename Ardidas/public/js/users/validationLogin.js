@@ -45,7 +45,7 @@ const inputEmail = document.querySelector("#email")
         default:
             validatorInput(".emailError", target)
             this.style.borderColor= "green";//sino saca el msj de error y deja seguir con el formulario
-            this.style.backgroundColor = "rgba(0, 255, 0, 0.1)";
+            this.style.backgroundColor = "white"
             break;
     }
 });
@@ -61,7 +61,7 @@ const inputPassword = document.querySelector("#password")
         default:
             validatorInput(".passwordError", target);
             this.style.borderColor= "green";//sino saca el msj de error y deja seguir con el formulario
-            this.style.backgroundColor = "rgba(0, 255, 0, 0.1)";
+            this.style.backgroundColor = "white"
             break;
     }
 });

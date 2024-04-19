@@ -36,15 +36,32 @@
 }
 
 .fa-address-book,
-.fa-highlighter,
-.fa-trash-can {
+.fa-highlighter{
     transition: color 0.3s, transform 0.3s; /* Agregar transiciones para el color y la transformación */
 }
 
 .fa-address-book:hover,
-.fa-highlighter:hover,
-.fa-trash-can:hover {
+.fa-highlighter:hover{
     color: rgb(38, 230, 0); /* Cambiar el color del icono a verde al pasar el mouse sobre él */
+    animation: shake 0.2s infinite alternate; /* Aplicar la animación de vibración */
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-2px); /* Mover el icono -2px horizontalmente */
+    }
+    100% {
+        transform: translateX(2px); /* Mover el icono 2px horizontalmente */
+    }
+}
+
+
+.fa-trash-can {
+    transition: color 0.3s, transform 0.3s; /* Agregar transiciones para el color y la transformación */
+}
+
+.fa-trash-can:hover {
+    color: rgb(255, 2, 2); /* Cambiar el color del icono a verde al pasar el mouse sobre él */
     animation: shake 0.2s infinite alternate; /* Aplicar la animación de vibración */
 }
 

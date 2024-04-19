@@ -106,7 +106,7 @@ inputEmail.addEventListener("blur", async function({target}) { //hacemos la func
 const inputPassword = document.querySelector("#password")
     inputPassword.addEventListener("blur", function({target}) {
     switch (true) {
-        case this.value.trim().length <= 6:
+        case this.value.trim().length <= 5:
             messageError(".passError","Contraseña mínimo(6) a máximo(20) caracteres",target);
             this.style.borderColor = "red";
             this.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
