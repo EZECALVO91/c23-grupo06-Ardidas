@@ -105,7 +105,7 @@ main {
 }
 
 .my-responsive-popup {
-    width: 50% !important; /* Ajustar el ancho del popup */
+    width: 100% !important; /* Ajustar el ancho del popup */
 }
 @media (min-width: 768px) {
     .secciones-productDetail {
@@ -215,7 +215,7 @@ main {
 }
 
 .my-responsive-popup {
-    width: 90% !important; /* Ajustar el ancho del popup */
+    width: 70% !important; /* Ajustar el ancho del popup */
 }
 }
 
