@@ -137,6 +137,19 @@
 
 }
 
+.priceAndCreated{
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+}
+
+.precio_dashboarD{
+    color: var(--color-blanco);
+    font-size: 18;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
 
 @media (min-width: 768px) {
     .box_redirect_create a {
