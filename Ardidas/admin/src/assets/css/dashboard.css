@@ -387,6 +387,7 @@
     border: 1px solid white;
     cursor: pointer;
     transition: box-shadow 0.3s, color 0.3s;
+    border-radius: 5px;
 }
 
 .acordion.active {

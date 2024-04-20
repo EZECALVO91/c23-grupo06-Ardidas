@@ -15,3 +15,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     autoSlide(); // ejecutamos la funcion
 });
+
+
+// utilizo la funcion de onclick que le pusimos a los botones de paginacion
+function setClicked() {
+    sessionStorage.setItem('paginationClicked', 'true');
+}
+// cuando la pagina recarga, hace el onload y despues cumple la funcion de scroll
+window.onload = function () {
+    //buscamos en el storage si se uso el evento click
+    const paginationClicked = sessionStorage.getItem('paginationClicked');
+    if (paginationClicked) {
+        // capturamos la clase
+        const productosTitle = document.getElementById('productos_home');
+        productosTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // y sacamos de la sesion el eventoclick hasta que pida utilizar de nuevo la funcion.
+        sessionStorage.removeItem('paginationClicked');
+    }
+};

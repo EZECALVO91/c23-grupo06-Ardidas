@@ -7,33 +7,32 @@ const { validationResult } = require("express-validator");
 const productsController = {
   index: async (req, res) => {
     try {
-      const pageProducts = 9; // Define la cantidad de productos por página
-      const totalProducts = await db.Product.count(); // Obtiene el total de productos
-      const totalPages = Math.ceil(totalProducts / pageProducts); // Calcula el total de páginas
-      // Obtiene la página actual de la consulta de URL, si no está presente, establece la primera página como predeterminada
-      const currentPage = req.query.page ? parseInt(req.query.page) : 1;
-      // Calcula el índice de inicio y fin para la consulta de productos
-      const startIndex = (currentPage - 1) * pageProducts;
-      const endIndex = currentPage * pageProducts;
-      // Consulta los productos para la página actual
-      const products = await db.Product.findAll({
-        include: [{ association: "Image_products" }],
-        limit: pageProducts,
-        offset: startIndex,
-      });
-  
-      res.render("products/products", {
-        title: "Ardidas",
-        usuarioLogeado: req.session.usuarioLogin,
-        products,
-        currentPage,
-        totalPages,
-      });
+        const pageProducts = 9; // Define la cantidad de productos por página
+        const currentPage = req.query.page ? parseInt(req.query.page) : 1;
+        const startIndex = (currentPage - 1) * pageProducts;
+        // Consulta los productos para la página actual y obtiene el total de productos
+        const [products, totalProducts] = await Promise.all([
+            db.Product.findAll({
+                include: [{ association: "Image_products" }],
+                limit: pageProducts,
+                offset: startIndex,
+            }),
+            db.Product.count()
+        ]);
+        const totalPages = Math.ceil(totalProducts / pageProducts); // Calcula el total de páginas
+
+        res.render("products/products", {
+            title: "Ardidas",
+            usuarioLogeado: req.session.usuarioLogin,
+            products,
+            currentPage,
+            totalPages,
+        });
     } catch (error) {
-      console.log(error);
-      res.status(500).send("Error al cargar los productos");
+        console.log(error);
+        res.status(500).send("Error al cargar los productos");
     }
-  },
+},
 
   productDetail: (req, res) => {
     let product = db.Product.findByPk(req.params.id,{
@@ -62,21 +61,37 @@ const productsController = {
         })
   },
   
-  dashboard: (req, res) => {
-    let products = db.Product.findAll({
-        include: [{
-          association:"Image_products"}]     
-    })  
-    Promise.all([products])
-    .then(([products]) => {
-        res.render("products/dashboard",{
-        title: "Dashboard",
-        usuarioLogeado: req.session.usuarioLogin,
-        products,
-    
-    })})
-    .catch(error=> console.log(error));
-  },
+  dashboard: async (req, res) => {
+    try {
+        const pageProducts = 9; // Define la cantidad de productos por página
+        const currentPage = req.query.page ? parseInt(req.query.page) : 1;
+        const startIndex = (currentPage - 1) * pageProducts;
+        // Consulta los productos para la página actual y obtiene el total de productos
+        const [products, totalProducts] = await Promise.all([
+            db.Product.findAll({
+                include: [{ association: "Image_products" }],
+                limit: pageProducts,
+                offset: startIndex,
+                order: [['createdAt', 'DESC']] // Ordena por el último ID creado (en orden descendente)
+            }),
+            db.Product.count()
+        ]);
+        const totalPages = Math.ceil(totalProducts / pageProducts); // Calcula el total de páginas
+
+        res.render("products/dashboard", {
+            title: "Dashboard",
+            usuarioLogeado: req.session.usuarioLogin,
+            products,
+            currentPage,
+            totalPages,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Error al cargar los productos del dashboard");
+    }
+},
+
+
   productLoad: (req, res) => {
     res.render("products/productLoad", {
       title: "Crear",
