@@ -11,7 +11,16 @@ function abrirImagen() {
 
 Swal.fire({
     imageUrl: "https://nikearprod.vtexassets.com/arquivos/promotions-modal-content-image.png",
-    imageHeight: 300,
-    imageAlt: "Promociones bancarias"
-  });
+    imageHeight: "auto",
+    imageWidth: "100%",
+    imageAlt: "Promociones bancarias",
+    background: 'transparent',
+    
+    showConfirmButton: false,
+    customClass: {
+        popup: 'my-responsive-popup',
+        content: 'my-responsive-content',
+    }
+  }
+)
 }

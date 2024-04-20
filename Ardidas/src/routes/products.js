@@ -14,7 +14,7 @@ const uploadImg = require ('../validation/validationProductImg')
 router
 .get("/", index)
 
-.get('/carrito/:id', sessionValidate, productCart)
+.get('/carrito', sessionValidate, productCart)
 
 .get('/detalle/:id', productDetail)
 

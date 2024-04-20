@@ -55,19 +55,13 @@ const productsController = {
         .catch(error=> console.log(error));
   },
   productCart: (req, res) => {
-    let product = db.Product.findByPk(req.params.id,{
-      include: [{
-          association: "Image_products"}],
-    });
-    Promise.all([product])
-      .then(([product]) => {
-          return res.render("products/productCart",{
-          product,
-          usuarioLogeado: req.session.usuarioLogin,
-          title: "Carrito"
-      })})
-      .catch(error=> console.log(error));
+         return res.render("products/productCart",{
+         usuarioLogeado: req.session.usuarioLogin,
+         title: "Carrito"
+          
+        })
   },
+  
   dashboard: (req, res) => {
     let products = db.Product.findAll({
         include: [{

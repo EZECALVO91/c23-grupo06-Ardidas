@@ -10,33 +10,47 @@
       <div class="bannerGif_ayuda_propaganda">
         <a href="http://localhost:3000/search?keywords=lanzamiento"><img src="/images/bannerGifs/new-shoes-gifs.gif" alt="Productos en Lanzamiento"></a>
       </div>
-
-      <div class="main_title_box">
-        <hr class="hr_txt" />
-        <h2 id="productos_home">RESULTADOS DE:
-          <br> 
-          "<%= keywords%>" </h2>
-        <hr class="hr_txt" />
-      </div>
-
-      <section class="contenedor-productos1 section_products_main_index">
-        <% products.forEach(product => { %>
-                  <article class="articulos">
-          <a href="../products/detalle/<%= product.id%>"><img src="/images/products/<%=product.Image_products[0].filename %>" alt="Zapatillas Nike" /></a>
-          <div class="product-texto">
-            <div class="main_descuento_precio_articulo">
-              <p class="precio">$<%=product.price%></p>
+      <% if(products.length > 0) { %>
+        <div class="main_title_box">
+          <hr class="hr_txt" />
+          <h2 id="productos_home">RESULTADOS DE:
+            <br> 
+            "<%= keywords %>" </h2>
+          <hr class="hr_txt" />
+        </div>
+  
+        <section class="contenedor-productos1 section_products_main_index">
+          <% products.forEach(product => { %>
+                    <article class="articulos">
+            <a href="../products/detalle/<%= product.id%>"><img src="/images/products/<%=product.Image_products[0].filename %>" alt="Zapatillas Nike" /></a>
+            <div class="product-texto">
+              <div class="main_descuento_precio_articulo">
+                <p class="precio">$<%=product.price%></p>
+              </div>
+              <p class="modelo"><%=product.name%></p>
+              <button><a href="/products/detalle/<%= product.id%>">SUMAR AL CARRITO</a></button>
             </div>
-            <p class="modelo"><%=product.name%></p>
-            <button><a href="/products/carrito/<%= product.id%>">SUMAR AL CARRITO</a></button>
-          </div>
+          </article>
+            <% }); %>
+        </section>
+  
+        <article class="ver_productos">
+          <a href="/products">VER TODOS LOS PRODUCTOS</a>
         </article>
-          <% }); %>
-      </section>
+      <% } else { %>
+        <div class="main_title_box">
+          <hr class="hr_txt" />
+          <h2 id="productos_home">NO HAY RESULTADOS QUE COINCIDAN CON SU BÚSQUEDA
+            <br> 
+            "<%= keywords %>" </h2>
+          <hr class="hr_txt" />
+        </div>
 
-      <article class="ver_productos">
-        <a href="/products">VER TODOS LOS PRODUCTOS</a>
-      </article>
+        <article class="ver_productos">
+          <a href="/products">VER TODOS LOS PRODUCTOS</a>
+        </article>
+      <% } %> 
+      
       <%- include("./partials/whatsapp.ejs") %>
     </main>
 

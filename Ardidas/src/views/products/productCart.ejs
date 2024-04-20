@@ -4,44 +4,55 @@
 
 <body>
 
+
     <header class="productCart-header">
       <a href="/"><img src="/images/LOGO-ARDIDAS.png" alt="LOGO-ARDIDAS" class="logo" /></a>
       <a href="/ayuda" id="button-ayuda-productCart">AYUDA</a>
     </header>
-    <main class="productCart-main">
-      <div class="productCart-main-div-promo">
-        <p>3 Cuotas sin interés con todos los bancos.</p>
+
+<!-- 
+      % if (tengo algo en session) { %> -->
+        <main class="productCart-main" id="root">
+      <div class="productCart-main-div-promo select-options-details-products">
+        <a class="boton_promoBancaria" id="promoBancariaBoton" style="margin:auto">
+          <p class="link_carrito_promoBancaria">Conocé nuestras promociones</p>
+        </a>
       </div>
-        <section class="productCart-main-section-principal">
+        <section class="productCart-main-section-principal" id="cart">
             <div class="productCart-main-section-principal-encabezado">
                 <h3>PRODUCTO</h3><h3>PRECIO</h3>
             </div>
             <article class="productCart-main-section-principal-article">
                 <div class="productCart-main-section-principal-article-div-1">
-                    <img src="/images/products/<%= product.Image_products[0].filename %>" alt="zapatillas">
+                    <img id="image_cart" src="/images/products/default-image.png" alt="zapatillas">
                 </div>
                 <div class="productCart-main-section-principal-article-div-2">
-                    <p id="productCart-article-nombre"><%= product.name%></p>
-                    <p id="productCart-article-precio">$<%= product.price%></p>
-                    <a href="" id="productCart-article-borrar"><i class="fa-solid fa-trash-can"></i></a>
+                    <p id="productCart-article-nombre">  </p>
+                    <p id="productCart-article-precio">  </p>
+                    <p id="productCart-article-color">Color: </p>
+                    <p id="productCart-article-talle">Talle:</p>
+                    <a id="productCart-article-borrar"><i class="fa-solid fa-trash-can"></i></a>
                     <input type="number" name="cantidad" id="productCart-article-cantidad" value="1">
                 </div>
             </article>
         </section>
-      <section class="productCart-main-section-secundario">
+      <section class="productCart-main-section-secundario" id="cart_sectionPago">
         <p class="productCart-main-section-secundario-resumen">Resumen de compra</p>      
         <div class="productCart-main-section-secundario-div-1">
         <p id="productCart-section-secundario-text-total">Total</p>
-        <p id="productCart-precio-total">$<%= product.price%></p>
+        <p id="productCart-precio-total"></p>
       </div>
       <div class="productCart-main-section-secundario-div-2">
         <button id="button-pagar-productCart">PAGAR</button>
         <a href="/"><button id="button-seguir-comprando-productCart">SEGUIR COMPRANDO</button></a>
       </section>
     </div>
-  </main>
-
+  </main> 
+   
     <!--ACA SE INCLUYE EL PARTIAL : -->
+    <script src="/js/products/promocionesBancarias.js"></script>
+    <script src="/js/cart.js"></script>
+   
 <%-include("../partials/footer.ejs")%>
 
 </body>
