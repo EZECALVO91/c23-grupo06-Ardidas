@@ -238,5 +238,14 @@
         display: flex;
         margin-bottom: 50%;
     }
+
+    .link_carrito_promoBancaria {
+        font-family:Helvetica-Neue;
+        color:#fcfce7;
+        font-weight:bold;
+        text-decoration:underline;
+        font-size: 28px;
+        margin-bottom: 0px;
+    }
 }
 
