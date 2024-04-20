@@ -1,5 +1,5 @@
 import Header from "./components/Header"
-import '../../public/stylesheets/styles.css'
+import './assets/css/styles.css'
 import DashboardExclusive from "./components/DashboardExclusive"
 import ContainerSections from "./components/ContainerSections"
 import Footer from "./components/Footer"
@@ -29,7 +29,6 @@ function App() {
           <ContainerSections apiData={apiData} />
         </section>
       </main>
-      <script src="../../public/js/dashboardReact/dashboard.js"></script>
       <Footer />
     </>
   )

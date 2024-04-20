@@ -5,7 +5,7 @@ const dashboardAPI = {
     try {
       const ultimoProductoPromise = db.Product.findOne({
         include: [{ association: "Image_products" }],
-        order: [["id", "DESC"]], //PEDIMOS QUE SE ORDENEN POR FECHA DE CREACION PARA
+        order: [["createdAt", "DESC"]], //PEDIMOS QUE SE ORDENEN POR FECHA DE CREACION PARA
         // QUE EL ULTIMO CREADO SE MUESTE EN EL DASHBOARD
       });
 

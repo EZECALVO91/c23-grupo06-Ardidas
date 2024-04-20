@@ -148,21 +148,37 @@ userProfileEdit: (req, res) => {
 
 // ---------------ACA EMPIEZA EL DASHBOARD--------------------------------------------------------------------------------------------------------------
 
-UsersDashboard: (req, res) => {
-      db.User.findAll({
-        where: { id: { [Op.ne]: req.session.usuarioLogin.id } },
-      })
-        .then((users) => {
-          // console.log("dashboard users", users);
-          // console.log("dashboard users", users);
-          res.render("users/usersDashboard", {
+UsersDashboard: async (req, res) => {
+    try {
+        const pageUsers = 9; // Define la cantidad de usuarios por página
+        const currentPage = req.query.page ? parseInt(req.query.page) : 1;
+        const startIndex = (currentPage - 1) * pageUsers;
+
+        // Consulta los usuarios para la página actual y obtiene el total de usuarios
+        const [users, totalUsers] = await Promise.all([
+            db.User.findAll({
+                where: { id: { [Op.ne]: req.session.usuarioLogin.id } },
+                include: [{ model: db.Category, as: 'Categories' }],
+                limit: pageUsers,
+                offset: startIndex,
+            }),
+            db.User.count({ where: { id: { [Op.ne]: req.session.usuarioLogin.id } } }),
+        ]);
+
+        const totalPages = Math.ceil(totalUsers / pageUsers); // Calcula el total de páginas
+
+        res.render("users/usersDashboard", {
             title: "Dashboard",
-            users: users,
             usuarioLogeado: req.session.usuarioLogin,
-          });
-        })
-        .catch((err) => console.log(err));
-    },
+            users,
+            currentPage,
+            totalPages,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Error al cargar los usuarios");
+    }
+},
 
   
     //Dashboar crear usuarios con provilegios

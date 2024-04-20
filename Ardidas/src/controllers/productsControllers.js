@@ -72,7 +72,7 @@ const productsController = {
                 include: [{ association: "Image_products" }],
                 limit: pageProducts,
                 offset: startIndex,
-                order: [['id', 'DESC']] // Ordena por el último ID creado (en orden descendente)
+                order: [['createdAt', 'DESC']] // Ordena por el último ID creado (en orden descendente)
             }),
             db.Product.count()
         ]);
