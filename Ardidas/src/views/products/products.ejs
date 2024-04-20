@@ -90,23 +90,23 @@
       </section>
 
       <%- include("../partials/whatsapp.ejs") %>
-      
+
     <section>
       <nav>
           <ul class="pagination">
               <% if (currentPage > 1) { %>
               <li>
-                  <a href="?page=<%= currentPage - 1 %>">Anterior</a>
+                  <a href="?page=<%= currentPage - 1 %>" onclick="setClicked()" >Anterior</a>
               </li>
               <% } %>
               <% for (let i = 1; i <= totalPages; i++) { %>
               <li class="<%= i === currentPage ? 'active' : '' %>">
-                  <a href="?page=<%= i %>"><%= i %></a>
+                  <a href="?page=<%= i %>" onclick="setClicked()"><%= i %></a>
               </li>
               <% } %>
               <% if (currentPage < totalPages) { %>
               <li>
-                  <a href="?page=<%= currentPage + 1 %>">Siguiente</a>
+                  <a href="?page=<%= currentPage + 1 %>" onclick="setClicked()">Siguiente</a>
               </li>
               <% } %>
           </ul>
