@@ -1,5 +1,7 @@
 console.log("holiiiiii")
+ 
 
+ 
 const sectionCart = document.getElementById("cart")
 const sectionPagoCart = document.getElementById("cart_sectionPago")
 

@@ -103,6 +103,10 @@ main {
     color: black;
 
 }
+
+.my-responsive-popup {
+    width: 50% !important; /* Ajustar el ancho del popup */
+}
 @media (min-width: 768px) {
     .secciones-productDetail {
         font-size: 16px;
@@ -209,6 +213,10 @@ main {
 .detalles_div_descripcion h3{
     margin-bottom: 3%;
 }
+
+.my-responsive-popup {
+    width: 90% !important; /* Ajustar el ancho del popup */
+}
 }
 
 @media (min-width: 1024px) {
@@ -299,4 +307,14 @@ main {
         margin:auto
     }
 
+    .my-responsive-popup {
+        width: 765px !important; /* Ajustar el ancho del popup */
+    }
+    }
+
+
+    @media (min-width: 1200px) {
+        .my-responsive-popup {
+            width: 1000px !important; /* Ajustar el ancho del popup */
+        }
     }
