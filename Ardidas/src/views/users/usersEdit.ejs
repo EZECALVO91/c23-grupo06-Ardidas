@@ -64,14 +64,14 @@
             </select>
           </div>
 
-          <label for="image">CAMBIO DE AVATAR: </label>
+          <label for="image">CAMBIO DE IMAGEN: </label>
           <input type="file" name="image" id="image" accept="image/*" value="<%= user.image %>">
           <small class="imageError">
             <%= locals.errores && errores.image ? errores.image.msg : null %>
           </small>
 
           <div class="container_avatar_img">
-            <h3 class="main__form__title">AVATAR: </h3>
+            <h3 class="main__form__title">IMAGEN: </h3>
             <img class="img_avatar" src="/images/users/<%= user.image %>" alt="imagen principal">
           </div>
 
