@@ -2,38 +2,93 @@ document.addEventListener("DOMContentLoaded", function () {
   const sectionCart = document.getElementById("cart");
   const sectionPagoCart = document.getElementById("cart_sectionPago");
 
+
   const productInfoJSON = sessionStorage.getItem("productsInCart");
   console.log("Que llega en carrito y en que formato: ", productInfoJSON);
 
   if (productInfoJSON) {
     const productInfo = JSON.parse(productInfoJSON);
-    const imageCart = document.getElementById("image_cart");
-    const nameCart = document.getElementById("productCart-article-nombre");
-    const priceCart = document.getElementById("productCart-article-precio");
-    const cantidadCart = document.getElementById(
-      "productCart-article-cantidad"
-    );
-    const colorCart = document.getElementById("productCart-article-color");
-    const talleCart = document.getElementById("productCart-article-talle");
+    const listaProductsCart = document.getElementById("listaProductsCart");
 
-    const precioFinal = document.getElementById("productCart-precio-total");
+    let sumaTotal = 0 
+
     for (i = 0; i < productInfo.length; i++) {
+      
 
+      const article = document.createElement("article");
+      article.setAttribute("class", "productCart-main-section-principal-article");
+
+      const imgDiv = document.createElement("div");
+      imgDiv.setAttribute("class", "productCart-main-section-principal-article-div-1");
+      imgDiv.style.position = "relative"
+      const imageCart = document.createElement("img");
+      imageCart.src = productInfo[i].image;
+      imgDiv.appendChild(imageCart);
     
-    imageCart.src = productInfo[i].image;
-    nameCart.innerText = productInfo[i].name;
-    priceCart.innerText = productInfo[i].price;
-    cantidadCart.value = productInfo[i].quantity;
-    colorCart.innerText += productInfo[i].color;
-    talleCart.innerText += productInfo[i].size;
+      article.appendChild(imgDiv);
 
-    precioFinal.innerText += productInfo[i].price * productInfo[i].quantity;
+      const detalles = document.createElement("div")
+      detalles.setAttribute("class", "productCart-main-section-principal-article-div-2")
 
+      article.appendChild(detalles);
+
+
+      const nombre = document.createElement("p")
+      nombre.setAttribute("id", "productCart-article-nombre")
+      nombre.innerText = productInfo[i].name;
+
+      detalles.appendChild(nombre)
+
+      const cantidad = document.createElement("input")
+      cantidad.setAttribute("id", "productCart-article-cantidad")
+      cantidad.value = productInfo[i].quantity;
+
+      detalles.appendChild(cantidad)
+
+      const precio = document.createElement("p")
+      precio.setAttribute("id", "productCart-article-precio")
+      precio.innerText = productInfo[i].price;
+
+      detalles.appendChild(precio)
+
+      const color = document.createElement("p")
+      color.setAttribute("id", "productCart-article-color")
+      color.innerText = `Color:  ${productInfo[i].color}`;
+
+      detalles.appendChild(color)
+
+      const talle = document.createElement("p")
+      talle.setAttribute("id", "productCart-article-talle")
+      talle.innerText = `Talle:  ${productInfo[i].size}`;
+
+      detalles.appendChild(talle)
+
+      const borrar = document.createElement("a")
+      borrar.setAttribute("id", `productCart-article-borrar${[i]}`)
+      borrar.innerHTML = '<i class="fa-solid fa-trash-can" style="color:black;z-index:1;position:absolute;right:10px;top:2px" ></i>';
+
+      imgDiv.appendChild(borrar)
+
+     
+
+
+      listaProductsCart.appendChild(article);
+
+    sumaTotal += (productInfo[i].price * productInfo[i].quantity);
+      
     console.log("Info del producto:", productInfo[i].price);
-  }
+    console.log("total: ", sumaTotal)
+  
+
+  const total = document.getElementById("productCart-precio-total")
+      total.innerText = sumaTotal;
+
+
+
     const borrarDelCarrito = document.getElementById(
-      "productCart-article-borrar"
+      `productCart-article-borrar${[i]}`
     );
+    
     borrarDelCarrito.addEventListener("click", function () {
       console.log("Borraste el productoooooo");
       sessionStorage.removeItem("productsInCart");
@@ -63,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
       main.appendChild(div);
       div.appendChild(a);
     });
+  }
   } else {
     console.log("No hay productos en el carrito");
     sectionCart.style.display = "none";
