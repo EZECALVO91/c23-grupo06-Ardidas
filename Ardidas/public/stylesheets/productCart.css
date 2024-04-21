@@ -60,8 +60,9 @@
     width: 70%;
 }
 .productCart-main-section-principal-article-div-2 #productCart-article-cantidad{
+    display:none;
     width: 35%;
-    margin-left: 5%;
+    /* margin-left: 5%; */
     text-align: center;
     border: 0px;
     border-radius: 12px;
@@ -95,6 +96,17 @@
     margin-left: 50%;
     text-decoration: none;
     color: #000;
+}
+.containerGiftCart{
+    width: 100%;
+}
+.img_CArt{
+    width: 100%;
+    margin: auto;
+}
+.img_CArt img{
+    width: 6rem;
+    border-radius: 50%;
 }
 
 .productCart-main-section-secundario{
@@ -171,6 +183,12 @@
         width: 170px;
 
     }
+    .containerGiftCart{
+       width: 1px;
+    }
+    .img_CArt img{
+        width:7rem;
+    }
     .productCart-header #button-ayuda-productCart{
         display: flex;
         justify-content: end;
@@ -183,6 +201,7 @@
         width: 18%;
     }
     .productCart-main-section-principal-article-div-1 img{
+        border-radius: 10%;
         width: 85px;
     }
     .productCart-main-section-principal-article-div-2{
@@ -190,10 +209,11 @@
     }
     .productCart-main-section-principal-article-div-2 #productCart-article-precio{
         margin-left: 5%;
-        width: 45%;
+        width: 30%;
     }
     .productCart-main-section-principal-article-div-2 #productCart-article-cantidad{
-        width: 30%;
+        display:inline;
+        width: 10%;
     }
     .productCart-main-section-principal-article-div-2 #productCart-article-borrar{
         padding-top: 2%;
@@ -207,6 +227,9 @@
 @media (min-width: 1024px){ /*Desktop*/
     .productCart-header #button-ayuda-productCart{
         font-size: 22px;
+    }
+    .img_CArt img{
+        width:8rem;
     }
     .productCart-main-div-promo{
         display: flex;
@@ -236,7 +259,6 @@
     }
     .productCart-main-section-secundario-resumen{
         display: flex;
-        margin-bottom: 50%;
     }
 
     .link_carrito_promoBancaria {

@@ -6,11 +6,11 @@
  const sizeProduct = document.getElementById("size_product")
  const colorProduct = document.getElementById("color_product")
  const cantidadProduct = document.getElementById("cantidad_product")
- 
+//  const listaCarrito = []
  
  //Armo un evento para que cuando clickee, me traiga por consola todos los datos
  addButton.addEventListener("click", function (e){
-   // e.preventDefault()
+    // e.preventDefault()
 
    console.log("clickeaste el addCart")
    console.log("Que llega en la imagen:",imageProduct.src)
@@ -29,12 +29,14 @@
    quantity: cantidadProduct.value
  };
 
-  const productInfoJSON = JSON.stringify(productInfo);
-
+let productsInCart = JSON.parse(sessionStorage.getItem("productsInCart")) || []
+  // const holi = listaCarrito.push(productInfoJSON)
+  console.log(sessionStorage)
 // Guardo la info en sessionStorage 
+productsInCart.push(productInfo);
 
-sessionStorage.setItem("productInfo", productInfoJSON);
+sessionStorage.setItem("productsInCart", JSON.stringify(productsInCart));
 
-console.log("Info del produtco en sessionStorage:", productInfoJSON);
+console.log("Info del produtco en sessionStorage:", productsInCart);
 });
  

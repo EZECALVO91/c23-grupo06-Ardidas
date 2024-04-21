@@ -22,9 +22,10 @@
             <div class="productCart-main-section-principal-encabezado">
                 <h3>PRODUCTO</h3><h3>PRECIO</h3>
             </div>
-            <article class="productCart-main-section-principal-article">
-                <div class="productCart-main-section-principal-article-div-1">
-                    <img id="image_cart" src="/images/products/default-image.png" alt="zapatillas">
+            <div id="listaProductsCart"></div>
+            <!-- <article class="productCart-main-section-principal-article" id="listaProductsCart">
+                <div class="productCart-main-section-principal-article-div-1" id="imgCart">
+                     <img id="image_cart" src="/images/products/default-image.png" alt="zapatillas"> 
                 </div>
                 <div class="productCart-main-section-principal-article-div-2">
                     <p id="productCart-article-nombre">  </p>
@@ -34,16 +35,23 @@
                     <a id="productCart-article-borrar"><i class="fa-solid fa-trash-can"></i></a>
                     <input type="number" name="cantidad" id="productCart-article-cantidad" value="1">
                 </div>
-            </article>
+            </article> -->
         </section>
       <section class="productCart-main-section-secundario" id="cart_sectionPago">
-        <p class="productCart-main-section-secundario-resumen">Resumen de compra</p>      
+        <p class="productCart-main-section-secundario-resumen">Resumen de compra</p> 
+          <div class="img_CArt">
+            <img src="/images/bannerGifs/200w.gif" alt="">
+          </div>
+        
         <div class="productCart-main-section-secundario-div-1">
-        <p id="productCart-section-secundario-text-total">Total</p>
+        <p id="productCart-section-secundario-text-total">Total $</p>
         <p id="productCart-precio-total"></p>
       </div>
       <div class="productCart-main-section-secundario-div-2">
-        <button id="button-pagar-productCart">PAGAR</button>
+        
+        <button id="button-pagar-productCart">
+          <a id="">PAGAR  
+        </button>
         <a href="/"><button id="button-seguir-comprando-productCart">SEGUIR COMPRANDO</button></a>
       </section>
     </div>
@@ -51,6 +59,7 @@
    
     <!--ACA SE INCLUYE EL PARTIAL : -->
     <script src="/js/products/promocionesBancarias.js"></script>
+    <script src="/js/products/mediosDePago.js"></script>
     <script src="/js/cart.js"></script>
    
 <%-include("../partials/footer.ejs")%>

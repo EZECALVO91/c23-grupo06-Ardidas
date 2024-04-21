@@ -221,6 +221,17 @@ const productsController = {
             }
         })
     }
+    // for (const key in file) {
+    //   file[key].forEach(element => {
+    //     console.log("Que es element", element)
+    //     db.Image_product.destroy({
+    //       where : {
+    //         id_product : id
+    //     }
+    //    })
+    //   })
+    // }
+       
  
     db.Product.update({
       name,
@@ -234,16 +245,30 @@ const productsController = {
     {
       where:{id}
     })
-      .then((resp)=>{
-        db.Image_product.update({
-           filename: file ? file.filename : image,
-           id_product: resp.id,
-           createdAt:new Date,
-          updatedAt:new Date
-        },
-        {
-          where:{id}
-        })
+      .then(()=>{
+        console.log("Que manda la promesa en resp: lo mandaba vacio", )
+        console.log("Y en id?: ", id)
+        for (const key in file) {
+          file[key].forEach(element => {
+            db.Image_product.create({
+              filename: element.filename,
+              id_product: id,
+              createdAt:new Date,
+             updatedAt:new Date
+           })
+          });
+       
+       }
+
+        // db.Image_product.update({
+        //    filename: file ? file.filename : image,
+        //    id_product: resp.id,
+        //    createdAt:new Date,
+        //   updatedAt:new Date
+        // },
+        // {
+        //   where:{id}
+        // })
         for (let i=0; i<sizes.length; i++){
                  db.Stock.create({
                   id_product: req.params.id,
