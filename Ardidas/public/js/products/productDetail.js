@@ -29,13 +29,14 @@
    quantity: cantidadProduct.value
  };
 
-  const productInfoJSON = JSON.stringify(productInfo);
+let productsInCart = JSON.parse(sessionStorage.getItem("productsInCart")) || []
   // const holi = listaCarrito.push(productInfoJSON)
-  // console.log("HOli", holi)
+  console.log(sessionStorage)
 // Guardo la info en sessionStorage 
+productsInCart.push(productInfo);
 
-sessionStorage.setItem("productInfo", productInfoJSON);
+sessionStorage.setItem("productsInCart", JSON.stringify(productsInCart));
 
-// console.log("Info del produtco en sessionStorage:", holi);
+console.log("Info del produtco en sessionStorage:", productsInCart);
 });
  
