@@ -1,7 +1,7 @@
 console.log("holiiiiii")
- 
 
- 
+
+document.addEventListener("DOMContentLoaded", function () {
 const sectionCart = document.getElementById("cart")
 const sectionPagoCart = document.getElementById("cart_sectionPago")
 
@@ -19,7 +19,6 @@ if (productInfoJSON) {
 
   const precioFinal = document.getElementById("productCart-precio-total")
 
-  window.onload = function(){
   imageCart.src = productInfo.image
   nameCart.innerText = productInfo.name
   priceCart.innerText = productInfo.price
@@ -27,57 +26,72 @@ if (productInfoJSON) {
   colorCart.innerText += productInfo.color
   talleCart.innerText += productInfo.size
 
-  precioFinal.innerText += (productInfo.price * productInfo.quantity)
-  }
+  precioFinal.innerText += productInfo.price * productInfo.quantity
+  
 
   console.log("Info del producto:", productInfo.price);
 
   const borrarDelCarrito = document.getElementById("productCart-article-borrar")
   borrarDelCarrito.addEventListener("click", function (){
     console.log("Borraste el productoooooo");
-    imageCart.src = ""
-    nameCart.innerText = ""
-    priceCart.innerText = ""
-    cantidadCart.value = ""
-    colorCart.innerText = ""
-    talleCart.innerText = ""
-  
-    precioFinal.innerText = ""
-  })
+    sessionStorage.removeItem("productInfo");
+      console.log("No hay info en sessionStorage.");
+          sectionCart.style.display = "none"
+          sectionPagoCart.style.display = "none";
+        const main = document.getElementById("root");
+          const container = document.createElement("div");
+          container.style.height = "30vh";
+        const p = document.createElement("p");
+            p.setAttribute("class", "text-center alert alert-warning py-5")
+            p.textContent = `Borraste todos los productos del Carrito`;
+
+            main.appendChild(container)
+            container.appendChild(p)
+
+        const div = document.createElement("div");
+            div.setAttribute("class", "productCart-main-section-secundario-div-2")
+        const a = document.createElement("a");
+            a.setAttribute("href", "/")
+            a.setAttribute("id", "button-seguir-comprando-productCart")
+            a.textContent = `VOLVER AL HOME`;
+            a.style.textAlign = "center"
+            a.style.color = "#FCFCE7"
+            a.style.background = "black"
+            
+
+            main.appendChild(div)
+            div.appendChild(a)
+
+  });
 
 } else {
-  console.log("No hay info en sessionStorage.");
-    sectionCart.style.display = "none"
-    sectionPagoCart.style.display = "none";
+      console.log("No hay productos en el carrito");
+        sectionCart.style.display = "none";
+        sectionPagoCart.style.display = "none";
 
+        const main = document.getElementById("root");
+        const container = document.createElement("div");
+        container.style.height = "30vh";
 
-    const main = document.getElementById("root");
-    const container = document.createElement("div");
-    container.style.height = "30vh";
+        const p = document.createElement("p");
+        p.setAttribute("class", "text-center alert alert-warning py-5");
+        p.textContent = `No hay productos en el carrito`;
 
-  
-    const p = document.createElement("p");
-        p.setAttribute("class", "text-center alert alert-warning py-5")
-        p.textContent = `Aún no se han agregado productos en el carrito`;
+        main.appendChild(container);
+        container.appendChild(p);
 
-        main.appendChild(container)
-        container.appendChild(p)
+        const div = document.createElement("div");
+        div.setAttribute("class", "productCart-main-section-secundario-div-2");
 
-
-
-    const div = document.createElement("div");
-        div.setAttribute("class", "productCart-main-section-secundario-div-2")
-       
-    
-    const a = document.createElement("a");
-        a.setAttribute("href", "/")
-        a.setAttribute("id", "button-seguir-comprando-productCart")
+        const a = document.createElement("a");
+        a.setAttribute("href", "/");
+        a.setAttribute("id", "button-seguir-comprando-productCart");
         a.textContent = `VOLVER AL HOME`;
-        a.style.textAlign = "center"
-        a.style.color = "#FCFCE7"
-        a.style.background = "black"
-    
+        a.style.textAlign = "center";
+        a.style.color = "#FCFCE7";
+        a.style.background = "black";
 
-    main.appendChild(div)
-    div.appendChild(a)
+        main.appendChild(div);
+        div.appendChild(a);
 }
+});

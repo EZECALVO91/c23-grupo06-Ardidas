@@ -96,6 +96,17 @@
     text-decoration: none;
     color: #000;
 }
+.containerGiftCart{
+    width: 100%;
+}
+.img_CArt{
+    width: 100%;
+    margin: auto;
+}
+.img_CArt img{
+    width: 6rem;
+    border-radius: 50%;
+}
 
 .productCart-main-section-secundario{
     display: flex;
@@ -171,6 +182,12 @@
         width: 170px;
 
     }
+    .containerGiftCart{
+       width: 1px;
+    }
+    .img_CArt img{
+        width:7rem;
+    }
     .productCart-header #button-ayuda-productCart{
         display: flex;
         justify-content: end;
@@ -208,6 +225,9 @@
     .productCart-header #button-ayuda-productCart{
         font-size: 22px;
     }
+    .img_CArt img{
+        width:8rem;
+    }
     .productCart-main-div-promo{
         display: flex;
         justify-content: center;
@@ -236,7 +256,7 @@
     }
     .productCart-main-section-secundario-resumen{
         display: flex;
-        margin-bottom: 50%;
+        margin-left: 20%;
     }
 
     .link_carrito_promoBancaria {
