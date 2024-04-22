@@ -52,7 +52,7 @@ export default function Section2 ({categoriesCount}) {
             </div>
         </div>
 
-                    <h2>Articulos</h2>
+                    <h2>Artículos:</h2>
         <div className="div_articulos_dash dash1">
             <div className="dash_description">
             <ul>

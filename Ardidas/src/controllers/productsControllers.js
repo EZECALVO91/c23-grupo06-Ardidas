@@ -22,7 +22,7 @@ const productsController = {
         const totalPages = Math.ceil(totalProducts / pageProducts); // Calcula el total de páginas
 
         res.render("products/products", {
-            title: "Ardidas",
+            title: "Productos | Ardidas",
             usuarioLogeado: req.session.usuarioLogin,
             products,
             currentPage,
@@ -48,7 +48,7 @@ const productsController = {
              return res.render("products/productDetail",{
              product,
              usuarioLogeado: req.session.usuarioLogin,
-             title: "Detalle"
+             title: "Detalle | Ardidas"
          })
       })
         .catch(error=> console.log(error));
@@ -56,7 +56,7 @@ const productsController = {
   productCart: (req, res) => {
          return res.render("products/productCart",{
          usuarioLogeado: req.session.usuarioLogin,
-         title: "Carrito"
+         title: "Carrito | Ardidas"
           
         })
   },
@@ -79,7 +79,7 @@ const productsController = {
         const totalPages = Math.ceil(totalProducts / pageProducts); // Calcula el total de páginas
 
         res.render("products/dashboard", {
-            title: "Dashboard",
+            title: "Dashboard productos | Ardidas",
             usuarioLogeado: req.session.usuarioLogin,
             products,
             currentPage,
@@ -94,7 +94,7 @@ const productsController = {
 
   productLoad: (req, res) => {
     res.render("products/productLoad", {
-      title: "Crear",
+      title: "Crear producto | Ardidas",
       usuarioLogeado: req.session.usuarioLogin,
     });
   },
@@ -102,7 +102,7 @@ const productsController = {
     const errores = validationResult(req); 
     if (!errores.isEmpty()) {
       // console.log("Ingrese en errores");
-      res.render("products/productLoad", {errores: errores.mapped(),old: req.body,title: "Error al crear",usuarioLogeado: req.session.usuarioLogin,
+      res.render("products/productLoad", {errores: errores.mapped(),old: req.body,title: "Crear producto | ERROR",usuarioLogeado: req.session.usuarioLogin,
       });
   } else {
     const file = req.files;
@@ -170,7 +170,7 @@ const productsController = {
            return res.render("products/productEdit",{
            product,
            usuarioLogeado: req.session.usuarioLogin,
-           title: "Editar producto",   
+           title: "Editar producto | Ardidas",   
        })
     })
       .catch(error=> console.log(error));
@@ -191,7 +191,7 @@ const productsController = {
     
     if (!errores.isEmpty()) {
       // console.log("Ingrese en errores de edición PUT");
-      res.render("products/productEdit", {errores: errores.mapped(),old: req.body,title: "Error al editar",usuarioLogeado: req.session.usuarioLogin, product
+      res.render("products/productEdit", {errores: errores.mapped(),old: req.body,title: "Editar producto | ERROR",usuarioLogeado: req.session.usuarioLogin, product
       });
   } else {
     const { id } = req.params;
@@ -246,8 +246,8 @@ const productsController = {
       where:{id}
     })
       .then(()=>{
-        console.log("Que manda la promesa en resp: lo mandaba vacio", )
-        console.log("Y en id?: ", id)
+        // console.log("Que manda la promesa en resp: lo mandaba vacio", )
+        // console.log("Y en id?: ", id)
         for (const key in file) {
           file[key].forEach(element => {
             db.Image_product.create({
