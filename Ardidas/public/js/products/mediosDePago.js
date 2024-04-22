@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const boton = document.getElementById('button-pagar-productCart');
+    const botonPagar = document.getElementById('button-pagar-productCart');
     
-    if (boton) {
-        boton.addEventListener('click', abrirImagen);
+    if (botonPagar) {
+        botonPagar.addEventListener('click', abrirImagenPago);
     }
     
 });
 
-function abrirImagen() {
+function abrirImagenPago() {
 
 Swal.fire({
     imageUrl: "/images/finalizarCompra.png",
