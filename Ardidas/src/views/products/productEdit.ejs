@@ -17,7 +17,7 @@
               <div class="img_create_fast" style="position:relative">
                 <i class="fa-regular fa-trash-can" style="color:black;position:absolute;right:30px;top:30px;z-index:1" id="delete_img1"></i>
 
-                <input class="dashboard__image" name="image" type="file" accept="image/*" id="image" value="<%= product.Image_products[0].filename %>">
+                <input class="dashboard__image" name="image" type="file" accept="image/*" id="image" style="padding:0px" value="<%= product.Image_products[0].filename %>">
                 <img id="previewImage" src="/images/products/<%= product.Image_products[0].filename %>" alt="Vista previa de la imagen" class="dashboard__image">
                 <p class="errores_validacion_login">
                   <%= locals.errores && errores.image ? errores.image.msg : null %>
@@ -26,7 +26,7 @@
 
               <div class="div_img_chiquitas">
                 <div class="imagen__chiquita_div" style="position:relative">
-                  <input class="imagen__chiquita" name="image2" type="file" accept="image/*" id="image2" value="<%= product.Image_products[1] ? product.Image_products[1].filename : "default-image.png" %>">
+                  <input class="imagen__chiquita" name="image2" type="file" accept="image/*" id="image2" style="padding:0px" value="<%= product.Image_products[1] ? product.Image_products[1].filename : "default-image.png" %>">
                   <% if(product.Image_products[1]) { %> 
                     <i class="fa-regular fa-trash-can" style="color:black;position:absolute;right:5px;top:5px;z-index:1" id="delete_img2"></i>
 
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="imagen__chiquita_div" style="position:relative">
-                  <input class="imagen__chiquita" name="image3" type="file" accept="image/*" id="image3" value="<%= product.Image_products[2] ? product.Image_products[2].filename : null %>">
+                  <input class="imagen__chiquita" name="image3" type="file" accept="image/*" id="image3" style="padding:0px" value="<%= product.Image_products[2] ? product.Image_products[2].filename : null %>">
                   <% if(product.Image_products[2]) { %> 
                     <i class="fa-regular fa-trash-can" style="color:black;position:absolute;right:5px;top:5px;z-index:1" id="delete_img3"></i>
 
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="imagen__chiquita_div" style="position:relative">
-                  <input class="imagen__chiquita" name="image4" type="file" accept="image/*" id="image4" value="<%= product.Image_products[3] ? product.Image_products[3].filename : "default-image.png" %>">
+                  <input class="imagen__chiquita" name="image4" type="file" accept="image/*" id="image4" style="padding:0px" value="<%= product.Image_products[3] ? product.Image_products[3].filename : "default-image.png" %>">
                   <% if(product.Image_products[3]) { %> 
                     <i class="fa-regular fa-trash-can" style="color:black;position:absolute;right:5px;top:5px;z-index:1" id="delete_img4"></i>
 
