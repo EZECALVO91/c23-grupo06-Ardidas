@@ -214,6 +214,7 @@
     .productCart-main-section-principal-article-div-2 #productCart-article-cantidad{
         display:inline;
         width: 10%;
+        height: 40px;
     }
     .productCart-main-section-principal-article-div-2 #productCart-article-borrar{
         padding-top: 2%;
