@@ -237,7 +237,7 @@ form.addEventListener('submit', function(event) {
             title: "¡Bienvenido a ARDIDAS!",
             // text: "Gracias por Registrarte, te enviamos al Login",
             // icon: "success",
-            timer: 4000, // Duración en milisegundos
+            timer: 2000, // Duración en milisegundos
             imageUrl: "/images/LOGO-ARDIDAS.png",
             imageHeight: "auto",
             imageWidth: "90%",
