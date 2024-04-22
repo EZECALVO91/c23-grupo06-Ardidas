@@ -239,7 +239,6 @@ const productsController = {
       price,
       description,
       id_category_product: category,
-      createdAt:new Date,
       updatedAt:new Date
     },
     {
