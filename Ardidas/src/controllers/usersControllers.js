@@ -63,6 +63,7 @@ login: (req, res) => {
                 email: user.dataValues.email,
                 id_category: user.dataValues.id_category,
                 image: user.dataValues.image,
+                name: user.dataValues.name
               };
               res.cookie("user", cookieUser, { maxAge: 1000 * 60 * 15 });
               res.cookie("recuerdame", "true", { maxAge: 1000 * 60 * 15 });
