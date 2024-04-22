@@ -8,7 +8,7 @@ export default function Footer () {
                 <li><a href="http://localhost:3000/">Inicio</a></li>
                 <li><a href="http://localhost:3000/contacto">Contacto</a></li>
                 <li><a href="http://localhost:3000/products">Productos</a></li>
-                <li><a href="http://localhost:3000/ayuda">¿Como comprar?</a></li>
+                <li><a href="http://localhost:3000/ayuda">¿Cómo comprar?</a></li>
             </ul>
         </div>
 
@@ -17,7 +17,7 @@ export default function Footer () {
             <ul>
                 <li>
                     <a href="tel:123-456-7890">
-                        <i className="fa-solid fa-phone icono-contact"></i>tel:123-456-7890</a>
+                        <i className="fa-solid fa-phone icono-contact"></i>cel: 1131036827</a>
                 </li>
                 <li>
                     <a href="mailto:ardidas.contacto@gmail.com"><i

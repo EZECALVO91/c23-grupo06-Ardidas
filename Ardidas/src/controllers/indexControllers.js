@@ -37,7 +37,7 @@ const indexController = {
           Promise.all([ofertas, destacados])
             .then(([ofertas, destacados]) => {
               res.render("index", {
-                title: "Ardidas",
+                title: "Inicio | Ardidas",
                 usuarioLogeado: req.session.usuarioLogin,
                 ofertas,
                 destacados
@@ -47,7 +47,7 @@ const indexController = {
     },
     search: (req, res) => {
       const {keywords} = req.query;
-      console.log("Que mando?: ", keywords)
+      // console.log("Que mando?: ", keywords)
       let productsSearch = db.Product.findAll({
         where : {
           [Op.or] : [
@@ -132,7 +132,7 @@ const indexController = {
               products = products.concat(zapatillasDama)
             }
           return res.render('search', {
-            title: "Resultados",
+            title: "Resultados | Ardidas",
             usuarioLogeado: req.session.usuarioLogin,
             products : products,
             keywords,
@@ -148,15 +148,15 @@ const indexController = {
       if(req.session.usuarioLogin){
         db.User.findByPk(req.session.usuarioLogin.id)
         .then((response) => {
-        res.render("contacto", {title:"Contacto", usuarioLogeado: response.dataValues })
+        res.render("contacto", {title:"Contacto | Ardidas", usuarioLogeado: response.dataValues })
       })
       .catch((err) => console.log(err));
       } else {
-       res.render("contacto", {title:"Contacto", usuarioLogeado: req.session.usuarioLogin })
+       res.render("contacto", {title:"Contacto | Ardidas", usuarioLogeado: req.session.usuarioLogin })
      }
     },
     ayuda: (req, res) => {
-      res.render("ayuda",  {title:"Ayuda", usuarioLogeado: req.session.usuarioLogin } )
+      res.render("ayuda",  {title:"¿Cómo comprar? | Ardidas", usuarioLogeado: req.session.usuarioLogin } )
     }
 }
 module.exports = indexController
