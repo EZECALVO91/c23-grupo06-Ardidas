@@ -11,25 +11,27 @@
       <article class="producto">
         <div class="detailProduct_img_chiquitas">
           <div class="detailProduct_img_individual" style="position:relative">
-           
-            <img src="/images/products/<%= product.Image_products[1] ? product.Image_products[1].filename : "TablaDeTallesArdidas.png" %>" id="imagenChica2"  alt="Vista previa de la imagen" class="dashboard__image">
-           
+            <% if (product.Image_products[1]) { %>
+            <img src="/images/products/<%= product.Image_products[1].filename %>" id="imagenChica2"  alt="Vista previa de la imagen" class="dashboard__image">
+            <% } else { %>
+              <img id="imagenChica2"  alt="Vista previa de la imagen" style="display:none" class="dashboard__image">
+            <% } %>
           </div>
 
           <div class="detailProduct_img_individual" style="position:relative">
             <% if (product.Image_products[2]) { %>
-            <img src="/images/products/<%= product.Image_products[2] ? product.Image_products[2].filename : ("TablaDeTallesArdidas.png" ? "default-image.png" : "TablaDeTallesArdidas.png") %>" id="imagenChica3"  alt="Vista previa de la imagen" class="dashboard__image">
+            <img src="/images/products/<%= product.Image_products[2].filename %>" id="imagenChica3"  alt="Vista previa de la imagen" class="dashboard__image">
             <% } else { %>
-              <img src="/images/products/<%= product.Image_products[2] ? product.Image_products[2].filename : ("TablaDeTallesArdidas.png" ? "default-image.png" : "TablaDeTallesArdidas.png") %>" id="imagenChica3"  alt="Vista previa de la imagen" style="display:none" class="dashboard__image">
+              <img id="imagenChica3"  alt="Vista previa de la imagen" style="display:none" class="dashboard__image">
 
               <% } %>
           </div>
 
           <div class="detailProduct_img_individual" style="position:relative"> 
             <% if (product.Image_products[3]) { %>
-              <img src="/images/products/<%= product.Image_products[3] ? product.Image_products[3].filename  : ("TablaDeTallesArdidas.png" ? "default-image.png" : "TablaDeTallesArdidas.png") %>" id="imagenChica4"  alt="Vista previa de la imagen" class="dashboard__image">
+              <img src="/images/products/<%= product.Image_products[3].filename  %>" id="imagenChica4"  alt="Vista previa de la imagen" class="dashboard__image">
             <% } else { %>
-            <img src="/images/products/<%= product.Image_products[3] ? product.Image_products[3].filename  : ("TablaDeTallesArdidas.png" ? "default-image.png" : "TablaDeTallesArdidas.png") %>" id="imagenChica4"  alt="Vista previa de la imagen" style="display:none" class="dashboard__image">
+            <img id="imagenChica4"  alt="Vista previa de la imagen" style="display:none" class="dashboard__image">
             <% } %>
           </div> 
         </div>

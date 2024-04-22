@@ -4,7 +4,7 @@ export default function Section1 ({productsCount,userCount,lastProductName,lastP
     return (
 <section className="section_info1">
 
-<div><h2>Contabilizacion de:</h2></div>
+<div><h2>Contabilización de:</h2></div>
 <div className="div_articulos_dash info2">
     <div className="box_container_count users1">
         <h3>Usuarios</h3>
@@ -17,7 +17,7 @@ export default function Section1 ({productsCount,userCount,lastProductName,lastP
 
 </div>
 
-<div><h3>Ultimo producto Agregado</h3></div>
+<div><h3>Último producto agregado:</h3></div>
 <div className="div_articulos_dash info1">
     
         <div className="img_dashReact">

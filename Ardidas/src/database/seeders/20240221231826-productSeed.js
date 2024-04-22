@@ -34,7 +34,7 @@ module.exports = {
         price:105000,
         description:"Impulsa tu estilo a toda velocidad con el Air Max 97. El diseño icónico está inspirado en las gotas de agua y los trenes bala japoneses. La amortiguación Nike Air de largo completo te permite andar con comodidad de alto rendimiento. Amárrate las agujetas y sal a dar un paseo de primera clase.",
         id_category_product:1,
-        createdAt:  new Date,
+        createdAt:  "2024-04-21",
         updatedAt: new Date
       },
       {
