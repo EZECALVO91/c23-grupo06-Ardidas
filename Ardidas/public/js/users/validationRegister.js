@@ -235,9 +235,14 @@ form.addEventListener('submit', function(event) {
         // Si no hay errores, muestra la alerta de SweetAlert
         Swal.fire({
             title: "¡Bienvenido a ARDIDAS!",
-            text: "Gracias por Registrarte, te enviamos al Login",
-            icon: "success",
+            // text: "Gracias por Registrarte, te enviamos al Login",
+            // icon: "success",
             timer: 4000, // Duración en milisegundos
+            imageUrl: "/images/LOGO-ARDIDAS.png",
+            imageHeight: "auto",
+            imageWidth: "90%",
+            imageAlt: "Logo",
+            background: 'transparent',
             showConfirmButton: false // No mostrar botón de confirmación
         }).then(() => {
             // Redirige al usuario después de 2 segundos
