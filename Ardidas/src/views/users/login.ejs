@@ -15,7 +15,7 @@
         <form class="box_home_form " action="/users/login" method="post">
           <section>
             <small>
-              <%= (locals.errores && errores.password) && ( locals.errores && errores.email) ? "CREDENCIALES INVALIDAS" : null %>
+              <%= (locals.errores && errores.password) || ( locals.errores && errores.email) ? "CREDENCIALES INVALIDAS" : null %>
           </small>
             <article class="articulo_login_main">
 
