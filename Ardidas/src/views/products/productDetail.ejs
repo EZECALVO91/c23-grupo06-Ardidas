@@ -9,40 +9,62 @@
     <main class="main-productDetail">
       <p class="secciones-productDetail"><a class="redirect-detalle" href="/">Inicio</a> > <a class="redirect-detalle" href="/products"> <%= product.Category_products.category %> </a>> Detalle > <%= product.name%></a></p>
       <article class="producto">
-        <div class="imagenes_pequeñas">
-          <img src="/images/products/<%= product.Image_products[1] ? product.Image_products[1].filename : product.Image_products[0].filename %>" alt="miniatura" class="imagen_pequeña">
-          <img src="/images/products/<%= product.Image_products[2] ? product.Image_products[2].filename : product.Image_products[0].filename %>"
-            alt="miniatura" class="imagen_pequeña">
-          <img src="/images/products/<%= product.Image_products[3] ? product.Image_products[3].filename  : product.Image_products[0].filename%>" alt="miniatura" class="imagen_pequeña">
+        <div class="detailProduct_img_chiquitas">
+          <div class="detailProduct_img_individual" style="position:relative">
+            <% if (product.Image_products[1]) { %>
+            <img src="/images/products/<%= product.Image_products[1].filename %>" id="imagenChica2"  alt="Vista previa de la imagen" class="dashboard__image">
+            <% } else { %>
+              <img id="imagenChica2"  alt="Vista previa de la imagen" style="display:none" class="dashboard__image">
+            <% } %>
+          </div>
+
+          <div class="detailProduct_img_individual" style="position:relative">
+            <% if (product.Image_products[2]) { %>
+            <img src="/images/products/<%= product.Image_products[2].filename %>" id="imagenChica3"  alt="Vista previa de la imagen" class="dashboard__image">
+            <% } else { %>
+              <img id="imagenChica3"  alt="Vista previa de la imagen" style="display:none" class="dashboard__image">
+
+              <% } %>
+          </div>
+
+          <div class="detailProduct_img_individual" style="position:relative"> 
+            <% if (product.Image_products[3]) { %>
+              <img src="/images/products/<%= product.Image_products[3].filename  %>" id="imagenChica4"  alt="Vista previa de la imagen" class="dashboard__image">
+            <% } else { %>
+            <img id="imagenChica4"  alt="Vista previa de la imagen" style="display:none" class="dashboard__image">
+            <% } %>
+          </div> 
         </div>
-        <img src="/images/products/<%= product.Image_products[0].filename %>" alt="imagen principal" class="imagen_grande">
+        
+        <img src="/images/products/<%= product.Image_products[0].filename %>" alt="imagen principal" class="imagen_grande" id="imagenGrande">
         <div class="detalles">
-          <h2><%= product.name%></h2>
-          <h2>$<%= product.price %></h2>
+          <h2 id="name_product"><%= product.name%></h2>
+          <p style="display: inline;font-size: calc(1.325rem + .9vw);" > $</p>
+          <h2 id="price_product" style="display: inline;" ><%= product.price %></h2>
           <div class="select-options-details-products">
-            <a class="boton_promoBancaria" id="promoBancariaBoton"><p style="font-family:Helvetica-Neue;color:black;font-weight:bold;text-decoration:underline">Conocé nuestras promociones</p>
+          <a class="boton_promoBancaria" id="tablaDeTalles"><p style="font-family:Helvetica-Neue;color:black;font-weight:bold;text-decoration:underline;">Guía de talles</p>
           </a>
-          <br><br>
+          
           <div class="detalles_talles">
             <p>Talles</p>
-             <select name="sizes" id="" class="numero">
+             <select name="sizes" id="size_product" class="numero">
               <% product.Sizes.forEach(talles => { %>
-                <option value=<%= talles.size %>><%= talles.size %></option>
+                <option  value=<%= talles.size %>><%= talles.size %></option>
               <% }) %>
             </select> 
           
           </div>
           <div class="detalles_cantidad">
             <p>Cantidad</p>
-            <input type="number" class="numero" value="1">
+            <input type="number" class="numero" value="1" id="cantidad_product">
           </div>
           <div class="detalles_color">
             <p>Color :</p>
-            <h4><%= product.color%></h4>      
+            <h4 id="color_product"><%= product.color%></h4>      
             </div>
-          <a href="/products/carrito/<%= product.id%>">
+          <a href="/products/carrito">
           </div>
-            <p class="main_carrito">Agregar al carrito</p>
+            <p class="main_carrito" id="buttonAdd">Agregar al carrito</p>
           </a>
         </div>
       </article>
@@ -60,6 +82,9 @@
 
 <!--ACA SE INCLUYE EL PARTIAL : -->
 <script src="/js/products/promocionesBancarias.js"></script>
+<script src="/js/products/tablaDeTalles.js"></script>
+<script src="/js/products/imagenesDetalle.js"></script>
+<script src="/js/products/productDetail.js"></script>
 <%- include("../partials/footer.ejs") %>
 
 

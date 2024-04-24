@@ -12,13 +12,69 @@
         <form action="/products/update/<%= product.id %>?_method=PUT" method="post" class="form_loadProduct" enctype="multipart/form-data">
 
           <section class="form__createProduct">
-            <div class="img_update_fast">
-              <img src="/images/products/<%= product.Image_products[0].filename %>" alt="imagen principal" class="imagen_grande input_edit_img">
-              <input class="dashboard__image" name="image" id="image" type="file" accept="image/*" value="<%= product.Image_products[0].filename %>">
-              <small class="imageError">
-                <%= locals.errores && errores.image ? errores.image.msg : null %>
-              </small>
+
+            <div class="inputs_imagenes">
+              <div class="img_create_fast" style="position:relative">
+                <i class="fa-regular fa-trash-can" style="color:black;position:absolute;right:30px;top:30px;z-index:1" id="delete_img1"></i>
+
+                <input class="dashboard__image" name="image" type="file" accept="image/*" id="image" style="padding:0px" value="<%= product.Image_products[0].filename %>">
+                <img id="previewImage" src="/images/products/<%= product.Image_products[0].filename %>" alt="Vista previa de la imagen" class="dashboard__image">
+                <p class="errores_validacion_login">
+                  <%= locals.errores && errores.image ? errores.image.msg : null %>
+                </p>
+              </div>
+
+              <div class="div_img_chiquitas">
+                <div class="imagen__chiquita_div" style="position:relative">
+                  <input class="imagen__chiquita" name="image2" type="file" accept="image/*" id="image2" style="padding:0px" value="<%= product.Image_products[1] ? product.Image_products[1].filename : "default-image.png" %>">
+                  <% if(product.Image_products[1]) { %> 
+                    <i class="fa-regular fa-trash-can" style="color:black;position:absolute;right:5px;top:5px;z-index:1" id="delete_img2"></i>
+
+                    <img id="previewImage2" src="/images/products/<%= product.Image_products[1].filename  %>" alt="Vista previa de la imagen" class="dashboard__image">
+                  <% } else { %>
+                    <img id="previewImage2" src="/images/products/<%= product.Image_products[1] %>" alt="Vista previa de la imagen" class="dashboard__image"  style="display:none">
+
+                  <% } %>
+                  <p class="errores_validacion_login">
+                    <%= locals.errores && errores.image2 ? errores.image2.msg : null %>
+                  </p>
+                </div>
+
+                <div class="imagen__chiquita_div" style="position:relative">
+                  <input class="imagen__chiquita" name="image3" type="file" accept="image/*" id="image3" style="padding:0px" value="<%= product.Image_products[2] ? product.Image_products[2].filename : null %>">
+                  <% if(product.Image_products[2]) { %> 
+                    <i class="fa-regular fa-trash-can" style="color:black;position:absolute;right:5px;top:5px;z-index:1" id="delete_img3"></i>
+
+                    <img id="previewImage3" src="/images/products/<%= product.Image_products[2].filename  %>" alt="Vista previa de la imagen" class="dashboard__image">
+                  <% } else { %>
+                    <img id="previewImage3" src="/images/products/<%= product.Image_products[2] %>" alt="Vista previa de la imagen" class="dashboard__image" style="display:none">
+
+                  <% } %>
+                  
+                  <p class="errores_validacion_login">
+                    <%= locals.errores && errores.image3 ? errores.image3.msg : null %>
+                  </p>
+                </div>
+
+                <div class="imagen__chiquita_div" style="position:relative">
+                  <input class="imagen__chiquita" name="image4" type="file" accept="image/*" id="image4" style="padding:0px" value="<%= product.Image_products[3] ? product.Image_products[3].filename : "default-image.png" %>">
+                  <% if(product.Image_products[3]) { %> 
+                    <i class="fa-regular fa-trash-can" style="color:black;position:absolute;right:5px;top:5px;z-index:1" id="delete_img4"></i>
+
+                    <img id="previewImage4" src="/images/products/<%= product.Image_products[3].filename %>" alt="Vista previa de la imagen" class="dashboard__image" >
+                  <% } else { %>
+                    <img id="previewImage4" src="/images/products/<%= product.Image_products[3] %>" alt="Vista previa de la imagen" class="dashboard__image" style="display:none">
+
+                    <% } %>
+                  <p class="errores_validacion_login">
+                    <%= locals.errores && errores.image4 ? errores.image4.msg : null %>
+                  </p>
+                </div> 
+
+              </div>
+
             </div>
+         
 
             <div class="update_box_intern">
               <label for="name">Nombre :</label>
@@ -96,14 +152,14 @@
                 <label class="label_colores" for="color">Color :</label>
                 
               <select name="color" id="color" >                                           
-                <option value="Azul" <%=product.color == "Azul" ? "selected" : null %>>Azul</option>
+                <option value="Azules" <%=product.color == "Azules" ? "selected" : null %>>Azules</option>
                 <option value="Beige" <%=product.color == "Beige" ? "selected" : null %>>Beige</option>
-                <option value="Blanco" <%=product.color == "Blanco" ? "selected" : null %>>Blanco</option>
-                <option value="Gris" <%=product.color == "Gris" ? "selected" : null %>>Gris</option>
-                <option value="Marron" <%=product.color == "Marron" ? "selected" : null %>>Marron</option>
-                <option value="Negro" <%=product.color == "Negro" ? "selected" : null %>>Negro</option>
-                <option value="Rojo" <%=product.color == "Rojo" ? "selected" : null %>>Rojo</option>
-                <option value="Rosa" <%=product.color == "Rosa" ? "selected" : null %>>Rosa</option>
+                <option value="Blancas" <%=product.color == "Blancas" ? "selected" : null %>>Blancas</option>
+                <option value="Grises" <%=product.color == "Grises" ? "selected" : null %>>Grises</option>
+                <option value="Marrones" <%=product.color == "Marrones" ? "selected" : null %>>Marrones</option>
+                <option value="Negras" <%=product.color == "Negras" ? "selected" : null %>>Negras</option>
+                <option value="Rojas" <%=product.color == "Rojas" ? "selected" : null %>>Rojas</option>
+                <option value="Rosadas" <%=product.color == "Rosadas" ? "selected" : null %>>Rosadas</option>
               </select>
             
               </div> 
@@ -119,6 +175,7 @@
 
       </main>
         <script src="/js/products/updateProduct.js"></script>
+        <script src="/js/products/previewImage.js"></script>
       <!--ACA SE INCLUYE EL PARTIAL : -->
       <%- include("../partials/footer.ejs") %>
   </body>

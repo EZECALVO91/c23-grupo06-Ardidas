@@ -81,10 +81,12 @@
     margin: auto;
     margin-top: 2%;
 }
-.captcha_register {
-    display: none;
-}
 
+.captcha_register_express {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
 @media (min-width:768px) {
     .main__form__lines {

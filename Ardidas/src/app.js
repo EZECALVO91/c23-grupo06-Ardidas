@@ -15,7 +15,7 @@ const cors = require('cors');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products')
-const dashReactRouter = require('./routes/dashboardReact')
+// const dashReactRouter = require('./routes/dashboardReact')
 
 //APIS
 const usersApiRouter = require('./routes/APIS/userApis');
@@ -24,7 +24,7 @@ const dashboardApiVite = require('./routes/APIS/dashboardApis');
 
 const app = express();
 
-   
+
 //Para usar las apis, se instala, se requiere y se implementa cors. Esto se hace para poder comunicar dos servidores distintos
 //al momento de setearlo, en el origen ponemos el servidor desde el cual hacemos el pedido a la api.
 app.use(cors({
@@ -52,7 +52,7 @@ app.use(userLoggedMiddleware)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-app.use('/dashboard', dashReactRouter);
+// app.use('/dashboard', dashReactRouter);
 
 //APIS APP.USE
 app.use('/api', usersApiRouter);

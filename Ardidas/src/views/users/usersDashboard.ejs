@@ -2,8 +2,11 @@
 <body>
     <%- include("../partials/header.ejs") %>
     <main>
-        <div class="box_redirect_create">
-            <a class="btn_redirect_create" href="/users/createPrivileges">Crear Privilegios</a>
+        <div class="div_container_buttons">
+                <a href="http://localhost:8000/"><i class="fa-solid fa-reply-all fa-beat-fade"></i></a>
+            <div class="box_redirect_create">
+                <a class="btn_redirect_create" href="/users/createPrivileges">Crear cuenta</a>
+            </div>
         </div>
         <section class="users_dashboard_db section_products_main_index">
             <% users.forEach(element => { %>
@@ -15,7 +18,7 @@
                     <div class="">
                         <div class="main_descuento_precio_articulo">
                             <p class="user_name_db">
-                                <%= element.name %>
+                            (<%= element.Categories.category%>)<%= element.name %>
                             </p>
                         </div>
                         <p class="modelo">
@@ -31,6 +34,28 @@
                     </div>
                 </article>
             <% }) %>
+        </section>
+
+        <section>
+            <nav>
+                <ul class="pagination">
+                    <% if (currentPage > 1) { %>
+                    <li>
+                        <a href="?page=<%= currentPage - 1 %>" >Anterior</a>
+                    </li>
+                    <% } %>
+                    <% for (let i = 1; i <= totalPages; i++) { %>
+                    <li class="<%= i === currentPage ? 'active' : '' %>">
+                        <a href="?page=<%= i %>"><%= i %></a>
+                    </li>
+                    <% } %>
+                    <% if (currentPage < totalPages) { %>
+                    <li>
+                        <a href="?page=<%= currentPage + 1 %>">Siguiente</a>
+                    </li>
+                    <% } %>
+                </ul>
+            </nav>
         </section>
     </main>
     <%- include("../partials/footer.ejs") %>

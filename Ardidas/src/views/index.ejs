@@ -12,28 +12,35 @@
           <div class="carousel-inner">
             <div class="carousel-item active d-item">
               <img
-                src="/images/baner1.png"
+                src="/images/banners/banner5.jpg"
                 class="d-block w-100 d-img"
                 alt="Zapatillas Nike"
               />
             </div>
             <div class="carousel-item d-item">
               <img
-                src="/images/baner3.jpg"
+                src="/images/banners/banner1.png"
                 class="d-block w-100 d-img"
                 alt="imagen zapatilla"
               />
             </div>
             <div class="carousel-item d-item">
               <img
-                src="/images/baner4.png"
+              src="/images/banners/banner2.jpg"
                 class="d-block w-100 d-img"
                 alt="imagen zapatilla"
               />
             </div>
             <div class="carousel-item d-item">
               <img
-                src="/images/baner6.jpg"
+                src="/images/banners/banner4.jpg"
+                class="d-block w-100 d-img"
+                alt="imagen zapatilla"
+              />
+            </div>
+            <div class="carousel-item d-item">
+              <img
+                src="/images/banners/banner3.jpg"
                 class="d-block w-100 d-img"
                 alt="imagen zapatilla"
               />
@@ -75,7 +82,7 @@
               <p class="precio">$<%=product.price%></p>
             </div>
             <p class="modelo"><%=product.name%></p>
-            <button><a href="/products/carrito/<%= product.id%>">SUMAR AL CARRITO</a></button>
+            <button><a href="/products/detalle/<%= product.id%>">SUMAR AL CARRITO</a></button>
           </div>
         </article>
           <% }); %>
@@ -96,7 +103,7 @@
               <p class="precio">$<%= product.price%></p>
             </div>
             <p class="modelo"><%=product.name%></p>
-            <button><a href="/products/carrito/<%= product.id%>">SUMAR AL CARRITO</a></button>
+            <button><a href="/products/detalle/<%= product.id%>">SUMAR AL CARRITO</a></button>
           </div>
         </article>
         <% }); %>
@@ -106,6 +113,7 @@
       </article>
       <%- include("./partials/whatsapp.ejs") %>
     </main>
+    <script src="/js/index.js"></script>
 
 <!--ACA SE INCLUYE EL PARTIAL : -->
 <%- include("./partials/footer.ejs") %>

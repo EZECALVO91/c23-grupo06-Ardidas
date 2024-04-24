@@ -12,7 +12,7 @@
           <h2 class="main__form__title">REGISTRARSE</h2>
           <hr class="main__form__lines">
         </div>
-        <form action="/users/register" method="post" class="main__form__register" enctype="multipart/form-data">
+        <form action="/users/register" id="myForm" method="post" class="main__form__register" enctype="multipart/form-data" onsubmit="return validateForm()">
           <label for="name">NOMBRE Y APELLIDO:</label>
           <input type="text" name="name" placeholder="Nombre y Apellido" id="name"
             value="<%= locals.old && old.name ? old.name : null %>">
@@ -43,7 +43,7 @@
             </small>
             <i class="fa-regular fa-eye"></i>
           </div>
-          <label for="image">AVATAR: </label>
+          <label for="image">IMAGEN DE PERFIL: </label>
           <input type="file" name="image" id="image" accept="image/*"
             value="<%= locals.old && old.image ? old.image : null %>">
           <small class="imageError">
@@ -52,13 +52,14 @@
           <div class="main__form__register__box">  
           <div id="error-message-registerUser">Errores en los datos para la creación de Usuario.</div> 
 
-            
+            <div class="captcha_register_express">
               <div class="g-recaptcha captcha_register" data-theme="dark" data-size="normal" data-sitekey="<%=process.env.SITE_KEY%>" ></div>
+            </div>
               <small class="captchaError">
                 <%= locals.errores && errores["g-recaptcha-response"] ?errores["g-recaptcha-response"].msg : null %>
               </small>
 
-            <button class="main__form__button" type="submit">CREAR CUENTA</button>
+            <button class="main__form__button" type="submit" id="submitButton">CREAR CUENTA</button>
 
 
             <h6>¿Ya tenés una cuenta? <a href="/users/login">Iniciar sesión</a></h6>

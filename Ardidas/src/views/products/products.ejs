@@ -6,59 +6,67 @@
 <!--ACA SE INCLUYE EL PARTIAL : HEADER -->
 <%- include("../partials/header.ejs") %>
 
-    <main class="productos">
-      <section class="carrusel_home">
-        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
+<main class="productos">
+  <section class="carrusel_home">
+    <div id="carouselExample" class="carousel slide">
+<div class="carousel-inner">
             <div class="carousel-item active d-item">
               <img
-                src="/images/baner1.png"
+                src="/images/banners/banner5.jpg"
                 class="d-block w-100 d-img"
                 alt="Zapatillas Nike"
               />
             </div>
             <div class="carousel-item d-item">
               <img
-                src="/images/baner3.jpg"
+                src="/images/banners/banner1.png"
                 class="d-block w-100 d-img"
                 alt="imagen zapatilla"
               />
             </div>
             <div class="carousel-item d-item">
               <img
-                src="/images/baner4.png"
+              src="/images/banners/banner2.jpg"
                 class="d-block w-100 d-img"
                 alt="imagen zapatilla"
               />
             </div>
             <div class="carousel-item d-item">
               <img
-                src="/images/baner6.jpg"
+                src="/images/banners/banner4.jpg"
+                class="d-block w-100 d-img"
+                alt="imagen zapatilla"
+              />
+            </div>
+            <div class="carousel-item d-item">
+              <img
+                src="/images/banners/banner3.jpg"
                 class="d-block w-100 d-img"
                 alt="imagen zapatilla"
               />
             </div>
           </div>
           <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+</main>
 
       <div class="main_title_box">
         <hr class="hr_txt" />
@@ -75,14 +83,39 @@
               <p class="precio">$<%=product.price%></p>
             </div>
             <p class="modelo"><%=product.name%></p>
-            <button><a href="/products/carrito/<%= product.id%>">SUMAR AL CARRITO</a></button>
+            <button><a href="/products/detalle/<%= product.id%>">SUMAR AL CARRITO</a></button>
           </div>
         </article>
           <% }); %>
       </section>
 
       <%- include("../partials/whatsapp.ejs") %>
+
+    <section>
+      <nav>
+          <ul class="pagination">
+              <% if (currentPage > 1) { %>
+              <li>
+                  <a href="?page=<%= currentPage - 1 %>" onclick="setClicked()" >Anterior</a>
+              </li>
+              <% } %>
+              <% for (let i = 1; i <= totalPages; i++) { %>
+              <li class="<%= i === currentPage ? 'active' : '' %>">
+                  <a href="?page=<%= i %>" onclick="setClicked()"><%= i %></a>
+              </li>
+              <% } %>
+              <% if (currentPage < totalPages) { %>
+              <li>
+                  <a href="?page=<%= currentPage + 1 %>" onclick="setClicked()">Siguiente</a>
+              </li>
+              <% } %>
+          </ul>
+      </nav>
+  </section>
+  
+    
     </main>
+    <script src="/js/index.js"></script>
 
 <!--ACA SE INCLUYE EL PARTIAL : -->
 <%- include("../partials/footer.ejs") %>

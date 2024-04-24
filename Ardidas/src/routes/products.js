@@ -14,17 +14,17 @@ const uploadImg = require ('../validation/validationProductImg')
 router
 .get("/", index)
 
-.get('/carrito/:id', sessionValidate, productCart)
+.get('/carrito', sessionValidate, productCart)
 
 .get('/detalle/:id', productDetail)
 
 .get('/dashboard', isAdmin, dashboard)
 
 .get("/create", isAdmin, productLoad)
-.post("/",uploadImg.single("image"), isAdmin, createProductValidation, create)
+.post("/",uploadImg.fields([{name:"image", maxcount:1}, {name:"image2", maxcount:1}, {name:"image3", maxcount:1}, {name:"image4", maxcount:1}]), isAdmin, createProductValidation, create)
 
 .get("/update/:id", isAdmin, productEdit)
-.put("/update/:id",uploadImg.single("image"), isAdmin, createProductValidation, update)
+.put("/update/:id",uploadImg.fields([{name:"image", maxcount:1}, {name:"image2", maxcount:1}, {name:"image3", maxcount:1}, {name:"image4", maxcount:1}]), isAdmin, createProductValidation, update)
 
 .delete('/delete/:id', isAdmin, destroy)
 

@@ -14,6 +14,9 @@
         </div>
         <form class="box_home_form " action="/users/login" method="post">
           <section>
+            <small>
+              <%= (locals.errores && errores.password) || ( locals.errores && errores.email) ? "CREDENCIALES INVALIDAS" : null %>
+          </small>
             <article class="articulo_login_main">
 
               <h2 class="login_h_all">EMAIL</h2>
@@ -43,11 +46,10 @@
               </div>
             </article>
             <article class="articulo_login_main">
+
               <button class="btn_login_main btnfos-5" type="submit">INICIAR SESIÓN</button>
               <div id="error-message-login">Información invalida.</div> 
-
-              <a href="/users/register" class="btn_login_up">
-                <h6>¿No tenés cuenta? Crear cuenta.</h6>
+                <h6>¿No tenés cuenta? <a class="btn_login_up" href="/users/register">Crear cuenta</a></h6>
               </a>
             </article>
           </section>

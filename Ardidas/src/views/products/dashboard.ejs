@@ -5,12 +5,12 @@
   <%-include("../partials/header.ejs")%>
 
 <main>
-    <div class="box_redirect_create">
-
-      <a class="btn_redirect_create" href="/products/create">Crear Producto</a>
-    
+    <div class="div_container_buttons">
+        <a href="http://localhost:8000/" id="replyIcon"><i class="fa-solid fa-reply-all fa-beat-fade"></i></a>
+      <div class="box_redirect_create">
+        <a class="btn_redirect_create" href="/products/create">Crear producto</a>
+      </div>
     </div>
-
   <section class="contenedor-productos1 section_products_main_index">
         
         <% products.forEach(element => { %>
@@ -19,9 +19,12 @@
               <img src="/images/products/<%= element.Image_products[0].filename %>" alt="Zapatillas Nike" />
                 <div class="">
                   <div class="main_descuento_precio_articulo">
-                    <p class="precio">$<%= element.price %></p>
+                    <p class="precio_dashboarD"><%= element.name %></p>
                   </div>
-                  <p class="modelo"><%= element.name %></p>
+                  <div class="priceAndCreated">
+                    <p class="modelo">$<%= element.price %></p>
+                  <p class="modelo"><%= element.createdAt %></p>
+                  </div>
                 </div>
                 
                 
@@ -39,6 +42,28 @@
             </article>
         <% }) %>
   </section>
+
+  <section>
+    <nav>
+        <ul class="pagination">
+            <% if (currentPage > 1) { %>
+            <li>
+                <a href="?page=<%= currentPage - 1 %>" >Anterior</a>
+            </li>
+            <% } %>
+            <% for (let i = 1; i <= totalPages; i++) { %>
+            <li class="<%= i === currentPage ? 'active' : '' %>">
+                <a href="?page=<%= i %>"><%= i %></a>
+            </li>
+            <% } %>
+            <% if (currentPage < totalPages) { %>
+            <li>
+                <a href="?page=<%= currentPage + 1 %>">Siguiente</a>
+            </li>
+            <% } %>
+        </ul>
+    </nav>
+</section>
 </main>
 <script src="/js/products/deleteProduct.js"></script>
 <%- include("../partials/footer.ejs") %>

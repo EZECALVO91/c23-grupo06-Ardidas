@@ -1,0 +1,320 @@
+a {
+    text-decoration: none !important;
+}
+.secciones-productDetail {
+    font-size: 14px;
+}
+
+.imagen_grande {
+    width: 295px;
+    height: 295px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border-radius: 10px;
+}
+.detailProduct_img_chiquitas {
+    height: 100px;
+    display: flex;
+    gap:15px;
+    justify-content: center;
+}
+
+#imagenChica2, #imagenChica3, #imagenChica4 {
+    width: 75px;
+    height: 75px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border-radius: 10px
+}
+
+
+.producto {
+    border-radius: 10px;
+    padding: 1%;
+    text-align: center;
+}
+
+.main_ver-todos-productos {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    width: 90%;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    margin:auto
+}
+
+.main_carrito {
+    text-align: center;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 92%;
+    position: relative;
+    left: 4%;
+    top: 10px;
+}
+.detalles_cantidad {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.detalles {
+    padding-bottom: 5%;
+    text-align: center;
+    position: relative;
+    margin-top: 5%;
+}
+
+.numero {
+    text-align: center;
+    background-color: white;
+    padding: 5px;
+    width: 60%;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+main {
+    padding: 2% 3% 5% 3%;
+    background-color: #FCFCE7;
+}
+
+.detalles_div_descripcion{
+    background:linear-gradient(white 50%, #FCFCE7 );
+    padding:  8% 6%;
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgb(100, 100, 100);
+    width:92%;
+    margin:auto
+
+}
+.detalles_div_descripcion_p{
+    font-size: 14px;
+
+}
+.detalles_div_descripcion h3{
+    margin-bottom: 3%;
+}
+
+.redirect-detalle{
+    color: black;
+
+}
+
+.my-responsive-popup {
+    width: 100% !important; /* Ajustar el ancho del popup */
+}
+@media (min-width: 768px) {
+    .secciones-productDetail {
+        font-size: 16px;
+    }
+    .producto {
+        flex-direction: row;
+        display: flex;
+        border-radius: 10px;
+    }
+    .imagen_grande {
+        width: 300px;
+        height: 300px;
+        margin-right: 1%;
+    }
+
+ 
+    .detailProduct_img_chiquitas {
+        width: 100px;
+        height: 100px;
+        margin: 0px 20px 0px 20px;
+        display: block;
+    }
+    #imagenChica2, #imagenChica3, #imagenChica4 {
+        width: 80px;
+        height: 80px;
+        margin:10px;
+        border-radius: 10px
+    }
+
+
+    
+    .detalles {
+        padding-left: 2%;
+        text-align: left;
+        position: relative;
+    }
+    .detalles_talles {
+        width: 250px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        
+    }
+    .detalles_talles p {
+        width: 40%;
+    }
+
+    .detalles_color {
+        width: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        margin-top: 5%;
+    }
+    .detalles_color p{
+        width: 45%;
+    }
+
+    .detalles_color h4 {
+        margin-left: 22px;
+        font-style: italic;
+    }
+
+    .numero {
+        text-align: center;
+        background-color: white;
+        padding: 5px;
+        width: 40%;
+        border-radius: 10px;
+        border: 1px solid rgb(0, 0, 0);
+        margin-right: 10px;
+        height: 100%;
+    }
+    main article .detalles select {
+        margin-left: 10px;
+    }
+    main article .detalles input {
+        margin-left: 10px;
+    }
+    .detalles_cantidad {
+        width: 250px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 5%;
+        justify-content: start;
+    }
+    .detalles_cantidad p {
+        text-align: start;
+        width: 40%;
+    }
+    .main_carrito {
+        text-align: center;
+        color: white;
+        background-color: black;
+        padding: 5px;
+        border-radius: 10px;
+        width: 85%;
+}
+.detalles_div_descripcion{
+    background-color: white;
+    padding: 2% 4%;
+}
+
+.detalles_div_descripcion h3{
+    margin-bottom: 3%;
+}
+
+.my-responsive-popup {
+    width: 70% !important; /* Ajustar el ancho del popup */
+}
+}
+
+@media (min-width: 1024px) {
+    .secciones-productDetail {
+        font-size: 18px;
+    }
+    .producto {
+        flex-direction: row;
+        display: flex;
+        border-radius: 10px;
+        padding: 1%;
+        justify-content: center;
+    }
+    .imagen_grande {
+        width: 360px;
+        height: 360px;
+        border-radius: 10px;
+    }
+    .detailProduct_img_chiquitas {
+        width: 100px; 
+        height: 100px;
+        margin: 0px 20px 0px 50px;
+        display:block
+    }
+
+    #imagenChica2, #imagenChica3, #imagenChica4 {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        margin-left: 0px;
+    }
+
+
+    .detalles {
+        text-align: left;
+        position: relative;
+        top: 10px;
+    }
+    .main_carrito {
+        text-align: center;
+        color: white;
+        background-color: black;
+        padding: 5px;
+        border-radius: 10px;
+        width: 55%;
+    }
+    .main_carrito {
+        text-align: center;
+        color: white;
+        background-color: rgb(0, 0, 0);
+        padding: 5px;
+        border-radius: 10px;
+        margin-top: 10px;
+        width: 92%;
+        position: relative;
+        left: 4%;
+        top: 10px;
+    }
+    .detalles_div_descripcion{
+        padding: 2% 4%;
+    }
+    .color_detail {
+        width:100px;
+        border-radius: 10px;
+       }
+    
+    .detalles_color {
+        width:220px
+     }
+    .detalles_color h4 {
+        margin-left: 14px;
+    }
+
+    .main-productDetail .producto{
+        max-width: 1024px;
+        margin: 20px auto 0px;
+    }
+    .main-productDetail .detalles_div_descripcion{
+        max-width: 1024px;
+        margin:auto;
+    }
+    .main-productDetail .main_ver-todos-productos{
+        max-width: 830px;
+        margin:auto;
+    }
+    .main-productDetail .secciones-productDetail {
+        max-width: 1024px;
+        margin:auto
+    }
+
+    .my-responsive-popup {
+        width: 765px !important; /* Ajustar el ancho del popup */
+    }
+    }
+
+
+    @media (min-width: 1200px) {
+        .my-responsive-popup {
+            width: 1000px !important; /* Ajustar el ancho del popup */
+        }
+    }

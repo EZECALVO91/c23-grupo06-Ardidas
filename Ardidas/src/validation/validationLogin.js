@@ -11,10 +11,10 @@ module.exports = [
                 where: { email: value }
             }).then(user => {
                 if (!user) {
-                    return Promise.reject('Email no registrado')
+                    return Promise.reject(' ')
                 }
             }).catch(() => {
-                return Promise.reject('Email no registrado')
+                return Promise.reject(' ')
             })
         }),
 
@@ -24,10 +24,10 @@ module.exports = [
                 where: { email: req.body.email }
             }).then(user => {
                 if (!bcrypt.compareSync(value, user.dataValues.password)) {
-                    return Promise.reject('Mal tipeo de contraseña')
+                    return Promise.reject(' ')
                 }
             }).catch(() => {
-                return Promise.reject('Contraseña incorrecta')
+                return Promise.reject(' ')
             })
         })
 ];

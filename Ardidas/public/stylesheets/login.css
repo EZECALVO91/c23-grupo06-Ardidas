@@ -50,7 +50,7 @@
     margin-left: 5%
 }
 .btn_login_up{
-    color: var(--color-negro);
+    color: green;
     text-align: center;
 }
 .btn_login_up h6{

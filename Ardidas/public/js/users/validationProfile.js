@@ -40,8 +40,8 @@ const inputName = document.querySelector("#name");
             break;
         default:
             validatorInput(".nameErrors", target);
-            this.style.borderColor = "#4F7F3F";
-            this.style.backgroundColor = "white";
+            this.style.borderColor= "green";//sino saca el msj de error y deja seguir con el formulario
+            this.style.backgroundColor = "rgba(0, 255, 0, 0.1)";
             break;
     }
 });
@@ -96,7 +96,8 @@ inputImg.addEventListener('change', function({target}) {
             break;
         default:
             validatorInput(".imageError", target);
-            this.style.backgroundColor = "rgba(0, 128, 0, 0.2)";
+            this.style.borderColor= "green";//sino saca el msj de error y deja seguir con el formulario
+            this.style.backgroundColor = "rgba(0, 255, 0, 0.1)";
             break;
     }
 });

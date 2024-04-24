@@ -5,8 +5,93 @@
 .icon_edit_dashboard {
     font-size: 25px;
     padding: 0 10px;
-
 }
+.div_container_buttons {
+    position: relative;
+}
+
+.fa-reply-all {
+    position: absolute;
+    color: var(--color-negro);
+    font-size: 30px;
+    top: 15%;
+    /* transform: translateY(-50%); */
+    left: 10px;
+    transition: color 0.3s; 
+    filter: drop-shadow(0 0 0 transparent); 
+}
+
+.fa-reply-all:hover {
+    color: rgb(83, 145, 70); 
+    animation: glow 1s infinite alternate; 
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(0, 128, 0, 0.7)); 
+    }
+    100% {
+        filter: drop-shadow(0 0 25px rgba(0, 128, 0, 0.7)); 
+    }
+}
+
+.fa-address-book,
+.fa-highlighter{
+    transition: color 0.3s, transform 0.3s; /* Agregar transiciones para el color y la transformación */
+}
+
+.fa-address-book:hover,
+.fa-highlighter:hover{
+    color: rgb(38, 230, 0); /* Cambiar el color del icono a verde al pasar el mouse sobre él */
+    animation: shake 0.2s infinite alternate; /* Aplicar la animación de vibración */
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-2px); /* Mover el icono -2px horizontalmente */
+    }
+    100% {
+        transform: translateX(2px); /* Mover el icono 2px horizontalmente */
+    }
+}
+
+
+.fa-trash-can {
+    transition: color 0.3s, transform 0.3s; /* Agregar transiciones para el color y la transformación */
+}
+
+.fa-trash-can:hover {
+    color: rgb(255, 2, 2); /* Cambiar el color del icono a verde al pasar el mouse sobre él */
+    animation: shake 0.2s infinite alternate; /* Aplicar la animación de vibración */
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-2px); /* Mover el icono -2px horizontalmente */
+    }
+    100% {
+        transform: translateX(2px); /* Mover el icono 2px horizontalmente */
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .fa-reply-all {
+        left: 20%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .fa-reply-all {
+        left: 320px;
+    }
+    .fa-reply-all {
+        font-size: 35px;
+    }
+}
+
+
 
 .box_redirect_create {
     text-align: center;
@@ -52,6 +137,19 @@
 
 }
 
+.priceAndCreated{
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+}
+
+.precio_dashboarD{
+    color: var(--color-blanco);
+    font-size: 18;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
 
 @media (min-width: 768px) {
     .box_redirect_create a {
@@ -61,6 +159,9 @@
 
 @media (min-width: 1024px) {
     .box_redirect_create a {
+        font-size: 40px;
+    }
+    .fa-reply-all {
         font-size: 40px;
     }
 

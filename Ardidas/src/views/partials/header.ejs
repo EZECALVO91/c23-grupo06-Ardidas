@@ -11,19 +11,19 @@
                         alt="imagen_avatar_usuario">
                     <a href="/users/profile/<%= usuarioLogeado.id %>">
                         <p>
-                            <%= usuarioLogeado.email %>
+                            <%= usuarioLogeado.name %>
                         </p>
                     </a>
                     <a href="">
-                        <p> | </p>
+                        <p>  | </p>
                     </a>
-                    <a href="#" id="logoutBtn"><p>Cerrar Sesión</p></a>
+                    <a href="#" id="logoutBtn"><p> Cerrar sesión</p></a>
                     <%} else{%>
                         <a href="/users/register">
-                            <p>Crear Cuenta |</p>
+                            <p>Crear cuenta |</p>
                         </a>
                         <a href="/users/login">
-                            <p>Iniciar Sesion</p>
+                            <p>Iniciar sesión</p>
                         </a>
                         <%}%>
     </div>
@@ -53,10 +53,10 @@
                         <%} else{%>
                             <div class="div_cuenta_burgerbutton">
                             <a href="/users/register">
-                                <p>Crear Cuenta </p>
+                                <p>Crear cuenta </p>
                             </a>
                             <a href="/users/login">
-                                <p>Iniciar Sesion</p>
+                                <p>Iniciar sesión</p>
                             </a>
                         </div>
                             <%}%>
@@ -69,7 +69,7 @@
                     
                     </div> 
                     <% if (usuarioLogeado !=undefined) {%>
-                        <a href="#" id="logoutBtnPhone"><p class="cerrar_sesion_burgerbutton">Cerrar Sesión</p></a>
+                        <a href="#" id="logoutBtnPhone"><p class="cerrar_sesion_burgerbutton">Cerrar sesión</p></a>
                         <%}%>
                 </div>
 

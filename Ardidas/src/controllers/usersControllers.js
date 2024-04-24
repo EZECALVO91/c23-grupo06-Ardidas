@@ -9,7 +9,7 @@ const usersController = {
 // -------------------REGISTER----------------------------------------------------------------------------------------------------------
 
 formRegister: (req, res) => {
-      res.render("./users/register", { title: "Registro", usuarioLogeado: null }); // vista del formulario de registro.
+      res.render("./users/register", { title: "Registro | Ardidas", usuarioLogeado: null }); // vista del formulario de registro.
     },
 
     register: (req, res) => {
@@ -26,11 +26,13 @@ formRegister: (req, res) => {
           createdAt:new Date(),
         })
           .then(() => {
-              res.redirect("/users/login");
+              // res.redirect("/users/login"); 
+      //SE COMITIO EL REDIRECT PARA QUE FUNCIONE EL SWEET ALERT DESPUES DEL REGISTRO
+      //ESTA EN LAS VALIDACIONES DEL FRONT REGISTRO.
           })
             .catch((error) => console.log(error));
       }else{
-        return res.render("./users/register", {errores: errores.mapped(),old: req.body,title: "registro",usuarioLogeado: null,
+        return res.render("./users/register", {errores: errores.mapped(),old: req.body,title: "Registro | ERROR",usuarioLogeado: null,
         });
       }
     },
@@ -38,14 +40,14 @@ formRegister: (req, res) => {
 // -------------------LOGIN----------------------------------------------------------------------------------------------------------
 
 formLogin: (req, res) => {
-      res.render("./users/login", {title: "Login",usuarioLogeado: req.session.usuarioLogin,}); // vista de formulario de login.
+      res.render("./users/login", {title: "Login | Ardidas",usuarioLogeado: req.session.usuarioLogin,}); // vista de formulario de login.
     },
 
 login: (req, res) => {
       const errores = validationResult(req); // logueo de cuenta mas cookis para guardar en las vistas.
       if (!errores.isEmpty()) {
         // console.log("errores:", errores.mapped());
-        res.render("./users/login", {errores: errores.mapped(),title: "Login",usuarioLogeado: req.session.usuarioLogin,});
+        res.render("./users/login", {errores: errores.mapped(),title: "Login | ERROR",usuarioLogeado: req.session.usuarioLogin,});
       }else{
         const { email } = req.body;
         db.User.findOne({
@@ -61,6 +63,7 @@ login: (req, res) => {
                 email: user.dataValues.email,
                 id_category: user.dataValues.id_category,
                 image: user.dataValues.image,
+                name: user.dataValues.name
               };
               res.cookie("user", cookieUser, { maxAge: 1000 * 60 * 15 });
               res.cookie("recuerdame", "true", { maxAge: 1000 * 60 * 15 });
@@ -91,7 +94,7 @@ userProfile: (req, res) => {
       const { id } = req.params;
       db.User.findByPk(req.session.usuarioLogin.id)
         .then((response) => {
-          res.render("users/profileEdit", {title: "Editar Usuario",usuarioLogeado: response.dataValues,});
+          res.render("users/profileEdit", {title: "Editar perfil | Ardidas",usuarioLogeado: response.dataValues,});
         })
         .catch((err) => console.log(err));
     },
@@ -101,7 +104,7 @@ userProfileEdit: (req, res) => {
       if (!errores.isEmpty()) {
         db.User.findByPk(req.session.usuarioLogin.id)
           .then((respons) => {
-            res.render("users/profileEdit", {errores: errores.mapped(),old: req.body,title: "Error",usuarioLogeado: respons.dataValues,});
+            res.render("users/profileEdit", {errores: errores.mapped(),old: req.body,title: "Editar perfil | ERROR",usuarioLogeado: respons.dataValues,});
           })
           .catch((err) => console.log(err));
       }else{
@@ -146,27 +149,43 @@ userProfileEdit: (req, res) => {
 
 // ---------------ACA EMPIEZA EL DASHBOARD--------------------------------------------------------------------------------------------------------------
 
-UsersDashboard: (req, res) => {
-      db.User.findAll({
-        where: { id: { [Op.ne]: req.session.usuarioLogin.id } },
-      })
-        .then((users) => {
-          // console.log("dashboard users", users);
-          // console.log("dashboard users", users);
-          res.render("users/usersDashboard", {
-            title: "Dashboard",
-            users: users,
+UsersDashboard: async (req, res) => {
+    try {
+        const pageUsers = 9; // Define la cantidad de usuarios por página
+        const currentPage = req.query.page ? parseInt(req.query.page) : 1;
+        const startIndex = (currentPage - 1) * pageUsers;
+
+        // Consulta los usuarios para la página actual y obtiene el total de usuarios
+        const [users, totalUsers] = await Promise.all([
+            db.User.findAll({
+                where: { id: { [Op.ne]: req.session.usuarioLogin.id } },
+                include: [{ model: db.Category, as: 'Categories' }],
+                limit: pageUsers,
+                offset: startIndex,
+            }),
+            db.User.count({ where: { id: { [Op.ne]: req.session.usuarioLogin.id } } }),
+        ]);
+
+        const totalPages = Math.ceil(totalUsers / pageUsers); // Calcula el total de páginas
+
+        res.render("users/usersDashboard", {
+            title: "Dashboard usuarios | Ardidas",
             usuarioLogeado: req.session.usuarioLogin,
-          });
-        })
-        .catch((err) => console.log(err));
-    },
+            users,
+            currentPage,
+            totalPages,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Error al cargar los usuarios");
+    }
+},
 
   
     //Dashboar crear usuarios con provilegios
 createPrivileges: (req, res) => {
       // vista de la creacion de usuario desde el dashboard.
-      res.render("users/userCreatePrivi", {title: "Users Privileges",usuarioLogeado: req.session.usuarioLogin,});
+      res.render("users/userCreatePrivi", {title: "Crear administrador | Ardidas",usuarioLogeado: req.session.usuarioLogin,});
     },
 
 createUserPrivileges: (req, res) => {
@@ -175,7 +194,7 @@ createUserPrivileges: (req, res) => {
       if (!errores.isEmpty()) {
         // creacion de usuarios desde el dashboard.
         // console.log("Ingrese en errores");
-        res.render("users/userCreatePrivi", {errores: errores.mapped(),old: req.body,title: "Errores Privilegios",usuarioLogeado: req.session.usuarioLogin,});
+        res.render("users/userCreatePrivi", {errores: errores.mapped(),old: req.body,title: "Crear administrador | ERROR",usuarioLogeado: req.session.usuarioLogin,});
       } else {
         const file = req.file;
         const { name, email, password, id_category } = req.body;
@@ -195,7 +214,7 @@ usersEdit: (req, res) => {
       const { id } = req.params;
       db.User.findByPk(req.params.id) // vista de edicion de usuario desde el dashboard.
         .then((user) => {
-          res.render("users/usersEdit", {title: "Editar Usuario",user,usuarioLogeado: req.session.usuarioLogin,});
+          res.render("users/usersEdit", {title: "Editar usuario | Ardidas",user,usuarioLogeado: req.session.usuarioLogin,});
         })
         .catch((err) => console.log(err));
     },
@@ -209,7 +228,7 @@ usersUpdate: (req, res) => {
         .then((user) => {
           if (!errores.isEmpty()) {
             // console.log("Ingrese en errores");
-            res.render("users/usersEdit", {errores: errores.mapped(),old: req.body,title: "Editar Usuario",user,usuarioLogeado: req.session.usuarioLogin,});
+            res.render("users/usersEdit", {errores: errores.mapped(),old: req.body,title: "Editar usuario | Ardidas",user,usuarioLogeado: req.session.usuarioLogin,});
           } else {
             const { id } = req.params;
             const { name, image, id_category } = req.body;
